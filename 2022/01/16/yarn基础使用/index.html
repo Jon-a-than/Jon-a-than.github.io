@@ -16,14 +16,17 @@
   <meta name="author" content="Jon-a-than">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
+    <meta name="description" content="脚本起用 在当前窗口启用脚本  1Set-ExecutionPolicy RemoteSigned Process       # 在当前窗口启用脚本    安装全部项目依赖1yarn                                           # 安装所有依赖包    初始化12yarn init -y   								# 默认yarn init">
+<meta property="og:type" content="article">
 <meta property="og:title" content="yarn基础使用">
 <meta property="og:url" content="http://example.com/2022/01/16/yarn%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
+<meta property="og:description" content="脚本起用 在当前窗口启用脚本  1Set-ExecutionPolicy RemoteSigned Process       # 在当前窗口启用脚本    安装全部项目依赖1yarn                                           # 安装所有依赖包    初始化12yarn init -y   								# 默认yarn init">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-16T03:12:49.000Z">
-<meta property="article:modified_time" content="2022-01-16T03:12:49.368Z">
+<meta property="article:modified_time" content="2022-01-16T03:16:20.568Z">
 <meta property="article:author" content="Jon-a-than">
+<meta property="article:tag" content="yarn">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -194,7 +197,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      229 字
     </span>
   
 
@@ -203,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      2 分钟
     </span>
   
 
@@ -235,12 +238,47 @@
             <h1 style="display: none">yarn基础使用</h1>
             
             <div class="markdown-body">
-              
+              <h2 id="脚本起用"><a href="#脚本起用" class="headerlink" title="脚本起用"></a>脚本起用</h2><ul>
+<li><strong>在当前窗口启用脚本</strong></li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell"><span class="hljs-built_in">Set-ExecutionPolicy</span> RemoteSigned <span class="hljs-keyword">Process</span>       <span class="hljs-comment"># 在当前窗口启用脚本</span><br></code></pre></div></td></tr></table></figure>
+
+
+
+<h2 id="安装全部项目依赖"><a href="#安装全部项目依赖" class="headerlink" title="安装全部项目依赖"></a>安装全部项目依赖</h2><figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">yarn                                           <span class="hljs-comment"># 安装所有依赖包</span><br></code></pre></div></td></tr></table></figure>
+
+
+
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">yarn init <span class="hljs-literal">-y</span>   								<span class="hljs-comment"># 默认</span><br>yarn init      								<span class="hljs-comment"># 自定义</span><br></code></pre></div></td></tr></table></figure>
+
+
+
+<h2 id="添加包"><a href="#添加包" class="headerlink" title="添加包"></a>添加包</h2><figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">yarn add name [<span class="hljs-type">package</span>]						 <span class="hljs-comment"># 安装包</span><br>yarn add global [<span class="hljs-type">package</span>]					 <span class="hljs-comment"># 全局安装包</span><br></code></pre></div></td></tr></table></figure>
+
+
+
+<h2 id="移除包"><a href="#移除包" class="headerlink" title="移除包"></a>移除包</h2><figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">yarn remove [<span class="hljs-type">package</span>]                          <span class="hljs-comment"># 移除包</span><br>yarn remove global [<span class="hljs-type">package</span>]                   <span class="hljs-comment"># 全局移除包</span><br></code></pre></div></td></tr></table></figure>
+
+
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/">前端工具</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/yarn/">yarn</a>
+                    
+                  </div>
                 
               </div>
               

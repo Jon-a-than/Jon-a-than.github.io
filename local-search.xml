@@ -8,9 +8,21 @@
     <link href="/2022/01/16/yarn%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/"/>
     <url>/2022/01/16/yarn%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h2 id="脚本起用"><a href="#脚本起用" class="headerlink" title="脚本起用"></a>脚本起用</h2><ul><li><strong>在当前窗口启用脚本</strong></li></ul><figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell"><span class="hljs-built_in">Set-ExecutionPolicy</span> RemoteSigned <span class="hljs-keyword">Process</span>       <span class="hljs-comment"># 在当前窗口启用脚本</span><br></code></pre></div></td></tr></table></figure><h2 id="安装全部项目依赖"><a href="#安装全部项目依赖" class="headerlink" title="安装全部项目依赖"></a>安装全部项目依赖</h2><figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">yarn                                           <span class="hljs-comment"># 安装所有依赖包</span><br></code></pre></div></td></tr></table></figure><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">yarn init <span class="hljs-literal">-y</span>   <span class="hljs-comment"># 默认</span><br>yarn init      <span class="hljs-comment"># 自定义</span><br></code></pre></div></td></tr></table></figure><h2 id="添加包"><a href="#添加包" class="headerlink" title="添加包"></a>添加包</h2><figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">yarn add name [<span class="hljs-type">package</span>] <span class="hljs-comment"># 安装包</span><br>yarn add global [<span class="hljs-type">package</span>] <span class="hljs-comment"># 全局安装包</span><br></code></pre></div></td></tr></table></figure><h2 id="移除包"><a href="#移除包" class="headerlink" title="移除包"></a>移除包</h2><figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">yarn remove [<span class="hljs-type">package</span>]                          <span class="hljs-comment"># 移除包</span><br>yarn remove global [<span class="hljs-type">package</span>]                   <span class="hljs-comment"># 全局移除包</span><br></code></pre></div></td></tr></table></figure>]]></content>
     
     
+    <categories>
+      
+      <category>前端工具</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>yarn</tag>
+      
+    </tags>
     
   </entry>
   
@@ -33,7 +45,7 @@
     
     <tags>
       
-      <tag>yarn</tag>
+      <tag>webpack</tag>
       
     </tags>
     
