@@ -16,15 +16,15 @@
   <meta name="author" content="Jon-a-than">
   <meta name="keywords" content="">
   
-    <meta name="description" content="webpack打包后压缩冗余空格与换行、变量名 初始化包环境1yarn init    安装webpack包1yarn add webpack webpack-cli -D    配置scripts 在package.json文件下配置  123&quot;scripts&quot;: &amp;#123;    &quot;build&quot;: &quot;webpack&quot;&amp;#125;">
+    <meta name="description" content="webpack打包后压缩冗余空格与换行、变量名 初始化包环境12yarn init                                   # 回车确认yarn init -y                                # 默认配置    安装webpack包1yarn add webpack webpack-cli -D    配置scripts 在package">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack基础使用">
 <meta property="og:url" content="http://example.com/2022/01/16/webpack%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
-<meta property="og:description" content="webpack打包后压缩冗余空格与换行、变量名 初始化包环境1yarn init    安装webpack包1yarn add webpack webpack-cli -D    配置scripts 在package.json文件下配置  123&quot;scripts&quot;: &amp;#123;    &quot;build&quot;: &quot;webpack&quot;&amp;#125;">
+<meta property="og:description" content="webpack打包后压缩冗余空格与换行、变量名 初始化包环境12yarn init                                   # 回车确认yarn init -y                                # 默认配置    安装webpack包1yarn add webpack webpack-cli -D    配置scripts 在package">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-16T03:10:43.000Z">
-<meta property="article:modified_time" content="2022-01-16T05:12:05.127Z">
+<meta property="article:modified_time" content="2022-01-16T14:11:12.709Z">
 <meta property="article:author" content="Jon-a-than">
 <meta property="article:tag" content="webpack">
 <meta name="twitter:card" content="summary_large_image">
@@ -197,7 +197,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      972 字
+      2.1k 字
     </span>
   
 
@@ -206,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      9 分钟
+      18 分钟
     </span>
   
 
@@ -239,7 +239,7 @@
             
             <div class="markdown-body">
               <p><strong>webpack打包后压缩冗余空格与换行、变量名</strong></p>
-<h2 id="初始化包环境"><a href="#初始化包环境" class="headerlink" title="初始化包环境"></a>初始化包环境</h2><figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">yarn init<br></code></pre></div></td></tr></table></figure>
+<h2 id="初始化包环境"><a href="#初始化包环境" class="headerlink" title="初始化包环境"></a>初始化包环境</h2><figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">yarn init                                   <span class="hljs-comment"># 回车确认</span><br>yarn init <span class="hljs-literal">-y</span>                                <span class="hljs-comment"># 默认配置</span><br></code></pre></div></td></tr></table></figure>
 
 
 
@@ -260,37 +260,86 @@
 <li><p><strong>在</strong><code>package.json</code><strong>目录下建立</strong><code>src</code><strong>文件夹</strong></p>
 </li>
 </ul>
-<h2 id="js打包"><a href="#js打包" class="headerlink" title="js打包"></a>js打包</h2><h3 id="导出模块文件"><a href="#导出模块文件" class="headerlink" title="导出模块文件"></a><code>导出模块文件</code></h3><p><code>src</code><strong>下新建</strong><code>sum/sum.js</code></p>
+<h2 id="js打包"><a href="#js打包" class="headerlink" title="js打包"></a>js打包</h2><h3 id="🍉导出模块文件"><a href="#🍉导出模块文件" class="headerlink" title="🍉导出模块文件"></a>🍉导出模块文件</h3><p><code>src</code><strong>下新建</strong><code>sum/sum.js</code></p>
 <p><code>sum.js</code><strong>写入导出求和函数</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> sum = <span class="hljs-function">(<span class="hljs-params">x, y</span>) =&gt;</span> x + y<br></code></pre></div></td></tr></table></figure>
 
 
 
-<h3 id="导入模块文件"><a href="#导入模块文件" class="headerlink" title="导入模块文件"></a><code>导入模块文件</code></h3><p><code>src</code><strong>下新建默认入口文件</strong><code>index.js</code></p>
+<h3 id="🍉导入模块文件"><a href="#🍉导入模块文件" class="headerlink" title="🍉导入模块文件"></a>🍉导入模块文件</h3><p><code>src</code><strong>下新建默认入口文件</strong><code>index.js</code></p>
 <p><code>index.js</code><strong>引用</strong><code>sum</code><strong>函数</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123;sum&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./sum/sum&#x27;</span><br><br><span class="hljs-keyword">const</span> [x, y] = [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>]<br><span class="hljs-built_in">console</span>.log(sum(x, y))<br></code></pre></div></td></tr></table></figure>
 
 
 
-<h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a><code>打包</code></h3><figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">yarn build |(或) npm run build                 <span class="hljs-comment"># 在src目录下生成dist文件夹</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="🍉打包"><a href="#🍉打包" class="headerlink" title="🍉打包"></a>🍉打包</h3><figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">yarn build                                      <span class="hljs-comment"># 或 `npm run build`</span><br></code></pre></div></td></tr></table></figure>
 
 <p><strong>运行后在</strong><code>src</code><strong>的同级目录下生成默认出口</strong><code>dist/main.js</code></p>
 <p><code>main.js</code><strong>的内容为</strong><code>index.js</code><strong>与其模块</strong><code>sum.js</code><strong>的打包内容</strong></p>
+<ul>
+<li><strong>只有与入口文件关联的代码会被打包</strong></li>
+</ul>
 <p><code>main.js</code><strong>内容如下</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">(<span class="hljs-function">()=&gt;</span>&#123;<span class="hljs-string">&quot;use strict&quot;</span>;<span class="hljs-keyword">const</span>[o,s]=[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>];<span class="hljs-built_in">console</span>.log((<span class="hljs-function">(<span class="hljs-params">o,s</span>)=&gt;</span>o+s)(o,s))&#125;)();<br></code></pre></div></td></tr></table></figure>
 
 
 
-<h3 id="更新代码"><a href="#更新代码" class="headerlink" title="更新代码"></a><code>更新代码</code></h3><p><strong>添加功能后再次</strong><code>yarn build</code><strong>打包即可更新</strong><code>main.js</code></p>
-<h2 id="自定义打包出入口"><a href="#自定义打包出入口" class="headerlink" title="自定义打包出入口"></a>自定义打包出入口</h2><h3 id="新建webpack配置文件"><a href="#新建webpack配置文件" class="headerlink" title="新建webpack配置文件"></a><code>新建webpack配置文件</code></h3><p><strong>在</strong><code>src</code><strong>同级目录下新建</strong><code>webpack.config.js</code><strong>文件</strong></p>
-<h3 id="配置打包出入口"><a href="#配置打包出入口" class="headerlink" title="配置打包出入口"></a><code>配置打包出入口</code></h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>)<br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>    <span class="hljs-attr">entry</span>: <span class="hljs-string">&#x27;./src/入口文件.js&#x27;</span>,<br>    <span class="hljs-attr">output</span>: &#123;<br>        <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">&quot;出口文件夹&quot;</span>),<br>        <span class="hljs-attr">filename</span>: <span class="hljs-string">&quot;出口文件名.js&quot;</span><br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h3 id="🍉更新代码"><a href="#🍉更新代码" class="headerlink" title="🍉更新代码"></a>🍉更新代码</h3><p><strong>添加功能后再次</strong><code>yarn build</code><strong>打包即可更新</strong><code>main.js</code></p>
+<h2 id="自定义打包出入口"><a href="#自定义打包出入口" class="headerlink" title="自定义打包出入口"></a>自定义打包出入口</h2><h3 id="🍇新建webpack配置文件"><a href="#🍇新建webpack配置文件" class="headerlink" title="🍇新建webpack配置文件"></a>🍇新建webpack配置文件</h3><p><strong>在</strong><code>src</code><strong>同级目录下新建</strong><code>webpack.config.js</code><strong>文件</strong></p>
+<h3 id="🍇配置打包出入口"><a href="#🍇配置打包出入口" class="headerlink" title="🍇配置打包出入口"></a>🍇配置打包出入口</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>)<br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>    <span class="hljs-attr">entry</span>: <span class="hljs-string">&#x27;./src/入口文件名.js&#x27;</span>,<br>    <span class="hljs-attr">output</span>: &#123;<br>        <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">&#x27;出口文件夹&#x27;</span>),<br>        <span class="hljs-attr">filename</span>: <span class="hljs-string">&#x27;出口文件名.js&#x27;</span><br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
 <ul>
 <li><strong>🥝要先自定义打包命令以使用配置文件</strong></li>
 </ul>
 <p><strong>自定义打包命令:</strong><a href="#%E9%85%8D%E7%BD%AEscripts">配置scripts</a></p>
-<p><strong>打包</strong><code>yarn build</code></p>
+<h3 id="🍇打包yarn-build"><a href="#🍇打包yarn-build" class="headerlink" title="🍇打包yarn build"></a>🍇打包<code>yarn build</code></h3><h2 id="自动嵌入html"><a href="#自动嵌入html" class="headerlink" title="自动嵌入html"></a>自动嵌入html</h2><p><code>html-webpack-plugin</code><strong>可以使webpack打包后自动将js引入html</strong><code>head</code><strong>标签中</strong></p>
+<h3 id="🍅安装"><a href="#🍅安装" class="headerlink" title="🍅安装"></a>🍅安装</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">yarn add html-webpack-plugin -D<br></code></pre></div></td></tr></table></figure>
 
+
+
+<h3 id="🍅提供主页面"><a href="#🍅提供主页面" class="headerlink" title="🍅提供主页面"></a>🍅提供主页面</h3><p>在<code>src</code>同目录下新建<code>pubilc\index.html</code></p>
+<h3 id="🍅配置"><a href="#🍅配置" class="headerlink" title="🍅配置"></a>🍅配置</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> HtmlWebpackPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;html-webpack-plugin&#x27;</span>)<br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>    <span class="hljs-attr">plugins</span>: [<br>        <span class="hljs-keyword">new</span> HtmlWebpackPlugin(&#123;<br>            <span class="hljs-attr">template</span>: <span class="hljs-string">&#x27;./public/index.html&#x27;</span>          <span class="hljs-comment">// 要导入的html</span><br>        &#125;)<br>    ]<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h3 id="🍅打包"><a href="#🍅打包" class="headerlink" title="🍅打包"></a>🍅打包</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">yarn build<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>默认在</strong><code>dist</code><strong>目录下生成</strong><code>index.html</code></p>
+<h2 id="css打包"><a href="#css打包" class="headerlink" title="css打包"></a>css打包</h2><h3 id="🥑新建css文件"><a href="#🥑新建css文件" class="headerlink" title="🥑新建css文件"></a>🥑新建css文件</h3><p><strong>在</strong><code>./src</code><strong>目录下新建</strong><code>css/background.css</code></p>
+<p><code>background.css</code><strong>:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">body</span>&#123;<br>    <span class="hljs-attribute">background</span>: <span class="hljs-number">#000</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>webpack不可直接打包css(webpack默认识别js与json文件)</strong></p>
+<p><strong>可安装loader加载器来打包css</strong></p>
+<h3 id="🥑安装loader"><a href="#🥑安装loader" class="headerlink" title="🥑安装loader"></a>🥑安装loader</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">yarn add style-loader css-loader -D<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>webpack通过</strong><code>css-loader</code><strong>识别与打包css</strong><br> <code>style-loader</code><strong>将样式绑定dom</strong></p>
+<h3 id="🥑webpack配置"><a href="#🥑webpack配置" class="headerlink" title="🥑webpack配置"></a>🥑webpack配置</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-built_in">module</span>.exports = &#123;<br>    <span class="hljs-attr">module</span>: &#123;<br>        <span class="hljs-attr">rules</span>: [<br>            &#123;<br>                <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css$/</span>,                        <span class="hljs-comment">// 匹配所有css</span><br>                use: [<span class="hljs-string">&#x27;style-loader&#x27;</span>, <span class="hljs-string">&#x27;css-loader&#x27;</span>]<br>            &#125;<br>        ]<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h3 id="🥑引入入口js"><a href="#🥑引入入口js" class="headerlink" title="🥑引入入口js"></a>🥑引入入口js</h3><p><strong>在</strong><code>index.js</code><strong>(入口文件)中引入</strong><code>background.css</code></p>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./css/background.css&#x27;</span><br></code></pre></div></td></tr></table></figure>
+
+
+
+<h3 id="🥑打包构建"><a href="#🥑打包构建" class="headerlink" title="🥑打包构建"></a>🥑打包构建</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">yarn build<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h2 id="图片打包"><a href="#图片打包" class="headerlink" title="图片打包"></a>图片打包</h2><h3 id="🥕安装依赖"><a href="#🥕安装依赖" class="headerlink" title="🥕安装依赖"></a>🥕安装依赖</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">yarn add url-loader file-loader -D<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h3 id="🥕webpack配置"><a href="#🥕webpack配置" class="headerlink" title="🥕webpack配置"></a>🥕webpack配置</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">&#123;<br>    <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.(png|jpg|gif|jpeg)$/i</span>,<br>    use: [<br>        &#123;<br>        	<span class="hljs-attr">loader</span>: <span class="hljs-string">&#x27;url-loader&#x27;</span>,<br>        	<span class="hljs-attr">options</span>: &#123;<br>        		<span class="hljs-attr">limit</span>: <span class="hljs-number">8</span> * <span class="hljs-number">1024</span>,<br>        	&#125;,<br>        &#125;,<br>    ],<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="字体图标打包"><a href="#字体图标打包" class="headerlink" title="字体图标打包"></a>字体图标打包</h2>
             </div>
             <hr>
             <div>
