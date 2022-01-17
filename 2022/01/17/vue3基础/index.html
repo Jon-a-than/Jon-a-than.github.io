@@ -1,0 +1,548 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
+  <link rel="icon" href="/img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Jon-a-than">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="生成vue3🥬从vue导入createApp函数在src目录下新建main.js导入createApp 1import &amp;#123; createApp &amp;#125; from &amp;#x27;vue&amp;#x27;    🥬创建一个根组件App.vue导入至main.js在src目录下新建App.vue中导入main.js App.vue: 12345678910&lt;template&gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue3基础">
+<meta property="og:url" content="http://example.com/2022/01/17/vue3%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Jonathan的博客">
+<meta property="og:description" content="生成vue3🥬从vue导入createApp函数在src目录下新建main.js导入createApp 1import &amp;#123; createApp &amp;#125; from &amp;#x27;vue&amp;#x27;    🥬创建一个根组件App.vue导入至main.js在src目录下新建App.vue中导入main.js App.vue: 12345678910&lt;template&gt;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-17T00:24:17.000Z">
+<meta property="article:modified_time" content="2022-01-17T04:22:45.150Z">
+<meta property="article:author" content="Jon-a-than">
+<meta property="article:tag" content="vue3">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  <title>vue3基础 - Jonathan的博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/atom-one-dark-reasonable.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>清山的博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/background.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="vue3基础">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-01-17 08:24" pubdate>
+        2022年1月17日 早上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.2k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      27 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">vue3基础</h1>
+            
+            <div class="markdown-body">
+              <h2 id="生成vue3"><a href="#生成vue3" class="headerlink" title="生成vue3"></a>生成vue3</h2><h3 id="🥬从vue导入createApp函数"><a href="#🥬从vue导入createApp函数" class="headerlink" title="🥬从vue导入createApp函数"></a>🥬从vue导入createApp函数</h3><p><strong>在</strong><code>src</code><strong>目录下新建</strong><code>main.js</code><strong>导入</strong><code>createApp</code></p>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; createApp &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br></code></pre></div></td></tr></table></figure>
+
+
+
+<h3 id="🥬创建一个根组件App-vue导入至main-js"><a href="#🥬创建一个根组件App-vue导入至main-js" class="headerlink" title="🥬创建一个根组件App.vue导入至main.js"></a>🥬创建一个根组件App.vue导入至main.js</h3><p><strong>在</strong><code>src</code><strong>目录下新建</strong><code>App.vue</code><strong>中导入</strong><code>main.js</code></p>
+<p><code>App.vue</code><strong>:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs vue">&lt;template&gt;<br>    &lt;div class=&quot;container&quot;&gt;<br>        根组件内容<br>    &lt;/div&gt;<br>&lt;/template&gt;<br>&lt;script&gt;<br>export default &#123;<br>    name: &#x27;App&#x27;<br>&#125;<br>&lt;/script&gt;<br></code></pre></div></td></tr></table></figure>
+
+
+
+<p><code>main.js</code><strong>:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; createApp &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> &#123;App <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./App.vue&#x27;</span><br></code></pre></div></td></tr></table></figure>
+
+
+
+<h3 id="🥬使用createApp创建应用实例"><a href="#🥬使用createApp创建应用实例" class="headerlink" title="🥬使用createApp创建应用实例"></a>🥬使用createApp创建应用实例</h3><p>在<code>main.js</code>添加</p>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> app = createApp(App)<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h3 id="🥬应用实例挂载到-app容器中"><a href="#🥬应用实例挂载到-app容器中" class="headerlink" title="🥬应用实例挂载到#app容器中"></a>🥬应用实例挂载到#app容器中</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">app.mount(<span class="hljs-string">&#x27;#app&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h2 id="setup函数"><a href="#setup函数" class="headerlink" title="setup函数"></a>setup函数</h2><ul>
+<li><strong>容器函数,组合各个API</strong></li>
+<li><strong>函数内不可使用</strong><code>this</code><strong>(在组件实例创建前执行)</strong></li>
+<li><strong>返回模板需求的数据与函数(对象)</strong></li>
+</ul>
+<h3 id="🍅创建vue模板及setup函数"><a href="#🍅创建vue模板及setup函数" class="headerlink" title="🍅创建vue模板及setup函数"></a>🍅创建vue模板及setup函数</h3><p><code>App.vue</code><strong>中写入根组件及</strong><code>setup</code><strong>函数</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs vue">&lt;template&gt;<br>    &lt;div class=&quot;container&quot;&gt;<br><br>    &lt;/div&gt;<br>&lt;/template&gt;<br>&lt;script&gt;<br>export default &#123;<br>    name: &#x27;App&#x27;,<br>    setup () &#123;<br><br>    &#125;<br>&#125;<br>&lt;/script&gt;<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h3 id="🍅在setup与模板中写入代码-返回数据"><a href="#🍅在setup与模板中写入代码-返回数据" class="headerlink" title="🍅在setup与模板中写入代码,返回数据"></a>🍅在setup与模板中写入代码,返回数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs vue">&lt;template&gt;<br>    &lt;div class=&quot;container&quot;&gt;<br>        &lt;!-- 展示dom --&gt;<br>        &lt;h1&gt;&#123;&#123; msg &#125;&#125;&lt;/h1&gt;<br>    &lt;/div&gt;<br>&lt;/template&gt;<br>&lt;script&gt;<br>export default &#123;<br>    name: &#x27;App&#x27;,<br>    setup () &#123;<br>        const msg = &#x27;Hellow Word!&#x27;<br>        return &#123; msg &#125;                            // 返回数据为对象<br>    &#125;<br>&#125;<br>&lt;/script&gt;<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h3 id="🍅在setup与模板中写入代码-返回函数"><a href="#🍅在setup与模板中写入代码-返回函数" class="headerlink" title="🍅在setup与模板中写入代码,返回函数"></a>🍅在setup与模板中写入代码,返回函数</h3><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs vue">&lt;template&gt;<br>    &lt;div class=&quot;container&quot;&gt;<br>        &lt;!-- 展示dom --&gt;<br>        &lt;h1 @click=&quot;say ()&quot; &gt;Click Me.&lt;/h1&gt;<br>    &lt;/div&gt;<br>&lt;/template&gt;<br>&lt;script&gt;<br>export default &#123;<br>    name: &#x27;App&#x27;,<br>    setup () &#123;<br>        const say = () =&gt; console.log(&#x27;Hellow Word!&#x27;)<br>        return &#123; say &#125;                            // 返回函数为对象<br>    &#125;<br>&#125;<br>&lt;/script&gt;<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><h3 id="🍈钩子函数"><a href="#🍈钩子函数" class="headerlink" title="🍈钩子函数"></a>🍈钩子函数</h3><ul>
+<li><code>setup</code><strong>创建实例前</strong></li>
+<li><code>onBeforeMount</code><strong>挂载DOM前</strong></li>
+<li><code>onMounted</code><strong>挂载DOM后</strong></li>
+<li><code>onBeforeUpdate</code><strong>更新组件前</strong></li>
+<li><code>onUpdated</code><strong>更新组件后</strong></li>
+<li><code>onBeforeUnmount</code><strong>卸载销毁前</strong></li>
+<li><code>onUmounted</code><strong>卸载销毁后</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs vue">&lt;template&gt;<br>    &lt;div class=&quot;container&quot;&gt;<br>    &lt;/div&gt;<br>&lt;/template&gt;<br>&lt;script&gt;<br>    import &#123;onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUmounted&#125; from &#x27;vue&#x27;<br>    // 使用钩子函数需先导入<br>	export default &#123;<br>    	name: &#x27;App&#x27;,<br>    	setup () &#123;<br>             // 创建实例前<br><br>			onBeforeMount()&#123;<br>             	// 挂载DOM前<br>        	&#125;<br>			onMounted()&#123;<br>             	// 挂载DOM后<br>        	&#125;<br>			onBeforeUpdate()&#123;<br>             	// 更新组件前<br>        	&#125;<br>         	onUpdated()&#123;<br>            	// 更新组件后<br>         	&#125;<br>			onBeforeUnmount()&#123;<br>             	// 卸载销毁前<br>        	&#125;<br>			onUmounted()&#123;<br>				// 卸载销毁后<br>        	&#125;<br>    	&#125;<br>	&#125;<br>&lt;/script&gt;<br></code></pre></div></td></tr></table></figure>
+
+<ul>
+<li><p><strong>钩子函数无需</strong><code>return</code><strong>可直接执行</strong></p>
+</li>
+<li><p><strong>可注册多个相同钩子(按序执行)</strong></p>
+</li>
+</ul>
+<h2 id="reactive函数"><a href="#reactive函数" class="headerlink" title="reactive函数"></a>reactive函数</h2><ul>
+<li><strong>定义复杂数据类型为响应式数据</strong></li>
+</ul>
+<h3 id="🍒写入点击记数功能"><a href="#🍒写入点击记数功能" class="headerlink" title="🍒写入点击记数功能"></a>🍒写入点击记数功能</h3><p><strong>此时数据变化,但DOM不渲染</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs vue">&lt;template&gt;<br>    &lt;div class=&quot;container&quot;&gt;<br>        &lt;!-- 展示dom --&gt;<br>        &lt;h1 @click=&quot;cnt&quot; &gt;&#123;&#123; obj.count &#125;&#125;&lt;/h1&gt;<br>    &lt;/div&gt;<br>&lt;/template&gt;<br>&lt;script&gt;<br>	export default &#123;<br>    	name: &#x27;App&#x27;,<br>    	setup () &#123;<br>        	const obj = &#123;<br>            	count: 0<br>        	&#125;<br>        	const cnt = () =&gt; obj.count++<br>        	return &#123; obj, cnt &#125;                            // 返回函数为对象<br>    	&#125;<br>	&#125;<br>&lt;/script&gt;<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h3 id="🍒使用reactive函数"><a href="#🍒使用reactive函数" class="headerlink" title="🍒使用reactive函数"></a>🍒使用reactive函数</h3><p><strong>用</strong><code>reactive</code><strong>函数将</strong><code>obj</code><strong>对象构造为响应式数据即可动态响应</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs vue">&lt;template&gt;<br>    &lt;div class=&quot;container&quot;&gt;<br>        &lt;!-- 展示dom --&gt;<br>        &lt;h1 @click=&quot;cnt&quot; &gt;&#123;&#123; obj.count &#125;&#125;&lt;/h1&gt;<br>    &lt;/div&gt;<br>&lt;/template&gt;<br>&lt;script&gt;<br>    import &#123; reactive &#125; from &#x27;vue&#x27;                        // 需导入<br>	export default &#123;<br>    	name: &#x27;App&#x27;,<br>    	setup () &#123;<br>        	const obj = reactive(&#123;                       // 构造为响应式数据<br>            	count: 0<br>        	&#125;)<br>        	const cnt = () =&gt; obj.count++<br>        	return &#123; obj, cnt &#125;                          // 返回函数为对象<br>    	&#125;<br>	&#125;<br>&lt;/script&gt;<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h2 id="toRef函数"><a href="#toRef函数" class="headerlink" title="toRef函数"></a>toRef函数</h2>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/vue/">vue</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/vue3/">vue3</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/01/17/vite%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">vite基础使用</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/01/16/yarn%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/">
+                        <span class="hidden-mobile">yarn基础使用</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
