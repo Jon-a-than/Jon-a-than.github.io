@@ -16,22 +16,22 @@
   <meta name="author" content="Jon-a-than">
   <meta name="keywords" content="">
   
-    <meta name="description" content="安装vite🍉项目创建1yarn create vite-app &quot;name&quot;                # 或&#96;npm init vite-a&#96;    🍉安装依赖1yarn                                       # 或&#96;npm i&#96;    🍉启动项目1yarn dev">
+    <meta name="description" content="setup语法糖1234567&lt;script setup&gt;    import son from &amp;#x27;.&#x2F;son.vue&amp;#x27;               &#x2F;&#x2F; 无需competazhu&amp;#x27;c    const data &#x3D; ref(&amp;#x27;son&amp;#x27;)                   &#x2F;&#x2F; 无需return&lt;&#x2F;script&gt;&lt;t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vite基础使用">
-<meta property="og:url" content="http://example.com/2022/01/17/vite%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="vue3.2基础">
+<meta property="og:url" content="http://example.com/2022/01/19/vue3-2%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
-<meta property="og:description" content="安装vite🍉项目创建1yarn create vite-app &quot;name&quot;                # 或&#96;npm init vite-a&#96;    🍉安装依赖1yarn                                       # 或&#96;npm i&#96;    🍉启动项目1yarn dev">
+<meta property="og:description" content="setup语法糖1234567&lt;script setup&gt;    import son from &amp;#x27;.&#x2F;son.vue&amp;#x27;               &#x2F;&#x2F; 无需competazhu&amp;#x27;c    const data &#x3D; ref(&amp;#x27;son&amp;#x27;)                   &#x2F;&#x2F; 无需return&lt;&#x2F;script&gt;&lt;t">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-01-17T00:38:07.000Z">
-<meta property="article:modified_time" content="2022-01-22T02:04:57.722Z">
+<meta property="article:published_time" content="2022-01-19T14:10:39.000Z">
+<meta property="article:modified_time" content="2022-01-22T02:05:18.515Z">
 <meta property="article:author" content="Jon-a-than">
-<meta property="article:tag" content="vite">
-<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="vue3.2">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>vite基础使用 - Jonathan的博客</title>
+  <title>vue3.2基础 - Jonathan的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -177,7 +177,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="vite基础使用">
+            <span class="h2" id="subtitle" title="vue3.2基础">
               
             </span>
 
@@ -187,8 +187,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-01-17 08:38" pubdate>
-        2022年1月17日 早上
+      <time datetime="2022-01-19 22:10" pubdate>
+        2022年1月19日 晚上
       </time>
     </span>
   
@@ -198,7 +198,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      110 字
+      471 字
     </span>
   
 
@@ -207,7 +207,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      4 分钟
     </span>
   
 
@@ -244,40 +244,16 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">vite基础使用</h1>
+            <h1 style="display: none">vue3.2基础</h1>
             
             <div class="markdown-body">
-              <h2 id="安装vite"><a href="#安装vite" class="headerlink" title="安装vite"></a>安装vite</h2><h3 id="🍉项目创建"><a href="#🍉项目创建" class="headerlink" title="🍉项目创建"></a>🍉项目创建</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">yarn create vite-app <span class="hljs-string">&quot;name&quot;</span>                <span class="hljs-comment"># 或`npm init vite-a`</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🍉安装依赖"><a href="#🍉安装依赖" class="headerlink" title="🍉安装依赖"></a>🍉安装依赖</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">yarn                                       <span class="hljs-comment"># 或`npm i`</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🍉启动项目"><a href="#🍉启动项目" class="headerlink" title="🍉启动项目"></a>🍉启动项目</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">yarn dev                                    <span class="hljs-comment"># 或`npm run dev`</span><br></code></pre></div></td></tr></table></figure>
+              <h2 id="setup语法糖"><a href="#setup语法糖" class="headerlink" title="setup语法糖"></a>setup语法糖</h2><figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="javascript"></span><br><span class="javascript">    <span class="hljs-keyword">import</span> son <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./son.vue&#x27;</span>               <span class="hljs-comment">// 无需competazhu&#x27;c</span></span><br><span class="javascript">    <span class="hljs-keyword">const</span> data = ref(<span class="hljs-string">&#x27;son&#x27;</span>)                   <span class="hljs-comment">// 无需return</span></span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">son</span>&gt;</span>&#123;&#123; data &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">son</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="javascript"></span><br><span class="javascript">    <span class="hljs-keyword">import</span> son <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./son.vue&#x27;</span>               <span class="hljs-comment">// 无需competazhu&#x27;c</span></span><br><span class="javascript">    <span class="hljs-keyword">const</span> props = defineProps(&#123;</span><br><span class="javascript">        <span class="hljs-attr">key</span>: &#123;</span><br><span class="javascript">            <span class="hljs-attr">type</span>: ,</span><br><span class="javascript">            <span class="hljs-keyword">default</span>: </span><br><span class="javascript">        &#125;</span><br><span class="javascript">    &#125;)</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">son</span>  &#123;&#123; <span class="hljs-attr">data</span> &#125;&#125;/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
 
             </div>
@@ -288,7 +264,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/">前端工具</a>
+                      <a class="hover-with-bg" href="/categories/vue/">vue</a>
                     
                   </div>
                 
@@ -296,9 +272,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/vite/">vite</a>
+                      <a class="hover-with-bg" href="/tags/vue/">vue</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+                      <a class="hover-with-bg" href="/tags/vue3-2/">vue3.2</a>
                     
                   </div>
                 
@@ -315,9 +291,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/01/17/vue%E9%AB%98%E4%BA%AE/">
+                      <a href="/2022/01/22/JavaScript%E5%9F%BA%E7%A1%80/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">vue高亮</span>
+                        <span class="hidden-mobile">JavaScript基础</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -325,8 +301,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/01/17/vue3%E5%9F%BA%E7%A1%80/">
-                        <span class="hidden-mobile">vue3基础</span>
+                      <a href="/2022/01/17/vuex%E5%9F%BA%E7%A1%80/">
+                        <span class="hidden-mobile">vuex基础</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
