@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/01/8d88941fd000d189.jpg">
 <meta property="article:published_time" content="2022-01-17T02:39:48.000Z">
-<meta property="article:modified_time" content="2022-01-22T03:31:59.964Z">
+<meta property="article:modified_time" content="2022-01-22T04:51:48.474Z">
 <meta property="article:author" content="Jon-a-than">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary_large_image">
@@ -199,7 +199,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      3.3k 字
+      4.1k 字
     </span>
   
 
@@ -208,7 +208,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      28 分钟
+      35 分钟
     </span>
   
 
@@ -350,13 +350,36 @@
 
 
 
-<h3 id="🍠事件修饰符"><a href="#🍠事件修饰符" class="headerlink" title="🍠事件修饰符"></a>🍠事件修饰符</h3><p><code>.stop</code></p>
-<p><code>.prevent</code></p>
-<p><code>.capture</code></p>
-<p><code>.self</code></p>
-<p><code>.once</code></p>
-<p><code>.passive</code></p>
-<h3 id="🍠事件名"><a href="#🍠事件名" class="headerlink" title="🍠事件名"></a>🍠事件名</h3><h2 id="表单绑定"><a href="#表单绑定" class="headerlink" title="表单绑定"></a>表单绑定</h2>
+<h3 id="🍠事件修饰符"><a href="#🍠事件修饰符" class="headerlink" title="🍠事件修饰符"></a>🍠事件修饰符</h3><figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 阻止单击事件继续冒泡 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> @<span class="hljs-attr">click.stop</span>=<span class="hljs-string">&quot;doThis&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 提交事件不再重载页面 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">form</span> @<span class="hljs-attr">submit.prevent</span>=<span class="hljs-string">&quot;onSubmit&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 修饰符可以串联 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> @<span class="hljs-attr">click.stop.prevent</span>=<span class="hljs-string">&quot;doThat&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 只有修饰符 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">form</span> @<span class="hljs-attr">submit.prevent</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 添加事件监听器时使用事件捕获模式 --&gt;</span><br><span class="hljs-comment">&lt;!-- 即内部元素触发的事件先在此处理，然后才交由内部元素进行处理 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> @<span class="hljs-attr">click.capture</span>=<span class="hljs-string">&quot;doThis&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 只当在 event.target 是当前元素自身时触发处理函数 --&gt;</span><br><span class="hljs-comment">&lt;!-- 即事件不是从内部元素触发的 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> @<span class="hljs-attr">click.self</span>=<span class="hljs-string">&quot;doThat&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+
+
+<h3 id="🍠按键修饰符"><a href="#🍠按键修饰符" class="headerlink" title="🍠按键修饰符"></a>🍠按键修饰符</h3><h3 id="🍠事件名"><a href="#🍠事件名" class="headerlink" title="🍠事件名"></a>🍠事件名</h3><h2 id="表单绑定"><a href="#表单绑定" class="headerlink" title="表单绑定"></a>表单绑定</h2><p><code>v-model</code><strong>指令实现双向绑定</strong></p>
+<p><strong>中文等拼写时不会绑定</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;msg&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>    Your input is &#123;&#123; msg &#125;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+
+
+<h3 id="🥑复选元素"><a href="#🥑复选元素" class="headerlink" title="🥑复选元素"></a>🥑复选元素</h3><p><strong>对于复选元素</strong><code>v-model</code><strong>返回一个数组</strong></p>
+<h3 id="🥑修饰符"><a href="#🥑修饰符" class="headerlink" title="🥑修饰符"></a>🥑修饰符</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">v-model.lazy                 <span class="hljs-comment">// 确认时再渲染</span><br>v-model.number               <span class="hljs-comment">// 用parseFloat()转数字,失败则返回原始值</span><br>v-model.trim                 <span class="hljs-comment">// 去除格式符</span><br></code></pre></div></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
             <hr>
             <div>
