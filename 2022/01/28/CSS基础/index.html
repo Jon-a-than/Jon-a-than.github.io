@@ -16,25 +16,23 @@
   <meta name="author" content="Jon-a-than">
   <meta name="keywords" content="">
   
-    <meta name="description" content="export🌿导出可以用export对外暴露变量,方法,类 定义后导出需用对象,expor default除外 12345export let x &#x3D; 0export const y &#x3D; (a, b) &#x3D;&gt; a + b&#x2F;&#x2F; 或一次性export &amp;#123; x, y &amp;#125;     🌿重命名导出时用as重命名导出内容 1234export &amp;#123;  a as method1">
+    <meta name="description" content="background1234567body &amp;#123;  background-color: ;  background-image: ;  background-repeat: ;  background-attachment: ;  background-position: ;&amp;#125;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6Module">
-<meta property="og:url" content="http://example.com/2022/01/27/JavaScriptES6/index.html">
+<meta property="og:title" content="CSS基础">
+<meta property="og:url" content="http://example.com/2022/01/28/CSS%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
-<meta property="og:description" content="export🌿导出可以用export对外暴露变量,方法,类 定义后导出需用对象,expor default除外 12345export let x &#x3D; 0export const y &#x3D; (a, b) &#x3D;&gt; a + b&#x2F;&#x2F; 或一次性export &amp;#123; x, y &amp;#125;     🌿重命名导出时用as重命名导出内容 1234export &amp;#123;  a as method1">
+<meta property="og:description" content="background1234567body &amp;#123;  background-color: ;  background-image: ;  background-repeat: ;  background-attachment: ;  background-position: ;&amp;#125;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tse1-mm.cn.bing.net/th/id/R-C.230ff3fd805bc41ffdeed1cbd048ce22?rik=d5YMeRYpkffV9Q&riu=http%3a%2f%2fscimg.jianbihuadq.com%2f202011%2f20201128215419186.jpg&ehk=IWIPR5ZhDdLUbTV3b3x4MHeJ6JdFBiCisKtetAnUNhQ%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1">
-<meta property="article:published_time" content="2022-01-27T02:58:27.000Z">
-<meta property="article:modified_time" content="2022-01-29T02:37:21.263Z">
+<meta property="og:image" content="https://png.pngtree.com/illustrations/20190322/ourmid/pngtree-deer-dream-beautiful-night-png-image_37300.jpg">
+<meta property="article:published_time" content="2022-01-28T03:24:07.000Z">
+<meta property="article:modified_time" content="2022-01-29T02:45:01.570Z">
 <meta property="article:author" content="Jon-a-than">
-<meta property="article:tag" content="JavaScript">
-<meta property="article:tag" content="ES6">
-<meta property="article:tag" content="Module">
+<meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://tse1-mm.cn.bing.net/th/id/R-C.230ff3fd805bc41ffdeed1cbd048ce22?rik=d5YMeRYpkffV9Q&riu=http%3a%2f%2fscimg.jianbihuadq.com%2f202011%2f20201128215419186.jpg&ehk=IWIPR5ZhDdLUbTV3b3x4MHeJ6JdFBiCisKtetAnUNhQ%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1">
+<meta name="twitter:image" content="https://png.pngtree.com/illustrations/20190322/ourmid/pngtree-deer-dream-beautiful-night-png-image_37300.jpg">
   
   
-  <title>ES6Module - Jonathan的博客</title>
+  <title>CSS基础 - Jonathan的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -180,7 +178,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="ES6Module">
+            <span class="h2" id="subtitle" title="CSS基础">
               
             </span>
 
@@ -190,8 +188,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-01-27 10:58" pubdate>
-        2022年1月27日 上午
+      <time datetime="2022-01-28 11:24" pubdate>
+        2022年1月28日 上午
       </time>
     </span>
   
@@ -201,7 +199,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      958 字
+      132 字
     </span>
   
 
@@ -210,7 +208,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8 分钟
+      2 分钟
     </span>
   
 
@@ -247,61 +245,14 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">ES6Module</h1>
+            <h1 style="display: none">CSS基础</h1>
             
             <div class="markdown-body">
-              <h2 id="export"><a href="#export" class="headerlink" title="export"></a>export</h2><h3 id="🌿导出"><a href="#🌿导出" class="headerlink" title="🌿导出"></a>🌿导出</h3><p><strong>可以用</strong><code>export</code><strong>对外暴露</strong><code>变量</code>,<code>方法</code>,<code>类</code></p>
-<p><strong>定义后导出需用对象,</strong><code>expor default</code><strong>除外</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> x = <span class="hljs-number">0</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> y = <span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a + b<br><br><span class="hljs-comment">// 或一次性</span><br><span class="hljs-keyword">export</span> &#123; x, y &#125; <br></code></pre></div></td></tr></table></figure>
+              <h2 id="background"><a href="#background" class="headerlink" title="background"></a>background</h2><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">body</span> &#123;<br>  <span class="hljs-attribute">background-color</span>: ;<br>  <span class="hljs-attribute">background-image</span>: ;<br>  <span class="hljs-attribute">background-repeat</span>: ;<br>  <span class="hljs-attribute">background-attachment</span>: ;<br>  <span class="hljs-attribute">background-position</span>: ;<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
 
 
-<h3 id="🌿重命名"><a href="#🌿重命名" class="headerlink" title="🌿重命名"></a>🌿重命名</h3><p><strong>导出时用</strong><code>as</code><strong>重命名导出内容</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">export</span> &#123;<br>  a <span class="hljs-keyword">as</span> method1,<br>  b <span class="hljs-keyword">as</span> method2<br>&#125;<br></code></pre></div></td></tr></table></figure>
-
-
-
-<h2 id="import静态加载"><a href="#import静态加载" class="headerlink" title="import静态加载"></a>import静态加载</h2><h3 id="🥕加载"><a href="#🥕加载" class="headerlink" title="🥕加载"></a>🥕加载</h3><p><code>import</code><strong>从路径导入</strong><code>export</code><strong>的js模块,名称需一致</strong></p>
-<p><strong>导入需用对象,</strong><code>expor default</code><strong>除外</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; a, b &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;url&#x27;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🥕加载重命名"><a href="#🥕加载重命名" class="headerlink" title="🥕加载重命名"></a>🥕加载重命名</h3><p><strong>用</strong><code>as</code><strong>关键字重命名</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; a <span class="hljs-keyword">as</span> method1, b <span class="hljs-keyword">as</span> method2 &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;url&#x27;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🥕全部加载"><a href="#🥕全部加载" class="headerlink" title="🥕全部加载"></a>🥕全部加载</h3><p><strong>用</strong><code>*</code><strong>可以将暴露的内容全部导入</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> methods <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;url&#x27;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h2 id="export-default匿名"><a href="#export-default匿名" class="headerlink" title="export default匿名"></a>export default匿名</h2><p><strong>一个只因用一次</strong></p>
-<p><code>export default</code><strong>可以导出匿名参量,且无需花括号,导出内容不可是</strong><code>变量声明语句</code></p>
-<p><code>import</code><strong>时可自定义命名,且无需花括号</strong></p>
-<p><strong>即导出一个</strong><code>default</code><strong>变量</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x, y</span>) </span>&#123; <span class="hljs-comment">// function add(x, y )&#123;也一样</span><br>    <span class="hljs-keyword">return</span> x + y<br>&#125;<br></code></pre></div></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">import</span> add <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;url&#x27;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h2 id="转发"><a href="#转发" class="headerlink" title="转发"></a>转发</h2><p><code>export ... from &#39;url&#39;</code><strong>在此文件未加载相应的模块</strong></p>
-<p><strong>可以用于更改接口名称与批量</strong><code>export</code></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">export</span> &#123; a, b <span class="hljs-keyword">as</span> method1 &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;url&#x27;</span><br><span class="hljs-keyword">export</span> * <span class="hljs-keyword">as</span> methods <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;url&#x27;</span>          <span class="hljs-comment">// export * 忽略default</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h2 id="import-动态加载"><a href="#import-动态加载" class="headerlink" title="import()动态加载"></a>import()动态加载</h2><p><code>import()</code><strong>在执行时加载并返回一个</strong><code>promise</code><strong>对象</strong></p>
-<h3 id="🍈条件加载"><a href="#🍈条件加载" class="headerlink" title="🍈条件加载"></a>🍈条件加载</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">if</span>(dark)<br>    <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;url1&#x27;</span>)<br><span class="hljs-keyword">else</span><br>    <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;url2&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🍈动态路径"><a href="#🍈动态路径" class="headerlink" title="🍈动态路径"></a>🍈动态路径</h3><p><strong>可以用变量来指定加载路径</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">let</span> url = <span class="hljs-string">&#x27;url&#x27;</span><br><span class="hljs-keyword">import</span>(url)<br>    .then()<br></code></pre></div></td></tr></table></figure>
-
-
+<h2 id><a href="#" class="headerlink" title></a></h2>
             </div>
             <hr>
             <div>
@@ -310,9 +261,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/JavaScript/">JavaScript</a>
-                    
-                      <a class="hover-with-bg" href="/categories/JavaScript/ES6/">ES6</a>
+                      <a class="hover-with-bg" href="/categories/CSS/">CSS</a>
                     
                   </div>
                 
@@ -320,11 +269,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/JavaScript/">JavaScript</a>
-                    
-                      <a class="hover-with-bg" href="/tags/ES6/">ES6</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Module/">Module</a>
+                      <a class="hover-with-bg" href="/tags/CSS/">CSS</a>
                     
                   </div>
                 
@@ -341,9 +286,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/01/28/ES6Promise/">
+                      <a href="/2022/01/28/CSS%E9%80%89%E6%8B%A9%E5%99%A8/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">ES6Promise</span>
+                        <span class="hidden-mobile">CSS选择器</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -351,8 +296,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/01/26/less%E5%AD%A6%E4%B9%A0/">
-                        <span class="hidden-mobile">less学习</span>
+                      <a href="/2022/01/28/ES6Promise/">
+                        <span class="hidden-mobile">ES6Promise</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
