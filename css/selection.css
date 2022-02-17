@@ -1,0 +1,21 @@
+::selection {
+  background: #2f6993;
+}
+
+pre::selection, pre ::selection {
+  background: #424858;
+}
+
+h1, h2, h3, h4, h5, h6, .line, footer, #toc, time, #subtitle.h2, .nav-link, .post-meta.mr-2, #busuanzi_container_page_pv, .note, .hover-with-bg {
+  moz-user-select: -moz-none;
+  -moz-user-select: none;
+  -o-user-select:none;
+  -khtml-user-select:none;
+  -webkit-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+
+.hljs-comment {
+  color: #88d084;
+}
