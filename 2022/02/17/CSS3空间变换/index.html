@@ -18,22 +18,21 @@
   
     <meta name="description" content="2D转换transform属性该属性用于元素的2D与3D转换 🥝元素偏移translate(posX, posY)相对原始位置偏移(posX, posY) 123div &amp;#123;  transform: translate(80px, 80px);&amp;#125;  动画效果如下:    @keyframes translate{     0% {       transform: transl">
 <meta property="og:type" content="article">
-<meta property="og:title" content="🏗CSS3空间变换">
+<meta property="og:title" content="✔CSS3空间变换">
 <meta property="og:url" content="http://example.com/2022/02/17/CSS3%E7%A9%BA%E9%97%B4%E5%8F%98%E6%8D%A2/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
 <meta property="og:description" content="2D转换transform属性该属性用于元素的2D与3D转换 🥝元素偏移translate(posX, posY)相对原始位置偏移(posX, posY) 123div &amp;#123;  transform: translate(80px, 80px);&amp;#125;  动画效果如下:    @keyframes translate{     0% {       transform: transl">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s4.ax1x.com/2022/02/17/HIb4FU.jpg">
 <meta property="article:published_time" content="2022-02-17T04:05:54.000Z">
-<meta property="article:modified_time" content="2022-02-17T15:01:30.407Z">
+<meta property="article:modified_time" content="2022-02-18T13:29:25.110Z">
 <meta property="article:author" content="Jon-a-than">
 <meta property="article:tag" content="CSS">
-<meta property="article:tag" content="CSS3">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://s4.ax1x.com/2022/02/17/HIb4FU.jpg">
   
   
-  <title>🏗CSS3空间变换 - Jonathan的博客</title>
+  <title>✔CSS3空间变换 - Jonathan的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -183,7 +182,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="🏗CSS3空间变换">
+            <span class="h2" id="subtitle" title="✔CSS3空间变换">
               
             </span>
 
@@ -204,7 +203,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      4k 字
+      5.1k 字
     </span>
   
 
@@ -213,7 +212,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      34 分钟
+      43 分钟
     </span>
   
 
@@ -250,7 +249,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">🏗CSS3空间变换</h1>
+            <h1 style="display: none">✔CSS3空间变换</h1>
             
             <div class="markdown-body">
               <h1 id="2D转换"><a href="#2D转换" class="headerlink" title="2D转换"></a>2D转换</h1><h2 id="transform属性"><a href="#transform属性" class="headerlink" title="transform属性"></a>transform属性</h2><p><strong>该属性用于元素的2D与3D转换</strong></p>
@@ -387,7 +386,7 @@
 
 <p><br><br></p>
 <p><br><br></p>
-<h2 id="transform-origin"><a href="#transform-origin" class="headerlink" title="transform-origin"></a>transform-origin</h2><p><strong>该属性用于改变元素原点位置(默认原点为元素几何中心位置)</strong></p>
+<h2 id="transform-origin"><a href="#transform-origin" class="headerlink" title="transform-origin"></a>transform-origin</h2><p><strong>该属性用于改变元素旋转中心位置(默认原点为元素几何中心位置)</strong></p>
 <ul>
 <li><code>center</code> 50%</li>
 <li><code>top</code><strong>/</strong><code>right</code> <strong>第一个参数</strong></li>
@@ -413,7 +412,7 @@
 <li><code>translateZ(posZ)</code><strong>向Z轴正方向偏移</strong><code>posZ</code></li>
 <li><code>translate3d()</code><strong>向x轴正方向偏移</strong><code>posX</code></li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-comment">/* 动画一 */</span><br><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(<span class="hljs-number">80px</span>);<br>&#125;<br><span class="hljs-comment">/* 动画二 */</span><br><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(<span class="hljs-number">80px</span>);<br>&#125;<br><span class="hljs-comment">/* 动画三(默认z轴运动无缩放效果故看不出效果) */</span><br><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateZ</span>(<span class="hljs-number">80px</span>);<br>&#125;<br><span class="hljs-comment">/* 动画四 */</span><br><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate3d</span>(<span class="hljs-number">80px</span>, <span class="hljs-number">80px</span>, <span class="hljs-number">80px</span>);<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-comment">/* 动画一 */</span><br><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(<span class="hljs-number">80px</span>);<br>&#125;<br><span class="hljs-comment">/* 动画二 */</span><br><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(<span class="hljs-number">80px</span>);<br>&#125;<br><span class="hljs-comment">/* 动画三(默认z轴运动无`perspective`属性故看不出效果) */</span><br><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateZ</span>(<span class="hljs-number">80px</span>);<br>&#125;<br><span class="hljs-comment">/* 动画四 */</span><br><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate3d</span>(<span class="hljs-number">80px</span>, <span class="hljs-number">80px</span>, <span class="hljs-number">80px</span>);<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
 <p><strong>动画效果如下:</strong></p>
 <style>
@@ -450,16 +449,12 @@
         }
     }
 </style>
-
-
-
-<div style="width:40px;height: 20px;background-color:#666;animation: translateX 2s linear infinite;display: inline-block;"></div>
-
-<div style="margin-left: 50px;width:40px;height: 20px;background-color:#666;animation: translateY 2s linear infinite;display: inline-block;"></div>
-
-<div style="margin-left: 50px;width:40px;height: 20px;background-color:#666;animation: translateZ 2s linear infinite;display: inline-block;"></div>
-
-<div style="margin-left: 50px;width:40px;height: 20px;background-color:#666;animation: translate3d 2s linear infinite;display: inline-block;"></div>
+<div>
+    <div style="width:40px;height: 20px;background-color:#666;animation: translateX 2s linear infinite;display: inline-block;"></div>
+    <div style="margin-left: 50px;width:40px;height: 20px;background-color:#666;animation: translateY 2s linear infinite;display: inline-block;"></div>
+    <div style="perspective: 200px;margin-left: 50px;width:40px;height: 20px;background-color:#666;animation: translateZ 2s linear infinite;display: inline-block;"></div>
+    <div style="margin-left: 50px;width:40px;height: 20px;background-color:#666;animation: translate3d 2s linear infinite;display: inline-block;"></div>
+</div>
 
 <br>
 
@@ -579,7 +574,74 @@
 
 
 
-<h2 id="transform-origin属性"><a href="#transform-origin属性" class="headerlink" title="transform-origin属性"></a>transform-origin属性</h2><p><strong>元素x轴与y轴交点,同2D转换</strong></p>
+<h2 id="transform-origin属性"><a href="#transform-origin属性" class="headerlink" title="transform-origin属性"></a>transform-origin属性</h2><p><strong>元素在三维坐标下的元素旋转中心位置,同2D转换</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-comment">/* 动画一 */</span><br><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">transform-origin</span>: <span class="hljs-number">50%</span> <span class="hljs-number">50%</span> <span class="hljs-number">0</span>;<br>  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotateY</span>(<span class="hljs-number">360deg</span>);<br>&#125;<br><span class="hljs-comment">/* 动画二 */</span><br><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">transform-origin</span>: <span class="hljs-number">50%</span> <span class="hljs-number">50%</span> -<span class="hljs-number">25px</span>;<br>  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotateY</span>(<span class="hljs-number">360deg</span>);<br>&#125;<br><span class="hljs-comment">/* 动画三 */</span><br><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">transform-origin</span>: <span class="hljs-number">100%</span> <span class="hljs-number">50%</span> -<span class="hljs-number">25px</span>;<br>  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotateY</span>(<span class="hljs-number">360deg</span>);<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+
+
+<p><strong>动画效果如下:</strong></p>
+<div>
+    <div style="width:40px;height: 20px;background-color:#666;animation: rotateY 2s linear infinite;display: inline-block;"></div>
+    <div style="transform-origin: 50% 50% -25px;margin-left: 50px;width:40px;height: 20px;background-color:#666;animation: rotateY 2s linear infinite;display: inline-block;"></div>
+    <div style="transform-origin: 100% 50% -25px;margin-left: 50px;width:40px;height: 20px;background-color:#666;animation: rotateY 2s linear infinite;display: inline-block;"></div>
+<div>
+
+
+
+<h2 id="transform-style属性"><a href="#transform-style属性" class="headerlink" title="transform-style属性"></a>transform-style属性</h2><p><strong>该属性设至子元素在容器内的展示方式(该属性不会继承)</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-comment">/* 动画一父容器 */</span><br>.<span class="hljs-number">2</span>d &#123;<br>  <span class="hljs-attribute">transform-style</span>: flat;<br>&#125;<br><br><span class="hljs-comment">/* 动画二父容器 */</span><br>.<span class="hljs-number">3</span>d &#123;<br><span class="hljs-attribute">transform-style</span>: preserve-<span class="hljs-number">3</span>d;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+
+
+<p><strong>动画效果如下:</strong></p>
+<div style="width:100px;height: 50px;background: #666;animation: rotateY 10s linear infinite;">
+    <div style="width:50px;height: 25px;background: #eee;animation: rotateY 2s linear infinite;"></div>
+</div>
+
+<br>
+
+<div style="width:100px;height: 50px;background: #666;animation: rotateY 10s linear infinite;transform-style: preserve-3d">
+    <div style="width:50px;height: 25px;background: #eee;animation: rotateY 2s linear infinite;"></div>
+</div>
+
+
+
+<h2 id="perspective属性"><a href="#perspective属性" class="headerlink" title="perspective属性"></a>perspective属性</h2><p><strong>该属性表示子元素的透视效果,添加后子元素z轴运动有缩放效果</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-class">.perspective</span> &#123;<br>  <span class="hljs-attribute">perspective</span>: <span class="hljs-number">200px</span>;<br>&#125;<br><br><span class="hljs-selector-class">.translate</span> &#123;<br>  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateZ</span>(<span class="hljs-number">80px</span>);<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-comment">&lt;!-- 动画一 --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;translate&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;perspective&quot;</span>&gt;</span><br>  <span class="hljs-comment">&lt;!-- 动画二 --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;translate&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p><strong>动画效果如下:</strong></p>
+<div style="display:inline-block;margin-right: 50px;">
+    <div style="perspective: 200px;width:40px;height: 20px;background-color:#666;animation: translateZ 2s linear infinite;display: inline-block;"></div>
+</div>
+
+<div style="perspective: 200px;display: inline-block;">
+        <div style="perspective: 200px;width:40px;height: 20px;background-color:#666;animation: translateZ 2s linear infinite;display: inline-block;"></div>
+</div>
+
+
+
+<h2 id="perspective-origin属性"><a href="#perspective-origin属性" class="headerlink" title="perspective-origin属性"></a>perspective-origin属性</h2><p><strong>该属性设置子元素透视效果观察点位置,需配合</strong><code>perspective-origin</code><strong>属性使用</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-comment">/* 动画一父容器 */</span><br><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">perspective</span>: <span class="hljs-number">200px</span>;<br>  <span class="hljs-attribute">perspective-origin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">/* 动画二父容器(默认) */</span><br><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">perspective</span>: <span class="hljs-number">200px</span>;<br>  <span class="hljs-attribute">perspective-origin</span>: <span class="hljs-number">50%</span> <span class="hljs-number">50%</span>;<br>&#125;<br><br><span class="hljs-comment">/* 动画三父容器 */</span><br><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">perspective</span>: <span class="hljs-number">200px</span>;<br>  <span class="hljs-attribute">perspective-origin</span>: <span class="hljs-number">100%</span> <span class="hljs-number">100%</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+
+
+<p><strong>动画效果如下:</strong></p>
+<div style="margin-right: 50px;perspective: 200px;display: inline-block;perspective-origin: 0% 0%;">
+        <div style="perspective: 200px;width:40px;height: 20px;background-color:#666;animation: translateZ 2s linear infinite;display: inline-block;"></div>
+</div>
+
+<div style="margin-right: 50px;perspective: 200px;display: inline-block;">
+        <div style="perspective: 200px;width:40px;height: 20px;background-color:#666;animation: translateZ 2s linear infinite;display: inline-block;"></div>
+</div>
+
+<div style="perspective: 200px;display: inline-block;perspective-origin: 100% 100%;">
+        <div style="perspective: 200px;width:40px;height: 20px;background-color:#666;animation: translateZ 2s linear infinite;display: inline-block;"></div>
+</div>
+
+
+
 <h2 id="backface-visibility属性"><a href="#backface-visibility属性" class="headerlink" title="backface-visibility属性"></a>backface-visibility属性</h2><p><strong>该属性设定元素背面是否可见(默认可见)</strong></p>
 <figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotateY</span>(<span class="hljs-number">360deg</span>);<br>  <span class="hljs-attribute">backface-visibility</span>: hidden;     <span class="hljs-comment">/* 动画一 */</span><br>  <span class="hljs-attribute">backface-visibility</span>: visible;    <span class="hljs-comment">/* 动画二 */</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
 
@@ -594,7 +656,7 @@
             <p><strong>参考文档:</strong></p><p><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/css/index.asp">《CSS教程 (w3school)》</a></p><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_40283570/article/details/94571041">《css3基础知识点–transform 3D变换坐标系、perspective透视距离》阿俊的博客-CSDN博客</a></p>
           </div>
 
-
+</div></div>
             </div>
             <hr>
             <div>
@@ -605,8 +667,6 @@
                     
                       <a class="hover-with-bg" href="/categories/CSS/">CSS</a>
                     
-                      <a class="hover-with-bg" href="/categories/CSS/CSS3/">CSS3</a>
-                    
                   </div>
                 
                 
@@ -614,8 +674,6 @@
                     <i class="iconfont icon-tags"></i>
                     
                       <a class="hover-with-bg" href="/tags/CSS/">CSS</a>
-                    
-                      <a class="hover-with-bg" href="/tags/CSS3/">CSS3</a>
                     
                   </div>
                 

@@ -16,16 +16,16 @@
   <meta name="author" content="Jon-a-than">
   <meta name="keywords" content="">
   
-    <meta name="description" content="flex布局grid布局float布局             参考文档:《CSS教程 (w3school)》《常见 CSS 布局 (Cherry)》">
+    <meta name="description" content="Flexbox布局     .flex {         display: flex;         border-radius: 5px;         background: #666;     }     .flex &gt; div {         background: #787;         padding: 10px 15px;         margin: 5px;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="🏗CSS布局">
 <meta property="og:url" content="http://example.com/2022/02/17/CSS%E5%B8%83%E5%B1%80/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
-<meta property="og:description" content="flex布局grid布局float布局             参考文档:《CSS教程 (w3school)》《常见 CSS 布局 (Cherry)》">
+<meta property="og:description" content="Flexbox布局     .flex {         display: flex;         border-radius: 5px;         background: #666;     }     .flex &gt; div {         background: #787;         padding: 10px 15px;         margin: 5px;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s4.ax1x.com/2022/02/17/HIL02Q.jpg">
 <meta property="article:published_time" content="2022-02-17T15:13:37.000Z">
-<meta property="article:modified_time" content="2022-02-17T15:22:27.340Z">
+<meta property="article:modified_time" content="2022-02-18T13:58:40.524Z">
 <meta property="article:author" content="Jon-a-than">
 <meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary_large_image">
@@ -203,7 +203,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      58 字
+      4.6k 字
     </span>
   
 
@@ -212,7 +212,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      39 分钟
     </span>
   
 
@@ -252,7 +252,528 @@
             <h1 style="display: none">🏗CSS布局</h1>
             
             <div class="markdown-body">
-              <h1 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a>flex布局</h1><h1 id="grid布局"><a href="#grid布局" class="headerlink" title="grid布局"></a>grid布局</h1><h1 id="float布局"><a href="#float布局" class="headerlink" title="float布局"></a>float布局</h1><div class="note note-info">
+              <h1 id="Flexbox布局"><a href="#Flexbox布局" class="headerlink" title="Flexbox布局"></a>Flexbox布局</h1><style>
+    .flex {
+        display: flex;
+        border-radius: 5px;
+        background: #666;
+    }
+    .flex > div {
+        background: #787;
+        padding: 10px 15px;
+        margin: 5px;
+        color: #fff;
+    }
+    .flex > div::selection {
+        background: #787;
+    }
+</style>
+
+<div class="note note-success">
+            <p><strong>本节子元素均默认设有以下属性</strong></p><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">background</span>: <span class="hljs-number">#787</span>;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;<br>  <span class="hljs-attribute">margin</span>: <span class="hljs-number">5px</span>;<br>  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">15px</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+          </div>
+
+<h2 id="父容器属性"><a href="#父容器属性" class="headerlink" title="父容器属性"></a>父容器属性</h2><h3 id="🍓display属性"><a href="#🍓display属性" class="headerlink" title="🍓display属性"></a>🍓display属性</h3><p><strong>将容器</strong><code>display</code><strong>属性设为</strong><code>flex</code><strong>(自动继承),容器成为一个</strong><code>Flex</code><strong>容器</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+<h3 id="🍓flex-direction属性"><a href="#🍓flex-direction属性" class="headerlink" title="🍓flex-direction属性"></a>🍓flex-direction属性</h3><p><strong>该属性设置子元素的排列方向</strong></p>
+<h4 id="📌row-默认"><a href="#📌row-默认" class="headerlink" title="📌row(默认)"></a>📌row(默认)</h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">flex-direction</span>: row;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="flex-direction: row;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+
+
+<h4 id="📌row-reverse"><a href="#📌row-reverse" class="headerlink" title="📌row-reverse"></a>📌row-reverse</h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">flex-direction</span>: row-reverse;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="flex-direction: row-reverse;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+<h4 id="📌column"><a href="#📌column" class="headerlink" title="📌column"></a>📌column</h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">flex-direction</span>: column;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="flex-direction: column;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+<h4 id="📌column-reverse"><a href="#📌column-reverse" class="headerlink" title="📌column-reverse"></a>📌column-reverse</h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">flex-direction</span>: column-reverse;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="flex-direction: column-reverse;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+<h3 id="🍓flex-wrap属性"><a href="#🍓flex-wrap属性" class="headerlink" title="🍓flex-wrap属性"></a>🍓flex-wrap属性</h3><p><strong>该属性设置</strong><code>Flex</code><strong>容器子元素过多时是否换行</strong></p>
+<h4 id="📌nowrap-默认"><a href="#📌nowrap-默认" class="headerlink" title="📌nowrap(默认)"></a>📌nowrap(默认)</h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">flex-wrap</span>: nowrap;<br>  <span class="hljs-attribute">max-width</span>: <span class="hljs-number">600px</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="max-width: 600px;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+    <div>13</div>
+    <div>14</div>
+    <div>15</div>
+    <div>16</div>
+</div>
+
+<h4 id="📌wrap"><a href="#📌wrap" class="headerlink" title="📌wrap"></a>📌wrap</h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">flex-wrap</span>: wrap;<br>  <span class="hljs-attribute">max-width</span>: <span class="hljs-number">600px</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="flex-wrap: wrap;max-width: 600px;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+    <div>13</div>
+    <div>14</div>
+    <div>15</div>
+    <div>16</div>
+</div>
+
+<h4 id="📌wrap-reverse"><a href="#📌wrap-reverse" class="headerlink" title="📌wrap-reverse"></a>📌wrap-reverse</h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">flex-wrap</span>: wrap-reverse;<br>  <span class="hljs-attribute">max-width</span>: <span class="hljs-number">600px</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="flex-wrap: wrap-reverse;max-width: 600px;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+    <div>13</div>
+    <div>14</div>
+    <div>15</div>
+    <div>16</div>
+</div>
+
+<h3 id="🍓flex-flow属性"><a href="#🍓flex-flow属性" class="headerlink" title="🍓flex-flow属性"></a>🍓flex-flow属性</h3><p><strong>该属性简写</strong><code>flex-direction</code><strong>和</strong><code>flex-wrap</code></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">flex-direction</span>: column;<br>  <span class="hljs-attribute">flex-wrap</span>: wrap;<br>&#125;<br><span class="hljs-comment">/* 下面是等价写法 */</span><br><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">flex-flow</span>: column wrap;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h3 id="🍓justify-content属性"><a href="#🍓justify-content属性" class="headerlink" title="🍓justify-content属性"></a>🍓justify-content属性</h3><p><strong>该属性设置主轴轴线的排列方式</strong></p>
+<h4 id="📌flex-start-默认"><a href="#📌flex-start-默认" class="headerlink" title="📌flex-start(默认)"></a>📌flex-start(默认)</h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">justify-content</span>: flex-start;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="justify-content: flex-start;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+<h4 id="📌flex-end"><a href="#📌flex-end" class="headerlink" title="📌flex-end"></a>📌flex-end</h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">justify-content</span>: flex-end;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="justify-content: flex-end;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+<h4 id="📌center"><a href="#📌center" class="headerlink" title="📌center"></a>📌center</h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">justify-content</span>: center;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="justify-content: center;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+<h4 id="📌space-around"><a href="#📌space-around" class="headerlink" title="📌space-around"></a>📌space-around</h4><h4 id><a href="#" class="headerlink" title></a></h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">justify-content</span>: space-around;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="justify-content: space-around;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+
+
+<h4 id="📌space-between"><a href="#📌space-between" class="headerlink" title="📌space-between"></a>📌space-between</h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">justify-content</span>: space-between;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="justify-content: space-between;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+<h3 id="🍓align-items属性"><a href="#🍓align-items属性" class="headerlink" title="🍓align-items属性"></a>🍓align-items属性</h3><p><strong>该属性用于设置交叉轴元素的排列方式</strong></p>
+<h4 id="📌stretch-默认"><a href="#📌stretch-默认" class="headerlink" title="📌stretch(默认)"></a>📌stretch(默认)</h4><p><strong>拉伸元素以填充空余(若元素尺寸固定则无效)</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">align-items</span>: stretch;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="align-items: stretch;height: 100px;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+
+
+<h4 id="📌flex-start"><a href="#📌flex-start" class="headerlink" title="📌flex-start"></a>📌flex-start</h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">align-items</span>: flex-start;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="align-items: flex-start;height: 100px;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+
+
+<h4 id="📌flex-end-1"><a href="#📌flex-end-1" class="headerlink" title="📌flex-end"></a>📌flex-end</h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">align-items</span>: flex-end;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="align-items: flex-end;height: 100px;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+
+
+<h4 id="📌center-1"><a href="#📌center-1" class="headerlink" title="📌center"></a>📌center</h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">align-items</span>: center;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="align-items: center;height: 100px;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+
+
+<h4 id="📌baseline"><a href="#📌baseline" class="headerlink" title="📌baseline"></a>📌baseline</h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">align-items</span>: baseline;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下(已设置不同的字体大小):</strong></p>
+<div class="flex" style="align-items: baseline;height: 100px;">
+    <div style="font-size: 0.5rem">1</div>
+    <div style="font-size: 1rem">2</div>
+    <div style="font-size: 1.5rem">3</div>
+    <div style="font-size: 2rem">4</div>
+</div>
+
+<h3 id="🍓align-content属性"><a href="#🍓align-content属性" class="headerlink" title="🍓align-content属性"></a>🍓align-content属性</h3><p><strong>该属性设置不同交叉轴的排列方式</strong></p>
+<h4 id="📌stretch-默认-1"><a href="#📌stretch-默认-1" class="headerlink" title="📌stretch(默认)"></a>📌stretch(默认)</h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">flex-wrap</span>: wrap;<br>  <span class="hljs-attribute">align-content</span>: stretch;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="align-content: stretch;height: 200px;max-width: 500px;flex-wrap: wrap;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+    <div>13</div>
+    <div>14</div>
+    <div>15</div>
+    <div>16</div>
+</div>
+
+
+
+
+
+
+
+
+
+<h4 id="📌flex-start-1"><a href="#📌flex-start-1" class="headerlink" title="📌flex-start"></a>📌flex-start</h4><h4 id="-1"><a href="#-1" class="headerlink" title></a></h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">flex-wrap</span>: wrap;<br>  <span class="hljs-attribute">align-content</span>: flex-start;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="align-content: flex-start;height: 200px;max-width: 500px;flex-wrap: wrap;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+    <div>13</div>
+    <div>14</div>
+    <div>15</div>
+    <div>16</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<h4 id="📌flex-end-2"><a href="#📌flex-end-2" class="headerlink" title="📌flex-end"></a>📌flex-end</h4><h4 id="-2"><a href="#-2" class="headerlink" title></a></h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">flex-wrap</span>: wrap;<br>  <span class="hljs-attribute">align-content</span>: flex-end;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="align-content: flex-end;height: 200px;max-width: 500px;flex-wrap: wrap;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+    <div>13</div>
+    <div>14</div>
+    <div>15</div>
+    <div>16</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<h4 id="📌center-2"><a href="#📌center-2" class="headerlink" title="📌center"></a>📌center</h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">flex-wrap</span>: wrap;<br>  <span class="hljs-attribute">align-content</span>: center;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="align-content: center;height: 200px;max-width: 500px;flex-wrap: wrap;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+    <div>13</div>
+    <div>14</div>
+    <div>15</div>
+    <div>16</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<h4 id="📌space-between-1"><a href="#📌space-between-1" class="headerlink" title="📌space-between"></a>📌space-between</h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">flex-wrap</span>: wrap;<br>  <span class="hljs-attribute">align-content</span>: space-between;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="align-content: space-between;height: 200px;max-width: 500px;flex-wrap: wrap;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+    <div>13</div>
+    <div>14</div>
+    <div>15</div>
+    <div>16</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<h4 id="📌space-around-1"><a href="#📌space-around-1" class="headerlink" title="📌space-around"></a>📌space-around</h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">flex-wrap</span>: wrap;<br>  <span class="hljs-attribute">align-content</span>: space-around;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex" style="align-content: space-around;height: 200px;max-width: 500px;flex-wrap: wrap;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+    <div>13</div>
+    <div>14</div>
+    <div>15</div>
+    <div>16</div>
+</div>
+
+
+
+
+
+
+
+
+
+<h2 id="子元素属性"><a href="#子元素属性" class="headerlink" title="子元素属性"></a>子元素属性</h2><h3 id="🍌order属性"><a href="#🍌order属性" class="headerlink" title="🍌order属性"></a>🍌order属性</h3><p><strong>该属性用于指定元素的排列顺序,若顺序重复则再按定义顺序排列(默认为0,顺序为定义顺序)</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flexbox&quot;</span>&gt;</span><br>  <span class="hljs-comment">&lt;!-- 已设置不同order --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;order: 4&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;order: 1&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;order: 0&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;order: 1&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex">
+    <div style="order: 4">1</div>
+    <div style="order: 1">2</div>
+    <div style="order: 3">3</div>
+    <div style="order: 1">4</div>
+</div>
+
+<h3 id="🍌flex-grow属性"><a href="#🍌flex-grow属性" class="headerlink" title="🍌flex-grow属性"></a>🍌flex-grow属性</h3><p><strong>该属性用于设置元素占取空余区域的相对大小(默认值为0,不拉伸)</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flexbox&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;flex-grow: 0&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;flex-grow: 1&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;flex-grow: 1.5&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;flex-grow: 3&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p><strong>动画效果如下:</strong></p>
+<style>
+    @keyframes width {
+        0% {
+            max-width: 200px; 
+        }
+        100% {
+            max-width: 100%;
+        }
+    }
+</style>
+<div class="flex" style="animation: width 4s linear infinite;">
+    <div style="flex-grow: 0">1</div>
+    <div style="flex-grow: 1">2</div>
+    <div style="flex-grow: 1.5">3</div>
+    <div style="flex-grow: 3">4</div>
+</div>
+
+<h3 id="🍌flex-shrink属性"><a href="#🍌flex-shrink属性" class="headerlink" title="🍌flex-shrink属性"></a>🍌flex-shrink属性</h3><p><strong>该属性设置当空间不足时元素相对收缩的大小(默认为0)</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flexbox&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 100px; flex-shrink: 0;&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 100px; flex-shrink: 1;&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 100px; flex-shrink: 1.5;&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 100px; flex-shrink: 3;&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+
+
+<p><strong>动画效果如下:</strong></p>
+<style>
+    @keyframes width2 {
+        0% {
+            max-width: 100%; 
+        }
+        100% {
+            max-width: 300px;
+        }
+    }
+</style>
+<div class="flex" style="animation: width2 4s linear infinite;">
+    <div style="width: 100px;flex-shrink: 0">1</div>
+    <div style="width: 100px;flex-shrink: 1">2</div>
+    <div style="width: 100px;flex-shrink: 1.5">3</div>
+    <div style="width: 100px;flex-shrink: 3">4</div>
+</div>
+
+<h3 id="🍌flex-basis"><a href="#🍌flex-basis" class="headerlink" title="🍌flex-basis"></a>🍌flex-basis</h3><p><strong>该属性设置元素主轴方向初始长度</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flexbox&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;flex-basis: 40px&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;flex-basis: 50px&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;flex-basis: 60px&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;flex-basis: 70px&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="flex">
+    <div style="flex-basis: 40px">1</div>
+    <div style="flex-basis: 50px">2</div>
+    <div style="flex-basis: 60px">3</div>
+    <div style="flex-basis: 70px">4</div>
+</div>
+
+<h3 id="🍌flex属性"><a href="#🍌flex属性" class="headerlink" title="🍌flex属性"></a>🍌flex属性</h3><p><code>flex-grow</code><strong>,</strong><code>flex-shrink</code><strong>,</strong><code>flex-basis</code><strong>的缩写</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">flex-grow</span>: <span class="hljs-number">2</span>;<br>  <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">1</span>;<br>  <span class="hljs-attribute">flex-basis</span>: <span class="hljs-number">20px</span>;<br>&#125;<br><span class="hljs-comment">/* 等价缩写 */</span><br><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">flex</span>: <span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">20px</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h3 id="🍌align-self属性"><a href="#🍌align-self属性" class="headerlink" title="🍌align-self属性"></a>🍌align-self属性</h3><p><strong>对单个元素设置不同的</strong><code>align-items</code><strong>属性,单个元素的属性值与效果同</strong><code>align-items</code></p>
+<h1 id="grid布局"><a href="#grid布局" class="headerlink" title="grid布局"></a>grid布局</h1><h1 id="float布局"><a href="#float布局" class="headerlink" title="float布局"></a>float布局</h1><div class="note note-info">
             <p><strong>参考文档:</strong></p><p><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/css/index.asp">《CSS教程 (w3school)》</a></p><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/29070363">《常见 CSS 布局 (Cherry)》</a></p>
           </div>
 
@@ -290,12 +811,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2022/02/18/CSS%E8%BF%87%E6%B8%A1%E4%B8%8E%E5%8A%A8%E7%94%BB/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">🏗CSS过渡与动画</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
                       <a href="/2022/02/17/CSS3%E7%A9%BA%E9%97%B4%E5%8F%98%E6%8D%A2/">
-                        <span class="hidden-mobile">🏗CSS3空间变换</span>
+                        <span class="hidden-mobile">✔CSS3空间变换</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
