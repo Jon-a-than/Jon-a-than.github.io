@@ -16,16 +16,16 @@
   <meta name="author" content="Jon-a-than">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Flexbox布局     .flex {         display: flex;         border-radius: 5px;         background: #666;     }     .flex &gt; div {         background: #787;         padding: 10px 15px;         margin: 5px;">
+    <meta name="description" content="本节子元素均默认设有以下属性123456div &amp;#123;  background: #787;  color: #fff;  margin: 5px;  padding: 10px 15px;&amp;#125;             Flexbox布局     .flex {         display: flex;         border-radius: 5p">
 <meta property="og:type" content="article">
 <meta property="og:title" content="🏗CSS布局">
 <meta property="og:url" content="http://example.com/2022/02/17/CSS%E5%B8%83%E5%B1%80/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
-<meta property="og:description" content="Flexbox布局     .flex {         display: flex;         border-radius: 5px;         background: #666;     }     .flex &gt; div {         background: #787;         padding: 10px 15px;         margin: 5px;">
+<meta property="og:description" content="本节子元素均默认设有以下属性123456div &amp;#123;  background: #787;  color: #fff;  margin: 5px;  padding: 10px 15px;&amp;#125;             Flexbox布局     .flex {         display: flex;         border-radius: 5p">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s4.ax1x.com/2022/02/17/HIL02Q.jpg">
 <meta property="article:published_time" content="2022-02-17T15:13:37.000Z">
-<meta property="article:modified_time" content="2022-02-19T14:29:21.687Z">
+<meta property="article:modified_time" content="2022-02-20T00:34:25.189Z">
 <meta property="article:author" content="Jon-a-than">
 <meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary_large_image">
@@ -203,7 +203,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      8.5k 字
+      9.8k 字
     </span>
   
 
@@ -212,7 +212,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      71 分钟
+      82 分钟
     </span>
   
 
@@ -252,7 +252,11 @@
             <h1 style="display: none">🏗CSS布局</h1>
             
             <div class="markdown-body">
-              <h1 id="Flexbox布局"><a href="#Flexbox布局" class="headerlink" title="Flexbox布局"></a>Flexbox布局</h1><style>
+              <div class="note note-success">
+            <p><strong>本节子元素均默认设有以下属性</strong></p><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">background</span>: <span class="hljs-number">#787</span>;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;<br>  <span class="hljs-attribute">margin</span>: <span class="hljs-number">5px</span>;<br>  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">15px</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+          </div>
+
+<h1 id="Flexbox布局"><a href="#Flexbox布局" class="headerlink" title="Flexbox布局"></a>Flexbox布局</h1><style>
     .flex {
         display: flex;
         border-radius: 5px;
@@ -268,11 +272,6 @@
         background: #787;
     }
 </style>
-
-<div class="note note-success">
-            <p><strong>本节子元素均默认设有以下属性</strong></p><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">background</span>: <span class="hljs-number">#787</span>;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;<br>  <span class="hljs-attribute">margin</span>: <span class="hljs-number">5px</span>;<br>  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">15px</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-          </div>
-
 <h2 id="父容器属性"><a href="#父容器属性" class="headerlink" title="父容器属性"></a>父容器属性</h2><h3 id="🍓display设置"><a href="#🍓display设置" class="headerlink" title="🍓display设置"></a>🍓display设置</h3><p><strong>将容器</strong><code>display</code><strong>属性设为</strong><code>flex</code><strong>(自动继承),容器成为一个</strong><code>Flex</code><strong>容器</strong></p>
 <figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
@@ -1083,7 +1082,55 @@
     <div>8</div>
 </div>
 
-<h3 id="🍍row-gap"><a href="#🍍row-gap" class="headerlink" title="🍍row-gap"></a>🍍row-gap</h3><h3 id="🍍column-gap"><a href="#🍍column-gap" class="headerlink" title="🍍column-gap"></a>🍍column-gap</h3><h3 id="🍍gap"><a href="#🍍gap" class="headerlink" title="🍍gap"></a>🍍gap</h3><h2 id="子元素设置"><a href="#子元素设置" class="headerlink" title="子元素设置"></a>子元素设置</h2><h3 id="🥝grid-row"><a href="#🥝grid-row" class="headerlink" title="🥝grid-row"></a>🥝grid-row</h3><p><strong>设置元素所占行</strong></p>
+<h3 id="🍍row-gap"><a href="#🍍row-gap" class="headerlink" title="🍍row-gap"></a>🍍row-gap</h3><p><strong>设置行间距</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: grid;<br>  grid-template-<span class="hljs-attribute">columns</span>: <span class="hljs-built_in">repeat</span>(<span class="hljs-number">3</span>, auto);<br>  row-gap: <span class="hljs-number">30px</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="grid" style="height: 250px;grid-template-columns: repeat(3, auto);row-gap: 30px">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+</div>
+
+<h3 id="🍍column-gap"><a href="#🍍column-gap" class="headerlink" title="🍍column-gap"></a>🍍column-gap</h3><p><strong>设置列间距</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: grid;<br>  grid-template-<span class="hljs-attribute">columns</span>: <span class="hljs-built_in">repeat</span>(<span class="hljs-number">3</span>, auto);<br>  row-gap: <span class="hljs-number">50px</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="grid" style="height: 250px;grid-template-columns: repeat(3, auto);column-gap: 50px">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+</div>
+
+<h3 id="🍍gap"><a href="#🍍gap" class="headerlink" title="🍍gap"></a>🍍gap</h3><p><strong>行列间距缩写</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">display</span>: grid;<br>  grid-template-<span class="hljs-attribute">columns</span>: <span class="hljs-built_in">repeat</span>(<span class="hljs-number">3</span>, auto);<br>  gap: <span class="hljs-number">30px</span> <span class="hljs-number">50px</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="grid" style="height: 250px;grid-template-columns: repeat(3, auto);gap: 30px 50px">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+</div>
+
+<h2 id="子元素设置"><a href="#子元素设置" class="headerlink" title="子元素设置"></a>子元素设置</h2><h3 id="🥝grid-row"><a href="#🥝grid-row" class="headerlink" title="🥝grid-row"></a>🥝grid-row</h3><p><strong>设置元素所占行</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span><br><span class="css">  <span class="hljs-selector-class">.gridblock</span> &#123;</span><br><span class="css">    <span class="hljs-attribute">display</span>: grid;</span><br><span class="css">    grid-template-<span class="hljs-attribute">columns</span>: auto auto auto auto;</span><br><span class="css">  &#125;</span><br><span class="css"></span><br><span class="css">  <span class="hljs-selector-class">.item1</span> &#123;</span><br><span class="css">    grid-row: <span class="hljs-number">1</span> / <span class="hljs-number">4</span>;</span><br><span class="css">  &#125;</span><br><span class="css"></span><br><span class="css">  <span class="hljs-selector-class">.item2</span> &#123;</span><br><span class="css">    grid-row: <span class="hljs-number">1</span> / span <span class="hljs-number">2</span>;</span><br><span class="css">  &#125;</span><br><span class="css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;gridblock&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item1&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item2&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>7<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
 <p><strong>效果如下:</strong></p>
@@ -1115,9 +1162,50 @@
 
 
 
+<h3 id="🥝grid-area"><a href="#🥝grid-area" class="headerlink" title="🥝grid-area"></a>🥝grid-area</h3><h4 id="📌gird-row与grid-column缩写"><a href="#📌gird-row与grid-column缩写" class="headerlink" title="📌gird-row与grid-column缩写"></a>📌gird-row与grid-column缩写</h4><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-class">.item1</span> &#123;<br>  grid-row: <span class="hljs-number">1</span> / <span class="hljs-number">3</span>;<br>  grid-column: <span class="hljs-number">2</span> / span <span class="hljs-number">3</span>;<br>&#125;<br><span class="hljs-comment">/* 等价缩写 */</span><br><span class="hljs-selector-class">.item2</span> &#123;<br>  grid-area: <span class="hljs-number">1</span> / <span class="hljs-number">2</span> / <span class="hljs-number">3</span> / span <span class="hljs-number">3</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="grid" style="grid-template-columns: auto auto auto auto;">
+  <div style="grid-row: 1 / 3;grid-column: 2 / span 3;">class="item1"</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+  <div>7</div>
+</div>
+
+<br>
+
+<div class="grid" style="grid-template-columns: auto auto auto auto;">
+  <div style="grid-area: 1 / 2 / 3 / span 3;">class="item2"</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+  <div>7</div>
+</div>
+
+<h4 id="📌命名区域"><a href="#📌命名区域" class="headerlink" title="📌命名区域"></a>📌命名区域</h4><p><code>grid-template-areas</code><strong>在父容器中命名区域(</strong><code>.</code><strong>表示没有名字的单元)</strong></p>
+<p><code>grid-area</code><strong>使用命名的区域</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span><br><span class="css">  <span class="hljs-selector-class">.grid</span> &#123;</span><br><span class="css">    <span class="hljs-attribute">display</span>: grid;</span><br><span class="css">    grid-template-<span class="hljs-attribute">columns</span>: <span class="hljs-built_in">repeat</span>(<span class="hljs-number">4</span>, auto);</span><br><span class="css">    grid-template-areas: <span class="hljs-string">&#x27;header header header header&#x27;</span></span><br><span class="css">                         <span class="hljs-string">&#x27;. main main aside&#x27;</span></span><br><span class="css">                         <span class="hljs-string">&#x27;. main main aside&#x27;</span></span><br><span class="css">                         <span class="hljs-string">&#x27;footer footer footer footer&#x27;</span>;</span><br><span class="css">  &#125;</span><br><span class="css">  <span class="hljs-selector-tag">header</span> &#123;</span><br><span class="css">    grid-area: header;</span><br><span class="css">  &#125;</span><br><span class="css">  <span class="hljs-selector-tag">main</span> &#123;</span><br><span class="css">    grid-area: main;</span><br><span class="css">  &#125;</span><br><span class="css">  <span class="hljs-selector-tag">aside</span> &#123;</span><br><span class="css">    grid-area: aside;</span><br><span class="css">  &#125;</span><br><span class="css">  <span class="hljs-selector-tag">footer</span> &#123;</span><br><span class="css">    grid-area: footer;</span><br><span class="css">  &#125;</span><br><span class="css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;grid&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>我是Header<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>未命名的区域1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>未命名的区域2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>我是Main<span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">aside</span>&gt;</span>我是Aside<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>我是Footer<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p><strong>效果如下:</strong></p>
+<div class="grid" style="grid-template-columns: repeat(4, auto);grid-template-areas: 'header header header header''. main main aside''. main main aside''footer footer footer footer';">
+    <div style="grid-area: header">我是Header</div>
+    <div>未命名的区域1</div>
+    <div>未命名的区域2</div>
+    <div style="grid-area: main">我是Main</div>
+    <div style="grid-area: aside">我是Aside</div>
+    <div style="grid-area: footer">我是Footer</div>
+</div>
 
 
-<h3 id="🥝grid-area"><a href="#🥝grid-area" class="headerlink" title="🥝grid-area"></a>🥝grid-area</h3><h1 id="Float布局"><a href="#Float布局" class="headerlink" title="Float布局"></a>Float布局</h1><div class="note note-info">
+
+
+
+<h1 id="Float布局"><a href="#Float布局" class="headerlink" title="Float布局"></a>Float布局</h1><div class="note note-info">
             <p><strong>参考文档:</strong></p><p><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/css/index.asp">《CSS教程 (w3school)》</a></p><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/29070363">《常见 CSS 布局 (Cherry)》</a></p><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/256353171">《最强大的 CSS 布局 —— Grid 布局 (Gopal)》</a></p><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zjy660358/article/details/113935300">《space-around space-evenly区别 (树欲静而风不止)》</a></p><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/gap">《gap (grid-gap) (MDN)》</a></p>
           </div>
 
@@ -1157,7 +1245,7 @@
                     
                       <a href="/2022/02/18/CSS%E8%BF%87%E6%B8%A1%E4%B8%8E%E5%8A%A8%E7%94%BB/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">🏗CSS过渡与动画</span>
+                        <span class="hidden-mobile">✔CSS过渡与动画</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
