@@ -16,21 +16,24 @@
   <meta name="author" content="Jon-a-than">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript对象">
-<meta property="og:url" content="http://example.com/2022/01/22/JavaScript%E5%9F%BA%E7%A1%80/index.html">
+    <meta name="description" content="冒泡排序算法实现1234567const bubbleSort &#x3D; (array) &#x3D;&gt; &amp;#123;  const L &#x3D; array.length  for(let i &#x3D; 0;i &lt; L;i++)    for(let j &#x3D; 0;j &lt; L - 1 - i;j++)      if(array[j] &gt; array[j + 1])        [array[j],">
+<meta property="og:type" content="article">
+<meta property="og:title" content="🏗算法-排序">
+<meta property="og:url" content="http://example.com/2022/02/23/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
+<meta property="og:description" content="冒泡排序算法实现1234567const bubbleSort &#x3D; (array) &#x3D;&gt; &amp;#123;  const L &#x3D; array.length  for(let i &#x3D; 0;i &lt; L;i++)    for(let j &#x3D; 0;j &lt; L - 1 - i;j++)      if(array[j] &gt; array[j + 1])        [array[j],">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s4.ax1x.com/2022/02/18/HoJY1x.jpg">
-<meta property="article:published_time" content="2022-01-22T02:01:01.000Z">
-<meta property="article:modified_time" content="2022-02-18T01:40:21.156Z">
+<meta property="og:image" content="https://s4.ax1x.com/2022/02/23/b93z4A.jpg">
+<meta property="article:published_time" content="2022-02-23T03:48:34.000Z">
+<meta property="article:modified_time" content="2022-02-25T13:09:37.972Z">
 <meta property="article:author" content="Jon-a-than">
-<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="排序">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://s4.ax1x.com/2022/02/18/HoJY1x.jpg">
+<meta name="twitter:image" content="https://s4.ax1x.com/2022/02/23/b93z4A.jpg">
   
   
-  <title>JavaScript对象 - Jonathan的博客</title>
+  <title>🏗算法-排序 - Jonathan的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -180,7 +183,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="JavaScript对象">
+            <span class="h2" id="subtitle" title="🏗算法-排序">
               
             </span>
 
@@ -190,8 +193,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-01-22 10:01" pubdate>
-        2022年1月22日 上午
+      <time datetime="2022-02-23 11:48" pubdate>
+        2022年2月23日 中午
       </time>
     </span>
   
@@ -201,7 +204,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      2.5k 字
     </span>
   
 
@@ -210,7 +213,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      21 分钟
     </span>
   
 
@@ -247,10 +250,136 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">JavaScript对象</h1>
+            <h1 style="display: none">🏗算法-排序</h1>
             
             <div class="markdown-body">
-              
+              <h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> bubbleSort = <span class="hljs-function">(<span class="hljs-params">array</span>) =&gt;</span> &#123;<br>  <span class="hljs-keyword">const</span> L = array.length<br>  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;i &lt; L;i++)<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> j = <span class="hljs-number">0</span>;j &lt; L - <span class="hljs-number">1</span> - i;j++)<br>      <span class="hljs-keyword">if</span>(array[j] &gt; array[j + <span class="hljs-number">1</span>])<br>        [array[j], array[j + <span class="hljs-number">1</span>]] = [array[j + <span class="hljs-number">1</span>], array[j]]<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+
+
+<style>
+    .sort {
+      display: -ms-grid;
+      display: grid;
+      grid-template-columns: repeat(10, auto);
+      justify-content: center;
+      column-gap: 5px;
+      align-items: flex-end;
+    }
+    .items {
+      display: inline-block;
+      padding: 4px 10px;
+      margin: 1%;
+      background-color: #787;
+      color: #fff;
+      transition: all 1s;
+    }
+  </style>
+
+<div class="sort bubble"><span class="items" style="padding-top: 5px;order: 5;">1</span><span class="items" style="padding-top: 20px;order: 3;">2</span><span class="items" style="padding-top: 35px;order: 7;">3</span><span class="items" style="padding-top: 50px;order: 2;">4</span><span class="items" style="padding-top: 65px;order: 9;">5</span><span class="items" style="padding-top: 80px;order: 1;">6</span><span class="items" style="padding-top: 95px;order: 4;">7</span><span class="items" style="padding-top: 110px;order: 6;">8</span><span class="items" style="padding-top: 125px;order: 8;">9</span></div>
+
+<script>
+    const Span = document.querySelectorAll('.bubble > .items')
+
+    // 交换与当前比较元素
+    const swap = (elemt, x, y, n, flg = false) => {
+      setTimeout(() => elemt[x].style.backgroundColor='#e5b453', (n-1) * 1000)
+      setTimeout(() => elemt[y].style.backgroundColor='#e5b453', (n-1) * 1000)
+      if(flg)
+        setTimeout(() => {
+          [elemt[x].style.order, elemt[y].style.order] = [elemt[y].style.order,  elemt[x].style.order]
+        }, n*1000 - 500)
+      setTimeout(() => elemt[x].style.backgroundColor='#787', n * 1000)
+      setTimeout(() => elemt[y].style.backgroundColor='#787', n * 1000)
+    }
+    const nums = [5, 3, 1, 6, 0, 7, 2, 8, 4]
+    const L = nums.length
+    // 冒泡排序
+    const bubbleSort = (nums, L) => {
+      let k = 1
+      for(let i = 0;i < L;i++){
+        for(let j = 0;j < L - 1 - i;j++){
+          if(nums[j] > nums[j + 1]){
+            swap(Span, nums[j], nums[j+1], k++, true);
+            [nums[j], nums[j+1]] = [nums[j+1], nums[j]]
+          }
+          else
+            swap(Span, nums[j], nums[j+1], k++)
+          if(j + 1 == L - 1 - i)
+          setTimeout(() => Span[L - i -1].style.backgroundColor='#d46c75', (k-1)*1000)
+        }
+        if(i == L - 1)
+          setTimeout(() => Span[0].style.backgroundColor='#d46c75', k*1000)
+      }
+    }
+    // 循环播放
+    bubbleSort([...nums], L)
+    setInterval(() => {
+      for(let i = 0;i < L;i++){
+        Span[nums[i]].style.order = i
+        Span[i].style.backgroundColor='#787'
+      }
+      bubbleSort([...nums], L)
+    }, 40000);
+</script>
+
+<h1 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h1><h2 id="算法实现-1"><a href="#算法实现-1" class="headerlink" title="算法实现"></a>算法实现</h2><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> selectSort = <span class="hljs-function">(<span class="hljs-params">array</span>) =&gt;</span> &#123;<br>  <span class="hljs-keyword">const</span> L = array.length<br>  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;i &lt; L;i++)&#123;<br>    <span class="hljs-keyword">let</span> maxIndex = L - i - <span class="hljs-number">1</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> j = <span class="hljs-number">0</span>;j &lt; L - i - <span class="hljs-number">1</span>;j++)<br>      <span class="hljs-keyword">if</span>(array[maxIndex] &lt; array[j])<br>        maxIndex = j<br>    <span class="hljs-keyword">if</span>(maxIndex != L - i - <span class="hljs-number">1</span>)<br>      [array[maxIndex], array[L - i - <span class="hljs-number">1</span>]] = [array[L - i - <span class="hljs-number">1</span>], array[maxIndex]]<br>  &#125;<br>&#125;<br><br></code></pre></div></td></tr></table></figure>
+
+
+
+
+
+<div class="sort select" style="margin-top: 20px"><span class="items" style="padding-top: 5px;order: 5">1</span><span class="items" style="padding-top: 20px;order: 3">2</span><span class="items" style="padding-top: 35px;order: 7">3</span><span class="items" style="padding-top: 50px;order: 2">4</span><span class="items" style="padding-top: 65px;order: 9">5</span><span class="items" style="padding-top: 80px;order: 1">6</span><span class="items" style="padding-top: 95px;order: 4">7</span><span class="items" style="padding-top: 110px;order: 6">8</span><span class="items" style="padding-top: 125px;order: 8">9</span></div>
+
+
+
+<script>
+  const Span2 = document.querySelectorAll('.select > .items')
+  console.log(Span2.length)
+  const selectSort = (nums, L) => {
+    let k = 0
+    for(let i = 0;i < L;i++){
+      let maxIndex = L - i - 1
+      for(let j = 0;j < L - i - 1;j++){
+        swap(Span2, nums[maxIndex], nums[j], k++)
+        if(nums[maxIndex] < nums[j])
+          maxIndex = j
+      }
+      if(L - i -1 != maxIndex){
+        swap(Span2, nums[maxIndex], nums[L - i -1], k, true);
+        [nums[L - i - 1], nums[maxIndex]] = [nums[maxIndex], nums[L - i - 1]]
+      }
+      setTimeout(() => Span2[L - i -1].style.backgroundColor='#d46c75', (k++)*1000)
+      if(i + 1 == L)
+        setTimeout(() => Span2[0].style.backgroundColor='#d46c75', (k+1)*1000)
+    }
+  }
+  selectSort([...nums], L)
+  setInterval(() => {
+    for(let i = 0;i < L;i++){
+      Span2[nums[i]].style.order = i
+      Span2[i].style.backgroundColor='#787'
+    }
+    selectSort([...nums], L)
+  }, 46000);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
             <hr>
             <div>
@@ -259,9 +388,9 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/JavaScript/">JavaScript</a>
+                      <a class="hover-with-bg" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
                     
-                      <a class="hover-with-bg" href="/categories/JavaScript/%E5%9F%BA%E7%A1%80/">基础</a>
+                      <a class="hover-with-bg" href="/categories/%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/">排序</a>
                     
                   </div>
                 
@@ -269,7 +398,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/JavaScript/">JavaScript</a>
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%8E%92%E5%BA%8F/">排序</a>
                     
                   </div>
                 
@@ -286,9 +417,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/01/22/vue%E7%BB%84%E4%BB%B6/">
+                      <a href="/2022/02/24/%E7%AE%97%E6%B3%95-%E5%8F%8C%E6%8C%87%E9%92%88/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">🏗Vue组件</span>
+                        <span class="hidden-mobile">算法-双指针</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -296,8 +427,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/01/19/vue3-2%E5%9F%BA%E7%A1%80/">
-                        <span class="hidden-mobile">🏗Vue3.2基础</span>
+                      <a href="/2022/02/23/JavaScript%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/">
+                        <span class="hidden-mobile">JavaScript严格模式</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
