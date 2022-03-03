@@ -16,21 +16,21 @@
   <meta name="author" content="Jon-a-than">
   <meta name="keywords" content="">
   
-    <meta name="description" content="安装依赖1yarn add     使用时引入axios 1import axios from &amp;#x27;axios&amp;#x27;    axios( ) API配置🍆axios配置123456789101112131415161718192021axios(&amp;#123;    url: &amp;#x27;&#x2F;user&amp;#x27;,                        &#x2F;&#x2F; 请求地址(必选项)">
+    <meta name="description" content="安装依赖 1yarn add  使用时引入axios 1import axios from &amp;#x27;axios&amp;#x27; axios( ) API配置 🍆axios配置 123456789101112131415161718192021axios(&amp;#123;    url: &amp;#x27;&#x2F;user&amp;#x27;,                        &#x2F;&#x2F; 请求地址(必">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Axios学习">
 <meta property="og:url" content="http://example.com/2022/01/25/Axios%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
-<meta property="og:description" content="安装依赖1yarn add     使用时引入axios 1import axios from &amp;#x27;axios&amp;#x27;    axios( ) API配置🍆axios配置123456789101112131415161718192021axios(&amp;#123;    url: &amp;#x27;&#x2F;user&amp;#x27;,                        &#x2F;&#x2F; 请求地址(必选项)">
+<meta property="og:description" content="安装依赖 1yarn add  使用时引入axios 1import axios from &amp;#x27;axios&amp;#x27; axios( ) API配置 🍆axios配置 123456789101112131415161718192021axios(&amp;#123;    url: &amp;#x27;&#x2F;user&amp;#x27;,                        &#x2F;&#x2F; 请求地址(必">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/01/d036fb59d301b1ad.jpg">
+<meta property="og:image" content="https://s4.ax1x.com/2022/02/26/bZ6DoV.jpg">
 <meta property="article:published_time" content="2022-01-25T06:06:59.000Z">
-<meta property="article:modified_time" content="2022-01-25T07:35:08.713Z">
+<meta property="article:modified_time" content="2022-02-26T10:15:13.873Z">
 <meta property="article:author" content="Jon-a-than">
 <meta property="article:tag" content="Axios">
 <meta property="article:tag" content="网络请求">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2022/01/d036fb59d301b1ad.jpg">
+<meta name="twitter:image" content="https://s4.ax1x.com/2022/02/26/bZ6DoV.jpg">
   
   
   <title>Axios学习 - Jonathan的博客</title>
@@ -86,7 +86,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>清山的博客</strong>
+      <strong>东风解冻，丽日舒和</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -253,50 +253,26 @@
             <h1 style="display: none">Axios学习</h1>
             
             <div class="markdown-body">
-              <h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">yarn add <br></code></pre></div></td></tr></table></figure>
-
-
-
+              <h2 id="安装依赖">安装依赖</h2>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">yarn add <br></code></pre></div></td></tr></table></figure>
 <p><strong>使用时引入</strong><code>axios</code></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;axios&#x27;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h2 id="axios-API配置"><a href="#axios-API配置" class="headerlink" title="axios( ) API配置"></a>axios( ) API配置</h2><h3 id="🍆axios配置"><a href="#🍆axios配置" class="headerlink" title="🍆axios配置"></a>🍆<code>axios</code>配置</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">axios(&#123;<br>    <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;/user&#x27;</span>,                        <span class="hljs-comment">// 请求地址(必选项)</span><br>    <span class="hljs-attr">baseURL</span>: <span class="hljs-string">&#x27;https://www.bar.com/foo&#x27;</span>,  <span class="hljs-comment">// 自动配置前缀</span><br>    <span class="hljs-attr">params</span>: &#123;                            <span class="hljs-comment">// url参数</span><br>        <span class="hljs-attr">id</span>: <span class="hljs-number">1234</span><br>    &#125;,<br>    <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;post&#x27;</span>,                      <span class="hljs-comment">// 请求方式(默认GET)</span><br>    <span class="hljs-attr">data</span>: &#123;                              <span class="hljs-comment">// 请求体</span><br>        <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;foo&#x27;</span>,<br>        <span class="hljs-attr">id</span>: <span class="hljs-number">1231</span>,<br>    &#125;<br>&#125;)<br>    .then( <span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> &#123;<br>         <span class="hljs-comment">// 成功执行</span><br>     &#125;)<br>     .catch(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> &#123;<br>         <span class="hljs-comment">// 失败执行</span><br>     &#125;)<br>     .then(<span class="hljs-function">() =&gt;</span> &#123;<br>         <span class="hljs-comment">// 始终执行</span><br>     &#125;)<br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🍆axios请求别名"><a href="#🍆axios请求别名" class="headerlink" title="🍆axios请求别名"></a>🍆<code>axios</code>请求别名</h3><p><strong>使用别名后无需指定</strong><code>method</code>,<code>data</code><strong>等属性</strong></p>
+<h2 id="axios-api配置">axios( ) API配置</h2>
+<h3 id="axios配置">🍆<code>axios</code>配置</h3>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">axios(&#123;<br>    <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;/user&#x27;</span>,                        <span class="hljs-comment">// 请求地址(必选项)</span><br>    <span class="hljs-attr">baseURL</span>: <span class="hljs-string">&#x27;https://www.bar.com/foo&#x27;</span>,  <span class="hljs-comment">// 自动配置前缀</span><br>    <span class="hljs-attr">params</span>: &#123;                            <span class="hljs-comment">// url参数</span><br>        <span class="hljs-attr">id</span>: <span class="hljs-number">1234</span><br>    &#125;,<br>    <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;post&#x27;</span>,                      <span class="hljs-comment">// 请求方式(默认GET)</span><br>    <span class="hljs-attr">data</span>: &#123;                              <span class="hljs-comment">// 请求体</span><br>        <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;foo&#x27;</span>,<br>        <span class="hljs-attr">id</span>: <span class="hljs-number">1231</span>,<br>    &#125;<br>&#125;)<br>    .then( <span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> &#123;<br>         <span class="hljs-comment">// 成功执行</span><br>     &#125;)<br>     .catch(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> &#123;<br>         <span class="hljs-comment">// 失败执行</span><br>     &#125;)<br>     .then(<span class="hljs-function">() =&gt;</span> &#123;<br>         <span class="hljs-comment">// 始终执行</span><br>     &#125;)<br></code></pre></div></td></tr></table></figure>
+<h3 id="axios请求别名">🍆<code>axios</code>请求别名</h3>
+<p><strong>使用别名后无需指定</strong><code>method</code>,<code>data</code><strong>等属性</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">axios.request(config)<br><br>axios.get(url, [config])<br>axios.delete(url, [config])<br>axios.head(url, [config])<br>axios.options(url, [config])<br><br>axios.post(url, [data, [config]])<br>axios.put(url, [data, [config]])<br>axios.patch(url, [data, [config]])<br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🍆自定义请求"><a href="#🍆自定义请求" class="headerlink" title="🍆自定义请求"></a>🍆自定义请求</h3><h2 id="请求结果"><a href="#请求结果" class="headerlink" title="请求结果"></a>请求结果</h2><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">&#123;<br>    <span class="hljs-attr">data</span>: &#123;&#125;,                <span class="hljs-comment">// 服务器返回内容</span><br>    <span class="hljs-attr">status</span>: <span class="hljs-number">200</span>,             <span class="hljs-comment">// http状态码</span><br>    <span class="hljs-attr">statusText</span>: <span class="hljs-string">&#x27;OK&#x27;</span>,        <span class="hljs-comment">// http状态信息</span><br>    <span class="hljs-attr">headers</span>: &#123;&#125;,             <span class="hljs-comment">// 服务器响应头</span><br>    <span class="hljs-attr">config</span>: &#123;&#125;,              <span class="hljs-comment">// axios配置信息</span><br>    <span class="hljs-attr">request</span>: &#123;&#125;              <span class="hljs-comment">// </span><br>&#125;<br></code></pre></div></td></tr></table></figure>
-
-
-
-
-
-<h2 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h2><h3 id="🌿请求拦截器"><a href="#🌿请求拦截器" class="headerlink" title="🌿请求拦截器"></a>🌿请求拦截器</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">axios.interceptors.request.use(<br>    <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>&#123;<br>        <span class="hljs-comment">// 请求前处理</span><br>        <span class="hljs-keyword">return</span> config<br>    &#125;,<br>    <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>&#123;<br>        <span class="hljs-comment">// 请求错误处理</span><br>        <span class="hljs-keyword">return</span> error<br>    &#125;<br>)<br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🌿响应拦截器"><a href="#🌿响应拦截器" class="headerlink" title="🌿响应拦截器"></a>🌿响应拦截器</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">axios.interceptors.response.use(<br>    <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">response</span>) </span>&#123;<br>        <span class="hljs-comment">// 状态码2xx时处理</span><br>        <span class="hljs-keyword">return</span> response<br>    &#125;,<br>    <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>&#123;<br>        <span class="hljs-comment">// 状态码超出2xx时处理</span><br>        <span class="hljs-keyword">return</span> error<br>    &#125;<br>)<br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🌿拦截器移除"><a href="#🌿拦截器移除" class="headerlink" title="🌿拦截器移除"></a>🌿拦截器移除</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> interceptor = axios.interceptors.response.use(...)<br><br>axios.interceptors.request.eject(interceptor)<br></code></pre></div></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
+<h3 id="自定义请求">🍆自定义请求</h3>
+<h2 id="请求结果">请求结果</h2>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">&#123;<br>    <span class="hljs-attr">data</span>: &#123;&#125;,                <span class="hljs-comment">// 服务器返回内容</span><br>    <span class="hljs-attr">status</span>: <span class="hljs-number">200</span>,             <span class="hljs-comment">// http状态码</span><br>    <span class="hljs-attr">statusText</span>: <span class="hljs-string">&#x27;OK&#x27;</span>,        <span class="hljs-comment">// http状态信息</span><br>    <span class="hljs-attr">headers</span>: &#123;&#125;,             <span class="hljs-comment">// 服务器响应头</span><br>    <span class="hljs-attr">config</span>: &#123;&#125;,              <span class="hljs-comment">// axios配置信息</span><br>    <span class="hljs-attr">request</span>: &#123;&#125;              <span class="hljs-comment">// </span><br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="拦截器">拦截器</h2>
+<h3 id="请求拦截器">🌿请求拦截器</h3>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">axios.interceptors.request.use(<br>    <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>&#123;<br>        <span class="hljs-comment">// 请求前处理</span><br>        <span class="hljs-keyword">return</span> config<br>    &#125;,<br>    <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>&#123;<br>        <span class="hljs-comment">// 请求错误处理</span><br>        <span class="hljs-keyword">return</span> error<br>    &#125;<br>)<br></code></pre></div></td></tr></table></figure>
+<h3 id="响应拦截器">🌿响应拦截器</h3>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">axios.interceptors.response.use(<br>    <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">response</span>) </span>&#123;<br>        <span class="hljs-comment">// 状态码2xx时处理</span><br>        <span class="hljs-keyword">return</span> response<br>    &#125;,<br>    <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>&#123;<br>        <span class="hljs-comment">// 状态码超出2xx时处理</span><br>        <span class="hljs-keyword">return</span> error<br>    &#125;<br>)<br></code></pre></div></td></tr></table></figure>
+<h3 id="拦截器移除">🌿拦截器移除</h3>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> interceptor = axios.interceptors.response.use(...)<br><br>axios.interceptors.request.eject(interceptor)<br></code></pre></div></td></tr></table></figure>
 
             </div>
             <hr>

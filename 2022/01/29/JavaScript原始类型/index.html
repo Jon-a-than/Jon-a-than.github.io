@@ -16,12 +16,12 @@
   <meta name="author" content="Jon-a-than">
   <meta name="keywords" content="">
   
-    <meta name="description" content="原始类型Undefined定义变量的默认值,表示未定义 Null一个空对象指针,声明变量要保存对象但暂时未获取时应赋初值null BooleanBoolean()方法将其他类型转为Boolean型,&#39;&#39;,0,NaN,null,undefined被转为false,其他均为true String🌿字符集🌿字符数组字符串可以当作一个只读字符数组 123let str &#x3D; &amp;#x27;">
+    <meta name="description" content="原始类型 Undefined 定义变量的默认值,表示未定义 Null 一个空对象指针,声明变量要保存对象但暂时未获取时应赋初值null Boolean Boolean()方法将其他类型转为Boolean型,&#39;&#39;,0,NaN,null,undefined被转为false,其他均为true String ### 🌿字符集 🌿字符数组 字符串可以当作一个只读字符数组 123le">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript数据类型">
 <meta property="og:url" content="http://example.com/2022/01/29/JavaScript%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
-<meta property="og:description" content="原始类型Undefined定义变量的默认值,表示未定义 Null一个空对象指针,声明变量要保存对象但暂时未获取时应赋初值null BooleanBoolean()方法将其他类型转为Boolean型,&#39;&#39;,0,NaN,null,undefined被转为false,其他均为true String🌿字符集🌿字符数组字符串可以当作一个只读字符数组 123let str &#x3D; &amp;#x27;">
+<meta property="og:description" content="原始类型 Undefined 定义变量的默认值,表示未定义 Null 一个空对象指针,声明变量要保存对象但暂时未获取时应赋初值null Boolean Boolean()方法将其他类型转为Boolean型,&#39;&#39;,0,NaN,null,undefined被转为false,其他均为true String ### 🌿字符集 🌿字符数组 字符串可以当作一个只读字符数组 123le">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s4.ax1x.com/2022/02/17/HIXlnA.jpg">
 <meta property="article:published_time" content="2022-01-29T11:43:39.000Z">
@@ -86,7 +86,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>清山的博客</strong>
+      <strong>东风解冻，丽日舒和</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -253,226 +253,218 @@
             <h1 style="display: none">JavaScript数据类型</h1>
             
             <div class="markdown-body">
-              <h1 id="原始类型"><a href="#原始类型" class="headerlink" title="原始类型"></a>原始类型</h1><h2 id="Undefined"><a href="#Undefined" class="headerlink" title="Undefined"></a>Undefined</h2><p><strong>定义变量的默认值,表示未定义</strong></p>
-<h2 id="Null"><a href="#Null" class="headerlink" title="Null"></a>Null</h2><p><strong>一个空对象指针,声明变量要保存对象但暂时未获取时应赋初值</strong><code>null</code></p>
-<h2 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h2><p><code>Boolean()</code><strong>方法将其他类型转为</strong><code>Boolean</code><strong>型,</strong><code>&#39;&#39;</code>,<code>0</code>,<code>NaN</code>,<code>null</code>,<code>undefined</code><strong>被转为</strong><code>false</code><strong>,其他均为</strong><code>true</code></p>
-<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><h3 id="🌿字符集"><a href="#🌿字符集" class="headerlink" title="🌿字符集"></a>🌿字符集</h3><h3 id="🌿字符数组"><a href="#🌿字符数组" class="headerlink" title="🌿字符数组"></a>🌿字符数组</h3><p><strong>字符串可以当作一个只读字符数组</strong></p>
+              <h1 id="原始类型">原始类型</h1>
+<h2 id="undefined">Undefined</h2>
+<p><strong>定义变量的默认值,表示未定义</strong></p>
+<h2 id="null">Null</h2>
+<p><strong>一个空对象指针,声明变量要保存对象但暂时未获取时应赋初值</strong><code>null</code></p>
+<h2 id="boolean">Boolean</h2>
+<p><code>Boolean()</code><strong>方法将其他类型转为</strong><code>Boolean</code><strong>型,</strong><code>''</code>,<code>0</code>,<code>NaN</code>,<code>null</code>,<code>undefined</code><strong>被转为</strong><code>false</code><strong>,其他均为</strong><code>true</code></p>
+<h2 id="string">String</h2>
+<p>### 🌿字符集</p>
+<h3 id="字符数组">🌿字符数组</h3>
+<p><strong>字符串可以当作一个只读字符数组</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&#x27;Jonathan&#x27;</span><br>str[<span class="hljs-number">3</span>] = <span class="hljs-string">&#x27;a&#x27;</span><br>str.length = <span class="hljs-number">8</span><br></code></pre></div></td></tr></table></figure>
-
-
-
 <p><strong>字符不可更改,长度不可更改</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&#x27;Jonathan&#x27;</span><br>str.length = <span class="hljs-number">4</span>, str[<span class="hljs-number">1</span>] = <span class="hljs-string">&#x27;a&#x27;</span><br><span class="hljs-built_in">console</span>.log(str)              <span class="hljs-comment">// &#x27;Jonathan&#x27;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
 <p><strong>可以用</strong><code>str.split()</code><strong>将字符串分割出一个可读写的字符数组</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&#x27;Jonathan&#x27;</span><br><span class="hljs-keyword">let</span> x = str.split(<span class="hljs-string">&#x27;&#x27;</span>)        <span class="hljs-comment">// [&#x27;J&#x27;, &#x27;o&#x27;, &#x27;n&#x27;, &#x27;a&#x27;, &#x27;t&#x27;, &#x27;h&#x27;, &#x27;a&#x27;, &#x27;n&#x27;]</span><br>x.length = <span class="hljs-number">4</span>, x[<span class="hljs-number">1</span>] = <span class="hljs-string">&#x27;a&#x27;</span><br><span class="hljs-keyword">let</span> y = x.join(<span class="hljs-string">&#x27;&#x27;</span>)           <span class="hljs-comment">// &#x27;Jana&#x27;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🌿Base64"><a href="#🌿Base64" class="headerlink" title="🌿Base64"></a>🌿Base64</h3><p><code>btoa()</code><strong>asc转</strong><code>Base64</code></p>
+<h3 id="base64">🌿Base64</h3>
+<p><code>btoa()</code><strong>asc转</strong><code>Base64</code></p>
 <p><code>atob()</code> <code>Base64</code><strong>转asc</strong></p>
-<h2 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h2><h3 id="🥝数值表示"><a href="#🥝数值表示" class="headerlink" title="🥝数值表示"></a>🥝数值表示</h3><div class="note note-success">
+<h2 id="number">Number</h2>
+<h3 id="数值表示">🥝数值表示</h3>
+<div class="note note-success">
             <p><strong>ES6中新增了二进制与八进制的表示</strong><a href class="btn" style="margin:10px">🔗前往查看</a></p>
           </div>
-
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> a = <span class="hljs-number">31</span>        <span class="hljs-comment">// 十进制</span><br><span class="hljs-keyword">const</span> a = <span class="hljs-number">037</span>       <span class="hljs-comment">// 八进制0开头,ES5严格模式禁止0开头表示八进制</span><br><span class="hljs-keyword">const</span> b = <span class="hljs-number">0x1F</span>      <span class="hljs-comment">// 十六进制0x(或0X)开头(不分大小写)</span><br></code></pre></div></td></tr></table></figure>
-
 <p><strong>JS有</strong><code>-0</code><strong>与</strong><code>+0</code><strong>一般情况是相等的</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-literal">Infinity</span>/-<span class="hljs-number">0</span> == <span class="hljs-literal">Infinity</span>/+<span class="hljs-number">0</span>    <span class="hljs-comment">// false, 只有这种情况会不同</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🥝浮点数"><a href="#🥝浮点数" class="headerlink" title="🥝浮点数"></a>🥝浮点数</h3><p><strong>JS会尽量接收一个整数,数字小数点后有非零值才会成为浮点数</strong></p>
+<h3 id="浮点数">🥝浮点数</h3>
+<p><strong>JS会尽量接收一个整数,数字小数点后有非零值才会成为浮点数</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> a = <span class="hljs-number">1.0</span>        <span class="hljs-comment">// 无效</span><br><span class="hljs-keyword">const</span> b = <span class="hljs-number">1.1</span>        <span class="hljs-comment">// 有效</span><br><span class="hljs-keyword">const</span> c = <span class="hljs-number">.1</span>         <span class="hljs-comment">// 有效</span><br></code></pre></div></td></tr></table></figure>
-
 <p><strong>小数高于6位会默认使用科学计数法(最高精度</strong><code>e-17</code><strong>)</strong></p>
-<h3 id="🥝NaN"><a href="#🥝NaN" class="headerlink" title="🥝NaN"></a>🥝NaN</h3><p><code>NaN</code><strong>(Not A Number),唯一一个不等于自身的值,可以用</strong><code>isNaN()</code><strong>或是否等于自身来判断</strong><code>NaN</code></p>
+<h3 id="nan">🥝NaN</h3>
+<p><code>NaN</code><strong>(Not A Number),唯一一个不等于自身的值,可以用</strong><code>isNaN()</code><strong>或是否等于自身来判断</strong><code>NaN</code></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-literal">NaN</span> != <span class="hljs-literal">NaN</span>          <span class="hljs-comment">// true</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-
-
-<h3 id="🥝Infinity"><a href="#🥝Infinity" class="headerlink" title="🥝Infinity"></a>🥝Infinity</h3><p><strong>表示无穷大,可以用</strong><code>isInfinity()</code><strong>判断是否为</strong><code>Infinity</code></p>
-<h3 id="🥝parseInt"><a href="#🥝parseInt" class="headerlink" title="🥝parseInt()"></a>🥝parseInt()</h3><p><code>parseInt(v&#123;待转值&#125;, &#123;以[2, 36]进制转换&#125;)</code></p>
-<h3 id="🥝parseFloat"><a href="#🥝parseFloat" class="headerlink" title="🥝parseFloat()"></a>🥝parseFloat()</h3><h3 id="🥝Number"><a href="#🥝Number" class="headerlink" title="🥝Number()"></a>🥝Number()</h3><h2 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h2><div class="note note-success">
+<h3 id="infinity">🥝Infinity</h3>
+<p><strong>表示无穷大,可以用</strong><code>isInfinity()</code><strong>判断是否为</strong><code>Infinity</code></p>
+<h3 id="parseint">🥝parseInt()</h3>
+<p><code>parseInt(v&#123;待转值&#125;, &#123;以[2, 36]进制转换&#125;)</code></p>
+<h3 id="parsefloat">🥝parseFloat()</h3>
+<h3 id="number-1">🥝Number()</h3>
+<h2 id="symbol">Symbol</h2>
+<div class="note note-success">
             <p><strong>ES6新增类型</strong><a href class="btn" style="margin:10px">🔗前往查看</a></p>
           </div>
-
-<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><h1 id="基本引用类型"><a href="#基本引用类型" class="headerlink" title="基本引用类型"></a>基本引用类型</h1><h2 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h2><p><code>Data</code><strong>的原型为字符串</strong></p>
-<h3 id="🍍建立日期对象"><a href="#🍍建立日期对象" class="headerlink" title="🍍建立日期对象"></a>🍍建立日期对象</h3><p><strong>日期对象可直接比较时间早晚(时间戳越大越晚)</strong></p>
+<h2 id="object">Object</h2>
+<h1 id="基本引用类型">基本引用类型</h1>
+<h2 id="date">Date</h2>
+<p><code>Data</code><strong>的原型为字符串</strong></p>
+<h3 id="建立日期对象">🍍建立日期对象</h3>
+<p><strong>日期对象可直接比较时间早晚(时间戳越大越晚)</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()                 <span class="hljs-comment">// 默认当时计算机日期</span><br></code></pre></div></td></tr></table></figure>
-
 <p><code>Date.parse()</code><strong>或</strong><code>Date.UTC()</code><strong>来初始化日期</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-built_in">Date</span>.parse(<span class="hljs-comment">/*...*/</span>))<br><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-built_in">Date</span>.UTC(<span class="hljs-comment">/*...*/</span>))<br><br><span class="hljs-comment">// 默认隐式调用Date.parse或Date.UTC</span><br><span class="hljs-comment">// 等价于</span><br><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-comment">/*...*/</span>)<br><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-comment">/*...*/</span>)<br></code></pre></div></td></tr></table></figure>
-
-<h4 id="Date-parse"><a href="#Date-parse" class="headerlink" title="Date.parse()"></a>Date.parse()</h4><p><code>Date.parse()</code><strong>接收一个日期字符串,模板如下(月名, 星期名均为英文缩写)</strong></p>
+<h4 id="date.parse">Date.parse()</h4>
+<p><code>Date.parse()</code><strong>接收一个日期字符串,模板如下(月名, 星期名均为英文缩写)</strong></p>
 <ul>
-<li>‘day/momth/year’</li>
-<li>‘月名 day, year’</li>
-<li>‘星期名 月名 dd yyyy hh:mm:ss 时区’</li>
-<li>‘YYYY-MM-DDTHH:mm:ss.sssZ’</li>
+<li>'day/momth/year'</li>
+<li>'月名 day, year'</li>
+<li>'星期名 月名 dd yyyy hh:mm:ss 时区'</li>
+<li>'YYYY-MM-DDTHH:mm:ss.sssZ'</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">&#x27;Thu Feb 03 2022 13:08:38 GMT+0800&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
-
-
-
-<h4 id="Date-UTC"><a href="#Date-UTC" class="headerlink" title="Date.UTC()"></a>Date.UTC()</h4><p><code>Date.UTC(year, month[, d, h, min, s, ms])</code><strong>年月必选,月为</strong><code>[0, 11]</code><strong>,天默认为</strong><code>1</code><strong>其余默认为</strong><code>0</code></p>
+<h4 id="date.utc">Date.UTC()</h4>
+<p><code>Date.UTC(year, month[, d, h, min, s, ms])</code><strong>年月必选,月为</strong><code>[0, 11]</code><strong>,天默认为</strong><code>1</code><strong>其余默认为</strong><code>0</code></p>
 <p><strong>该时间为</strong><code>GMT</code><strong>时间(0时区时间)</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2022</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">13</span>, <span class="hljs-number">24</span>, <span class="hljs-number">17</span>)<br></code></pre></div></td></tr></table></figure>
-
-<h4 id="Date-now"><a href="#Date-now" class="headerlink" title="Date.now()"></a>Date.now()</h4><p><code>Date.now()</code><strong>方法返回当时计算机日期与</strong><code>1970/1/1 00:00:00</code><strong>的时间差的毫秒数</strong></p>
+<h4 id="date.now">Date.now()</h4>
+<p><code>Date.now()</code><strong>方法返回当时计算机日期与</strong><code>1970/1/1 00:00:00</code><strong>的时间差的毫秒数</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Date</span>.now())<br><span class="hljs-comment">// 1643867269483</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🍍继承方法"><a href="#🍍继承方法" class="headerlink" title="🍍继承方法"></a>🍍继承方法</h3><h4 id="Date-valueOf"><a href="#Date-valueOf" class="headerlink" title="Date.valueOf()"></a>Date.valueOf()</h4><p><strong>返回时间戳</strong></p>
+<h3 id="继承方法">🍍继承方法</h3>
+<h4 id="date.valueof">Date.valueOf()</h4>
+<p><strong>返回时间戳</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().valueOf())<br><span class="hljs-comment">// 1643867269483</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h4 id="Date-toString"><a href="#Date-toString" class="headerlink" title="Date.toString()"></a>Date.toString()</h4><p><strong>24小时制的时间(具体格式与环境有关)</strong></p>
+<h4 id="date.tostring">Date.toString()</h4>
+<p><strong>24小时制的时间(具体格式与环境有关)</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().toString())<br><span class="hljs-comment">// Thu Feb 03 2022 18:47:09 GMT+0800 (中国标准时间)</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h4 id="Date-toLocaleString"><a href="#Date-toLocaleString" class="headerlink" title="Date.toLocaleString()"></a>Date.toLocaleString()</h4><p><strong>12小时制时间(具体格式与环境有关)</strong></p>
+<h4 id="date.tolocalestring">Date.toLocaleString()</h4>
+<p><strong>12小时制时间(具体格式与环境有关)</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().toLocaleString())<br><span class="hljs-comment">// 2022/2/3 下午6:47:09</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h2 id="RegExp"><a href="#RegExp" class="headerlink" title="RegExp"></a>RegExp</h2><h2 id="原始值包装类型"><a href="#原始值包装类型" class="headerlink" title="原始值包装类型"></a>原始值包装类型</h2><h2 id="单例内置对象Global"><a href="#单例内置对象Global" class="headerlink" title="单例内置对象Global"></a>单例内置对象Global</h2><h3 id="🥬URI编码方法"><a href="#🥬URI编码方法" class="headerlink" title="🥬URI编码方法"></a>🥬URI编码方法</h3><h3 id="🥬eval方法"><a href="#🥬eval方法" class="headerlink" title="🥬eval方法"></a>🥬eval方法</h3><h3 id="🥬对象属性"><a href="#🥬对象属性" class="headerlink" title="🥬对象属性"></a>🥬对象属性</h3><table>
+<h2 id="regexp">RegExp</h2>
+<h2 id="原始值包装类型">原始值包装类型</h2>
+<h2 id="单例内置对象global">单例内置对象Global</h2>
+<h3 id="uri编码方法">🥬URI编码方法</h3>
+<h3 id="eval方法">🥬eval方法</h3>
+<h3 id="对象属性">🥬对象属性</h3>
+<table>
 <thead>
-<tr>
-<th align="center">属性</th>
+<tr class="header">
+<th style="text-align: center;">属性</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center"><code>undefined</code></td>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>undefined</code></td>
 </tr>
-<tr>
-<td align="center"><code>NaN</code></td>
+<tr class="even">
+<td style="text-align: center;"><code>NaN</code></td>
 </tr>
-<tr>
-<td align="center"><code>Infinity</code></td>
+<tr class="odd">
+<td style="text-align: center;"><code>Infinity</code></td>
 </tr>
-<tr>
-<td align="center"><code>Object</code></td>
+<tr class="even">
+<td style="text-align: center;"><code>Object</code></td>
 </tr>
-<tr>
-<td align="center"><code>Array</code></td>
+<tr class="odd">
+<td style="text-align: center;"><code>Array</code></td>
 </tr>
-<tr>
-<td align="center"><code>Function</code></td>
+<tr class="even">
+<td style="text-align: center;"><code>Function</code></td>
 </tr>
-<tr>
-<td align="center"><code>Boolean</code></td>
+<tr class="odd">
+<td style="text-align: center;"><code>Boolean</code></td>
 </tr>
-<tr>
-<td align="center"><code>String</code></td>
+<tr class="even">
+<td style="text-align: center;"><code>String</code></td>
 </tr>
-<tr>
-<td align="center"><code>Number</code></td>
+<tr class="odd">
+<td style="text-align: center;"><code>Number</code></td>
 </tr>
-<tr>
-<td align="center"></td>
+<tr class="even">
+<td style="text-align: center;"></td>
 </tr>
-<tr>
-<td align="center"></td>
+<tr class="odd">
+<td style="text-align: center;"></td>
 </tr>
-<tr>
-<td align="center"></td>
+<tr class="even">
+<td style="text-align: center;"></td>
 </tr>
-<tr>
-<td align="center"></td>
+<tr class="odd">
+<td style="text-align: center;"></td>
 </tr>
-<tr>
-<td align="center"></td>
+<tr class="even">
+<td style="text-align: center;"></td>
 </tr>
-<tr>
-<td align="center"></td>
+<tr class="odd">
+<td style="text-align: center;"></td>
 </tr>
-</tbody></table>
-<h2 id="单例内置对象Math"><a href="#单例内置对象Math" class="headerlink" title="单例内置对象Math"></a>单例内置对象Math</h2><h3 id="🍉属性"><a href="#🍉属性" class="headerlink" title="🍉属性"></a>🍉属性</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-built_in">Math</span>.PI<br><span class="hljs-built_in">Math</span>.E<br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🍉方法"><a href="#🍉方法" class="headerlink" title="🍉方法"></a>🍉方法</h3><h4 id="最值方法"><a href="#最值方法" class="headerlink" title="最值方法"></a>最值方法</h4><p><code>Math.min()</code><strong>与</strong><code>Math.max()</code><strong>方法可以返回多个数中的最值</strong></p>
+</tbody>
+</table>
+<h2 id="单例内置对象math">单例内置对象Math</h2>
+<h3 id="属性">🍉属性</h3>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-built_in">Math</span>.PI<br><span class="hljs-built_in">Math</span>.E<br></code></pre></div></td></tr></table></figure>
+<h3 id="方法">🍉方法</h3>
+<h4 id="最值方法">最值方法</h4>
+<p><code>Math.min()</code><strong>与</strong><code>Math.max()</code><strong>方法可以返回多个数中的最值</strong></p>
 <p><strong>可用</strong><code>...</code><strong>(扩展操作符)找出数组最值</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> nums = [<span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, -<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>]<br><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Math</span>.max(...nums))     <span class="hljs-comment">// 5</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Math</span>.min(...nums))     <span class="hljs-comment">// -4</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h4 id="舍入方法"><a href="#舍入方法" class="headerlink" title="舍入方法"></a>舍入方法</h4><ul>
+<h4 id="舍入方法">舍入方法</h4>
+<ul>
 <li><code>Math.ceil()</code><strong>向上舍入</strong></li>
 <li><code>Math.floor()</code><strong>向下舍入</strong></li>
 <li><code>Math.round()</code><strong>四舍五入</strong></li>
 <li><code>Math.fround()</code><strong>最接近的单精度浮点数</strong></li>
 </ul>
-<h4 id="运算方法"><a href="#运算方法" class="headerlink" title="运算方法"></a>运算方法</h4><ul>
+<h4 id="运算方法">运算方法</h4>
+<ul>
 <li><code>Math.random()</code><strong>返回[0,1)的随机数</strong></li>
 <li><code>Math.sqrt(x)</code><strong>求根</strong></li>
 <li><code>Math.pow(x, p)</code><strong>求幂</strong></li>
 <li><code>Math.abs(x)</code><strong>求绝对值</strong></li>
 </ul>
-<h1 id="集合引用类型"><a href="#集合引用类型" class="headerlink" title="集合引用类型"></a>集合引用类型</h1><h2 id="Object-1"><a href="#Object-1" class="headerlink" title="Object"></a>Object</h2><h3 id="🍇创建对象"><a href="#🍇创建对象" class="headerlink" title="🍇创建对象"></a>🍇创建对象</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>()   <span class="hljs-comment">// 构造函数式</span><br><span class="hljs-keyword">const</span> obj = &#123;&#125;             <span class="hljs-comment">// 对象字面量</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🍇对象属性"><a href="#🍇对象属性" class="headerlink" title="🍇对象属性"></a>🍇对象属性</h3><p><strong>对象属性</strong><code>key</code><strong>使用数字会转换为字符串</strong></p>
+<h1 id="集合引用类型">集合引用类型</h1>
+<h2 id="object-1">Object</h2>
+<h3 id="创建对象">🍇创建对象</h3>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>()   <span class="hljs-comment">// 构造函数式</span><br><span class="hljs-keyword">const</span> obj = &#123;&#125;             <span class="hljs-comment">// 对象字面量</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="对象属性-1">🍇对象属性</h3>
+<p><strong>对象属性</strong><code>key</code><strong>使用数字会转换为字符串</strong></p>
 <p><code>key</code><strong>使用中括号语法避免错误语法</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> obj = &#123;<br>  <span class="hljs-number">0</span>: <span class="hljs-string">&#x27;a&#x27;</span>,<br>  [<span class="hljs-string">&#x27;a b&#x27;</span>]: <span class="hljs-string">&#x27;b&#x27;</span><br>&#125;<br><br><span class="hljs-built_in">console</span>.log(obj<span class="hljs-number">.0</span>, obj.<span class="hljs-string">&#x27;0&#x27;</span>)<br><span class="hljs-comment">// 报错</span><br><span class="hljs-built_in">console</span>.log(obj[<span class="hljs-number">0</span>], obj[<span class="hljs-string">&#x27;0&#x27;</span>])<br><span class="hljs-comment">// &#x27;a&#x27; &#x27;a&#x27;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><h3 id="🥕创建数组"><a href="#🥕创建数组" class="headerlink" title="🥕创建数组"></a>🥕创建数组</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> nums = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-number">3</span>)<br><span class="hljs-keyword">const</span> nums = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]<br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🥕方法"><a href="#🥕方法" class="headerlink" title="🥕方法"></a>🥕方法</h3><h4 id="继承方法"><a href="#继承方法" class="headerlink" title="继承方法"></a>继承方法</h4><ul>
+<h2 id="array">Array</h2>
+<h3 id="创建数组">🥕创建数组</h3>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> nums = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-number">3</span>)<br><span class="hljs-keyword">const</span> nums = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]<br></code></pre></div></td></tr></table></figure>
+<h3 id="方法-1">🥕方法</h3>
+<h4 id="继承方法-1">继承方法</h4>
+<ul>
 <li><code>array.valueOf()</code><strong>等同数组字面量</strong></li>
 <li><code>array.toString()</code><strong>数组值</strong><code>toString()</code><strong>后以</strong><code>,</code><strong>相连的字符串</strong></li>
 <li><code>array.toLocaleString()</code><strong>数组值</strong><code>toLocaleString()</code><strong>后以</strong><code>,</code><strong>相连的字符串</strong></li>
 </ul>
-<h4 id="复制与填充"><a href="#复制与填充" class="headerlink" title="复制与填充"></a>复制与填充</h4><div class="note note-success">
+<h4 id="复制与填充">复制与填充</h4>
+<div class="note note-success">
             <p><strong>ES6提供了</strong><code>fill()</code><strong>与</strong><code>copyWithin()</code><strong>方法</strong><a href class="btn" style="margin:10px">🔗前往查看</a></p>
           </div>
-
-<h4 id="判断数组"><a href="#判断数组" class="headerlink" title="判断数组"></a>判断数组</h4><p><code>Array.isArray()</code><strong>方法判断数据是否为数组</strong></p>
-<h4 id="栈方法"><a href="#栈方法" class="headerlink" title="栈方法"></a>栈方法</h4><ul>
+<h4 id="判断数组">判断数组</h4>
+<p><code>Array.isArray()</code><strong>方法判断数据是否为数组</strong></p>
+<h4 id="栈方法">栈方法</h4>
+<ul>
 <li><code>array.push(x[, ...y])</code><strong>数组末尾添加元素,返回新</strong><code>length</code></li>
 <li><code>array.pop()</code><strong>数组</strong><code>length</code><strong>减一,返回删除值</strong></li>
 </ul>
-<h4 id="队列方法"><a href="#队列方法" class="headerlink" title="队列方法"></a>队列方法</h4><p><strong>(所有元素索引改变)性能逊于栈方法</strong></p>
+<h4 id="队列方法">队列方法</h4>
+<p><strong>(所有元素索引改变)性能逊于栈方法</strong></p>
 <ul>
 <li><code>array.unshift(x[, ...y])</code><strong>数组首部添加元素,返回新</strong><code>length</code></li>
 <li><code>array.shift()</code><strong>数组</strong><code>length</code><strong>减一,返回删除值</strong></li>
 </ul>
-<h4 id="排序方法"><a href="#排序方法" class="headerlink" title="排序方法"></a>排序方法</h4><ul>
+<h4 id="排序方法">排序方法</h4>
+<ul>
 <li><code>array.sort((a, b) =&gt; &#123;&#125;)</code><strong>冒泡排序,接收一个回调确定排序规则</strong></li>
 <li><code>array.reverse()</code><strong>元素顺序颠倒</strong></li>
 </ul>
-<h4 id="搜索方法"><a href="#搜索方法" class="headerlink" title="搜索方法"></a>搜索方法</h4><ul>
+<h4 id="搜索方法">搜索方法</h4>
+<ul>
 <li><code>array.indexOf(x)</code><strong>返回第一个匹配的索引(无返回-1)</strong></li>
 <li><code>array.lastIndexOf(x)</code><strong>返回最后一个匹配的索引(无返回-1)</strong></li>
 <li><code>array.includes(x[, n])</code><strong>是否至少含有一个(无则返回</strong><code>false</code><strong>)</strong></li>
 </ul>
-<h4 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h4><h2 id="ES6新类型"><a href="#ES6新类型" class="headerlink" title="ES6新类型"></a>ES6新类型</h2><div class="note note-success">
+<h4 id="操作方法">操作方法</h4>
+<h2 id="es6新类型">ES6新类型</h2>
+<div class="note note-success">
             <p><strong>ES6新增了四种引用类型(</strong><code>Map</code><strong>,</strong><code>WeakMap</code><strong>,</strong><code>Set</code><strong>,</strong><code>WeakSet</code><strong>)</strong><a href class="btn" style="margin:10px">🔗前往查看</a></p>
           </div>
-
-
-
-
-
-
-
-
-
-
-
 
             </div>
             <hr>

@@ -16,12 +16,12 @@
   <meta name="author" content="Jon-a-than">
   <meta name="keywords" content="">
   
-    <meta name="description" content="window对象窗口位置🥕位置获取window.screenTop,window.screenLeft显示浏览器应用左上角的位置 🥕位置方法             这些方法可能被浏览器禁用              window.moveTo(x, y)浏览器左上角移动至(x, y) window.moveBy(x, y)浏览器左上角相对当前向左x px向下y px  窗口大小🍐大小获取w">
+    <meta name="description" content="window对象 窗口位置 🥕位置获取 window.screenTop,window.screenLeft显示浏览器应用左上角的位置 🥕位置方法              这些方法可能被浏览器禁用             window.moveTo(x, y)浏览器左上角移动至(x, y) window.moveBy(x, y)浏览器左上角相对当前向左x px向下y px">
 <meta property="og:type" content="article">
 <meta property="og:title" content="🏗JavaScriptBOM">
 <meta property="og:url" content="http://example.com/2022/01/30/JavaScriptBOM/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
-<meta property="og:description" content="window对象窗口位置🥕位置获取window.screenTop,window.screenLeft显示浏览器应用左上角的位置 🥕位置方法             这些方法可能被浏览器禁用              window.moveTo(x, y)浏览器左上角移动至(x, y) window.moveBy(x, y)浏览器左上角相对当前向左x px向下y px  窗口大小🍐大小获取w">
+<meta property="og:description" content="window对象 窗口位置 🥕位置获取 window.screenTop,window.screenLeft显示浏览器应用左上角的位置 🥕位置方法              这些方法可能被浏览器禁用             window.moveTo(x, y)浏览器左上角移动至(x, y) window.moveBy(x, y)浏览器左上角相对当前向左x px向下y px">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s4.ax1x.com/2022/02/17/HIX37t.jpg">
 <meta property="article:published_time" content="2022-01-30T03:29:57.000Z">
@@ -86,7 +86,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>清山的博客</strong>
+      <strong>东风解冻，丽日舒和</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -253,167 +253,171 @@
             <h1 style="display: none">🏗JavaScriptBOM</h1>
             
             <div class="markdown-body">
-              <h1 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h1><h2 id="窗口位置"><a href="#窗口位置" class="headerlink" title="窗口位置"></a>窗口位置</h2><h3 id="🥕位置获取"><a href="#🥕位置获取" class="headerlink" title="🥕位置获取"></a>🥕位置获取</h3><p><code>window.screenTop</code><strong>,</strong><code>window.screenLeft</code><strong>显示浏览器应用左上角的位置</strong></p>
-<h3 id="🥕位置方法"><a href="#🥕位置方法" class="headerlink" title="🥕位置方法"></a>🥕位置方法</h3><div class="note note-warning">
+              <h1 id="window对象">window对象</h1>
+<h2 id="窗口位置">窗口位置</h2>
+<h3 id="位置获取">🥕位置获取</h3>
+<p><code>window.screenTop</code><strong>,</strong><code>window.screenLeft</code><strong>显示浏览器应用左上角的位置</strong></p>
+<h3 id="位置方法">🥕位置方法</h3>
+<div class="note note-warning">
             <p><strong>这些方法可能被浏览器禁用</strong></p>
           </div>
-
 <ul>
 <li><code>window.moveTo(x, y)</code><strong>浏览器左上角移动至</strong><code>(x, y)</code></li>
 <li><code>window.moveBy(x, y)</code><strong>浏览器左上角相对当前向左</strong><code>x px</code><strong>向下</strong><code>y px</code></li>
 </ul>
-<h2 id="窗口大小"><a href="#窗口大小" class="headerlink" title="窗口大小"></a>窗口大小</h2><h3 id="🍐大小获取"><a href="#🍐大小获取" class="headerlink" title="🍐大小获取"></a>🍐大小获取</h3><p><code>window.innnerHeight</code><strong>,</strong> <code>window.innerWidth</code><strong>显示视口大小(不含工具栏,地址栏等.包含滚动条)</strong></p>
-<p> <code>window.outerHeight</code><strong>,</strong><code>window.outerWidth</code><strong>显示浏览器应用的窗口大小</strong></p>
+<h2 id="窗口大小">窗口大小</h2>
+<h3 id="大小获取">🍐大小获取</h3>
+<p><code>window.innnerHeight</code><strong>,</strong> <code>window.innerWidth</code><strong>显示视口大小(不含工具栏,地址栏等.包含滚动条)</strong></p>
+<p><code>window.outerHeight</code><strong>,</strong><code>window.outerWidth</code><strong>显示浏览器应用的窗口大小</strong></p>
 <p><code>document.documentElement.clientHeight</code><strong>,</strong><code>document.documentElement.clientWidth</code><strong>显示渲染页的大小(不含滚动条)</strong></p>
-<h3 id="🍐窗口缩放方法"><a href="#🍐窗口缩放方法" class="headerlink" title="🍐窗口缩放方法"></a>🍐窗口缩放方法</h3><div class="note note-warning">
+<h3 id="窗口缩放方法">🍐窗口缩放方法</h3>
+<div class="note note-warning">
             <p><strong>这些方法可能被浏览器禁用</strong></p>
           </div>
-
 <ul>
 <li><code>window.resizeTo(x, y)</code><strong>缩放到</strong><code>x × y</code></li>
 <li><code>window.resizeBy(x, y)</code><strong>缩放至</strong><code>(x+原x) × (y+原y)</code></li>
 </ul>
-<h2 id="视口位置"><a href="#视口位置" class="headerlink" title="视口位置"></a>视口位置</h2><h3 id="🍊位置获取"><a href="#🍊位置获取" class="headerlink" title="🍊位置获取"></a>🍊位置获取</h3><p><code>window.scrollX</code><strong>,</strong><code>window.scrollY</code><strong>或</strong><code>window.pageXoffset</code><strong>,</strong><code>window.pageYoffset</code><strong>显示滚动位置</strong></p>
-<h3 id="🍊滚动方法"><a href="#🍊滚动方法" class="headerlink" title="🍊滚动方法"></a>🍊滚动方法</h3><ul>
+<h2 id="视口位置">视口位置</h2>
+<h3 id="位置获取-1">🍊位置获取</h3>
+<p><code>window.scrollX</code><strong>,</strong><code>window.scrollY</code><strong>或</strong><code>window.pageXoffset</code><strong>,</strong><code>window.pageYoffset</code><strong>显示滚动位置</strong></p>
+<h3 id="滚动方法">🍊滚动方法</h3>
+<ul>
 <li><code>window.scroll()</code></li>
 <li><code>window.scrollTo()</code></li>
 <li><code>window.scrollBy()</code></li>
 </ul>
-<h2 id="链接导航"><a href="#链接导航" class="headerlink" title="链接导航"></a>链接导航</h2><h3 id="🌿打开链接"><a href="#🌿打开链接" class="headerlink" title="🌿打开链接"></a>🌿打开链接</h3><p><code>window.open(url)</code><strong>方法可以打开链接并返回窗口的</strong><code>window</code><strong>实例</strong></p>
+<h2 id="链接导航">链接导航</h2>
+<h3 id="打开链接">🌿打开链接</h3>
+<p><code>window.open(url)</code><strong>方法可以打开链接并返回窗口的</strong><code>window</code><strong>实例</strong></p>
 <p><strong>该实例的</strong><code>opener</code><strong>属性指向打开它的</strong><code>window</code><strong>实例</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-built_in">window</span>.open(<span class="hljs-string">&#x27;https://www.baidu.com&#x27;</span>)          <span class="hljs-comment">// 默认在新窗口打开</span><br></code></pre></div></td></tr></table></figure>
-
 <div class="note note-danger">
             <p><strong>浏览器可能弹出警告</strong></p>
           </div>
-
-<h3 id="🌿目标窗口"><a href="#🌿目标窗口" class="headerlink" title="🌿目标窗口"></a>🌿目标窗口</h3><p><code>window.open</code><strong>的第二个参数表示打开链接的窗口</strong></p>
+<h3 id="目标窗口">🌿目标窗口</h3>
+<p><code>window.open</code><strong>的第二个参数表示打开链接的窗口</strong></p>
 <p><strong>可以使用自定义名称,若找不到该名称窗口则新建一个同名窗口</strong></p>
-<p><strong>也可使用</strong><code>&#39;_self&#39;</code><strong>,</strong><code>&#39;_parent&#39;</code><strong>,</strong><code>&#39;_top&#39;</code><strong>,</strong><code>&#39;_blank&#39;</code></p>
+<p><strong>也可使用</strong><code>'_self'</code><strong>,</strong><code>'_parent'</code><strong>,</strong><code>'_top'</code><strong>,</strong><code>'_blank'</code></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-built_in">window</span>.open(<span class="hljs-string">&#x27;https://www.baidu.com&#x27;</span>, <span class="hljs-string">&#x27;_self&#x27;</span>)<br><span class="hljs-built_in">window</span>.open(<span class="hljs-string">&#x27;https://www.baidu.com&#x27;</span>, <span class="hljs-string">&#x27;page1&#x27;</span>)   <span class="hljs-comment">// 无名为`page1`的窗口则新建一个同名窗口</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-
-
-<h3 id="🌿特性设置"><a href="#🌿特性设置" class="headerlink" title="🌿特性设置"></a>🌿特性设置</h3><p><code>window.open</code><strong>的第三个参数接收一个特性字符串配置新窗口设置</strong></p>
+<h3 id="特性设置">🌿特性设置</h3>
+<p><code>window.open</code><strong>的第三个参数接收一个特性字符串配置新窗口设置</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-built_in">window</span>.open(<span class="hljs-string">&#x27;https://www.baidu.com&#x27;</span>, <span class="hljs-string">&#x27;page1&#x27;</span>, <span class="hljs-string">&#x27;height=600, width=400&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
-
 <div class="note note-warning">
             <p><strong>浏览器可能禁用特性设置</strong></p>
           </div>
-
-
-
-<h3 id="🌿窗口关闭"><a href="#🌿窗口关闭" class="headerlink" title="🌿窗口关闭"></a>🌿窗口关闭</h3><p><code>close()</code><strong>可关闭</strong><code>window</code><strong>实例</strong></p>
+<h3 id="窗口关闭">🌿窗口关闭</h3>
+<p><code>close()</code><strong>可关闭</strong><code>window</code><strong>实例</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> newPage = <span class="hljs-built_in">window</span>.open(<span class="hljs-string">&#x27;https://www.baidu.com&#x27;</span>)   <span class="hljs-comment">// 获取实例</span><br><span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> newPage.close(), <span class="hljs-number">5000</span>)                <span class="hljs-comment">// 5秒后关闭</span><br><br><span class="hljs-built_in">window</span>.close()                                         <span class="hljs-comment">// 关闭最新窗口</span><br></code></pre></div></td></tr></table></figure>
-
 <div class="note note-warning">
-            <p><strong>当不是在</strong><code>window</code><strong>实例,而是在</strong><code>window</code><strong>对象上使用时关闭最新的窗口</strong></p><p><strong>部分浏览器不支持关闭非脚本打开的窗口</strong></p>
+            <p><strong>当不是在</strong><code>window</code><strong>实例,而是在</strong><code>window</code><strong>对象上使用时关闭最新的窗口</strong></p><p><strong>部分浏览器不支持关闭非脚本打开的窗口</strong></p>
           </div>
-
 <p><strong>关闭后</strong><code>window</code><strong>对象的</strong><code>closed</code><strong>属性值为</strong><code>true</code></p>
-<h3 id="🌿弹窗屏蔽"><a href="#🌿弹窗屏蔽" class="headerlink" title="🌿弹窗屏蔽"></a>🌿弹窗屏蔽</h3><p><strong>被浏览器屏蔽时</strong><code>window.open</code><strong>返回</strong><code>null</code><strong>可用此特性判断是否被屏蔽</strong></p>
+<h3 id="弹窗屏蔽">🌿弹窗屏蔽</h3>
+<p><strong>被浏览器屏蔽时</strong><code>window.open</code><strong>返回</strong><code>null</code><strong>可用此特性判断是否被屏蔽</strong></p>
 <p><strong>被屏蔽时也会抛出错误,可用</strong><code>try/catch</code><strong>精确捕获是否被屏蔽</strong></p>
-<h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><h3 id="🍌setTimeout"><a href="#🍌setTimeout" class="headerlink" title="🍌setTimeout"></a>🍌setTimeout</h3><p><code>setTimeout(f, t[, a, b...])</code><strong>第一个参数接收一个函数或</strong><code>js</code><strong>代码的字符串,第二个参数设置</strong><code>t ms</code><strong>后代码/函数进入消息队列,消息队列为空则立即执行,后面的参数到期时会传给任务函数(字符串不可)</strong></p>
+<h2 id="定时器">定时器</h2>
+<h3 id="settimeout">🍌setTimeout</h3>
+<p><code>setTimeout(f, t[, a, b...])</code><strong>第一个参数接收一个函数或</strong><code>js</code><strong>代码的字符串,第二个参数设置</strong><code>t ms</code><strong>后代码/函数进入消息队列,消息队列为空则立即执行,后面的参数到期时会传给任务函数(字符串不可)</strong></p>
 <p><strong>设置时返回一个超时排期</strong><code>ID</code><strong>,可用</strong><code>clearTimeout(ID)</code><strong>取消排期</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> Task = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-string">&#x27;alert(&quot;Hi!&quot;)&#x27;</span>, <span class="hljs-number">1000</span>)<br><br><span class="hljs-comment">// 等价于</span><br><span class="hljs-keyword">const</span> Tsak = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>  alert(<span class="hljs-string">&#x27;Hi!&#x27;</span>)<br>&#125;, <span class="hljs-number">1000</span>)<br><br><span class="hljs-keyword">if</span>(flg)<br>  <span class="hljs-built_in">clearTimeout</span>(Task)               <span class="hljs-comment">// 取消任务</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🍌-setInterval"><a href="#🍌-setInterval" class="headerlink" title="🍌 setInterval"></a>🍌 setInterval</h3><p><code>setInterval(f, t[, a, b...])</code><strong>参数同上,其每隔</strong><code>t ms</code><strong>就将任务推入消息队列</strong></p>
+<h3 id="setinterval">🍌 setInterval</h3>
+<p><code>setInterval(f, t[, a, b...])</code><strong>参数同上,其每隔</strong><code>t ms</code><strong>就将任务推入消息队列</strong></p>
 <p><strong>设置时返回一个超时排期</strong><code>ID</code><strong>,可用</strong><code>clearInterval(ID)</code><strong>取消排期</strong></p>
-<h2 id="对话框"><a href="#对话框" class="headerlink" title="对话框"></a>对话框</h2><h3 id="🍒alert-text"><a href="#🍒alert-text" class="headerlink" title="🍒alert(text)"></a>🍒alert(text)</h3><p><strong>接收文本,其他类型隐式调用</strong><code>toString()</code></p>
+<h2 id="对话框">对话框</h2>
+<h3 id="alerttext">🍒alert(text)</h3>
+<p><strong>接收文本,其他类型隐式调用</strong><code>toString()</code></p>
 <p><strong>只有确认键,无返回值,执行期间为同步状态</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-built_in">window</span>.alert(<span class="hljs-string">&#x27;Hi!&#x27;</span>)<br>alert(<span class="hljs-string">&#x27;Hi!&#x27;</span>)          <span class="hljs-comment">// 可不加`window.`以下均不加</span><br></code></pre></div></td></tr></table></figure>
-
 <p><a class="btn" onclick="alert('Hi!')">alert</a></p>
-<h3 id="🍒confirm-text"><a href="#🍒confirm-text" class="headerlink" title="🍒confirm(text)"></a>🍒confirm(text)</h3><p><strong>接收文本,其他类型隐式调用</strong><code>toString()</code></p>
+<h3 id="confirmtext">🍒confirm(text)</h3>
+<p><strong>接收文本,其他类型隐式调用</strong><code>toString()</code></p>
 <p><strong>有确认/取消键,返回布尔值对应</strong><code>true</code><strong>/</strong><code>false</code><strong>(同步执行)</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">confirm(<span class="hljs-string">&#x27;Hi!&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
-
 <p><a class="btn" onclick="confirm('Hi!')">confirm</a></p>
-<h3 id="🍒prompt-tips-default"><a href="#🍒prompt-tips-default" class="headerlink" title="🍒prompt(tips, default)"></a>🍒prompt(tips, default)</h3><p><strong>接收两个文本,其他类型隐式调用</strong><code>toString()</code></p>
+<h3 id="prompttips-default">🍒prompt(tips, default)</h3>
+<p><strong>接收两个文本,其他类型隐式调用</strong><code>toString()</code></p>
 <p><strong>第一个为提示,第二个为默认输入(默认为空)(同步执行)</strong></p>
 <p><strong>有输入时返回输入字符串,否则返回</strong><code>null</code></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">prompt(<span class="hljs-string">&#x27;What is your name?&#x27;</span>, <span class="hljs-string">&#x27;Jonathan&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
-
 <p><a class="btn" onclick="prompt('What is your name?', 'Jonathan')">prompt</a></p>
-<h3 id="🍒print"><a href="#🍒print" class="headerlink" title="🍒print()"></a>🍒print()</h3><p><strong>开启打印(异步执行)</strong></p>
+<h3 id="print">🍒print()</h3>
+<p><strong>开启打印(异步执行)</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">print()<br></code></pre></div></td></tr></table></figure>
-
 <p><a class="btn" onclick="print()">print</a></p>
-<h1 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h1><p><strong>获取</strong><code>location</code><strong>对象</strong></p>
+<h1 id="location对象">location对象</h1>
+<p><strong>获取</strong><code>location</code><strong>对象</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-built_in">window</span>.location<br><span class="hljs-built_in">document</span>.location  <span class="hljs-comment">// 等价于</span><br>location           <span class="hljs-comment">// 等价于</span><br></code></pre></div></td></tr></table></figure>
-
-<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><table>
+<h2 id="属性">属性</h2>
+<table>
 <thead>
-<tr>
-<th align="center">属性名</th>
-<th align="center">属性值</th>
+<tr class="header">
+<th style="text-align: center;">属性名</th>
+<th style="text-align: center;">属性值</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center"><code>hash</code></td>
-<td align="center"><strong>URL散列表</strong></td>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>hash</code></td>
+<td style="text-align: center;"><strong>URL散列表</strong></td>
 </tr>
-<tr>
-<td align="center"><code>hostname</code></td>
-<td align="center"><strong>服务器名</strong></td>
+<tr class="even">
+<td style="text-align: center;"><code>hostname</code></td>
+<td style="text-align: center;"><strong>服务器名</strong></td>
 </tr>
-<tr>
-<td align="center"><code>port</code></td>
-<td align="center"><strong>端口号</strong></td>
+<tr class="odd">
+<td style="text-align: center;"><code>port</code></td>
+<td style="text-align: center;"><strong>端口号</strong></td>
 </tr>
-<tr>
-<td align="center"><code>host</code></td>
-<td align="center"><strong>服务器名及端口号</strong></td>
+<tr class="even">
+<td style="text-align: center;"><code>host</code></td>
+<td style="text-align: center;"><strong>服务器名及端口号</strong></td>
 </tr>
-<tr>
-<td align="center"><code>href</code></td>
-<td align="center"><strong>完整的URL</strong></td>
+<tr class="odd">
+<td style="text-align: center;"><code>href</code></td>
+<td style="text-align: center;"><strong>完整的URL</strong></td>
 </tr>
-<tr>
-<td align="center"><code>protocol</code></td>
-<td align="center"><strong>使用协议</strong></td>
+<tr class="even">
+<td style="text-align: center;"><code>protocol</code></td>
+<td style="text-align: center;"><strong>使用协议</strong></td>
 </tr>
-<tr>
-<td align="center"><code>search</code></td>
-<td align="center"><strong>问号开头的查询字符串</strong></td>
+<tr class="odd">
+<td style="text-align: center;"><code>search</code></td>
+<td style="text-align: center;"><strong>问号开头的查询字符串</strong></td>
 </tr>
-<tr>
-<td align="center"><code>username</code></td>
-<td align="center"><strong>用户名</strong></td>
+<tr class="even">
+<td style="text-align: center;"><code>username</code></td>
+<td style="text-align: center;"><strong>用户名</strong></td>
 </tr>
-<tr>
-<td align="center"><code>password</code></td>
-<td align="center"><strong>密码</strong></td>
+<tr class="odd">
+<td style="text-align: center;"><code>password</code></td>
+<td style="text-align: center;"><strong>密码</strong></td>
 </tr>
-<tr>
-<td align="center"><code>origin</code></td>
-<td align="center"><strong>URL源地址(只读)</strong></td>
+<tr class="even">
+<td style="text-align: center;"><code>origin</code></td>
+<td style="text-align: center;"><strong>URL源地址(只读)</strong></td>
 </tr>
-</tbody></table>
-<h2 id="查询字符串"><a href="#查询字符串" class="headerlink" title="查询字符串"></a>查询字符串</h2><p><strong>可使用</strong><code>URLSearchParams</code><strong>来解析</strong><code>location.search</code><strong>(自动跳过</strong><code>?</code><strong>)</strong></p>
+</tbody>
+</table>
+<h2 id="查询字符串">查询字符串</h2>
+<p><strong>可使用</strong><code>URLSearchParams</code><strong>来解析</strong><code>location.search</code><strong>(自动跳过</strong><code>?</code><strong>)</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> searchParams = <span class="hljs-keyword">new</span> URLSearchParams(location.search)<br></code></pre></div></td></tr></table></figure>
-
 <p><code>has(key)</code><strong>方法检查是否有</strong><code>key</code><strong>参数</strong></p>
 <p><code>get(key)</code><strong>方法返回</strong><code>key</code><strong>参数的值,没有则返回</strong><code>null</code></p>
 <p><code>set(key, value)</code><strong>新增参数</strong></p>
 <p><code>delete(key)</code><strong>删除参数</strong></p>
 <p><strong>实例支持迭代</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">const</span> x <span class="hljs-keyword">of</span> searchParams)<br>  <span class="hljs-comment">// x 为数组 x[0] = key, x[1] = value</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h2 id="操作URL"><a href="#操作URL" class="headerlink" title="操作URL"></a>操作URL</h2><h3 id="🌶整体修改"><a href="#🌶整体修改" class="headerlink" title="🌶整体修改"></a>🌶整体修改</h3><p><strong>后两种写法隐式调用了</strong><code>assign</code><strong>方法</strong></p>
+<h2 id="操作url">操作URL</h2>
+<h3 id="整体修改">🌶整体修改</h3>
+<p><strong>后两种写法隐式调用了</strong><code>assign</code><strong>方法</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">location.assign(<span class="hljs-string">&#x27;https://www.baidu.com&#x27;</span>)<br>location.href = <span class="hljs-string">&#x27;https://www.baidu.com&#x27;</span>     <span class="hljs-comment">// 等价于</span><br>location = <span class="hljs-string">&#x27;https://www.baidu.com&#x27;</span>          <span class="hljs-comment">// 等价于</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🌶局部修改"><a href="#🌶局部修改" class="headerlink" title="🌶局部修改"></a>🌶局部修改</h3><p><strong>可以通过修改</strong><code>location</code><strong>的属性来导航</strong></p>
-<h1 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h1><p><strong>该对象存放了客户端软硬件信息与一些方法,可用来确认浏览器类型</strong></p>
-<h2 id="插件检测"><a href="#插件检测" class="headerlink" title="插件检测"></a>插件检测</h2><p><code>plugins</code><strong>数组存放了浏览器插件</strong></p>
+<h3 id="局部修改">🌶局部修改</h3>
+<p><strong>可以通过修改</strong><code>location</code><strong>的属性来导航</strong></p>
+<h1 id="navigator对象">navigator对象</h1>
+<p><strong>该对象存放了客户端软硬件信息与一些方法,可用来确认浏览器类型</strong></p>
+<h2 id="插件检测">插件检测</h2>
+<p><code>plugins</code><strong>数组存放了浏览器插件</strong></p>
 <p><strong>数组元素有以下属性描述插件</strong></p>
 <ul>
 <li><code>name</code><strong>插件名</strong></li>
@@ -421,36 +425,40 @@
 <li><code>filename</code><strong>插件文件名</strong></li>
 <li><code>length</code><strong>插件处理的MIME(媒体类型)数</strong></li>
 </ul>
-<h1 id="screen对象"><a href="#screen对象" class="headerlink" title="screen对象"></a>screen对象</h1><p><strong>存储了客户端显示器信息</strong></p>
-<h2 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h2><table>
+<h1 id="screen对象">screen对象</h1>
+<p><strong>存储了客户端显示器信息</strong></p>
+<h2 id="属性-1">属性</h2>
+<table>
 <thead>
-<tr>
-<th align="center">属性</th>
-<th align="center">属性值</th>
+<tr class="header">
+<th style="text-align: center;">属性</th>
+<th style="text-align: center;">属性值</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center"><code>availHeight</code></td>
-<td align="center"></td>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>availHeight</code></td>
+<td style="text-align: center;"></td>
 </tr>
-<tr>
-<td align="center"></td>
-<td align="center"></td>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
-<tr>
-<td align="center"></td>
-<td align="center"></td>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
-</tbody></table>
-<h1 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h1><h2 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h2><p><code>go(n)</code><strong>方法用于导航前进或后退</strong></p>
+</tbody>
+</table>
+<h1 id="history对象">history对象</h1>
+<h2 id="导航">导航</h2>
+<p><code>go(n)</code><strong>方法用于导航前进或后退</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">history.go(<span class="hljs-number">2</span>)     <span class="hljs-comment">// 前进两步</span><br>history.go(-<span class="hljs-number">2</span>)    <span class="hljs-comment">// 后退两步</span><br></code></pre></div></td></tr></table></figure>
-
 <p><code>length</code><strong>属性存储本窗口页面记录总数,</strong><code>URL</code><strong>或</strong><code>location.hash</code><strong>改变会增加记录数</strong></p>
-<h3 id="🍠语法糖"><a href="#🍠语法糖" class="headerlink" title="🍠语法糖"></a>🍠语法糖</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">history.forward() <span class="hljs-comment">// 前进一步</span><br>history.back()    <span class="hljs-comment">// 后退一步</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="语法糖">🍠语法糖</h3>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">history.forward() <span class="hljs-comment">// 前进一步</span><br>history.back()    <span class="hljs-comment">// 后退一步</span><br></code></pre></div></td></tr></table></figure>
+<h2 id="历史状态管理">历史状态管理</h2>
 
-
-
-<h2 id="历史状态管理"><a href="#历史状态管理" class="headerlink" title="历史状态管理"></a>历史状态管理</h2>
             </div>
             <hr>
             <div>

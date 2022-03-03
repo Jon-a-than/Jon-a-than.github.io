@@ -16,12 +16,12 @@
   <meta name="author" content="Jon-a-than">
   <meta name="keywords" content="">
   
-    <meta name="description" content="🌿导出可以用export对外暴露变量,方法,类 定义后导出需用对象,expor default除外 12345export let x &#x3D; 0export const y &#x3D; (a, b) &#x3D;&gt; a + b&#x2F;&#x2F; 或一次性export &amp;#123; x, y &amp;#125;     🌿重命名导出时用as重命名导出内容 1234export &amp;#123;  a as method1,  b a">
+    <meta name="description" content="🌿导出 可以用export对外暴露变量,方法,类 定义后导出需用对象,expor default除外 12345export let x &#x3D; 0export const y &#x3D; (a, b) &#x3D;&gt; a + b&#x2F;&#x2F; 或一次性export &amp;#123; x, y &amp;#125;  🌿重命名 导出时用as重命名导出内容 1234export &amp;#123;  a as method1,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="✔ES6Module">
 <meta property="og:url" content="http://example.com/2022/01/27/JavaScriptES6/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
-<meta property="og:description" content="🌿导出可以用export对外暴露变量,方法,类 定义后导出需用对象,expor default除外 12345export let x &#x3D; 0export const y &#x3D; (a, b) &#x3D;&gt; a + b&#x2F;&#x2F; 或一次性export &amp;#123; x, y &amp;#125;     🌿重命名导出时用as重命名导出内容 1234export &amp;#123;  a as method1,  b a">
+<meta property="og:description" content="🌿导出 可以用export对外暴露变量,方法,类 定义后导出需用对象,expor default除外 12345export let x &#x3D; 0export const y &#x3D; (a, b) &#x3D;&gt; a + b&#x2F;&#x2F; 或一次性export &amp;#123; x, y &amp;#125;  🌿重命名 导出时用as重命名导出内容 1234export &amp;#123;  a as method1,">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s4.ax1x.com/2022/02/17/HIXacQ.jpg">
 <meta property="article:published_time" content="2022-01-27T02:58:27.000Z">
@@ -87,7 +87,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>清山的博客</strong>
+      <strong>东风解冻，丽日舒和</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -205,7 +205,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      952 字
+      944 字
     </span>
   
 
@@ -254,57 +254,42 @@
             <h1 style="display: none">✔ES6Module</h1>
             
             <div class="markdown-body">
-              <h3 id="🌿导出"><a href="#🌿导出" class="headerlink" title="🌿导出"></a>🌿导出</h3><p><strong>可以用</strong><code>export</code><strong>对外暴露</strong><code>变量</code>,<code>方法</code>,<code>类</code></p>
+              <h3 id="导出">🌿导出</h3>
+<p><strong>可以用</strong><code>export</code><strong>对外暴露</strong><code>变量</code>,<code>方法</code>,<code>类</code></p>
 <p><strong>定义后导出需用对象,</strong><code>expor default</code><strong>除外</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> x = <span class="hljs-number">0</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> y = <span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a + b<br><br><span class="hljs-comment">// 或一次性</span><br><span class="hljs-keyword">export</span> &#123; x, y &#125; <br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🌿重命名"><a href="#🌿重命名" class="headerlink" title="🌿重命名"></a>🌿重命名</h3><p><strong>导出时用</strong><code>as</code><strong>重命名导出内容</strong></p>
+<h3 id="重命名">🌿重命名</h3>
+<p><strong>导出时用</strong><code>as</code><strong>重命名导出内容</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">export</span> &#123;<br>  a <span class="hljs-keyword">as</span> method1,<br>  b <span class="hljs-keyword">as</span> method2<br>&#125;<br></code></pre></div></td></tr></table></figure>
-
-
-
-<h2 id="import静态加载"><a href="#import静态加载" class="headerlink" title="import静态加载"></a>import静态加载</h2><h3 id="🥕加载"><a href="#🥕加载" class="headerlink" title="🥕加载"></a>🥕加载</h3><p><code>import</code><strong>从路径导入</strong><code>export</code><strong>的js模块,名称需一致</strong></p>
+<h2 id="import静态加载">import静态加载</h2>
+<h3 id="加载">🥕加载</h3>
+<p><code>import</code><strong>从路径导入</strong><code>export</code><strong>的js模块,名称需一致</strong></p>
 <p><strong>导入需用对象,</strong><code>expor default</code><strong>除外</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; a, b &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;url&#x27;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🥕加载重命名"><a href="#🥕加载重命名" class="headerlink" title="🥕加载重命名"></a>🥕加载重命名</h3><p><strong>用</strong><code>as</code><strong>关键字重命名</strong></p>
+<h3 id="加载重命名">🥕加载重命名</h3>
+<p><strong>用</strong><code>as</code><strong>关键字重命名</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; a <span class="hljs-keyword">as</span> method1, b <span class="hljs-keyword">as</span> method2 &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;url&#x27;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🥕全部加载"><a href="#🥕全部加载" class="headerlink" title="🥕全部加载"></a>🥕全部加载</h3><p><strong>用</strong><code>*</code><strong>可以将暴露的内容全部导入</strong></p>
+<h3 id="全部加载">🥕全部加载</h3>
+<p><strong>用</strong><code>*</code><strong>可以将暴露的内容全部导入</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> methods <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;url&#x27;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h2 id="export-default匿名"><a href="#export-default匿名" class="headerlink" title="export default匿名"></a>export default匿名</h2><p><strong>一个只因用一次</strong></p>
+<h2 id="export-default匿名">export default匿名</h2>
+<p><strong>一个只因用一次</strong></p>
 <p><code>export default</code><strong>可以导出匿名参量,且无需花括号,导出内容不可是</strong><code>变量声明语句</code></p>
 <p><code>import</code><strong>时可自定义命名,且无需花括号</strong></p>
 <p><strong>即导出一个</strong><code>default</code><strong>变量</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x, y</span>) </span>&#123; <span class="hljs-comment">// function add(x, y )&#123;也一样</span><br>    <span class="hljs-keyword">return</span> x + y<br>&#125;<br></code></pre></div></td></tr></table></figure>
-
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">import</span> add <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;url&#x27;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h2 id="转发"><a href="#转发" class="headerlink" title="转发"></a>转发</h2><p><code>export ... from &#39;url&#39;</code><strong>在此文件未加载相应的模块</strong></p>
+<h2 id="转发">转发</h2>
+<p><code>export ... from 'url'</code><strong>在此文件未加载相应的模块</strong></p>
 <p><strong>可以用于更改接口名称与批量</strong><code>export</code></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">export</span> &#123; a, b <span class="hljs-keyword">as</span> method1 &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;url&#x27;</span><br><span class="hljs-keyword">export</span> * <span class="hljs-keyword">as</span> methods <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;url&#x27;</span>          <span class="hljs-comment">// export * 忽略default</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h2 id="import-动态加载"><a href="#import-动态加载" class="headerlink" title="import()动态加载"></a>import()动态加载</h2><p><code>import()</code><strong>在执行时加载并返回一个</strong><code>promise</code><strong>对象</strong></p>
-<h3 id="🍈条件加载"><a href="#🍈条件加载" class="headerlink" title="🍈条件加载"></a>🍈条件加载</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">if</span>(dark)<br>    <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;url1&#x27;</span>)<br><span class="hljs-keyword">else</span><br>    <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;url2&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🍈动态路径"><a href="#🍈动态路径" class="headerlink" title="🍈动态路径"></a>🍈动态路径</h3><p><strong>可以用变量来指定加载路径</strong></p>
+<h2 id="import动态加载">import()动态加载</h2>
+<p><code>import()</code><strong>在执行时加载并返回一个</strong><code>promise</code><strong>对象</strong></p>
+<h3 id="条件加载">🍈条件加载</h3>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">if</span>(dark)<br>    <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;url1&#x27;</span>)<br><span class="hljs-keyword">else</span><br>    <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;url2&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
+<h3 id="动态路径">🍈动态路径</h3>
+<p><strong>可以用变量来指定加载路径</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">let</span> url = <span class="hljs-string">&#x27;url&#x27;</span><br><span class="hljs-keyword">import</span>(url)<br>    .then()<br></code></pre></div></td></tr></table></figure>
-
 
             </div>
             <hr>

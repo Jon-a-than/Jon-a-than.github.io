@@ -16,12 +16,12 @@
   <meta name="author" content="Jon-a-than">
   <meta name="keywords" content="">
   
-    <meta name="description" content="指令🥝指令基础指令以v-为前缀的属性 指令可以接受一个单句表达式(除了v-for,v-on) v-???:参数&#x3D;&quot;&quot; 1&lt;tag v-on:click&#x3D;&quot;clickFunction&quot;&gt;&lt;&#x2F;tag&gt;    v-???:[动态参数]&#x3D;&quot;&quot; 1&lt;tag v-on:[eventType]&#x3D;&quot;eventFu">
+    <meta name="description" content="指令 🥝指令基础 指令以v-为前缀的属性 指令可以接受一个单句表达式(除了v-for,v-on) v-???:参数&#x3D;&quot;&quot; 1&lt;tag v-on:click&#x3D;&quot;clickFunction&quot;&gt;&lt;&#x2F;tag&gt; v-???:[动态参数]&#x3D;&quot;&quot; 1&lt;tag v-on:[eventType]&#x3D;&quot;eventFunction&quot;&amp;g">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue基础">
 <meta property="og:url" content="http://example.com/2022/01/17/vue%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
-<meta property="og:description" content="指令🥝指令基础指令以v-为前缀的属性 指令可以接受一个单句表达式(除了v-for,v-on) v-???:参数&#x3D;&quot;&quot; 1&lt;tag v-on:click&#x3D;&quot;clickFunction&quot;&gt;&lt;&#x2F;tag&gt;    v-???:[动态参数]&#x3D;&quot;&quot; 1&lt;tag v-on:[eventType]&#x3D;&quot;eventFu">
+<meta property="og:description" content="指令 🥝指令基础 指令以v-为前缀的属性 指令可以接受一个单句表达式(除了v-for,v-on) v-???:参数&#x3D;&quot;&quot; 1&lt;tag v-on:click&#x3D;&quot;clickFunction&quot;&gt;&lt;&#x2F;tag&gt; v-???:[动态参数]&#x3D;&quot;&quot; 1&lt;tag v-on:[eventType]&#x3D;&quot;eventFunction&quot;&amp;g">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s4.ax1x.com/2022/02/18/HoJ3N9.jpg">
 <meta property="article:published_time" content="2022-01-17T02:39:48.000Z">
@@ -85,7 +85,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>清山的博客</strong>
+      <strong>东风解冻，丽日舒和</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -212,7 +212,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      35 分钟
+      34 分钟
     </span>
   
 
@@ -252,161 +252,80 @@
             <h1 style="display: none">Vue基础</h1>
             
             <div class="markdown-body">
-              <h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><h3 id="🥝指令基础"><a href="#🥝指令基础" class="headerlink" title="🥝指令基础"></a>🥝指令基础</h3><p><strong>指令以</strong><code>v-</code><strong>为前缀的属性</strong></p>
+              <h2 id="指令">指令</h2>
+<h3 id="指令基础">🥝指令基础</h3>
+<p><strong>指令以</strong><code>v-</code><strong>为前缀的属性</strong></p>
 <p><strong>指令可以接受一个单句表达式(除了v-for,v-on)</strong></p>
-<p><code>v-???:参数=&quot;&quot;</code></p>
+<p><code>v-???:参数=""</code></p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">tag</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">&quot;clickFunction&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tag</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<p><code>v-???:[动态参数]=&quot;&quot;</code></p>
+<p><code>v-???:[动态参数]=""</code></p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">tag</span> <span class="hljs-attr">v-on:</span>[<span class="hljs-attr">eventType</span>]=<span class="hljs-string">&quot;eventFunction&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tag</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🥝指令语法糖"><a href="#🥝指令语法糖" class="headerlink" title="🥝指令语法糖"></a>🥝指令语法糖</h3><p><code>v-bind:</code><strong>等价于</strong><code>:</code></p>
+<h3 id="指令语法糖">🥝指令语法糖</h3>
+<p><code>v-bind:</code><strong>等价于</strong><code>:</code></p>
 <p><code>v-on:</code><strong>等价于</strong><code>@</code></p>
-<h3 id="🥝指令修饰符"><a href="#🥝指令修饰符" class="headerlink" title="🥝指令修饰符"></a>🥝指令修饰符</h3><h2 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h2><p><strong>双花括号内输入插值变量(单个js表达式)</strong></p>
+<h3 id="指令修饰符">🥝指令修饰符</h3>
+<h2 id="插值">插值</h2>
+<p><strong>双花括号内输入插值变量(单个js表达式)</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">tag</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">tag</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tag</span>&gt;</span>&#123;&#123; (conditions) ? msgT : msgF &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">tag</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
 <p><strong>使用</strong><code>v-once</code><strong>指令数据只响应一次</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">tag</span> <span class="hljs-attr">v-once</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">tag</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
 <p><strong>使用</strong><code>v-html</code><strong>指令插入html代码</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">tag</span> <span class="hljs-attr">v-html</span>=<span class="hljs-string">&quot;htmlCode&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tag</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
 <p><strong>使用</strong><code>v-bind</code><strong>指令绑定标签属性值</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">tag</span> <span class="hljs-attr">v-bind:</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;titleMsg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tag</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h2 id="data选项"><a href="#data选项" class="headerlink" title="data选项"></a>data选项</h2><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> app = &#123;<br>    <span class="hljs-function"><span class="hljs-title">data</span>(<span class="hljs-params"></span>)</span> &#123;<br>        <span class="hljs-comment">// 业务处理</span><br>        <span class="hljs-keyword">return</span> &#123;  &#125; <span class="hljs-comment">// 返回需求内容对象</span><br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-
-
-
-<h2 id="methods选项"><a href="#methods选项" class="headerlink" title="methods选项"></a>methods选项</h2><p><code>this</code><strong>指向组件实例</strong></p>
+<h2 id="data选项">data选项</h2>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> app = &#123;<br>    <span class="hljs-function"><span class="hljs-title">data</span>(<span class="hljs-params"></span>)</span> &#123;<br>        <span class="hljs-comment">// 业务处理</span><br>        <span class="hljs-keyword">return</span> &#123;  &#125; <span class="hljs-comment">// 返回需求内容对象</span><br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="methods选项">methods选项</h2>
+<p><code>this</code><strong>指向组件实例</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> app = &#123;<br>    <span class="hljs-attr">methods</span>: &#123;<br>        <span class="hljs-function"><span class="hljs-title">methodOne</span>(<span class="hljs-params"></span>)</span>&#123;<br>            <span class="hljs-comment">// 业务处理</span><br>        &#125;,<br>        <span class="hljs-function"><span class="hljs-title">methodTwo</span>(<span class="hljs-params"></span>)</span>&#123;<br>            <span class="hljs-comment">// 业务处理</span><br>        &#125;,<br>        <span class="hljs-comment">// ......</span><br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-
-
-
-<h2 id="computed选项"><a href="#computed选项" class="headerlink" title="computed选项"></a>computed选项</h2><p><strong>当数据没有变化时返回缓存</strong></p>
-<h2 id="watch选项"><a href="#watch选项" class="headerlink" title="watch选项"></a>watch选项</h2><p><strong>被侦听数据改变时执行</strong></p>
+<h2 id="computed选项">computed选项</h2>
+<p><strong>当数据没有变化时返回缓存</strong></p>
+<h2 id="watch选项">watch选项</h2>
+<p><strong>被侦听数据改变时执行</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> app = &#123;<br>    <span class="hljs-function"><span class="hljs-title">data</span>(<span class="hljs-params"></span>)</span> &#123;<br>        <span class="hljs-keyword">let</span> msg = <span class="hljs-string">&#x27;Jonathan&#x27;</span><br>        <span class="hljs-keyword">return</span> &#123; Jonathan &#125;<br>    &#125;,<br>    <span class="hljs-attr">watch</span>: &#123;<br>        <span class="hljs-function"><span class="hljs-title">msg</span>(<span class="hljs-params">oldMsg, newMsg</span>)</span>&#123;<br>            <span class="hljs-comment">// 业务代码</span><br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-
-
-
-<h2 id="绑定class"><a href="#绑定class" class="headerlink" title="绑定class"></a>绑定class</h2><p><strong>用</strong><code>v-bind:class=&quot;&quot;</code><strong>指令来绑定动态</strong><code>class</code><strong>属性</strong></p>
-<h3 id="🥬对象绑定"><a href="#🥬对象绑定" class="headerlink" title="🥬对象绑定"></a>🥬对象绑定</h3><figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">tag</span> <span class="hljs-attr">:class</span>=<span class="hljs-string">&quot;&#123; className1 : isTrue1 &#125;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tag</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
-
+<h2 id="绑定class">绑定class</h2>
+<p><strong>用</strong><code>v-bind:class=""</code><strong>指令来绑定动态</strong><code>class</code><strong>属性</strong></p>
+<h3 id="对象绑定">🥬对象绑定</h3>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">tag</span> <span class="hljs-attr">:class</span>=<span class="hljs-string">&quot;&#123; className1 : isTrue1 &#125;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tag</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> app = &#123;<br>    <span class="hljs-keyword">let</span> isTrue1 = <span class="hljs-comment">// 是否应用className1</span><br>    <span class="hljs-keyword">return</span> &#123; isTrue1 &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-
-
-
 <p><strong>可绑定多个类</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">tag</span> <span class="hljs-attr">:class</span>=<span class="hljs-string">&quot;&#123; className1 : isTrue1, className2 : isTrue2, ... &#125;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tag</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🥬数组绑定"><a href="#🥬数组绑定" class="headerlink" title="🥬数组绑定"></a>🥬数组绑定</h3><figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html">```<br><br><br><br>## 绑定内联style<br><br>**vue可自动匹配css前缀**<br><br><br><br><br><br>## 条件渲染<br><br>### 🍉`v-if`系列指令<br><br>**可用**`v-if`,`v-else-if`,`v-else`**指令来指定不同条件下的显示组件**<br><br>`v-if`**初始化不会全部渲染,故初始化开销较小,但频繁切换开销大不适合频繁切换的组件**<br><br><br><br>```html<br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot; ch &gt;= &#x27;a&#x27; &amp;&amp; ch &lt;= &#x27;z&#x27; &quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>ch是小写字符<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-else-if</span>=<span class="hljs-string">&quot; ch &gt;= &#x27;A&#x27; &amp;&amp; ch &lt;= &#x27;Z&#x27; &quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>ch是大写字符<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-else-if</span>=<span class="hljs-string">&quot; ch &gt;= &#x27;0&#x27; &amp;&amp; ch &lt;= &#x27;9&#x27; &quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>ch是阿拉伯数字<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-comment">&lt;!-- ...可多个v-else-if --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-else</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>ch既不是字母也不是阿拉伯数字<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🍉v-show指令"><a href="#🍉v-show指令" class="headerlink" title="🍉v-show指令"></a>🍉<code>v-show</code>指令</h3><p><code>v-show</code><strong>会全部渲染后再改变css来条件显示组件</strong></p>
+<h3 id="数组绑定">🥬数组绑定</h3>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html">```<br><br><br><br>## 绑定内联style<br><br>**vue可自动匹配css前缀**<br><br><br><br><br><br>## 条件渲染<br><br>### 🍉`v-if`系列指令<br><br>**可用**`v-if`,`v-else-if`,`v-else`**指令来指定不同条件下的显示组件**<br><br>`v-if`**初始化不会全部渲染,故初始化开销较小,但频繁切换开销大不适合频繁切换的组件**<br><br><br><br>```html<br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot; ch &gt;= &#x27;a&#x27; &amp;&amp; ch &lt;= &#x27;z&#x27; &quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>ch是小写字符<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-else-if</span>=<span class="hljs-string">&quot; ch &gt;= &#x27;A&#x27; &amp;&amp; ch &lt;= &#x27;Z&#x27; &quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>ch是大写字符<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-else-if</span>=<span class="hljs-string">&quot; ch &gt;= &#x27;0&#x27; &amp;&amp; ch &lt;= &#x27;9&#x27; &quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>ch是阿拉伯数字<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-comment">&lt;!-- ...可多个v-else-if --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-else</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>ch既不是字母也不是阿拉伯数字<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="v-show指令">🍉<code>v-show</code>指令</h3>
+<p><code>v-show</code><strong>会全部渲染后再改变css来条件显示组件</strong></p>
 <p><code>v-show</code><strong>初始化开销大,适合应用于需频繁切换的组件</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-show</span>=<span class="hljs-string">&quot; ch &gt;= &#x27;a&#x27; &amp;&amp; ch &lt;= &#x27;z&#x27; &quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>ch是小写字符<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-show</span>=<span class="hljs-string">&quot; ch &gt;= &#x27;A&#x27; &amp;&amp; ch &lt;= &#x27;Z&#x27; &quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>ch是大写字符<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-show</span>=<span class="hljs-string">&quot; ch &gt;= &#x27;0&#x27; &amp;&amp; ch &lt;= &#x27;9&#x27; &quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>ch是阿拉伯数字<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h2 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h2><p><code>v-for=&quot;item in/of items&quot;</code><strong>指令</strong></p>
-<h3 id="🥦遍历正整数"><a href="#🥦遍历正整数" class="headerlink" title="🥦遍历正整数"></a>🥦遍历正整数</h3><p><strong>从1开始遍历</strong></p>
+<h2 id="列表渲染">列表渲染</h2>
+<p><code>v-for="item in/of items"</code><strong>指令</strong></p>
+<h3 id="遍历正整数">🥦遍历正整数</h3>
+<p><strong>从1开始遍历</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">tag</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;i of n&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tag</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🥦遍历数组"><a href="#🥦遍历数组" class="headerlink" title="🥦遍历数组"></a>🥦遍历数组</h3><p><strong>可选两个参数</strong><code>(value[值], index[索引])</code></p>
+<h3 id="遍历数组">🥦遍历数组</h3>
+<p><strong>可选两个参数</strong><code>(value[值], index[索引])</code></p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">tag</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(value, index) of [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;]&quot;</span>&gt;</span>第&#123;&#123; index &#125;&#125;个元素是&#123;&#123; value &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">tag</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🥦遍历对象"><a href="#🥦遍历对象" class="headerlink" title="🥦遍历对象"></a>🥦遍历对象</h3><p><strong>可选三个参数</strong><code>(value[值], key[键名], index[索引])</code></p>
+<h3 id="遍历对象">🥦遍历对象</h3>
+<p><strong>可选三个参数</strong><code>(value[值], key[键名], index[索引])</code></p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">tag</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(vlaue, key, index) in obj&quot;</span>&gt;</span>&#123;&#123; index &#125;&#125;-&#123;&#123; key &#125;&#125;:&#123;&#123; value &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">tag</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h2 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h2><p><code>v-on:event=&quot;method&quot;</code><strong>指令绑定事件</strong></p>
+<h2 id="事件监听">事件监听</h2>
+<p><code>v-on:event="method"</code><strong>指令绑定事件</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">tag</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">&quot;count++&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">tag</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
 <p><strong>缩写</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">tag</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;count++&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">tag</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
 <p><strong>绑定多个事件</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">tag</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;count++, count *= 2&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">tag</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🍠事件修饰符"><a href="#🍠事件修饰符" class="headerlink" title="🍠事件修饰符"></a>🍠事件修饰符</h3><figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 阻止单击事件继续冒泡 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> @<span class="hljs-attr">click.stop</span>=<span class="hljs-string">&quot;doThis&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 提交事件不再重载页面 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">form</span> @<span class="hljs-attr">submit.prevent</span>=<span class="hljs-string">&quot;onSubmit&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 修饰符可以串联 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> @<span class="hljs-attr">click.stop.prevent</span>=<span class="hljs-string">&quot;doThat&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 只有修饰符 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">form</span> @<span class="hljs-attr">submit.prevent</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 添加事件监听器时使用事件捕获模式 --&gt;</span><br><span class="hljs-comment">&lt;!-- 即内部元素触发的事件先在此处理，然后才交由内部元素进行处理 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> @<span class="hljs-attr">click.capture</span>=<span class="hljs-string">&quot;doThis&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 只当在 event.target 是当前元素自身时触发处理函数 --&gt;</span><br><span class="hljs-comment">&lt;!-- 即事件不是从内部元素触发的 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> @<span class="hljs-attr">click.self</span>=<span class="hljs-string">&quot;doThat&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🍠按键修饰符"><a href="#🍠按键修饰符" class="headerlink" title="🍠按键修饰符"></a>🍠按键修饰符</h3><h3 id="🍠事件名"><a href="#🍠事件名" class="headerlink" title="🍠事件名"></a>🍠事件名</h3><h2 id="表单绑定"><a href="#表单绑定" class="headerlink" title="表单绑定"></a>表单绑定</h2><p><code>v-model</code><strong>指令实现双向绑定</strong></p>
+<h3 id="事件修饰符">🍠事件修饰符</h3>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 阻止单击事件继续冒泡 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> @<span class="hljs-attr">click.stop</span>=<span class="hljs-string">&quot;doThis&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 提交事件不再重载页面 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">form</span> @<span class="hljs-attr">submit.prevent</span>=<span class="hljs-string">&quot;onSubmit&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 修饰符可以串联 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> @<span class="hljs-attr">click.stop.prevent</span>=<span class="hljs-string">&quot;doThat&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 只有修饰符 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">form</span> @<span class="hljs-attr">submit.prevent</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 添加事件监听器时使用事件捕获模式 --&gt;</span><br><span class="hljs-comment">&lt;!-- 即内部元素触发的事件先在此处理，然后才交由内部元素进行处理 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> @<span class="hljs-attr">click.capture</span>=<span class="hljs-string">&quot;doThis&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 只当在 event.target 是当前元素自身时触发处理函数 --&gt;</span><br><span class="hljs-comment">&lt;!-- 即事件不是从内部元素触发的 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> @<span class="hljs-attr">click.self</span>=<span class="hljs-string">&quot;doThat&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="按键修饰符">🍠按键修饰符</h3>
+<h3 id="事件名">🍠事件名</h3>
+<h2 id="表单绑定">表单绑定</h2>
+<p><code>v-model</code><strong>指令实现双向绑定</strong></p>
 <p><strong>中文等拼写时不会绑定</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;msg&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>    Your input is &#123;&#123; msg &#125;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🥑复选元素"><a href="#🥑复选元素" class="headerlink" title="🥑复选元素"></a>🥑复选元素</h3><p><strong>对于复选元素</strong><code>v-model</code><strong>返回一个数组</strong></p>
-<h3 id="🥑修饰符"><a href="#🥑修饰符" class="headerlink" title="🥑修饰符"></a>🥑修饰符</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">v-model.lazy                 <span class="hljs-comment">// 确认时再渲染</span><br>v-model.number               <span class="hljs-comment">// 用parseFloat()转数字,失败则返回原始值</span><br>v-model.trim                 <span class="hljs-comment">// 去除格式符</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<h3 id="复选元素">🥑复选元素</h3>
+<p><strong>对于复选元素</strong><code>v-model</code><strong>返回一个数组</strong></p>
+<h3 id="修饰符">🥑修饰符</h3>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">v-model.lazy                 <span class="hljs-comment">// 确认时再渲染</span><br>v-model.number               <span class="hljs-comment">// 用parseFloat()转数字,失败则返回原始值</span><br>v-model.trim                 <span class="hljs-comment">// 去除格式符</span><br></code></pre></div></td></tr></table></figure>
 
             </div>
             <hr>

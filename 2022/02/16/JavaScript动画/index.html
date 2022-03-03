@@ -16,12 +16,12 @@
   <meta name="author" content="Jon-a-than">
   <meta name="keywords" content="">
   
-    <meta name="description" content="动画间隔requestAnimationFrame接收一个函数地址,多次触发时会有节流效果,该函数同setInterval可返回一个id 1234567891011const example &#x3D; document.querySelector(&amp;#x27;.example&amp;#x27;)requestAnimationFrame(move)function move() &amp;#123;  const m">
+    <meta name="description" content="动画间隔 requestAnimationFrame 接收一个函数地址,多次触发时会有节流效果,该函数同setInterval可返回一个id 1234567891011const example &#x3D; document.querySelector(&amp;#x27;.example&amp;#x27;)requestAnimationFrame(move)function move() &amp;#123;  co">
 <meta property="og:type" content="article">
 <meta property="og:title" content="🏗JavaScript动画">
 <meta property="og:url" content="http://example.com/2022/02/16/JavaScript%E5%8A%A8%E7%94%BB/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
-<meta property="og:description" content="动画间隔requestAnimationFrame接收一个函数地址,多次触发时会有节流效果,该函数同setInterval可返回一个id 1234567891011const example &#x3D; document.querySelector(&amp;#x27;.example&amp;#x27;)requestAnimationFrame(move)function move() &amp;#123;  const m">
+<meta property="og:description" content="动画间隔 requestAnimationFrame 接收一个函数地址,多次触发时会有节流效果,该函数同setInterval可返回一个id 1234567891011const example &#x3D; document.querySelector(&amp;#x27;.example&amp;#x27;)requestAnimationFrame(move)function move() &amp;#123;  co">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/02/d42de2fb7927755b.jpg">
 <meta property="article:published_time" content="2022-02-16T13:21:48.000Z">
@@ -86,7 +86,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>清山的博客</strong>
+      <strong>东风解冻，丽日舒和</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -204,7 +204,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      7.3k 字
+      7.4k 字
     </span>
   
 
@@ -253,63 +253,56 @@
             <h1 style="display: none">🏗JavaScript动画</h1>
             
             <div class="markdown-body">
-              <h1 id="动画间隔"><a href="#动画间隔" class="headerlink" title="动画间隔"></a>动画间隔</h1><h2 id="requestAnimationFrame"><a href="#requestAnimationFrame" class="headerlink" title="requestAnimationFrame"></a>requestAnimationFrame</h2><p><strong>接收一个函数地址,多次触发时会有节流效果,该函数同</strong><code>setInterval</code><strong>可返回一个</strong><code>id</code></p>
+              <h1 id="动画间隔">动画间隔</h1>
+<h2 id="requestanimationframe">requestAnimationFrame</h2>
+<p><strong>接收一个函数地址,多次触发时会有节流效果,该函数同</strong><code>setInterval</code><strong>可返回一个</strong><code>id</code></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> example = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&#x27;.example&#x27;</span>)<br><br>requestAnimationFrame(move)<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">move</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-keyword">const</span> margin = <span class="hljs-built_in">parseInt</span>(<span class="hljs-string">&#x27;0&#x27;</span> + example.style.marginLeft)<br>  <span class="hljs-keyword">if</span>(margin &lt; <span class="hljs-number">80</span>)&#123;<br>    example.style.marginLeft = <span class="hljs-string">`<span class="hljs-subst">$&#123;margin+<span class="hljs-number">1</span>&#125;</span>%`</span><br>    requestAnimationFrame(move)<br>  &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-
 <p><a class="btn" onclick="reStart()">查看效果</a></p>
-<p class="example" style="width:40px;height: 20px;background:#787;"></p>
-
+<p class="example" style="width:40px;height: 20px;background:#787;">
+</p>
 <script>
     const example = document.querySelector('.example')
     function move() {
-         const margin = parseInt('0' + example.style.marginLeft)
+        const margin = parseInt('0' + example.style.marginLeft)
     if(margin < 80){
         example.style.marginLeft = `${margin+1}%`
-         requestAnimationFrame(move)
-         }
+        requestAnimationFrame(move)
+        }
    }
     function reStart() {
         example.style.marginLeft = 0
         move()
     }
 </script>
-
-
-
-<h2 id="clearAnimationFrame"><a href="#clearAnimationFrame" class="headerlink" title="clearAnimationFrame"></a>clearAnimationFrame</h2><p><strong>该方法同</strong><code>clearInterval</code><strong>方法,可停止</strong><code>requestAnimationFrame</code><strong>执行</strong></p>
+<h2 id="clearanimationframe">clearAnimationFrame</h2>
+<p><strong>该方法同</strong><code>clearInterval</code><strong>方法,可停止</strong><code>requestAnimationFrame</code><strong>执行</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> animation = requestAnimationFrame(fill)<br>clearAnimationFrame(animation)                 <span class="hljs-comment">// 停止动画</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-
-
-<h1 id="canvas"><a href="#canvas" class="headerlink" title="canvas"></a>canvas</h1><h2 id="canvas标签"><a href="#canvas标签" class="headerlink" title="canvas标签"></a>canvas标签</h2><p><code>canvas</code><strong>标签使用</strong><code>JavaScript</code><strong>来绘制动画与图像</strong></p>
+<h1 id="canvas">canvas</h1>
+<h2 id="canvas标签">canvas标签</h2>
+<p><code>canvas</code><strong>标签使用</strong><code>JavaScript</code><strong>来绘制动画与图像</strong></p>
 <p><strong>首先要获取标签对象</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> board = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;board&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
-
-
-
-<h2 id="getContext"><a href="#getContext" class="headerlink" title="getContext()"></a>getContext()</h2><p><strong>该方法用于获取</strong><code>canvas</code><strong>上下文</strong></p>
+<h2 id="getcontext">getContext()</h2>
+<p><strong>该方法用于获取</strong><code>canvas</code><strong>上下文</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> ctx = board.getContext(<span class="hljs-string">&#x27;2d&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
-
-
-
-<h2 id="设置绘制属性"><a href="#设置绘制属性" class="headerlink" title="设置绘制属性"></a>设置绘制属性</h2><h3 id="🥝fillStyle"><a href="#🥝fillStyle" class="headerlink" title="🥝fillStyle"></a>🥝fillStyle</h3><p><strong>设置填充内容属性</strong></p>
+<h2 id="设置绘制属性">设置绘制属性</h2>
+<h3 id="fillstyle">🥝fillStyle</h3>
+<p><strong>设置填充内容属性</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">ctx.fillStyle = <span class="hljs-string">&#x27;#787;&#x27;</span><br>ctx.fillStyle = <span class="hljs-string">&#x27;rgba(119, 136, 119, 0.5)&#x27;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🥝strokeStyle"><a href="#🥝strokeStyle" class="headerlink" title="🥝strokeStyle"></a>🥝strokeStyle</h3><p><strong>设置边框属性</strong></p>
-<h3 id="🥝lineWidth"><a href="#🥝lineWidth" class="headerlink" title="🥝lineWidth"></a>🥝lineWidth</h3><p><strong>设置画笔粗细</strong></p>
-<h2 id="绘制图像"><a href="#绘制图像" class="headerlink" title="绘制图像"></a>绘制图像</h2><h3 id="🍉矩形"><a href="#🍉矩形" class="headerlink" title="🍉矩形"></a>🍉矩形</h3><h4 id="📌fillRect"><a href="#📌fillRect" class="headerlink" title="📌fillRect"></a>📌fillRect</h4><p><code>fillRect(posX, posY, width, height)</code><strong>方法绘制实心矩阵</strong></p>
+<h3 id="strokestyle">🥝strokeStyle</h3>
+<p><strong>设置边框属性</strong></p>
+<h3 id="linewidth">🥝lineWidth</h3>
+<p><strong>设置画笔粗细</strong></p>
+<h2 id="绘制图像">绘制图像</h2>
+<h3 id="矩形">🍉矩形</h3>
+<h4 id="fillrect">📌fillRect</h4>
+<p><code>fillRect(posX, posY, width, height)</code><strong>方法绘制实心矩阵</strong></p>
 <p><strong>可用</strong><code>fillStyle</code><strong>设置填充样式</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">ctx.fillRect(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>)<br></code></pre></div></td></tr></table></figure>
-
 <p><a class="btn" onclick="drawRect()">绘制</a></p>
 <canvas class="rect" style="width: 100%;height: 100%;">
-    该浏览器不支持canvas
+该浏览器不支持canvas
 </canvas>
-
 <script>
     const rect = document.querySelector('.rect')
     const rectCtx = rect.getContext('2d')
@@ -320,16 +313,13 @@
     rectCtx.fillRect(95, 65, 80, 80)
     }
 </script>
-
-<h4 id="📌strokeRect"><a href="#📌strokeRect" class="headerlink" title="📌strokeRect"></a>📌strokeRect</h4><p><code>strokeRect(posX, posY, width, height)</code><strong>方法绘制空心矩阵</strong></p>
+<h4 id="strokerect">📌strokeRect</h4>
+<p><code>strokeRect(posX, posY, width, height)</code><strong>方法绘制空心矩阵</strong></p>
 <p><strong>可用</strong><code>strokeStyle</code><strong>设置边框样式</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">ctx.strokeRect(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>)<br></code></pre></div></td></tr></table></figure>
-
-
-
 <p><a class="btn" onclick="drawStroke()">绘制</a></p>
 <canvas class="stroke" style="width: 100%;height: 100%;">
-    该浏览器不支持canvas
+该浏览器不支持canvas
 </canvas>
 <script>
     const stroke = document.querySelector('.stroke')
@@ -341,16 +331,12 @@
     strokeCtx.strokeRect(95, 65, 80, 80)
     }
 </script>
-
-
-
-
-<h4 id="📌clearRect"><a href="#📌clearRect" class="headerlink" title="📌clearRect"></a>📌clearRect</h4><p><code>clearRect(posX, posY, width, height)</code><strong>方法擦除矩形内容</strong></p>
+<h4 id="clearrect">📌clearRect</h4>
+<p><code>clearRect(posX, posY, width, height)</code><strong>方法擦除矩形内容</strong></p>
 <p><a class="btn" onclick="clea()">擦除</a></p>
 <canvas class="clear" style="width: 100%;height: 100%;">
-    该浏览器不支持canvas
+该浏览器不支持canvas
 </canvas>
-
 <script>
     const cle = document.querySelector('.clear')
     const clearCtx = cle.getContext('2d')
@@ -360,28 +346,32 @@
         clearCtx.clearRect(parseInt(Math.random() * 200), parseInt(Math.random() * 200), 10, 10)
     }
 </script>
-
-
-<h3 id="🍉曲线"><a href="#🍉曲线" class="headerlink" title="🍉曲线"></a>🍉曲线</h3><h4 id="📌beginPath"><a href="#📌beginPath" class="headerlink" title="📌beginPath()"></a>📌beginPath()</h4><p><strong>使用</strong><code>beginPath()</code><strong>开始绘制新路径</strong></p>
-<h4 id="📌closePath"><a href="#📌closePath" class="headerlink" title="📌closePath()"></a>📌closePath()</h4><p><strong>连接路径终点与起点</strong></p>
-<h4 id="📌stroke"><a href="#📌stroke" class="headerlink" title="📌stroke()"></a>📌stroke()</h4><p><strong>用线条描绘路径,可用</strong><code>strokeStyle</code><strong>设置画笔样式</strong></p>
-<h4 id="📌fill"><a href="#📌fill" class="headerlink" title="📌fill()"></a>📌fill()</h4><p><strong>填充闭合路径,可用</strong><code>fillStyle</code><strong>设置填充样式</strong></p>
+<h3 id="曲线">🍉曲线</h3>
+<h4 id="beginpath">📌beginPath()</h4>
+<p><strong>使用</strong><code>beginPath()</code><strong>开始绘制新路径</strong></p>
+<h4 id="closepath">📌closePath()</h4>
+<p><strong>连接路径终点与起点</strong></p>
+<h4 id="stroke">📌stroke()</h4>
+<p><strong>用线条描绘路径,可用</strong><code>strokeStyle</code><strong>设置画笔样式</strong></p>
+<h4 id="fill">📌fill()</h4>
+<p><strong>填充闭合路径,可用</strong><code>fillStyle</code><strong>设置填充样式</strong></p>
 <p><strong>若曲线未闭合则隐式调用</strong><code>closePath()</code></p>
-<h4 id="📌moveTo-x-y"><a href="#📌moveTo-x-y" class="headerlink" title="📌moveTo(x, y)"></a>📌moveTo(x, y)</h4><p><strong>将画笔光标移至</strong><code>(x, y)</code></p>
-<h4 id="📌lineTo-x-y"><a href="#📌lineTo-x-y" class="headerlink" title="📌lineTo(x, y)"></a>📌lineTo(x, y)</h4><p><strong>链接上一坐标至</strong><code>(x, y)</code></p>
-<h4 id="📌arc-x-y-radius-startAngle-endAngle-direction"><a href="#📌arc-x-y-radius-startAngle-endAngle-direction" class="headerlink" title="📌arc(x, y, radius, startAngle, endAngle, direction)"></a>📌arc(x, y, radius, startAngle, endAngle, direction)</h4><p><strong>绘制圆弧路径</strong></p>
+<h4 id="movetox-y">📌moveTo(x, y)</h4>
+<p><strong>将画笔光标移至</strong><code>(x, y)</code></p>
+<h4 id="linetox-y">📌lineTo(x, y)</h4>
+<p><strong>链接上一坐标至</strong><code>(x, y)</code></p>
+<h4 id="arcx-y-radius-startangle-endangle-direction">📌arc(x, y, radius, startAngle, endAngle, direction)</h4>
+<p><strong>绘制圆弧路径</strong></p>
 <ul>
-<li><code>x, y</code>——————————–<strong>圆心坐标</strong></li>
-<li><code>radius</code>—————————–<strong>半径</strong></li>
-<li><code>startAngle, endAngle</code>———<strong>圆弧始末角度(弧度制)</strong></li>
-<li><code>direction</code>————————<strong>是否顺时针绘制</strong></li>
+<li><code>x, y</code>--------------------------------<strong>圆心坐标</strong></li>
+<li><code>radius</code>-----------------------------<strong>半径</strong></li>
+<li><code>startAngle, endAngle</code>---------<strong>圆弧始末角度(弧度制)</strong></li>
+<li><code>direction</code>------------------------<strong>是否顺时针绘制</strong></li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">arcCtx.beginPath()<br>arcCtx.arc(<span class="hljs-number">120</span>, <span class="hljs-number">60</span>, <span class="hljs-number">50</span>, <span class="hljs-number">.785</span>, -<span class="hljs-number">.785</span>, <span class="hljs-literal">false</span>)<br>arcCtx.stroke()<br><br>arcCtx.beginPath()<br>arcCtx.arc(<span class="hljs-number">260</span>, <span class="hljs-number">60</span>, <span class="hljs-number">50</span>, <span class="hljs-number">.785</span>, -<span class="hljs-number">.785</span>, <span class="hljs-literal">false</span>)<br>arcCtx.fill()<br></code></pre></div></td></tr></table></figure>
-
 <canvas class="arc" style="width: 50%;height: 50%;border: 5px solid #fa8b83;background: #787">
-  该浏览器不支持canvas
+该浏览器不支持canvas
 </canvas>
-
 <script>
   const ARC = document.querySelector('.arc')
   const arcCtx = ARC.getContext('2d')
@@ -392,23 +382,17 @@
   arcCtx.arc(230, 70, 50, .785, -.785, false)
   arcCtx.fill()
 </script>
-
-
-
-
-
-<h4 id="📌arcTo-x1-y1-x2-y2-radius"><a href="#📌arcTo-x1-y1-x2-y2-radius" class="headerlink" title="📌arcTo(x1, y1, x2, y2, radius)"></a>📌arcTo(x1, y1, x2, y2, radius)</h4><p><strong>用半径</strong><code>radius</code><strong>的圆弧连接上一坐标和</strong><code>(x2, y2)</code><strong>,圆弧在上一坐标与</strong><code>(x2, y2)</code><strong>的切线交于</strong><code>(x1, y1)</code></p>
+<h4 id="arctox1-y1-x2-y2-radius">📌arcTo(x1, y1, x2, y2, radius)</h4>
+<p><strong>用半径</strong><code>radius</code><strong>的圆弧连接上一坐标和</strong><code>(x2, y2)</code><strong>,圆弧在上一坐标与</strong><code>(x2, y2)</code><strong>的切线交于</strong><code>(x1, y1)</code></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">ctx.beginPath()<br>ctx.moveTo(<span class="hljs-number">70</span>, <span class="hljs-number">100</span>)<br>ctx.arcTo(<span class="hljs-number">220</span>, <span class="hljs-number">10</span>, <span class="hljs-number">420</span>, <span class="hljs-number">300</span>, <span class="hljs-number">80</span>)<br>ctx.stroke()<br></code></pre></div></td></tr></table></figure>
-
 <ul>
 <li><strong>红色</strong><code>(x1, y1)</code></li>
 <li><strong>黄色</strong><code>(x2, y2)</code></li>
 <li><strong>白色</strong><code>上一坐标</code></li>
 </ul>
 <canvas class="arcto" style="width: 50%;height: 50%;border: 5px solid #fa8b83;background: #787">
-  该浏览器不支持canvas
+该浏览器不支持canvas
 </canvas>
-
 <script>
   const ARCTO = document.querySelector('.arcto')
   const arcToCtx = ARCTO.getContext('2d')
@@ -423,18 +407,12 @@
   arcToCtx.fillStyle = 'yellow'
   arcToCtx.fillRect(260, 70, 3, 3)
 </script>
-
-
-
-<h4 id="📌rect-x-y-width-height"><a href="#📌rect-x-y-width-height" class="headerlink" title="📌rect(x, y, width, height)"></a>📌rect(x, y, width, height)</h4><p><strong>绘制矩形路径</strong></p>
+<h4 id="rectx-y-width-height">📌rect(x, y, width, height)</h4>
+<p><strong>绘制矩形路径</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">ctx.beginPath()<br>ctx.rect(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">90</span>, <span class="hljs-number">90</span>)<br>ctx.stroke()<br><br>ctx.beginPath()<br>ctx.rect(<span class="hljs-number">120</span>, <span class="hljs-number">10</span>, <span class="hljs-number">90</span>, <span class="hljs-number">90</span>)<br>ctx.fill()<br></code></pre></div></td></tr></table></figure>
-
-
-
 <canvas class="rect2" style="width: 50%;height: 50%;border: 5px solid #fa8b83;background: #787">
-  该浏览器不支持canvas
+该浏览器不支持canvas
 </canvas>
-
 <script>
   const rect2 = document.querySelector('.rect2')
   const recCtx = rect2.getContext('2d')
@@ -445,20 +423,16 @@
   recCtx.rect(120, 10, 90, 90)
   recCtx.fill()
 </script>
-
-
-
-<h4 id="📌quadraticCurveTo-cx-cy-x-y"><a href="#📌quadraticCurveTo-cx-cy-x-y" class="headerlink" title="📌quadraticCurveTo(cx, cy, x, y)"></a>📌quadraticCurveTo(cx, cy, x, y)</h4><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">ctx.beginPath()<br>ctx.moveTo(<span class="hljs-number">70</span>, <span class="hljs-number">100</span>)<br>ctx.quadraticCurveTo(<span class="hljs-number">90</span>, <span class="hljs-number">10</span>, <span class="hljs-number">220</span>, <span class="hljs-number">90</span>)<br>ctx.stroke()<br></code></pre></div></td></tr></table></figure>
-
+<h4 id="quadraticcurvetocx-cy-x-y">📌quadraticCurveTo(cx, cy, x, y)</h4>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">ctx.beginPath()<br>ctx.moveTo(<span class="hljs-number">70</span>, <span class="hljs-number">100</span>)<br>ctx.quadraticCurveTo(<span class="hljs-number">90</span>, <span class="hljs-number">10</span>, <span class="hljs-number">220</span>, <span class="hljs-number">90</span>)<br>ctx.stroke()<br></code></pre></div></td></tr></table></figure>
 <ul>
 <li><strong>红色</strong><code>(cx, cy)</code></li>
 <li><strong>黄色</strong><code>(x, y)</code></li>
 <li><strong>白色</strong><code>上一坐标</code></li>
 </ul>
 <canvas class="quadratic" style="width: 50%;height: 50%;border: 5px solid #fa8b83;background: #787">
-  该浏览器不支持canvas
+该浏览器不支持canvas
 </canvas>
-
 <script>
   const quadratic = document.querySelector('.quadratic')
   const qdtCtx = quadratic.getContext('2d')
@@ -473,13 +447,8 @@
   qdtCtx.fillStyle = 'yellow'
   qdtCtx.fillRect(220, 90, 3, 3)
 </script>
-
-
-
-
-
-<h4 id="📌bezierCurveTo-cx1-cy1-cx2-cy2-x-y"><a href="#📌bezierCurveTo-cx1-cy1-cx2-cy2-x-y" class="headerlink" title="📌bezierCurveTo(cx1, cy1, cx2, cy2, x, y)"></a>📌bezierCurveTo(cx1, cy1, cx2, cy2, x, y)</h4><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">ctx.beginPath()<br>ctx.moveTo(<span class="hljs-number">70</span>, <span class="hljs-number">100</span>)<br>ctx.bezierCurveTo(<span class="hljs-number">90</span>, <span class="hljs-number">10</span>, <span class="hljs-number">240</span>, <span class="hljs-number">30</span>,<span class="hljs-number">220</span>, <span class="hljs-number">90</span>)<br>ctx.stroke()<br></code></pre></div></td></tr></table></figure>
-
+<h4 id="beziercurvetocx1-cy1-cx2-cy2-x-y">📌bezierCurveTo(cx1, cy1, cx2, cy2, x, y)</h4>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">ctx.beginPath()<br>ctx.moveTo(<span class="hljs-number">70</span>, <span class="hljs-number">100</span>)<br>ctx.bezierCurveTo(<span class="hljs-number">90</span>, <span class="hljs-number">10</span>, <span class="hljs-number">240</span>, <span class="hljs-number">30</span>,<span class="hljs-number">220</span>, <span class="hljs-number">90</span>)<br>ctx.stroke()<br></code></pre></div></td></tr></table></figure>
 <ul>
 <li><strong>红色</strong><code>(cx1, cy1)</code></li>
 <li><strong>蓝色</strong><code>(cx2, cy2)</code></li>
@@ -487,11 +456,8 @@
 <li><strong>白色</strong><code>上一坐标</code></li>
 </ul>
 <canvas class="bzr" style="width: 50%;height: 50%;border: 5px solid #fa8b83;background: #787">
-  该浏览器不支持canvas
+该浏览器不支持canvas
 </canvas>
-
-
-
 <script>
   const bzr = document.querySelector('.bzr')
   const bzrCtx = bzr.getContext('2d')
@@ -516,32 +482,41 @@
   bzrCtx.fillStyle = 'blue'
   bzrCtx.fillRect(240, 30, 3, 3)
 </script>
-
-
-
-<h3 id="🍉字符"><a href="#🍉字符" class="headerlink" title="🍉字符"></a>🍉字符</h3><h4 id="📌font"><a href="#📌font" class="headerlink" title="📌font"></a>📌font</h4><p><strong>设置字体样式</strong></p>
-<h4 id="📌textAlign"><a href="#📌textAlign" class="headerlink" title="📌textAlign"></a>📌textAlign</h4><p><strong>设置文本对齐方式</strong></p>
-<h4 id="📌textBaseLine"><a href="#📌textBaseLine" class="headerlink" title="📌textBaseLine"></a>📌textBaseLine</h4><p><strong>文本基线</strong></p>
-<h4 id="📌fillText-‘context’-x-y"><a href="#📌fillText-‘context’-x-y" class="headerlink" title="📌fillText(‘context’, x, y)"></a>📌fillText(‘context’, x, y)</h4><p><strong>绘制文本</strong></p>
-<h3 id="🍉图像变换"><a href="#🍉图像变换" class="headerlink" title="🍉图像变换"></a>🍉图像变换</h3><h4 id="📌rotate-n-deg"><a href="#📌rotate-n-deg" class="headerlink" title="📌rotate(n deg)"></a>📌rotate(n deg)</h4><p><strong>图像旋转</strong><code>n deg</code></p>
-<h4 id="📌scale"><a href="#📌scale" class="headerlink" title="📌scale()"></a>📌scale()</h4><h4 id="📌translate-x-y"><a href="#📌translate-x-y" class="headerlink" title="📌translate(x, y)"></a>📌translate(x, y)</h4><h4 id="📌transform"><a href="#📌transform" class="headerlink" title="📌transform()"></a>📌transform()</h4><h4 id="📌setTransform"><a href="#📌setTransform" class="headerlink" title="📌setTransform()"></a>📌setTransform()</h4><h3 id="🍉图像"><a href="#🍉图像" class="headerlink" title="🍉图像"></a>🍉图像</h3><h4 id="📌drawImage-imageObj-x-y"><a href="#📌drawImage-imageObj-x-y" class="headerlink" title="📌drawImage(imageObj, x, y)"></a>📌drawImage(imageObj, x, y)</h4><h4 id><a href="#" class="headerlink" title></a></h4><h2 id="图片打码Demo"><a href="#图片打码Demo" class="headerlink" title="图片打码Demo"></a>图片打码Demo</h2><h3 id="🥕HTML代码"><a href="#🥕HTML代码" class="headerlink" title="🥕HTML代码"></a>🥕HTML代码</h3><figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span><br><span class="css">  <span class="hljs-selector-class">.pic</span> &#123;</span><br><span class="css">    <span class="hljs-attribute">border</span>: <span class="hljs-number">5px</span> solid <span class="hljs-number">#fa8b83</span>;</span><br><span class="css">    <span class="hljs-attribute">max-width</span>: <span class="hljs-number">100%</span>;</span><br><span class="css">  &#125;</span><br><span class="css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;pic&quot;</span>&gt;</span>该浏览器不支持canvas<span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
-
-
-
-
-
-<h3 id="🥕JavaScript代码"><a href="#🥕JavaScript代码" class="headerlink" title="🥕JavaScript代码"></a>🥕JavaScript代码</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-comment">// url=图片地址     n=马赛克矩形边长</span><br><span class="hljs-keyword">const</span> Mosaic = <span class="hljs-function">(<span class="hljs-params">url = <span class="hljs-string">&#x27;https://s3.bmp.ovh/imgs/2022/02/57d13c60b0c24d94.jpg&#x27;</span>, n = <span class="hljs-number">20</span></span>) =&gt;</span> &#123;<br>  <span class="hljs-keyword">const</span> pic = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&#x27;.pic&#x27;</span>)<br>  <span class="hljs-keyword">const</span> ctx = pic.getContext(<span class="hljs-string">&#x27;2d&#x27;</span>)<br><br>  <span class="hljs-keyword">const</span> image = <span class="hljs-keyword">new</span> Image();                              <span class="hljs-comment">// 导入图片</span><br>  [image.src, image.crossOrigin] = [url, <span class="hljs-string">&#x27;&#x27;</span>]              <span class="hljs-comment">// crossOrigin = &#x27;&#x27;用于解决跨域</span><br>  ctx.fillStyle = ctx.createPattern(image, <span class="hljs-string">&#x27;no-repeat&#x27;</span>)<br>  image.onload = <span class="hljs-function">() =&gt;</span> &#123;<br>    ;[pic.width, pic.height] = [image.width, image.height]<br>    ctx.drawImage(image, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)<br>    drawMosaic(image.width, image.height)                <span class="hljs-comment">// 调用打码函数</span><br>  &#125;<br>  <br>  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawMosaic</span>(<span class="hljs-params">x, y</span>) </span>&#123;                            <span class="hljs-comment">// 打码函数</span><br>    <span class="hljs-keyword">let</span> k = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;i &lt; x;i += n)&#123;<br>      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> j = <span class="hljs-number">0</span>;j &lt; y;j += n)&#123;<br>        <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>          <span class="hljs-keyword">const</span> colorData = ctx.getImageData(i, j, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>).data<br>          ctx.fillStyle = <span class="hljs-string">`rgba(<span class="hljs-subst">$&#123;colorData[<span class="hljs-number">0</span>]&#125;</span>, <span class="hljs-subst">$&#123;colorData[<span class="hljs-number">1</span>]&#125;</span>, <span class="hljs-subst">$&#123;colorData[<span class="hljs-number">2</span>]&#125;</span>, <span class="hljs-subst">$&#123;colorData[<span class="hljs-number">3</span>]&#125;</span>)`</span><br>          ctx.fillRect(i, j, n, n)<br>        &#125;, (k++ * <span class="hljs-number">100</span> * n) / x)<br>      &#125;<br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-
-
-
-<h3 id="🥕效果展示"><a href="#🥕效果展示" class="headerlink" title="🥕效果展示"></a>🥕效果展示</h3><p><a class="btn" onclick="Mosaic()">查看效果</a></p>
+<h3 id="字符">🍉字符</h3>
+<h4 id="font">📌font</h4>
+<p><strong>设置字体样式</strong></p>
+<h4 id="textalign">📌textAlign</h4>
+<p><strong>设置文本对齐方式</strong></p>
+<h4 id="textbaseline">📌textBaseLine</h4>
+<p><strong>文本基线</strong></p>
+<h4 id="filltextcontext-x-y">📌fillText('context', x, y)</h4>
+<p><strong>绘制文本</strong></p>
+<h3 id="图像变换">🍉图像变换</h3>
+<h4 id="rotaten-deg">📌rotate(n deg)</h4>
+<p><strong>图像旋转</strong><code>n deg</code></p>
+<h4 id="scale">📌scale()</h4>
+<h4 id="translatex-y">📌translate(x, y)</h4>
+<h4 id="transform">📌transform()</h4>
+<h4 id="settransform">📌setTransform()</h4>
+<h3 id="图像">🍉图像</h3>
+<h4 id="drawimageimageobj-x-y">📌drawImage(imageObj, x, y)</h4>
+<h4 id="section"></h4>
+<h2 id="图片打码demo">图片打码Demo</h2>
+<h3 id="html代码">🥕HTML代码</h3>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span><br><span class="css">  <span class="hljs-selector-class">.pic</span> &#123;</span><br><span class="css">    <span class="hljs-attribute">border</span>: <span class="hljs-number">5px</span> solid <span class="hljs-number">#fa8b83</span>;</span><br><span class="css">    <span class="hljs-attribute">max-width</span>: <span class="hljs-number">100%</span>;</span><br><span class="css">  &#125;</span><br><span class="css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;pic&quot;</span>&gt;</span>该浏览器不支持canvas<span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="javascript代码">🥕JavaScript代码</h3>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-comment">// url=图片地址     n=马赛克矩形边长</span><br><span class="hljs-keyword">const</span> Mosaic = <span class="hljs-function">(<span class="hljs-params">url = <span class="hljs-string">&#x27;https://s3.bmp.ovh/imgs/2022/02/57d13c60b0c24d94.jpg&#x27;</span>, n = <span class="hljs-number">20</span></span>) =&gt;</span> &#123;<br>  <span class="hljs-keyword">const</span> pic = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&#x27;.pic&#x27;</span>)<br>  <span class="hljs-keyword">const</span> ctx = pic.getContext(<span class="hljs-string">&#x27;2d&#x27;</span>)<br><br>  <span class="hljs-keyword">const</span> image = <span class="hljs-keyword">new</span> Image();                              <span class="hljs-comment">// 导入图片</span><br>  [image.src, image.crossOrigin] = [url, <span class="hljs-string">&#x27;&#x27;</span>]              <span class="hljs-comment">// crossOrigin = &#x27;&#x27;用于解决跨域</span><br>  ctx.fillStyle = ctx.createPattern(image, <span class="hljs-string">&#x27;no-repeat&#x27;</span>)<br>  image.onload = <span class="hljs-function">() =&gt;</span> &#123;<br>    ;[pic.width, pic.height] = [image.width, image.height]<br>    ctx.drawImage(image, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)<br>    drawMosaic(image.width, image.height)                <span class="hljs-comment">// 调用打码函数</span><br>  &#125;<br>  <br>  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawMosaic</span>(<span class="hljs-params">x, y</span>) </span>&#123;                            <span class="hljs-comment">// 打码函数</span><br>    <span class="hljs-keyword">let</span> k = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;i &lt; x;i += n)&#123;<br>      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> j = <span class="hljs-number">0</span>;j &lt; y;j += n)&#123;<br>        <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>          <span class="hljs-keyword">const</span> colorData = ctx.getImageData(i, j, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>).data<br>          ctx.fillStyle = <span class="hljs-string">`rgba(<span class="hljs-subst">$&#123;colorData[<span class="hljs-number">0</span>]&#125;</span>, <span class="hljs-subst">$&#123;colorData[<span class="hljs-number">1</span>]&#125;</span>, <span class="hljs-subst">$&#123;colorData[<span class="hljs-number">2</span>]&#125;</span>, <span class="hljs-subst">$&#123;colorData[<span class="hljs-number">3</span>]&#125;</span>)`</span><br>          ctx.fillRect(i, j, n, n)<br>        &#125;, (k++ * <span class="hljs-number">100</span> * n) / x)<br>      &#125;<br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h3 id="效果展示">🥕效果展示</h3>
+<p><a class="btn" onclick="Mosaic()">查看效果</a></p>
 <style>
   .pic {
     border: 5px solid #fa8b83;
     max-width: 100%;
   }
 </style>
-<p><canvas class="pic">该浏览器不支持canvas</canvas></p>
+<canvas class="pic">
+该浏览器不支持canvas
+</canvas>
 <script>
     // url='图片地址'     n=马赛克矩形边长
 const Mosaic = (url = 'https://s3.bmp.ovh/imgs/2022/02/57d13c60b0c24d94.jpg', n = 30) => {
@@ -571,7 +546,7 @@ const Mosaic = (url = 'https://s3.bmp.ovh/imgs/2022/02/57d13c60b0c24d94.jpg', n 
 Mosaic()
 </script>
 <div class="note note-info">
-            <p><strong>参考文档:</strong></p><p>《JavaScript高级程序设计 (第四版)》</p><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34025694/article/details/104793785">《HTML中canvas标签的弧线arcTo使用方法 (季大师)》</a></p>
+            <p><strong>参考文档:</strong></p><p>《JavaScript高级程序设计 (第四版)》</p><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34025694/article/details/104793785">《HTML中canvas标签的弧线arcTo使用方法 (季大师)》</a></p>
           </div>
 
             </div>
