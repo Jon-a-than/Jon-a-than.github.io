@@ -16,23 +16,24 @@
   <meta name="author" content="Jon-a-than">
   <meta name="keywords" content="">
   
-    <meta name="description" content="向量运算 🍍点积 \[ \vec{a} \cdot \vec{b} &#x3D; |\vec a||\vec b|\cos\theta \] \(\vec{a} \cdot \vec{b}\)对三阶向量 \[ (x_1, y_1,z_1) \cdot(x_2, y_2,z_2) &#x3D; x_1x_2+y_1y_2+z_1z_2 \] 🍍叉积 结果为两向量的垂直向量,方向符合右手准则 \[">
+    <meta name="description" content="安装 🍐Express框架 1npm install express 🍐请求体解析Json 1npm install body-parper 🍐跨域解决 1npm install cros 使用 12345678910const express &#x3D; require(&amp;#x27;epress&amp;#x27;)const app express()const port &#x3D; 3000a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="高等数学θ">
-<meta property="og:url" content="http://example.com/2022/03/03/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%E7%AC%AC%E5%85%AB%E7%AB%A0/index.html">
+<meta property="og:title" content="Nodejs-Express">
+<meta property="og:url" content="http://example.com/2022/03/15/express/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
-<meta property="og:description" content="向量运算 🍍点积 \[ \vec{a} \cdot \vec{b} &#x3D; |\vec a||\vec b|\cos\theta \] \(\vec{a} \cdot \vec{b}\)对三阶向量 \[ (x_1, y_1,z_1) \cdot(x_2, y_2,z_2) &#x3D; x_1x_2+y_1y_2+z_1z_2 \] 🍍叉积 结果为两向量的垂直向量,方向符合右手准则 \[">
+<meta property="og:description" content="安装 🍐Express框架 1npm install express 🍐请求体解析Json 1npm install body-parper 🍐跨域解决 1npm install cros 使用 12345678910const express &#x3D; require(&amp;#x27;epress&amp;#x27;)const app express()const port &#x3D; 3000a">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s4.ax1x.com/2022/03/04/baKWRK.jpg">
-<meta property="article:published_time" content="2022-03-03T13:27:37.000Z">
-<meta property="article:modified_time" content="2022-03-06T05:29:58.784Z">
+<meta property="og:image" content="https://s1.ax1x.com/2022/03/19/qACux1.jpg">
+<meta property="article:published_time" content="2022-03-15T13:16:45.000Z">
+<meta property="article:modified_time" content="2022-03-19T01:32:51.032Z">
 <meta property="article:author" content="Jon-a-than">
-<meta property="article:tag" content="高等数学">
+<meta property="article:tag" content="Node.js">
+<meta property="article:tag" content="Express">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://s4.ax1x.com/2022/03/04/baKWRK.jpg">
+<meta name="twitter:image" content="https://s1.ax1x.com/2022/03/19/qACux1.jpg">
   
   
-  <title>高等数学θ - Jonathan的博客</title>
+  <title>Nodejs-Express - Jonathan的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -85,7 +86,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>微雨众卉新，一雷惊蛰始</strong>
+      <strong>社日双飞燕，春分百啭莺</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -182,7 +183,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="高等数学θ">
+            <span class="h2" id="subtitle" title="Nodejs-Express">
               
             </span>
 
@@ -192,8 +193,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-03-03 21:27" pubdate>
-        2022年3月3日 晚上
+      <time datetime="2022-03-15 21:16" pubdate>
+        2022年3月15日 晚上
       </time>
     </span>
   
@@ -203,7 +204,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.4k 字
+      515 字
     </span>
   
 
@@ -212,7 +213,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      21 分钟
+      5 分钟
     </span>
   
 
@@ -249,150 +250,20 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">高等数学θ</h1>
+            <h1 style="display: none">Nodejs-Express</h1>
             
             <div class="markdown-body">
-              <h2 id="向量运算">向量运算</h2>
-<h3 id="点积">🍍点积</h3>
-<p><span class="math display">\[
-\vec{a} \cdot \vec{b} = |\vec a||\vec b|\cos\theta
-\]</span></p>
-<p><span class="math inline">\(\vec{a} \cdot \vec{b}\)</span><strong>对三阶向量</strong> <span class="math display">\[
-(x_1, y_1,z_1) \cdot(x_2, y_2,z_2) = x_1x_2+y_1y_2+z_1z_2
-\]</span></p>
-<h3 id="叉积">🍍叉积</h3>
-<p><strong>结果为两向量的垂直向量,方向符合右手准则</strong> <span class="math display">\[
-\vec{a} \times \vec{b} = |\vec a||\vec b|\sin\theta
-\]</span></p>
-<p><span class="math inline">\(\vec{a} \times \vec{b}\)</span><strong>对三阶向量</strong> <span class="math display">\[
-(x_1, y_1,z_1) \times (x_2, y_2,z_2) = \begin{vmatrix}\vec i &amp;\vec j &amp;\vec k\\x_1&amp; y_1 &amp; z_1\\x_2&amp; y_2 &amp; z_2 \end{vmatrix}
-\]</span></p>
-<h3 id="混合积">🍍混合积</h3>
-<p><strong>混合积为零则三向量共面</strong> <span class="math display">\[
-\left [\begin{matrix}
-\vec a &amp;\vec b &amp;\vec c
-\end{matrix}\right ] = (\vec a \times\vec b)\cdot\vec c
-\]</span></p>
-<h2 id="空间平面">空间平面</h2>
-<p><span class="math display">\[
-f(x, y, z) = 0
-\]</span></p>
-<h3 id="点法式方程">🍉点法式方程</h3>
-<p><strong>已知平面法向量</strong><span class="math inline">\((A,B,C)\)</span><strong>则平面的点法式方程为</strong> <span class="math display">\[
-A(x-x_0) + B(y-y_0)+C(z-z_0) = 0
-\]</span></p>
-<h3 id="一般方程">🍉一般方程</h3>
-<p><span class="math display">\[
-Ax+By+Cz+D = 0
-\]</span></p>
-<h3 id="面面角">🍉面面角</h3>
-<p><span class="math display">\[
-\cos\theta=\frac{|\vec n_1 \cdot\vec n_2|}{|\vec n_1||\vec n_2|}\ \ (\theta\in[0, \frac \pi 2])
-\]</span></p>
-<h3 id="过三点求平面">🍉过三点求平面</h3>
-<p><strong>先用叉积求法向量,再写点法式方程</strong> <span class="math display">\[
-\begin{align}
-&amp;\cases{\overrightarrow{M_1M_2} = (x_2-x_1, y_2-y_1,z_2-z_1)\\\\\overrightarrow{M_1M_2} = (x_3-x_1, y_3-y_1,z_3-z_1)}\\\\
-&amp;\vec n=\overrightarrow{M_1M_2}\times\overrightarrow{M_1M_2}\\\\
-&amp;f: A(x-x_1) + B(y-y_1)+C(z-z_1) = 0
-\end{align}
-\]</span></p>
-<h3 id="方向余弦">🍉方向余弦</h3>
-<p><strong>若平面法向量为</strong><span class="math inline">\((x,y,z)\)</span><strong>则其方向余弦为</strong> <span class="math display">\[
-\begin{align}
-&amp;\cases{\cos\alpha =\frac x {|\vec n|}\\\\\cos\beta =\frac y {|\vec n|}\\\\\cos\gamma =\frac z {|\vec n|}}
-\end{align}
-\]</span></p>
-<h2 id="空间直线">空间直线</h2>
-<h3 id="一般方程-1">🥝一般方程</h3>
-<p><span class="math display">\[
-\cases{
-A_0x+B_0y+C_0z+D_0 = 0\\\\
-A_1x+B_1y+C_1z+D_1 = 0
-}
-\]</span></p>
-<p><strong>方向向量为两面法向量叉积</strong> <span class="math display">\[
-\vec l =\vec n_1\times\vec n_2
-\]</span></p>
-<h3 id="对称式方程">🥝对称式方程</h3>
-<p><strong>过</strong><span class="math inline">\((x_0,y_0,x_0)\)</span><strong>方向向量为</strong><span class="math inline">\((m,n,k)\)</span><strong>的直线的对称式方程为</strong> <span class="math display">\[
-\frac{x-x_0}{m}=\frac{y-y_0}{n}=\frac{z-z_0}{k}
-\]</span></p>
-<h3 id="参数方程">🥝参数方程</h3>
-<p><strong>若设点法式方程比值为</strong><span class="math inline">\(t\)</span><strong>,则直线的参数方程为</strong> <span class="math display">\[
-\cases {
-x=x_0+mt\\\\
-y=y_0+nt\\\\
-z=z_0+kt
-}
-\]</span></p>
-<h3 id="平面束">🥝平面束</h3>
-<p><strong>平面束方程表示过两平面交线的所有方程</strong> <span class="math display">\[
-\cases{
-A_0x+B_0y+C_0z+D_0 = 0\\\\
-A_1x+B_1y+C_1z+D_1 = 0
-}
-\]</span></p>
-<p><span class="math display">\[
-\mu(A_0x+B_0y+C_0z+D_0)+\lambda(A_1x+B_1y+C_1z+D_1) = 0
-\]</span></p>
-<p><strong>当取</strong><span class="math inline">\(\mu = 1\)</span><strong>时,平面束方程无法表示平面二,但计算更加方便</strong> <span class="math display">\[
-A_0x+B_0y+C_0z+D_0+\lambda(A_1x+B_1y+C_1z+D_1) = 0
-\]</span></p>
-<h3 id="线线角">🥝线线角</h3>
-<p><span class="math display">\[
-\cos\theta=\frac{|\vec n_1 \cdot\vec n_2|}{|\vec n_1||\vec n_2|}\ \ (\theta\in[0, \frac \pi 2])
-\]</span></p>
-<h3 id="线面角">🥝线面角</h3>
-<p><span class="math display">\[
-\sin\theta=\frac{|\vec n_1 \cdot\vec n_2|}{|\vec n_1||\vec n_2|}\ \ (\theta\in[0, \frac \pi 2])
-\]</span></p>
-<h3 id="点面距离">🥝点面距离</h3>
-<p><span class="math display">\[
-|d| = \frac{|\vec l \times\vec n|}{|\vec l|}
-\]</span></p>
-<h3 id="点线距离">🥝点线距离</h3>
-<h3 id="点在面的投影">🥝点在面的投影</h3>
-<p><strong>平面法向量与点</strong><span class="math inline">\(P(x_0,y_0,z_0)\)</span><strong>的参数方程</strong> <span class="math display">\[
-\cases {
-x=x_0+At\\\\
-y=y_0+Bt\\\\
-z=z_0+Ct
-}
-\]</span> <strong>线面交点即点在面的投影,参数方程代入平面方程得</strong><span class="math inline">\(t\)</span> <span class="math display">\[
-f(x,y,z)=0 \Rightarrow f(t) = 0
-\]</span> <strong>投影点为</strong><span class="math inline">\((x_0+At,y_0+Bt,z_0+Ct)\)</span></p>
-<h3 id="线在面的投影">🥝线在面的投影</h3>
-<p><strong>求出过直线且垂直平面一的平面二的法向量</strong> <span class="math display">\[
-\begin{align}
-&amp;\vec n_2 = \vec n_1\times\vec l\\
-\end{align}
-\]</span> <strong>由直线上的点也在平面二内得到平面二的点法式方程</strong></p>
-<p><strong>投影线即两面交线</strong></p>
-<h2 id="曲面">曲面</h2>
-<h3 id="旋转曲面">🍍旋转曲面</h3>
-<p><strong>绕</strong><code>x</code><strong>轴旋</strong></p>
-<p><strong>转</strong><span class="math inline">\(f(x,y)\Rightarrow f(x,\sqrt{y^2+z^2})\)</span></p>
-<p><strong>绕</strong><code>y</code><strong>轴旋转</strong><span class="math inline">\(f(x,y)\Rightarrow f(\sqrt{x^2+z^2},y)\)</span></p>
-<p><strong>绕</strong><code>z</code><strong>轴旋转</strong><span class="math inline">\(f(y,z)\Rightarrow f(\sqrt{x^2+y^2},z)\)</span></p>
-<h4 id="球面">📌球面</h4>
-<p><span class="math inline">\(x^2+y^2=R^2\)</span><strong>绕</strong><code>z</code><strong>轴旋转一周</strong> <span class="math display">\[
-x^2+y^2+z^2=R^2
-\]</span></p>
-<p><img src="https://s1.ax1x.com/2022/03/06/bBIrJf.png" srcset="/img/loading.gif" lazyload style="zoom:25%;"></p>
-<h4 id="圆锥面">📌圆锥面</h4>
-<p><span class="math inline">\(z=\alpha y\)</span><strong>绕</strong><code>z</code><strong>轴旋转一周</strong> <span class="math display">\[
-\alpha^2(x^2+y^2)=z^2
-\]</span></p>
-<h4 id="section">📌</h4>
-<h3 id="柱面">🍍柱面</h3>
-<h3 id="旋转曲面的伸缩">🍍旋转曲面的伸缩</h3>
-<h4 id="椭圆锥面">📌椭圆锥面</h4>
-<p><img src="https://s1.ax1x.com/2022/03/06/bBNSud.png" srcset="/img/loading.gif" lazyload style="zoom:25%;"></p>
-<h4 id="椭球面">📌椭球面</h4>
-<div class="note note-info">
-            <p><strong>参考文档:</strong></p><p>《高等数学下册 (同济大学)》</p>
-          </div>
+              <h2 id="安装">安装</h2>
+<h3 id="express框架">🍐Express框架</h3>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">npm install express<br></code></pre></div></td></tr></table></figure>
+<h3 id="请求体解析json">🍐请求体解析Json</h3>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">npm install body-parper<br></code></pre></div></td></tr></table></figure>
+<h3 id="跨域解决">🍐跨域解决</h3>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">npm install cros<br></code></pre></div></td></tr></table></figure>
+<h2 id="使用">使用</h2>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;epress&#x27;</span>)<br><span class="hljs-keyword">const</span> app express()<br><span class="hljs-keyword">const</span> port = <span class="hljs-number">3000</span><br><br>app.get(<span class="hljs-string">&#x27;/&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">request, response</span>) =&gt;</span> &#123;<br>	response.send(<span class="hljs-string">&#x27;Hello World!&#x27;</span>)<br>&#125;)<br><br>app.listen(port, <span class="hljs-function">() =&gt;</span> &#123;<br>&#125;)<br></code></pre></div></td></tr></table></figure>
+<h2 id="工程化目录">工程化目录</h2>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">├─api                     # API目录<br>│  ├─Api1.js<br>│  └─Api2.js<br>├─node_modules<br>├─router                  # 路由目录<br>│  └─index.js<br>├─app.js                  # 主入口文件<br>└─package.json            # 安装包管理<br><br>app.js 程序入口文件<br>router 入口路由文件<br>config 各种配置文件<br>models 数据库模型<br>app 存放所有的商业逻辑<br>public 静态资源存放目录<br>logs 存放日志目录<br></code></pre></div></td></tr></table></figure>
 
             </div>
             <hr>
@@ -402,9 +273,9 @@ x^2+y^2+z^2=R^2
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E5%A4%A7%E4%B8%80%E8%AF%BE%E7%A8%8B/">大一课程</a>
+                      <a class="hover-with-bg" href="/categories/Node-js/">Node.js</a>
                     
-                      <a class="hover-with-bg" href="/categories/%E5%A4%A7%E4%B8%80%E8%AF%BE%E7%A8%8B/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">高等数学</a>
+                      <a class="hover-with-bg" href="/categories/Node-js/Express/">Express</a>
                     
                   </div>
                 
@@ -412,7 +283,9 @@ x^2+y^2+z^2=R^2
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">高等数学</a>
+                      <a class="hover-with-bg" href="/tags/Node-js/">Node.js</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Express/">Express</a>
                     
                   </div>
                 
@@ -429,9 +302,9 @@ x^2+y^2+z^2=R^2
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/03/03/hexo%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/">
+                      <a href="/2022/03/17/NodeJs%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99-fs%E6%A8%A1%E5%9D%97/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">hexo数学公式</span>
+                        <span class="hidden-mobile">🏗Node文件读写(fs模块)</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -439,8 +312,8 @@ x^2+y^2+z^2=R^2
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/02/27/WebpackTS%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
-                        <span class="hidden-mobile">WebpackTS环境搭建</span>
+                      <a href="/2022/03/13/Vue-cli%E5%AE%89%E8%A3%9D%E4%B8%8E%E6%9B%B4%E6%96%B0/">
+                        <span class="hidden-mobile">Vue-cli安裝与更新</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
