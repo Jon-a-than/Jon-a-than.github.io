@@ -1,0 +1,13 @@
+div.vwrap {
+  /* background-color: #787; */
+  background-image: url('https://img-blog.csdnimg.cn/2020041610020524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N1bmd1ZGFmYQ==,size_16,color_FFFFFF,t_70') !important;
+}
+
+.vinput {
+  color: var(--post-text-color);
+  font-size: 1rem;
+}
+
+.vpower, .txt-right {
+  display: none;
+}

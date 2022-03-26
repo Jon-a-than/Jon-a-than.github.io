@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s4.ax1x.com/2022/02/18/HoJdBD.jpg">
 <meta property="article:published_time" content="2022-01-16T01:51:13.350Z">
-<meta property="article:modified_time" content="2022-03-26T05:12:23.827Z">
+<meta property="article:modified_time" content="2022-03-26T13:17:52.522Z">
 <meta property="article:author" content="Jon-a-than">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary_large_image">
@@ -203,7 +203,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      879 字
+      1.3k 字
     </span>
   
 
@@ -212,7 +212,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8 分钟
+      11 分钟
     </span>
   
 
@@ -305,6 +305,9 @@
 <li><strong>在博客的头部添加</strong><code>tags: [tag1, tag2, ...]</code><strong>即可分类</strong></li>
 </ol>
 <figure class="highlight yaml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">hexo博客搭建</span><br><span class="hljs-attr">tags:</span> [<span class="hljs-string">tag1</span>, <span class="hljs-string">tag2</span>] <br><span class="hljs-meta">---</span><br></code></pre></div></td></tr></table></figure>
+<h2 id="valine评论">valine评论</h2>
+<p><a target="_blank" rel="noopener" href="https://valine.js.org/quickstart.html">《快速开始》</a></p>
+<figure class="highlight yaml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">valine:</span><br>  <span class="hljs-attr">appId:</span> <span class="hljs-string">&lt;appId&gt;</span><br>  <span class="hljs-attr">appKey:</span> <span class="hljs-string">&lt;appKey&gt;</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">window.location.pathname</span><br>  <span class="hljs-attr">placeholder:</span> <span class="hljs-string">畅所欲言吧!!!</span><br>  <span class="hljs-attr">avatar:</span> <span class="hljs-string">&#x27;retro&#x27;</span><br>  <span class="hljs-attr">meta:</span> [<span class="hljs-string">&#x27;nick&#x27;</span>, <span class="hljs-string">&#x27;mail&#x27;</span>, <span class="hljs-string">&#x27;link&#x27;</span>]<br>  <span class="hljs-attr">requiredFields:</span> [<span class="hljs-string">&#x27;nick&#x27;</span>]<br>  <span class="hljs-attr">pageSize:</span> <span class="hljs-number">10</span><br>  <span class="hljs-attr">lang:</span> <span class="hljs-string">&#x27;zh-CN&#x27;</span><br>  <span class="hljs-attr">highlight:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-attr">recordIP:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-attr">serverURLs:</span> <span class="hljs-string">&lt;REST</span> <span class="hljs-string">API</span> <span class="hljs-string">服务器地址&gt;</span><br>  <span class="hljs-attr">emojiCDN:</span><br>  <span class="hljs-attr">emojiMaps:</span><br>  <span class="hljs-attr">enableQQ:</span> <span class="hljs-literal">false</span><br></code></pre></div></td></tr></table></figure>
 
             </div>
             <hr>
@@ -367,11 +370,21 @@
                   
                 
                 
-  <div id="SOHUCS" sid='http://example.com/2022/01/16/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/'></div>
+  <div id="valine"></div>
   <script type="text/javascript">
-    Fluid.utils.loadComments('#SOHUCS', function() {
-      Fluid.utils.createScript("https://changyan.sohu.com/upload/changyan.js", function() {
-        window.changyan.api.config({"appid":"cyvYzum5c","appkey":"aeb9afc5581c429d22001398fc870089"})
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"IPRcxIlbuBJqh3907FzvjV07-MdYXbMMI","appKey":"Tkc8adMPvEMFtVmpGfH95iFh","path":"window.location.pathname","placeholder":"云青青兮欲雨💗水澹澹兮生烟","avatar":"robohash","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://iprcxilb.api.lncldglobal.com","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        })
       });
     });
   </script>
