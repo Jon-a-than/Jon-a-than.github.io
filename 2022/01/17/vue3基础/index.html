@@ -27,8 +27,8 @@
 <meta property="article:published_time" content="2022-01-17T00:24:17.000Z">
 <meta property="article:modified_time" content="2022-03-24T12:41:34.540Z">
 <meta property="article:author" content="Jon-a-than">
-<meta property="article:tag" content="笔记">
 <meta property="article:tag" content="Vue3">
+<meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://s4.ax1x.com/2022/02/17/HIKJTP.jpg">
   
@@ -435,9 +435,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
-                    
                       <a class="hover-with-bg" href="/tags/Vue3/">Vue3</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
                     
                   </div>
                 
@@ -482,21 +482,11 @@
                   
                 
                 
-  <div id="valine"></div>
+  <div id="SOHUCS" sid='http://example.com/2022/01/17/vue3%E5%9F%BA%E7%A1%80/'></div>
   <script type="text/javascript">
-    Fluid.utils.loadComments('#valine', function() {
-      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
-        var options = Object.assign(
-          {"appId":"IPRcxIlbuBJqh3907FzvjV07-MdYXbMMI","appKey":"Tkc8adMPvEMFtVmpGfH95iFh","path":"window.location.pathname","placeholder":"畅所欲言吧!!!","avatar":"retro","meta":["nick","mail","link"],"requiredFields":["nick"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"iprcxilb.api.lncldglobal.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
-          {
-            el: "#valine",
-            path: window.location.pathname
-          }
-        )
-        new Valine(options);
-        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
-          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
-        })
+    Fluid.utils.loadComments('#SOHUCS', function() {
+      Fluid.utils.createScript("https://changyan.sohu.com/upload/changyan.js", function() {
+        window.changyan.api.config({"appid":"cyvYzum5c","appkey":"aeb9afc5581c429d22001398fc870089"})
       });
     });
   </script>
