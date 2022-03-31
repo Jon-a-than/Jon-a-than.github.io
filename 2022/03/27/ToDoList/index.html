@@ -16,24 +16,21 @@
   <meta name="author" content="Jon-a-than">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Proxy 自定义代理对象的操作 创建代理 1const obj &#x3D; new Proxy(target, handler) 🥦操作捕获器    捕获器 参数 对应操作     get(target, key, proxy) (原对象, 查询属性, 代理对象) 获取属性值   set(target, key, value, proxy) (原对象, 添加属">
+    <meta name="description" content="初始化 项目包 vite+vue3+vue-router+typescript+axios+element-plus+pinia+scss 安装 12345pnpm create vite todo-frontend&gt; vue&gt; vue-ts 123456pnpm i vue-router@4pnpm i piniapnpm i axiospnpm i element-plu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="🏗ES6代理(Proxy)与反射(Reflect)">
-<meta property="og:url" content="http://example.com/2022/02/10/ES6%E4%BB%A3%E7%90%86-Proxy/index.html">
+<meta property="og:title" content="ToDoList">
+<meta property="og:url" content="http://example.com/2022/03/27/ToDoList/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
-<meta property="og:description" content="Proxy 自定义代理对象的操作 创建代理 1const obj &#x3D; new Proxy(target, handler) 🥦操作捕获器    捕获器 参数 对应操作     get(target, key, proxy) (原对象, 查询属性, 代理对象) 获取属性值   set(target, key, value, proxy) (原对象, 添加属">
+<meta property="og:description" content="初始化 项目包 vite+vue3+vue-router+typescript+axios+element-plus+pinia+scss 安装 12345pnpm create vite todo-frontend&gt; vue&gt; vue-ts 123456pnpm i vue-router@4pnpm i piniapnpm i axiospnpm i element-plu">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://wx4.sinaimg.cn/mw2000/008kfmColy1h0tey2pbpzj30nw0hwah4.jpg">
-<meta property="article:published_time" content="2022-02-10T13:45:02.000Z">
-<meta property="article:modified_time" content="2022-03-31T14:12:43.136Z">
+<meta property="article:published_time" content="2022-03-27T06:26:04.000Z">
+<meta property="article:modified_time" content="2022-03-27T06:50:02.320Z">
 <meta property="article:author" content="Jon-a-than">
-<meta property="article:tag" content="JavaScript">
-<meta property="article:tag" content="Proxy">
+<meta property="article:tag" content="Vue3">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wx4.sinaimg.cn/mw2000/008kfmColy1h0tey2pbpzj30nw0hwah4.jpg">
   
   
-  <title>🏗ES6代理(Proxy)与反射(Reflect) - Jonathan的博客</title>
+  <title>ToDoList - Jonathan的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -183,7 +180,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="🏗ES6代理(Proxy)与反射(Reflect)">
+            <span class="h2" id="subtitle" title="ToDoList">
               
             </span>
 
@@ -193,8 +190,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-02-10 21:45" pubdate>
-        2022年2月10日 晚上
+      <time datetime="2022-03-27 14:26" pubdate>
+        2022年3月27日 下午
       </time>
     </span>
   
@@ -204,7 +201,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      179 字
+      776 字
     </span>
   
 
@@ -213,7 +210,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2 分钟
+      7 分钟
     </span>
   
 
@@ -250,43 +247,18 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">🏗ES6代理(Proxy)与反射(Reflect)</h1>
+            <h1 style="display: none">ToDoList</h1>
             
             <div class="markdown-body">
-              <h1 id="proxy">Proxy</h1>
-<p><strong>自定义代理对象的操作</strong></p>
-<h2 id="创建代理">创建代理</h2>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(target, handler)<br></code></pre></div></td></tr></table></figure>
-<h3 id="操作捕获器">🥦操作捕获器</h3>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">捕获器</th>
-<th style="text-align: center;">参数</th>
-<th style="text-align: center;">对应操作</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><code>get(target, key, proxy)</code></td>
-<td style="text-align: center;"><code>(原对象, 查询属性, 代理对象)</code></td>
-<td style="text-align: center;"><strong>获取属性值</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>set(target, key, value, proxy)</code></td>
-<td style="text-align: center;"><code>(原对象, 添加属性, 属性值, 代理对象)</code></td>
-<td style="text-align: center;"><strong>设置属性值</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">``</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<h2 id="section"></h2>
-<h1 id="reflect">Reflect</h1>
-<p><strong>对象操作的默认行为</strong></p>
+              <h1 id="初始化">初始化</h1>
+<h2 id="项目包">项目包</h2>
+<p><code>vite</code>+<code>vue3</code>+<code>vue-router</code>+<code>typescript</code>+<code>axios</code>+<code>element-plus</code>+<code>pinia</code>+<code>scss</code></p>
+<h2 id="安装">安装</h2>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pnpm create vite todo-frontend<br><br>&gt; vue<br><br>&gt; vue-ts<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pnpm i vue-router@4<br>pnpm i pinia<br>pnpm i axios<br>pnpm i element-plus<br>pnpm i @element-plus/icons-vue<br>pnpm i --save-D sass<br></code></pre></div></td></tr></table></figure>
+<h2 id="全局引入">全局引入</h2>
+<p><code>main.ts</code></p>
+<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; createApp &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> &#123; createPinia &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;pinia&#x27;</span><br><span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/router&#x27;</span><br><span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./App.vue&#x27;</span><br><span class="hljs-keyword">import</span> ElementPlus <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;element-plus&#x27;</span><br><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> ElIcons <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@element-plus/icons-vue&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;element-plus/dist/index.css&#x27;</span><br><br><span class="hljs-keyword">const</span> app = createApp(App)<br><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> name <span class="hljs-keyword">in</span> ElIcons)&#123;                       <span class="hljs-comment">// 全局注册icon</span><br>	app.component(name,(ElIcons <span class="hljs-keyword">as</span> <span class="hljs-built_in">any</span>)[name])<br>&#125;<br><br>app.use(createPinia())                             <span class="hljs-comment">// 导入Pinia</span><br>  .use(router)                                     <span class="hljs-comment">// 导入路由</span><br>  .use(ElementPlus)                                <span class="hljs-comment">// 导入UI</span><br>  .mount(<span class="hljs-string">&#x27;#app&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
 
             </div>
             <hr>
@@ -296,9 +268,11 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/JavaScript/">JavaScript</a>
+                      <a class="hover-with-bg" href="/categories/Vue/">Vue</a>
                     
-                      <a class="hover-with-bg" href="/categories/JavaScript/ES6/">ES6</a>
+                      <a class="hover-with-bg" href="/categories/Vue/Vue3-x/">Vue3.x</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Vue/Vue3-x/%E5%AE%9E%E8%B7%B5/">实践</a>
                     
                   </div>
                 
@@ -306,9 +280,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/JavaScript/">JavaScript</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Proxy/">Proxy</a>
+                      <a class="hover-with-bg" href="/tags/Vue3/">Vue3</a>
                     
                   </div>
                 
@@ -325,9 +297,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/02/11/JavaScript%E4%BA%8B%E4%BB%B6/">
+                      <a href="/2022/03/31/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%98%E5%82%A8/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">🏗JavaScript事件</span>
+                        <span class="hidden-mobile">客户端存储</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -335,8 +307,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/02/05/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A3%80%E6%B5%8B/">
-                        <span class="hidden-mobile">🏗客户端检测</span>
+                      <a href="/2022/03/17/NodeJs%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99-fs%E6%A8%A1%E5%9D%97/">
+                        <span class="hidden-mobile">🏗Node文件读写(fs模块)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

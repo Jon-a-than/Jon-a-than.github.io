@@ -16,24 +16,24 @@
   <meta name="author" content="Jon-a-than">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Proxy 自定义代理对象的操作 创建代理 1const obj &#x3D; new Proxy(target, handler) 🥦操作捕获器    捕获器 参数 对应操作     get(target, key, proxy) (原对象, 查询属性, 代理对象) 获取属性值   set(target, key, value, proxy) (原对象, 添加属">
+    <meta name="description" content="LocalStorage 存储的数据不删除会始终存在(关闭浏览器或刷新后也不清除),且不同域名的存储区不同 🍉localStorage.setItem() 设置数据 1localStorage.setItem(&amp;#x27;key&amp;#x27;, &amp;#x27;value&amp;#x27;) 🍉localStorage.getItem() 获取数据值,没有则返回null 1localStor">
 <meta property="og:type" content="article">
-<meta property="og:title" content="🏗ES6代理(Proxy)与反射(Reflect)">
-<meta property="og:url" content="http://example.com/2022/02/10/ES6%E4%BB%A3%E7%90%86-Proxy/index.html">
+<meta property="og:title" content="客户端存储">
+<meta property="og:url" content="http://example.com/2022/03/31/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%98%E5%82%A8/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
-<meta property="og:description" content="Proxy 自定义代理对象的操作 创建代理 1const obj &#x3D; new Proxy(target, handler) 🥦操作捕获器    捕获器 参数 对应操作     get(target, key, proxy) (原对象, 查询属性, 代理对象) 获取属性值   set(target, key, value, proxy) (原对象, 添加属">
+<meta property="og:description" content="LocalStorage 存储的数据不删除会始终存在(关闭浏览器或刷新后也不清除),且不同域名的存储区不同 🍉localStorage.setItem() 设置数据 1localStorage.setItem(&amp;#x27;key&amp;#x27;, &amp;#x27;value&amp;#x27;) 🍉localStorage.getItem() 获取数据值,没有则返回null 1localStor">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://wx4.sinaimg.cn/mw2000/008kfmColy1h0tey2pbpzj30nw0hwah4.jpg">
-<meta property="article:published_time" content="2022-02-10T13:45:02.000Z">
-<meta property="article:modified_time" content="2022-03-31T14:12:43.136Z">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw2000/008kfmColy1h0tespln31j30nw0hwk11.jpg">
+<meta property="article:published_time" content="2022-03-31T13:32:56.000Z">
+<meta property="article:modified_time" content="2022-03-31T14:00:48.136Z">
 <meta property="article:author" content="Jon-a-than">
 <meta property="article:tag" content="JavaScript">
-<meta property="article:tag" content="Proxy">
+<meta property="article:tag" content="客户端存储">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wx4.sinaimg.cn/mw2000/008kfmColy1h0tey2pbpzj30nw0hwah4.jpg">
+<meta name="twitter:image" content="https://wx3.sinaimg.cn/mw2000/008kfmColy1h0tespln31j30nw0hwk11.jpg">
   
   
-  <title>🏗ES6代理(Proxy)与反射(Reflect) - Jonathan的博客</title>
+  <title>客户端存储 - Jonathan的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -183,7 +183,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="🏗ES6代理(Proxy)与反射(Reflect)">
+            <span class="h2" id="subtitle" title="客户端存储">
               
             </span>
 
@@ -193,8 +193,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-02-10 21:45" pubdate>
-        2022年2月10日 晚上
+      <time datetime="2022-03-31 21:32" pubdate>
+        2022年3月31日 晚上
       </time>
     </span>
   
@@ -204,7 +204,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      179 字
+      342 字
     </span>
   
 
@@ -213,7 +213,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2 分钟
+      3 分钟
     </span>
   
 
@@ -250,43 +250,23 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">🏗ES6代理(Proxy)与反射(Reflect)</h1>
+            <h1 style="display: none">客户端存储</h1>
             
             <div class="markdown-body">
-              <h1 id="proxy">Proxy</h1>
-<p><strong>自定义代理对象的操作</strong></p>
-<h2 id="创建代理">创建代理</h2>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(target, handler)<br></code></pre></div></td></tr></table></figure>
-<h3 id="操作捕获器">🥦操作捕获器</h3>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">捕获器</th>
-<th style="text-align: center;">参数</th>
-<th style="text-align: center;">对应操作</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><code>get(target, key, proxy)</code></td>
-<td style="text-align: center;"><code>(原对象, 查询属性, 代理对象)</code></td>
-<td style="text-align: center;"><strong>获取属性值</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>set(target, key, value, proxy)</code></td>
-<td style="text-align: center;"><code>(原对象, 添加属性, 属性值, 代理对象)</code></td>
-<td style="text-align: center;"><strong>设置属性值</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">``</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<h2 id="section"></h2>
-<h1 id="reflect">Reflect</h1>
-<p><strong>对象操作的默认行为</strong></p>
+              <h2 id="localstorage">LocalStorage</h2>
+<p><strong>存储的数据不删除会始终存在(关闭浏览器或刷新后也不清除),且不同域名的存储区不同</strong></p>
+<h4 id="localstorage.setitem">🍉localStorage.setItem()</h4>
+<p><strong>设置数据</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-built_in">localStorage</span>.setItem(<span class="hljs-string">&#x27;key&#x27;</span>, <span class="hljs-string">&#x27;value&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
+<h4 id="localstorage.getitem">🍉localStorage.getItem()</h4>
+<p><strong>获取数据值,没有则返回</strong><code>null</code></p>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-built_in">localStorage</span>.getItem(<span class="hljs-string">&#x27;key&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
+<h4 id="localstorage.removeitem">🍉localStorage.removeItem()</h4>
+<p><strong>删除数据</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-built_in">localStorage</span>.removeItem(<span class="hljs-string">&#x27;key&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
+<h4 id="localstorage.clear">🍉localStorage.clear()</h4>
+<p><strong>清空</strong><code>localStorage</code></p>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-built_in">localStorage</span>.clear()<br></code></pre></div></td></tr></table></figure>
 
             </div>
             <hr>
@@ -298,7 +278,7 @@
                     
                       <a class="hover-with-bg" href="/categories/JavaScript/">JavaScript</a>
                     
-                      <a class="hover-with-bg" href="/categories/JavaScript/ES6/">ES6</a>
+                      <a class="hover-with-bg" href="/categories/JavaScript/BOM/">BOM</a>
                     
                   </div>
                 
@@ -308,7 +288,7 @@
                     
                       <a class="hover-with-bg" href="/tags/JavaScript/">JavaScript</a>
                     
-                      <a class="hover-with-bg" href="/tags/Proxy/">Proxy</a>
+                      <a class="hover-with-bg" href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%98%E5%82%A8/">客户端存储</a>
                     
                   </div>
                 
@@ -325,18 +305,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/02/11/JavaScript%E4%BA%8B%E4%BB%B6/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">🏗JavaScript事件</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/02/05/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A3%80%E6%B5%8B/">
-                        <span class="hidden-mobile">🏗客户端检测</span>
+                      <a href="/2022/03/27/ToDoList/">
+                        <span class="hidden-mobile">ToDoList</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
