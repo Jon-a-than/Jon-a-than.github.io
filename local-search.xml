@@ -1838,16 +1838,16 @@
   
   
   <entry>
-    <title>域名</title>
+    <title>域名与DNS</title>
     <link href="/2021/11/20/%E5%9F%9F%E5%90%8D/"/>
     <url>/2021/11/20/%E5%9F%9F%E5%90%8D/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h2 id="域名与ip地址">域名与IP地址</h2><p><strong>域名</strong> =&gt; <code>IP</code></p>]]></content>
     
     
     <categories>
       
-      <category>计算机网络</category>
+      <category>网络</category>
       
     </categories>
     
@@ -1871,6 +1871,8 @@
     
     
     <categories>
+      
+      <category>版本控制</category>
       
       <category>Git</category>
       
