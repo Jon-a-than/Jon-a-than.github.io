@@ -1866,10 +1866,10 @@
   
   <entry>
     <title>域名与DNS</title>
-    <link href="/2021/11/20/%E5%9F%9F%E5%90%8D/"/>
-    <url>/2021/11/20/%E5%9F%9F%E5%90%8D/</url>
+    <link href="/2021/11/20/%E5%9F%9F%E5%90%8D%E4%B8%8EDNS/"/>
+    <url>/2021/11/20/%E5%9F%9F%E5%90%8D%E4%B8%8EDNS/</url>
     
-    <content type="html"><![CDATA[<h2 id="域名与ip地址">域名与IP地址</h2><p><strong>域名</strong> =&gt; <code>IP</code></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="域名与ip地址">域名与IP地址</h2><p><strong>域名</strong> =&gt; <code>IP</code></p><h2 id="网域名称系统dns">网域名称系统(DNS)</h2><p><strong>对域名</strong><code>DNS</code><strong>解析后可得到</strong><code>ip</code><strong>地址,即可用</strong><code>ip</code><strong>地址访问了</strong></p>]]></content>
     
     
     <categories>
