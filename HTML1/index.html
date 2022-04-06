@@ -1,0 +1,727 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
+  <link rel="icon" href="/img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="清山">
+  <meta name="keywords" content="前端, JavaScript, hexo, HTML, CSS, Vue, 学习">
+  
+    <meta name="description" content="全局属性    属性 描述     class 类   id id   lang 内容语言   style 行内样式   title 鼠标悬停提示信息   dir 内容文本方向   tabindex tab键次序   accesskey 元素快捷键   contenteditable H5 元素是否可编辑">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML基础标签">
+<meta property="og:url" content="https://qingshaner.com/HTML1/index.html">
+<meta property="og:site_name" content="Jonathan的博客">
+<meta property="og:description" content="全局属性    属性 描述     class 类   id id   lang 内容语言   style 行内样式   title 鼠标悬停提示信息   dir 内容文本方向   tabindex tab键次序   accesskey 元素快捷键   contenteditable H5 元素是否可编辑">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204012045633.jpg">
+<meta property="article:published_time" content="2022-02-04T13:46:31.000Z">
+<meta property="article:modified_time" content="2022-04-05T11:35:46.517Z">
+<meta property="article:author" content="清山">
+<meta property="article:tag" content="HTML">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204012045633.jpg">
+  
+  
+  <title>HTML基础标签 - Jonathan的博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/selection.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"qingshaner.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>风景清明后，云山睥睨前</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/%E9%97%AE%E6%B8%A0%E9%82%A3%E5%BE%97%E6%B8%85%E5%A6%82%E8%AE%B8/">
+                <i class="iconfont icon-plan"></i>
+                计划表
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204031054091.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="HTML基础标签">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      清山
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-02-04 21:46" pubdate>
+        2022年2月4日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.4k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      37 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">HTML基础标签</h1>
+            
+            <div class="markdown-body">
+              <h2 id="全局属性">全局属性</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">属性</th>
+<th style="text-align: center;">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>class</code></td>
+<td style="text-align: center;"><strong>类</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>id</code></td>
+<td style="text-align: center;"><strong>id</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>lang</code></td>
+<td style="text-align: center;"><strong>内容语言</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>style</code></td>
+<td style="text-align: center;"><strong>行内样式</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>title</code></td>
+<td style="text-align: center;"><strong>鼠标悬停提示信息</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>dir</code></td>
+<td style="text-align: center;"><strong>内容文本方向</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>tabindex</code></td>
+<td style="text-align: center;"><strong>tab键次序</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>accesskey</code></td>
+<td style="text-align: center;"><strong>元素快捷键</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>contenteditable</code> <span class="label label-primary">H5</span></td>
+<td style="text-align: center;"><strong>元素是否可编辑</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>data-xxx</code> <span class="label label-primary">H5</span></td>
+<td style="text-align: center;"><strong>自定义属性</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>translate</code> <span class="label label-primary">H5</span></td>
+<td style="text-align: center;"><strong>是否翻译此元素</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>spellcheck</code> <span class="label label-primary">H5</span></td>
+<td style="text-align: center;"><strong>是否进行语法检查</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>draggable</code> <span class="label label-primary">H5</span></td>
+<td style="text-align: center;"><strong>元素是否可拖动</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>dropzone</code> <span class="label label-danger">*H5</span></td>
+<td style="text-align: center;"><strong>拖动方式</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>hidden</code> <span class="label label-primary">H5</span></td>
+<td style="text-align: center;"><strong>是否隐藏元素</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>contextmenu</code> <span class="label label-danger">*H5</span></td>
+<td style="text-align: center;"><strong>定义菜单</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="表单标签">表单标签</h2>
+<h3 id="form标签">&lt;form&gt;标签</h3>
+<p><strong>该标签用于组合表单元素</strong></p>
+<h4 id="action">🍌action</h4>
+<p><strong>表单提交地址,默认为当前页</strong></p>
+<h4 id="method">🍌method</h4>
+<p><strong>设置请求方式,默认</strong><code>GET</code></p>
+<h4 id="target">🍌target</h4>
+<p><strong>设置结果显示的页面</strong></p>
+<h4 id="autocomplete">🍌autocomplete</h4>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">autocomplete</span>=<span class="hljs-string">&quot;on | off&quot;</span>&gt;</span><br>  <span class="hljs-comment">&lt;!-- ... --&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p><strong>是否记录保存用户的输入并用于之后的自动输入,默认打开</strong></p>
+<h4 id="元素属性">🍌元素属性</h4>
+<h4 id="name">📌name</h4>
+<p><strong>设置</strong><code>name</code><strong>属性的表单数据才能被发送</strong></p>
+<h3 id="input-标签">&lt;input /&gt;标签</h3>
+<p><code>&lt;input/&gt;</code><strong>为行内替换元素可设置宽高</strong></p>
+<h4 id="type属性">🥝type属性</h4>
+<h5 id="button">📌button</h5>
+<p><code>value</code><strong>设置控件提示</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;按钮&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;button&quot;</span>/&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p><input class="btn" type="button" value="按钮"></p>
+<h5 id="checkbox">📌checkbox</h5>
+<p><strong>默认会换行,</strong><code>value</code><strong>属性设置勾选后采集到的数据</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;check1&quot;</span> /&gt;</span>吃饭<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;check2&quot;</span> /&gt;</span>睡觉<br></code></pre></div></td></tr></table></figure>
+<p><input type="checkbox"><strong>吃饭</strong></p>
+<p><input type="checkbox"><strong>睡觉</strong></p>
+<h5 id="file">📌file</h5>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;file&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;file&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p><input type="file"></p>
+<h5 id="hidden">📌hidden</h5>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;hidden&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p><input type="hidden"></p>
+<h5 id="image">📌image</h5>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;img&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p><input type="image"></p>
+<h5 id="password">📌password</h5>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;psw&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p><input type="password"></p>
+<h5 id="radio">📌radio</h5>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radioo&quot;</span> /&gt;</span>是<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radioo&quot;</span> /&gt;</span>否<br></code></pre></div></td></tr></table></figure>
+<p><input type="radio" name="form1"><strong>是</strong></p>
+<p><input type="radio" name="form1"><strong>否</strong></p>
+<p><strong>单选项效果需设置相同的</strong><code>name</code><strong>属性才生效</strong></p>
+<h5 id="reset">📌reset</h5>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;reset&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p><input class="btn" type="reset"></p>
+<p><strong>重置表单</strong></p>
+<h5 id="submit">📌submit</h5>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p><input class="btn" type="submit"></p>
+<p><strong>用于表单的提交</strong></p>
+<h5 id="text">📌text</h5>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p><input type="text"></p>
+<p><strong>默认的样式</strong></p>
+<h5 id="date">📌date <span class="label label-danger">H5</span></h5>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;date&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p><input type="date"></p>
+<h5 id="datetime">📌datetime <span class="label label-danger">H5</span></h5>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;datetime&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p><input type="datetime"></p>
+<h5 id="datetime-local">📌datetime-local <span class="label label-danger">H5</span></h5>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;datetime-local&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p><input type="datetime-local"></p>
+<h5 id="month">📌month <span class="label label-danger">H5</span></h5>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;month&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p><input type="month"></p>
+<h5 id="week">📌week <span class="label label-danger">H5</span></h5>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;week&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p><input type="week"></p>
+<h5 id="time">📌time <span class="label label-danger">H5</span></h5>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;time&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p><input type="time"></p>
+<h5 id="color">📌color <span class="label label-danger">H5</span></h5>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;color&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p><input type="color"></p>
+<h5 id="url">📌url <span class="label label-danger">H5</span></h5>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;url&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p><input type="url"></p>
+<h5 id="email">📌email <span class="label label-danger">H5</span></h5>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;email&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p><input type="email"></p>
+<h4 id="value属性">🥝value属性</h4>
+<h2 id="表单demo">表单Demo</h2>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;get&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;form&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>会议发起人信息<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span>姓名<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;name&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;name&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;请输入昵称&quot;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;phone&quot;</span>&gt;</span>电话<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;tel&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;phone&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;phone&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;请输入手机号&quot;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;email&quot;</span>&gt;</span>邮箱<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;email&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;email&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;email&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;请输入邮箱&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>会议规划<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;start&quot;</span>&gt;</span>开始时间<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;datetime-local&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;start&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;start&quot;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;end&quot;</span>&gt;</span>结束时间<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;datetime-local&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;end&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;end&quot;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;place&quot;</span>&gt;</span>地点<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;place&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;place&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;请输入地点&quot;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;people&quot;</span>&gt;</span>人数<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;people&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;people&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;请输入人数&quot;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;theme&quot;</span>&gt;</span>会议主题<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;theme&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;theme&quot;</span>&gt;</span>任务分发<br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;theme&quot;</span>&gt;</span>工作报告<br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;theme&quot;</span>&gt;</span>工作计划<br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;theme&quot;</span>&gt;</span>工作总结<br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;theme&quot;</span>&gt;</span>工作交接<br>      <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>内容概要<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;content&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;content&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;请输入内容&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;adjunt&quot;</span>&gt;</span>添加附件说明<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;file&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;adjunt&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;adjunt&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>其他<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;must&quot;</span>&gt;</span>是否接受请假<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;must&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;must&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>是<br>      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;must&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>否<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;发起会议&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;reset&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;清空表单&quot;</span> /&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<form action method="get" name="form">
+<fieldset>
+<legend>会议发起人信息</legend><label for="name">姓名</label><input type="text" name="name" id="name" placeholder="请输入昵称"><label for="phone">电话</label><input type="tel" name="phone" id="phone" placeholder="请输入手机号"><label for="email">邮箱</label><input type="email" name="email" id="email" placeholder="请输入邮箱">
+</fieldset>
+<fieldset>
+<legend>会议规划</legend><label for="start">开始时间</label><input type="datetime-local" name="start" id="start"><label for="end">结束时间</label><input type="datetime-local" name="end" id="end"><br><label for="place">地点</label><input type="text" name="place" id="place" placeholder="请输入地点"><label for="people">人数</label><input type="number" name="people" id="people" placeholder="请输入人数"><br><label for="theme">会议主题</label><input type="checkbox" name="theme" id="theme">任务分发<input type="checkbox" name="theme">工作报告<input type="checkbox" name="theme">工作计划<input type="checkbox" name="theme">工作总结<input type="checkbox" name="theme">工作交接<br><label for="content">内容概要</label><br>
+<textarea name="content" id="content" placeholder="请输入内容"></textarea>
+<br><label for="adjunt">添加附件说明</label><input type="file" name="adjunt" id="adjunt">
+</fieldset>
+<fieldset>
+<legend>其他</legend><label for="must">是否接受请假</label><input type="radio" name="must" id="must" value="true">是<input type="radio" name="must" value="false">否
+</fieldset>
+<input type="submit" value="发起会议"><input type="reset" value="清空表单">
+</form>
+<div class="note note-info">
+            <p><strong>参考文档:</strong></p><p><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/html/html_forms.asp">《HTML 表单 (w3school)》</a></p>
+          </div>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80/">标记语言</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80/HTML/">HTML</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/HTML/">HTML</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A3%80%E6%B5%8B/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">🏗客户端检测</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/XHTML/">
+                        <span class="hidden-mobile">XHTML</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"IPRcxIlbuBJqh3907FzvjV07-MdYXbMMI","appKey":"Tkc8adMPvEMFtVmpGfH95iFh","path":"window.location.pathname","placeholder":"云青青兮欲雨💗水澹澹兮生烟","avatar":"robohash","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://iprcxilb.api.lncldglobal.com","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

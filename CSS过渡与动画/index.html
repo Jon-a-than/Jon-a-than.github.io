@@ -1,0 +1,775 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
+  <link rel="icon" href="/img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="清山">
+  <meta name="keywords" content="前端, JavaScript, hexo, HTML, CSS, Vue, 学习">
+  
+    <meta name="description" content="过渡      .transition {       padding: 10px;       background: #787;       color: #fff;       display: inline-block;     }  当可动画的值变化时可响应过渡效果 transition-property属性 🍍all 设置all表示所有可动画属性变化时均触发过">
+<meta property="og:type" content="article">
+<meta property="og:title" content="🟢CSS过渡与动画">
+<meta property="og:url" content="https://qingshaner.com/CSS%E8%BF%87%E6%B8%A1%E4%B8%8E%E5%8A%A8%E7%94%BB/index.html">
+<meta property="og:site_name" content="Jonathan的博客">
+<meta property="og:description" content="过渡      .transition {       padding: 10px;       background: #787;       color: #fff;       display: inline-block;     }  当可动画的值变化时可响应过渡效果 transition-property属性 🍍all 设置all表示所有可动画属性变化时均触发过">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204012103289.jpg">
+<meta property="article:published_time" content="2022-02-18T04:28:05.000Z">
+<meta property="article:modified_time" content="2022-04-05T11:44:44.612Z">
+<meta property="article:author" content="清山">
+<meta property="article:tag" content="CSS">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204012103289.jpg">
+  
+  
+  <title>🟢CSS过渡与动画 - Jonathan的博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/selection.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"qingshaner.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>风景清明后，云山睥睨前</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/%E9%97%AE%E6%B8%A0%E9%82%A3%E5%BE%97%E6%B8%85%E5%A6%82%E8%AE%B8/">
+                <i class="iconfont icon-plan"></i>
+                计划表
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204031054091.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="🟢CSS过渡与动画">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      清山
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-02-18 12:28" pubdate>
+        2022年2月18日 中午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.6k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      39 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">🟢CSS过渡与动画</h1>
+            
+            <div class="markdown-body">
+              <h1 id="过渡">过渡</h1>
+<style>
+    .transition {
+      padding: 10px;
+      background: #787;
+      color: #fff;
+      display: inline-block;
+    }
+</style>
+<p><strong>当可动画的值变化时可响应过渡效果</strong></p>
+<h2 id="transition-property属性">transition-property属性</h2>
+<h3 id="all">🍍all</h3>
+<p><strong>设置</strong><code>all</code><strong>表示所有可动画属性变化时均触发过渡</strong></p>
+<h3 id="指定属性">🍍指定属性</h3>
+<p><strong>指定的可动画属性变化时触发过渡,多个属性以逗号间隔</strong></p>
+<h3 id="none">🍍none</h3>
+<h2 id="transition-duration属性">transition-duration属性</h2>
+<p><strong>该属性设置过渡持续时间,不设置或为</strong><code>0</code><strong>不会触发过渡效果</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">transition-duration</span>: <span class="hljs-number">1s</span>;<br>  <span class="hljs-attribute">transition-property</span>: padding, transform;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p><strong>效果如下(鼠标移至或手指点击元素触发):</strong></p>
+<style>
+.duration:hover{
+  transform: rotate(180deg);
+  padding: 15px;
+}
+</style>
+<p><span class="transition duration" style="transition-duration: 1s;transition-property: transform, padding;">效果</span></p>
+<h2 id="transition-delay属性">transition-delay属性</h2>
+<p><strong>该属性设置可动画属性改变多久后触发过渡</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">transition-delay</span>: <span class="hljs-number">2s</span>;<br>  <span class="hljs-attribute">transition-duration</span>: <span class="hljs-number">1s</span>;<br>  <span class="hljs-attribute">transition-property</span>: background-color, padding;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p><strong>效果如下(鼠标移至或手指点击元素触发):</strong></p>
+<p>​ <span class="transition duration" style="transition-delay: 2s;transition-duration: 1s;transition-property: transform, padding;" onclick>效果</span></p>
+<h2 id="transition-timing-function属性">transition-timing-function属性</h2>
+<p><strong>设置过渡时属性变化速度(默认</strong><code>ease-in-out</code><strong>)</strong></p>
+<p><strong>可用</strong><code>cubic-bezier</code><strong>函数绘制更多动画曲线</strong></p>
+<style>
+    .timing {
+        --width: 20%;
+    }
+    .timing:hover{
+        --width: 100%;
+    }
+    .timing>div {
+        transition: all 2s;
+        padding: 10px;
+        background: #787;
+        color: #fff;
+        width: var(--width);
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+</style>
+<p>​</p>
+<div class="timing">
+<div style="transition-timing-function:linear;">
+linear
+</div>
+<div style="transition-timing-function:ease-in;">
+ease-in
+</div>
+<div style="transition-timing-function:ease-out;">
+ease-out
+</div>
+<div style="transition-timing-function:ease;-in-out">
+ease-in-out
+</div>
+<div style="transition-timing-function:cubic-bezier(0, 1, 1, 0);">
+cubic-bezier(0, 1, 1, 0)
+</div>
+<div style="transition-timing-function:cubic-bezier(0.5, 1, 1, 0.5);">
+cubic-bezier(0.5, 1, 1, 0.5)
+</div>
+<div style="transition-timing-function:cubic-bezier(0, 2, 1, -2);">
+cubic-bezier(0, 2, 1, -2)
+</div>
+</div>
+<h2 id="transition属性">transition属性</h2>
+<p><strong>该属性用于简写动画属性</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">transition</span>: padding <span class="hljs-number">1s</span> ease, width <span class="hljs-number">2s</span> linear;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h1 id="动画">动画</h1>
+<h2 id="keyframes关键字"><span class="citation" data-cites="keyframes关键字">@keyframes关键字</span></h2>
+<p><strong>可用该关键字定义动画,</strong><code>@keyframes [动画名] &#123;&#125;</code><strong>来添加动画</strong></p>
+<p><strong>在</strong><code>from</code><strong>块中填写第一帧样式</strong></p>
+<p><strong>在</strong><code>to</code><strong>块中填写最后一帧样式</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-keyword">@keyframes</span> myAnimation&#123;<br>  <span class="hljs-selector-tag">from</span> &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">20%</span>;<br>  &#125;<br>  <span class="hljs-selector-tag">to</span> &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;<br>  &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p><strong>也可使用百分比定义中间帧的样式</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-keyword">@keyframes</span> myAnimation&#123;<br>  <span class="hljs-number">0%</span> &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">20%</span>;<br>  &#125;<br>  <span class="hljs-number">66%</span> &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">125%</span><br>  &#125;<br>  <span class="hljs-number">100%</span> &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;<br>  &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="animation-name">animation-name</h2>
+<p><strong>该属性设置应用的动画</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">animation-name</span>: myAnimation;<br>&#125;<br><br><span class="hljs-keyword">@keyframes</span> myAnimation &#123;<br>  <span class="hljs-selector-tag">from</span>&#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">20%</span>;<br>  &#125;<br>  <span class="hljs-selector-tag">to</span> &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;<br>  &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="animation-duration">animation-duration</h2>
+<p><strong>该属性设置动画持续时间</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">animation-name</span>: myAnimation;<br>  <span class="hljs-attribute">animation-duration</span>: <span class="hljs-number">4s</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p><strong>效果如下:</strong></p>
+<style>
+    .animation{
+        color: #fff;
+        background: #787;
+        padding: 10px;
+    }
+    @keyframes myAnimation {
+  from{
+    width: 20%;
+  }
+  to {
+    width: 100%;
+  }
+}
+</style>
+<div class="animation" onclick="event.target.style.animation=&#39;4s myAnimation ease-in-out 1&#39;;setTimeout(()=&gt;event.target.style.animation=&#39;none&#39;, 4000);">
+点击展示动画
+</div>
+<h2 id="animation-timing-function">animation-timing-function</h2>
+<p><strong>设置过渡时属性变化速度(默认</strong><code>ease-in-out</code><strong>)</strong></p>
+<p><strong>可用</strong><code>cubic-bezier</code><strong>函数绘制更多动画曲线</strong></p>
+<p><strong>同</strong><a href="#transition-timing-function属性">transition-timing-function</a></p>
+<h2 id="animation-delay">animation-delay</h2>
+<p><strong>设置延时多久后执行动画</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">animation-name</span>: myAnimation;<br>  <span class="hljs-attribute">animation-duration</span>: <span class="hljs-number">4s</span>;<br>  <span class="hljs-attribute">animation-delay</span>: <span class="hljs-number">2s</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<div class="animation" onclick="event.target.style.animation=&#39;4s myAnimation ease-in-out 2s&#39;;setTimeout(()=&gt;event.target.style.animation=&#39;none&#39;, 6000);">
+点击展示动画
+</div>
+<h2 id="animation-iteration-count">animation-iteration-count</h2>
+<p><strong>该属性设置动画重复次数(默认1次)</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">animation-name</span>: myAnimation;<br>  <span class="hljs-attribute">animation-duration</span>: <span class="hljs-number">4s</span>;<br>  <span class="hljs-attribute">animation-iteration-count</span>: <span class="hljs-number">2</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<style>
+    @keyframes myAnimation2{
+        from {
+            transform:rotate(0);
+        }
+        to {
+            transform:rotate(360deg);
+        }
+    }
+</style>
+<div class="animation" onclick="event.target.style.animation=&#39;2s myAnimation ease-in-out 2&#39;;setTimeout(()=&gt;event.target.style.animation=&#39;none&#39;, 4000);">
+点击展示动画
+</div>
+<h3 id="infinite">🍒infinite</h3>
+<p><strong>设置次数为</strong><code>infinite</code><strong>一直重复</strong></p>
+<p><strong>效果如下:</strong></p>
+<div class="animation" style="animation: 3s myAnimation infinite">
+
+</div>
+<h2 id="animation-direction">animation-direction</h2>
+<p><strong>该属性设置动画的播放方式</strong></p>
+<h3 id="normal默认">🍕normal(默认)</h3>
+<p><strong>效果如下:</strong></p>
+<div class="animation" onclick="event.target.style.animation=&#39;4s myAnimation ease-in-out 1 normal&#39;;setTimeout(()=&gt;event.target.style.animation=&#39;none&#39;, 4000);">
+点击展示动画
+</div>
+<h3 id="reverse">🍕reverse</h3>
+<p><strong>效果如下:</strong></p>
+<div class="animation" onclick="event.target.style.animation=&#39;4s myAnimation ease-in-out 1 reverse&#39;;setTimeout(()=&gt;event.target.style.animation=&#39;none&#39;, 4000);">
+点击展示动画
+</div>
+<h3 id="alternate">🍕alternate</h3>
+<p><strong>正反动画均会占用一次</strong><code>animation-iteration-count</code></p>
+<p><strong>效果如下:</strong></p>
+<div class="animation" onclick="event.target.style.animation=&#39;4s myAnimation 2 ease-in-out alternate&#39;;setTimeout(()=&gt;event.target.style.animation=&#39;none&#39;, 8000);">
+点击展示动画
+</div>
+<h3 id="alternate-reverse">🍕alternate-reverse</h3>
+<p><strong>正反动画均会占用一次</strong><code>animation-iteration-count</code></p>
+<p><strong>效果如下:</strong></p>
+<div class="animation" onclick="event.target.style.animation=&#39;4s myAnimation ease-in-out 2 alternate-reverse&#39;;setTimeout(()=&gt;event.target.style.animation=&#39;none&#39;, 8000);">
+点击展示动画
+</div>
+<h2 id="animation-fill-mode">animation-fill-mode</h2>
+<p><strong>该属性设置动画开始前与结束后元素的样式是否跟随动画首末帧改变</strong></p>
+<p><strong>(动画设有两秒延时,刷新重开😀)</strong></p>
+<h3 id="none默认">🥕none(默认)</h3>
+<p><strong>开始前与结束后均不改变</strong></p>
+<div class="animation" onclick="event.target.style.animation=&#39;4s myAnimation 2 ease-in-out 2s alternate&#39;;">
+点击载入动画
+</div>
+<h3 id="forwards">🥕forwards</h3>
+<p><strong>结束后改变</strong></p>
+<div class="animation" onclick="event.target.style.animation=&#39;4s myAnimation 2 ease-in-out 2s alternate forwards&#39;;">
+点击载入动画
+</div>
+<h3 id="backwards">🥕backwards</h3>
+<p><strong>开始前改变(包括延时期间)</strong></p>
+<div class="animation" onclick="event.target.style.animation=&#39;4s myAnimation 2 ease-in-out 2s alternate backwards&#39;;">
+点击载入动画
+</div>
+<h3 id="both">🥕both</h3>
+<p><strong>均改变</strong></p>
+<div class="animation" onclick="event.target.style.animation=&#39;4s myAnimation 2 ease-in-out 2s alternate both&#39;;">
+点击载入动画
+</div>
+<h2 id="animation-play-state">animation-play-state</h2>
+<p><strong>该属性设置动画暂停(</strong><code>paused</code><strong>)或执行(</strong><code>running</code><strong>)</strong></p>
+<div class="animation" style="animation: 3s myAnimation infinite" onclick="event.target.style.animationPlayState = event.target.style.animationPlayState == &#39;paused&#39; ? &#39;running&#39; : &#39;paused&#39;;">
+点击暂停/继续
+</div>
+<h2 id="animation">animation</h2>
+<p><strong>动画属性的简写</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">animation</span>: myAnimation;<br>  <span class="hljs-attribute">animation-duration</span>: <span class="hljs-number">4s</span>;<br>  <span class="hljs-attribute">animation-timing-function</span>: ease;<br>  <span class="hljs-attribute">animation-delay</span>: <span class="hljs-number">1s</span>;<br>  <span class="hljs-attribute">animation-iteration-count</span>: infinite;<br>  <span class="hljs-attribute">animation-direction</span>: alternate;<br>  <span class="hljs-attribute">animation-fill-mode</span>: both;<br>  <span class="hljs-attribute">animation-play-state</span>: running;<br>&#125;<br><span class="hljs-comment">/* 等价缩写 */</span><br><span class="hljs-selector-tag">div</span> &#123;<br>  <span class="hljs-attribute">animation</span>: myAnimation <span class="hljs-number">4s</span> ease <span class="hljs-number">1s</span> infinite alternate both running;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<div class="animation" onclick="event.target.style.animation=&#39;myAnimation 4s ease 1s infinite alternate both running&#39;">
+点击插入动画
+</div>
+<h1 id="小demo">小Demo</h1>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span><br><span class="css">  <span class="hljs-selector-id">#loading</span>&#123;</span><br><span class="css">    <span class="hljs-attribute">display</span>: flex;</span><br><span class="css">  &#125;</span><br><span class="css">  <span class="hljs-selector-id">#loading</span> <span class="hljs-selector-tag">td</span>&#123;</span><br><span class="css">    <span class="hljs-attribute">margin</span>: <span class="hljs-number">3px</span>;</span><br><span class="css">    <span class="hljs-attribute">width</span>: <span class="hljs-number">10px</span>;</span><br><span class="css">    <span class="hljs-attribute">height</span>: <span class="hljs-number">60px</span>;</span><br><span class="css">    <span class="hljs-attribute">animation</span>: rotate <span class="hljs-number">3s</span> linear infinite;</span><br><span class="css">    <span class="hljs-attribute">animation-delay</span>: <span class="hljs-built_in">calc</span>(-<span class="hljs-number">0.1s</span>*<span class="hljs-built_in">var</span>(--i));</span><br><span class="css">    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">3px</span>;</span><br><span class="css">  &#125;</span><br><span class="css">  <span class="hljs-keyword">@keyframes</span> rotate &#123;</span><br><span class="css">    <span class="hljs-number">0%</span>&#123;</span><br><span class="css">      <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">17</span>, <span class="hljs-number">128</span>, <span class="hljs-number">255</span>);</span><br><span class="css">      <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">2px</span> <span class="hljs-number">2px</span> <span class="hljs-number">2px</span> <span class="hljs-built_in">rgb</span>(<span class="hljs-number">17</span>, <span class="hljs-number">128</span>, <span class="hljs-number">255</span>);</span><br><span class="css">      <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotateX</span>(<span class="hljs-number">0deg</span>);</span><br><span class="css">    &#125;</span><br><span class="css">    <span class="hljs-number">50%</span>&#123;</span><br><span class="css">      <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">75</span>, <span class="hljs-number">255</span>, <span class="hljs-number">135</span>);</span><br><span class="css">      <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">2px</span> <span class="hljs-number">2px</span> <span class="hljs-number">2px</span> <span class="hljs-built_in">rgb</span>(<span class="hljs-number">75</span>, <span class="hljs-number">255</span>, <span class="hljs-number">135</span>);</span><br><span class="css">      <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotateX</span>(<span class="hljs-number">180deg</span>);</span><br><span class="css">    &#125;</span><br><span class="css">    <span class="hljs-number">100%</span>&#123;</span><br><span class="css">      <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">17</span>, <span class="hljs-number">128</span>, <span class="hljs-number">255</span>);</span><br><span class="css">      <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">2px</span> <span class="hljs-number">2px</span> <span class="hljs-number">2px</span> <span class="hljs-built_in">rgb</span>(<span class="hljs-number">17</span>, <span class="hljs-number">128</span>, <span class="hljs-number">255</span>);</span><br><span class="css">      <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotateX</span>(<span class="hljs-number">360deg</span>);</span><br><span class="css">    &#125;</span><br><span class="css">  &#125;</span><br><span class="css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;loading&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">  <span class="hljs-keyword">const</span> LOAD = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">n</span>)</span>&#123;</span><br><span class="javascript">    <span class="hljs-keyword">const</span> BOX = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;loading&#x27;</span>)</span><br><span class="javascript">    <span class="hljs-keyword">while</span>(n--)&#123;</span><br><span class="javascript">      <span class="hljs-keyword">const</span> BAR = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&#x27;td&#x27;</span>)</span><br><span class="javascript">      BAR.setAttribute(<span class="hljs-string">&#x27;style&#x27;</span>, <span class="hljs-string">`--i:<span class="hljs-subst">$&#123;n&#125;</span>`</span>)</span><br><span class="javascript">      BOX.appendChild(BAR)</span><br><span class="javascript">    &#125;</span><br><span class="javascript">  &#125;</span><br><span class="javascript">  LOAD(<span class="hljs-number">20</span>)</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p><strong>效果如下:</strong></p>
+<style>#loading{display: flex;}#loading td{ margin: 3px;width: 10px;height: 60px;animation: 3s rotate linear infinite;animation-delay: calc(-0.1s*var(--i));border-radius: 3px;} @keyframes rotate {0%{background-color: rgb(17, 128, 255);box-shadow: 2px 2px 2px rgb(17, 128, 255);transform: rotateX(0deg);}50%{background-color: rgb(75, 255, 135);box-shadow: 2px 2px 2px rgb(75, 255, 135);transform: rotateX(180deg);}100%{background-color: rgb(17, 128, 255);box-shadow: 2px 2px 2px rgb(17, 128, 255);transform: rotateX(360deg);}}</style>
+<div style="display: flex;justify-content: center">
+<div id="loading">
+
+</div>
+</div>
+<script>
+    const LOAD = function(n){
+        const BOX = document.getElementById('loading')
+        while(n--){
+            const BAR = document.createElement('td')
+            BAR.setAttribute('style', `--i:${n}`)
+            BOX.appendChild(BAR)
+        }
+    }
+    LOAD(20)
+</script>
+<div class="note note-info">
+            <p><strong>参考文档:</strong></p><p><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/css/index.asp">《CSS教程 (w3school)》</a></p>
+          </div>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CSS/">CSS</a>
+                    
+                      <a class="hover-with-bg" href="/categories/CSS/%E5%9F%BA%E7%A1%80/">基础</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/CSS/">CSS</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/CSS%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">🔴CSS响应式设计</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/CSS%E5%B8%83%E5%B1%80/">
+                        <span class="hidden-mobile">🔵CSS布局</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"IPRcxIlbuBJqh3907FzvjV07-MdYXbMMI","appKey":"Tkc8adMPvEMFtVmpGfH95iFh","path":"window.location.pathname","placeholder":"云青青兮欲雨💗水澹澹兮生烟","avatar":"robohash","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://iprcxilb.api.lncldglobal.com","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
