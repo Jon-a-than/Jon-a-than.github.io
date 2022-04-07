@@ -14,25 +14,25 @@
   
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="清山">
-  <meta name="keywords" content="域名,IP,DNS">
+  <meta name="keywords" content="HTML,SVG,img,插入视频">
   
-    <meta name="description" content="域名与IP地址 IPv4 32位地址,用.分成四部份,每部份为0 ~ 2^8的数字 IPv6 由于IPv4的数量不够了,所以出现了新的IPv6 128位地址,用:分成八份,每部分为0 ~ 2^16的数字(通常用16进制表示) 域名 IP地址不好记,所以就用域名来映射 域名 ⇿ IP地址 www.baidu.com ⇿ 36.152.44.96 关于中文域名 输入中文域名时会发">
+    <meta name="description" content="总结HTML中插入图片视频的方法,插入SVG矢量图">
 <meta property="og:type" content="article">
-<meta property="og:title" content="域名与DNS">
-<meta property="og:url" content="https://qingshaner.com/%E5%9F%9F%E5%90%8D%E4%B8%8EDNS/index.html">
+<meta property="og:title" content="🔴HTML嵌入多媒体元素">
+<meta property="og:url" content="https://qingshaner.com/HTML%E5%B5%8C%E5%85%A5%E5%A4%9A%E5%AA%92%E4%BD%93%E5%85%83%E7%B4%A0/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
-<meta property="og:description" content="域名与IP地址 IPv4 32位地址,用.分成四部份,每部份为0 ~ 2^8的数字 IPv6 由于IPv4的数量不够了,所以出现了新的IPv6 128位地址,用:分成八份,每部分为0 ~ 2^16的数字(通常用16进制表示) 域名 IP地址不好记,所以就用域名来映射 域名 ⇿ IP地址 www.baidu.com ⇿ 36.152.44.96 关于中文域名 输入中文域名时会发">
+<meta property="og:description" content="总结HTML中插入图片视频的方法,插入SVG矢量图">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204041930680.jpg">
-<meta property="article:published_time" content="2021-11-20T11:21:04.000Z">
-<meta property="article:modified_time" content="2022-04-06T04:17:16.886Z">
+<meta property="og:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204041930683.jpg">
+<meta property="article:published_time" content="2021-11-23T13:38:29.000Z">
+<meta property="article:modified_time" content="2022-04-07T14:37:03.206Z">
 <meta property="article:author" content="清山">
-<meta property="article:tag" content="域名">
+<meta property="article:tag" content="HTML">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204041930680.jpg">
+<meta name="twitter:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204041930683.jpg">
   
   
-  <title>域名与DNS - Jonathan的博客</title>
+  <title>🔴HTML嵌入多媒体元素 - Jonathan的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -206,7 +206,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="域名与DNS">
+            <span class="h2" id="subtitle" title="🔴HTML嵌入多媒体元素">
               
             </span>
 
@@ -221,8 +221,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-11-20 19:21" pubdate>
-        2021年11月20日 晚上
+      <time datetime="2021-11-23 21:38" pubdate>
+        2021年11月23日 晚上
       </time>
     </span>
   
@@ -232,7 +232,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      727 字
+      571 字
     </span>
   
 
@@ -241,7 +241,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7 分钟
+      5 分钟
     </span>
   
 
@@ -278,33 +278,41 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">域名与DNS</h1>
+            <h1 style="display: none">🔴HTML嵌入多媒体元素</h1>
             
             <div class="markdown-body">
-              <h2 id="域名与ip地址">域名与IP地址</h2>
-<h3 id="ipv4">IPv4</h3>
-<p>32<strong>位地址,用</strong><code>.</code><strong>分成四部份,每部份为</strong><code>0 ~ 2^8</code><strong>的数字</strong></p>
-<h3 id="ipv6">IPv6</h3>
-<p><strong>由于</strong><code>IPv4</code><strong>的数量不够了,所以出现了新的</strong><code>IPv6</code></p>
-<p>128<strong>位地址,用</strong><code>:</code><strong>分成八份,每部分为</strong><code>0 ~ 2^16</code><strong>的数字(通常用16进制表示)</strong></p>
-<h3 id="域名">域名</h3>
-<p><code>IP</code><strong>地址不好记,所以就用域名来映射</strong></p>
-<p><strong>域名</strong> <code>⇿</code> <strong>IP地址</strong></p>
-<p><code>www.baidu.com</code> <code>⇿</code> <code>36.152.44.96</code></p>
-<h3 id="关于中文域名">关于中文域名</h3>
-<p><strong>输入中文域名时会发现地址会像重定向一样被转码</strong></p>
-<p><strong>如输入</strong><code>国务院.政务</code><strong>会转换成</strong><code>http://xn--zfr54hdx6e.xn--zfr164b/</code></p>
-<h2 id="网域名称系统dns">网域名称系统(DNS)</h2>
-<p><strong>浏览器输入</strong><code>www.baidu.com</code><strong>时</strong><code>DNS</code><strong>对域名解析后可得到对应的</strong><code>ip</code><strong>地址,即可用</strong><code>ip</code><strong>地址访问了</strong></p>
-<p><strong>在控制台输入</strong><code>ping &#123; url &#125;</code><strong>即可获得该网址的IP地址</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">ping www.baidu.com<br><br>正在 Ping www.a.shifen.com [36.152.44.96] 具有 32 字节的数据:<br>来自 36.152.44.96 的回复: 字节=32 时间=8ms TTL=57<br>来自 36.152.44.96 的回复: 字节=32 时间=9ms TTL=57<br>来自 36.152.44.96 的回复: 字节=32 时间=9ms TTL=57<br>来自 36.152.44.96 的回复: 字节=32 时间=9ms TTL=57<br><br>36.152.44.96 的 Ping 统计信息:<br>    数据包: 已发送 = 4，已接收 = 4，丢失 = 0 (0% 丢失)，<br>往返行程的估计时间(以毫秒为单位):<br>    最短 = 8ms，最长 = 9ms，平均 = 8ms<br></code></pre></div></td></tr></table></figure>
-<p><strong>在浏览器中地址栏输入</strong><code>36.152.44.96</code><strong>即可访问</strong><code>www.baidu.com</code></p>
-<h2 id="根域">根域</h2>
-<p><code>jon-a-than.github.io.</code></p>
-<p><strong>最后这个通常忽略</strong><code>.</code><strong>即代表根域</strong></p>
-<h2 id="顶级域">顶级域</h2>
-<p><code>.io</code>,<code>.com</code><strong>为顶级域</strong></p>
-<h2 id="域名分级">域名分级</h2>
+              <h2 id="img">img</h2>
+<h3 id="基础使用">基础使用</h3>
+<p><code>src</code><strong>:图片链接</strong></p>
+<p><code>alt</code><strong>:加载失败时的文字提示</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://http.cat/101&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;http状态码:101&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p><img src="https://http.cat/101" srcset="/img/loading.gif" lazyload alt="http状态码:101"></p>
+<h3 id="图像链接">图像链接</h3>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http.cat&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://http.cat/101&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;http状态码:101&quot;</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p><a src="https://http.cat"><img src="https://http.cat/101" srcset="/img/loading.gif" lazyload alt="http状态码:101"></a></p>
+<h3 id="语义化">语义化</h3>
+<p><strong>当图片只起装饰作用时,可使用CSS背景图片代替</strong></p>
+<p><strong>不要将重要信息放在图片</strong><code>title</code><strong>中显示</strong></p>
+<h2 id="figure">figure</h2>
+<p><code>figure</code><strong>元素定义一个语义化的多媒体元素</strong></p>
+<p><code>figcaption</code><strong>实现语义化</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">figure</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://http.cat/101&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;http状态码:101&quot;</span> /&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span>&gt;</span>HTTP状态码101:切换协议<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure>
+<img src="https://http.cat/101" srcset="/img/loading.gif" lazyload alt="http状态码:101">
+<figcaption style="text-align:center">
+HTTP状态码101:切换协议
+</figcaption>
+</figure>
+<div class="note note-info">
+            <p><code>&lt;figure&gt;</code>可以是几张图片、一段代码、音视频、方程、表格或别的--------MDN</p>
+          </div>
+<h2 id="video">video</h2>
+<figure class="highlight"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs"><br></code></pre></div></td></tr></table></figure>
+<video src="https://video.zhihu.com/video/1364145425868472320?itemId=1364160282437210112&amp;itemType=zvideo&amp;player=%7B%22shouldShowPageFullScreenButton%22%3Atrue%7D" controls>
+<p>
+你的浏览器不支持 HTML5 视频。可点击<a href="rabbit320.mp4">此链接</a>观看
+</p>
+</video>
 
             </div>
             <hr>
@@ -314,7 +322,9 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E7%BD%91%E7%BB%9C/">网络</a>
+                      <a class="hover-with-bg" href="/categories/%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80/">标记语言</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80/HTML/">HTML</a>
                     
                   </div>
                 
@@ -322,7 +332,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E5%9F%9F%E5%90%8D/">域名</a>
+                      <a class="hover-with-bg" href="/tags/HTML/">HTML</a>
                     
                   </div>
                 
@@ -339,9 +349,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/HTMLhead%E6%A0%87%E7%AD%BE/">
+                      <a href="/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">🔵HTMLhead元素</span>
+                        <span class="hidden-mobile">✔hexo博客搭建</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -349,8 +359,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Git%E5%91%BD%E4%BB%A4/">
-                        <span class="hidden-mobile">Git命令</span>
+                      <a href="/HTMLhead%E6%A0%87%E7%AD%BE/">
+                        <span class="hidden-mobile">🔵HTMLhead元素</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

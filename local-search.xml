@@ -1865,6 +1865,33 @@
   
   
   <entry>
+    <title>🔴HTML嵌入多媒体元素</title>
+    <link href="/HTML%E5%B5%8C%E5%85%A5%E5%A4%9A%E5%AA%92%E4%BD%93%E5%85%83%E7%B4%A0/"/>
+    <url>/HTML%E5%B5%8C%E5%85%A5%E5%A4%9A%E5%AA%92%E4%BD%93%E5%85%83%E7%B4%A0/</url>
+    
+    <content type="html"><![CDATA[<h2 id="img">img</h2><h3 id="基础使用">基础使用</h3><p><code>src</code><strong>:图片链接</strong></p><p><code>alt</code><strong>:加载失败时的文字提示</strong></p><figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://http.cat/101&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;http状态码:101&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure><p><img src="https://http.cat/101" srcset="/img/loading.gif" lazyload alt="http状态码:101"></p><h3 id="图像链接">图像链接</h3><figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http.cat&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://http.cat/101&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;http状态码:101&quot;</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></code></pre></div></td></tr></table></figure><p><a src="https://http.cat"><img src="https://http.cat/101" srcset="/img/loading.gif" lazyload alt="http状态码:101"></a></p><h3 id="语义化">语义化</h3><p><strong>当图片只起装饰作用时,可使用CSS背景图片代替</strong></p><p><strong>不要将重要信息放在图片</strong><code>title</code><strong>中显示</strong></p><h2 id="figure">figure</h2><p><code>figure</code><strong>元素定义一个语义化的多媒体元素</strong></p><p><code>figcaption</code><strong>实现语义化</strong></p><figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">figure</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://http.cat/101&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;http状态码:101&quot;</span> /&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span>&gt;</span>HTTP状态码101:切换协议<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span><br></code></pre></div></td></tr></table></figure><figure><img src="https://http.cat/101" srcset="/img/loading.gif" lazyload alt="http状态码:101"><figcaption style="text-align:center">HTTP状态码101:切换协议</figcaption></figure><div class="note note-info">            <p><code>&lt;figure&gt;</code>可以是几张图片、一段代码、音视频、方程、表格或别的--------MDN</p>          </div><h2 id="video">video</h2><figure class="highlight"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs"><br></code></pre></div></td></tr></table></figure><video src="https://video.zhihu.com/video/1364145425868472320?itemId=1364160282437210112&amp;itemType=zvideo&amp;player=%7B%22shouldShowPageFullScreenButton%22%3Atrue%7D" controls><p>你的浏览器不支持 HTML5 视频。可点击<a href="rabbit320.mp4">此链接</a>观看</p></video>]]></content>
+    
+    
+    <categories>
+      
+      <category>标记语言</category>
+      
+      <category>HTML</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>HTML</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>🔵HTMLhead元素</title>
     <link href="/HTMLhead%E6%A0%87%E7%AD%BE/"/>
     <url>/HTMLhead%E6%A0%87%E7%AD%BE/</url>
