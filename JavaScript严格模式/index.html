@@ -14,16 +14,18 @@
   
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="清山">
-  <meta name="keywords" content="前端, JavaScript, hexo, HTML, CSS, Vue, 学习">
+  <meta name="keywords" content="Javascript,js,严格模式">
   
-    <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript严格模式">
+    <meta name="description" content="记录js严格模式的使用方法与严格模式的优势点以及严格模式使用后的差异">
+<meta property="og:type" content="article">
+<meta property="og:title" content="🟡JavaScript严格模式">
 <meta property="og:url" content="https://qingshaner.com/JavaScript%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
+<meta property="og:description" content="记录js严格模式的使用方法与严格模式的优势点以及严格模式使用后的差异">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204012103293.jpg">
 <meta property="article:published_time" content="2022-02-23T03:47:50.000Z">
-<meta property="article:modified_time" content="2022-04-05T11:42:59.820Z">
+<meta property="article:modified_time" content="2022-04-08T13:08:21.263Z">
 <meta property="article:author" content="清山">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="严格模式">
@@ -31,7 +33,7 @@
 <meta name="twitter:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204012103293.jpg">
   
   
-  <title>JavaScript严格模式 - Jonathan的博客</title>
+  <title>🟡JavaScript严格模式 - Jonathan的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -205,7 +207,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="JavaScript严格模式">
+            <span class="h2" id="subtitle" title="🟡JavaScript严格模式">
               
             </span>
 
@@ -231,7 +233,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      737 字
     </span>
   
 
@@ -240,7 +242,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      7 分钟
     </span>
   
 
@@ -277,10 +279,38 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">JavaScript严格模式</h1>
+            <h1 style="display: none">🟡JavaScript严格模式</h1>
             
             <div class="markdown-body">
-              
+              <h2 id="开启严格模式">开启严格模式</h2>
+<h3 id="全局开启">全局开启</h3>
+<p><strong>在脚本</strong><code>首行</code><strong>标记</strong><code>'use strict'</code><strong>开启全局严格模式</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-meta">&#x27;use strict&#x27;</span><br><span class="hljs-comment">// ToDo</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-meta"></span></span><br><span class="hljs-meta"><span class="javascript">  &#x27;use strict&#x27;</span></span><br><span class="javascript">  <span class="hljs-comment">// ToDo</span></span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<div class="note note-danger">
+            <p><strong>全局使用严格模式导入没有启用严格模式的库时可能会不兼容</strong></p>
+          </div>
+<h3 id="函数单独开启">函数单独开启</h3>
+<p><strong>在函数首行标记</strong><code>'use strict'</code><strong>函数语块开启严格模式</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params"></span>) </span>&#123;<br><span class="hljs-meta">  &#x27;use strict&#x27;</span><br>  <span class="hljs-comment">// ToDo</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h3 id="默认的开启">默认的开启</h3>
+<p><strong>在</strong><code>module</code><strong>与</strong><code>class</code><strong>中强制开启严格模式</strong></p>
+<h2 id="严格模式的优势">严格模式的优势</h2>
+<ol type="1">
+<li><strong>可以对静默错误报错</strong></li>
+<li><strong>优化了代码执行效率</strong></li>
+<li><strong>对未来的保留关键字语法约束</strong></li>
+</ol>
+<h2 id="严格模式的特性">严格模式的特性</h2>
+<h3 id="禁止隐式全局变量声明">禁止隐式全局变量声明</h3>
+<p><strong>原先赋值未定义的变量时默认声明全局变量的行为被禁止</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-meta">&#x27;use strict&#x27;</span><br><span class="hljs-keyword">let</span> name<br>name = <span class="hljs-string">&#x27;Jonathan&#x27;</span><br>neme = <span class="hljs-string">&#x27;Jonathan&#x27;</span>  <br><span class="hljs-comment">// &gt; Uncaught ReferenceError: neme is not defined</span><br><span class="hljs-comment">// 可以解决意外的变量名书写错误(第二个name拼错)</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="禁止删除变量名">禁止删除变量名</h3>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-meta">&#x27;use strict&#x27;</span><br><span class="hljs-keyword">const</span> myName = <span class="hljs-string">&#x27;Jonathan&#x27;</span><br><span class="hljs-keyword">delete</span> myName<br><span class="hljs-comment">// &gt; Uncaught main.js:404</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="禁止同名形参">禁止同名形参</h3>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-meta">&#x27;use strict&#x27;</span><br><span class="hljs-built_in">console</span>.log(sum(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>))<br><span class="hljs-comment">// &gt; Uncaught main.js:404</span><br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span> (<span class="hljs-params">a, a, b</span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> a + a + b<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h3 id="禁止同名字面量属性">禁止同名字面量属性</h3>
+<h3 id="section"></h3>
 
             </div>
             <hr>
@@ -321,7 +351,7 @@
                     
                       <a href="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">🏗算法-排序</span>
+                        <span class="hidden-mobile">🔴算法-排序</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -330,7 +360,7 @@
                     
                     
                       <a href="/JavaScript%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0/">
-                        <span class="hidden-mobile">JavaScript高阶函数</span>
+                        <span class="hidden-mobile">🔴JavaScript高阶函数</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -4,7 +4,7 @@
   
   
   <entry>
-    <title>🟢为GitHub博客绑定域名</title>
+    <title>🔵为GitHub博客绑定域名</title>
     <link href="/%E4%B8%BAGitHub%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/"/>
     <url>/%E4%B8%BAGitHub%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/</url>
     
@@ -31,7 +31,7 @@
   
   
   <entry>
-    <title>🟢Hexo Fluid主题美化</title>
+    <title>🔵Hexo Fluid主题美化</title>
     <link href="/hexoFluid%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/"/>
     <url>/hexoFluid%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/</url>
     
@@ -56,7 +56,7 @@
   
   
   <entry>
-    <title>客户端存储</title>
+    <title>🟡客户端存储</title>
     <link href="/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%98%E5%82%A8/"/>
     <url>/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%98%E5%82%A8/</url>
     
@@ -85,7 +85,7 @@
   
   
   <entry>
-    <title>ToDoList</title>
+    <title>🟡ToDoList</title>
     <link href="/ToDoList/"/>
     <url>/ToDoList/</url>
     
@@ -114,7 +114,7 @@
   
   
   <entry>
-    <title>🏗Node文件读写(fs模块)</title>
+    <title>🟡Node文件读写(fs模块)</title>
     <link href="/NodeJs%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99-fs%E6%A8%A1%E5%9D%97/"/>
     <url>/NodeJs%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99-fs%E6%A8%A1%E5%9D%97/</url>
     
@@ -212,7 +212,7 @@
   
   
   <entry>
-    <title>hexo博文加密</title>
+    <title>🔵hexo博文加密</title>
     <link href="/hexo%E5%8D%9A%E6%96%87%E5%8A%A0%E5%AF%86/"/>
     <url>/hexo%E5%8D%9A%E6%96%87%E5%8A%A0%E5%AF%86/</url>
     
@@ -239,7 +239,7 @@
   
   
   <entry>
-    <title>🏗CSS颜色与渐变</title>
+    <title>🟡CSS颜色与渐变</title>
     <link href="/CSS%E6%B8%90%E5%8F%98/"/>
     <url>/CSS%E6%B8%90%E5%8F%98/</url>
     
@@ -297,7 +297,7 @@
   
   
   <entry>
-    <title>Tailwind CSS</title>
+    <title>🔴Tailwind CSS</title>
     <link href="/TailWind/"/>
     <url>/TailWind/</url>
     
@@ -326,7 +326,7 @@
   
   
   <entry>
-    <title>pnpm使用</title>
+    <title>🟡pnpm使用</title>
     <link href="/pnpm%E4%BD%BF%E7%94%A8/"/>
     <url>/pnpm%E4%BD%BF%E7%94%A8/</url>
     
@@ -353,7 +353,7 @@
   
   
   <entry>
-    <title>hexo数学公式</title>
+    <title>🔵hexo数学公式</title>
     <link href="/hexo%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"/>
     <url>/hexo%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</url>
     
@@ -434,7 +434,7 @@
   
   
   <entry>
-    <title>🏗算法-位运算</title>
+    <title>🔴算法-位运算</title>
     <link href="/%E7%AE%97%E6%B3%95-%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     <url>/%E7%AE%97%E6%B3%95-%E4%BD%8D%E8%BF%90%E7%AE%97/</url>
     
@@ -463,7 +463,7 @@
   
   
   <entry>
-    <title>算法-双指针</title>
+    <title>🔴算法-双指针</title>
     <link href="/%E7%AE%97%E6%B3%95-%E5%8F%8C%E6%8C%87%E9%92%88/"/>
     <url>/%E7%AE%97%E6%B3%95-%E5%8F%8C%E6%8C%87%E9%92%88/</url>
     
@@ -492,7 +492,7 @@
   
   
   <entry>
-    <title>🏗算法-排序</title>
+    <title>🔴算法-排序</title>
     <link href="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
     <url>/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/</url>
     
@@ -521,11 +521,11 @@
   
   
   <entry>
-    <title>JavaScript严格模式</title>
+    <title>🟡JavaScript严格模式</title>
     <link href="/JavaScript%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/"/>
     <url>/JavaScript%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h2 id="开启严格模式">开启严格模式</h2><h3 id="全局开启">全局开启</h3><p><strong>在脚本</strong><code>首行</code><strong>标记</strong><code>'use strict'</code><strong>开启全局严格模式</strong></p><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-meta">&#x27;use strict&#x27;</span><br><span class="hljs-comment">// ToDo</span><br></code></pre></div></td></tr></table></figure><figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-meta"></span></span><br><span class="hljs-meta"><span class="javascript">  &#x27;use strict&#x27;</span></span><br><span class="javascript">  <span class="hljs-comment">// ToDo</span></span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></div></td></tr></table></figure><div class="note note-danger">            <p><strong>全局使用严格模式导入没有启用严格模式的库时可能会不兼容</strong></p>          </div><h3 id="函数单独开启">函数单独开启</h3><p><strong>在函数首行标记</strong><code>'use strict'</code><strong>函数语块开启严格模式</strong></p><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params"></span>) </span>&#123;<br><span class="hljs-meta">  &#x27;use strict&#x27;</span><br>  <span class="hljs-comment">// ToDo</span><br>&#125;<br></code></pre></div></td></tr></table></figure><h3 id="默认的开启">默认的开启</h3><p><strong>在</strong><code>module</code><strong>与</strong><code>class</code><strong>中强制开启严格模式</strong></p><h2 id="严格模式的优势">严格模式的优势</h2><ol type="1"><li><strong>可以对静默错误报错</strong></li><li><strong>优化了代码执行效率</strong></li><li><strong>对未来的保留关键字语法约束</strong></li></ol><h2 id="严格模式的特性">严格模式的特性</h2><h3 id="禁止隐式全局变量声明">禁止隐式全局变量声明</h3><p><strong>原先赋值未定义的变量时默认声明全局变量的行为被禁止</strong></p><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-meta">&#x27;use strict&#x27;</span><br><span class="hljs-keyword">let</span> name<br>name = <span class="hljs-string">&#x27;Jonathan&#x27;</span><br>neme = <span class="hljs-string">&#x27;Jonathan&#x27;</span>  <br><span class="hljs-comment">// &gt; Uncaught ReferenceError: neme is not defined</span><br><span class="hljs-comment">// 可以解决意外的变量名书写错误(第二个name拼错)</span><br></code></pre></div></td></tr></table></figure><h3 id="禁止删除变量名">禁止删除变量名</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-meta">&#x27;use strict&#x27;</span><br><span class="hljs-keyword">const</span> myName = <span class="hljs-string">&#x27;Jonathan&#x27;</span><br><span class="hljs-keyword">delete</span> myName<br><span class="hljs-comment">// &gt; Uncaught main.js:404</span><br></code></pre></div></td></tr></table></figure><h3 id="禁止同名形参">禁止同名形参</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-meta">&#x27;use strict&#x27;</span><br><span class="hljs-built_in">console</span>.log(sum(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>))<br><span class="hljs-comment">// &gt; Uncaught main.js:404</span><br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span> (<span class="hljs-params">a, a, b</span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> a + a + b<br>&#125;<br></code></pre></div></td></tr></table></figure><h3 id="禁止同名字面量属性">禁止同名字面量属性</h3><h3 id="section"></h3>]]></content>
     
     
     <categories>
@@ -550,7 +550,7 @@
   
   
   <entry>
-    <title>JavaScript高阶函数</title>
+    <title>🔴JavaScript高阶函数</title>
     <link href="/JavaScript%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0/"/>
     <url>/JavaScript%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0/</url>
     
@@ -579,7 +579,7 @@
   
   
   <entry>
-    <title>🏗JavaScript函数</title>
+    <title>🟡JavaScript函数</title>
     <link href="/JavaScript%E5%87%BD%E6%95%B0/"/>
     <url>/JavaScript%E5%87%BD%E6%95%B0/</url>
     
@@ -608,7 +608,7 @@
   
   
   <entry>
-    <title>JavaScript防抖与节流</title>
+    <title>🔴JavaScript防抖与节流</title>
     <link href="/JavaScript%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/"/>
     <url>/JavaScript%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/</url>
     
@@ -666,7 +666,7 @@
   
   
   <entry>
-    <title>🟢CSS过渡与动画</title>
+    <title>🔵CSS过渡与动画</title>
     <link href="/CSS%E8%BF%87%E6%B8%A1%E4%B8%8E%E5%8A%A8%E7%94%BB/"/>
     <url>/CSS%E8%BF%87%E6%B8%A1%E4%B8%8E%E5%8A%A8%E7%94%BB/</url>
     
@@ -693,7 +693,7 @@
   
   
   <entry>
-    <title>🔵CSS布局</title>
+    <title>🟡CSS布局</title>
     <link href="/CSS%E5%B8%83%E5%B1%80/"/>
     <url>/CSS%E5%B8%83%E5%B1%80/</url>
     
@@ -720,7 +720,7 @@
   
   
   <entry>
-    <title>🟢CSS3空间变换</title>
+    <title>🔵CSS3空间变换</title>
     <link href="/CSS3%E7%A9%BA%E9%97%B4%E5%8F%98%E6%8D%A2/"/>
     <url>/CSS3%E7%A9%BA%E9%97%B4%E5%8F%98%E6%8D%A2/</url>
     
@@ -747,7 +747,7 @@
   
   
   <entry>
-    <title>🏗JavaScript动画</title>
+    <title>🟡JavaScript动画</title>
     <link href="/JavaScript%E5%8A%A8%E7%94%BB/"/>
     <url>/JavaScript%E5%8A%A8%E7%94%BB/</url>
     
@@ -776,7 +776,7 @@
   
   
   <entry>
-    <title>🏗JavaScript网络与资源请求</title>
+    <title>🟡JavaScript网络与资源请求</title>
     <link href="/JavaScript%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B5%84%E6%BA%90%E8%AF%B7%E6%B1%82/"/>
     <url>/JavaScript%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B5%84%E6%BA%90%E8%AF%B7%E6%B1%82/</url>
     
@@ -834,7 +834,7 @@
   
   
   <entry>
-    <title>🏗JavaScript事件</title>
+    <title>🟡JavaScript事件</title>
     <link href="/JavaScript%E4%BA%8B%E4%BB%B6/"/>
     <url>/JavaScript%E4%BA%8B%E4%BB%B6/</url>
     
@@ -892,7 +892,7 @@
   
   
   <entry>
-    <title>🏗客户端检测</title>
+    <title>🔴客户端检测</title>
     <link href="/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A3%80%E6%B5%8B/"/>
     <url>/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A3%80%E6%B5%8B/</url>
     
@@ -921,7 +921,7 @@
   
   
   <entry>
-    <title>HTML基础标签</title>
+    <title>🟡HTML基础标签</title>
     <link href="/HTML1/"/>
     <url>/HTML1/</url>
     
@@ -975,7 +975,7 @@
   
   
   <entry>
-    <title>HTML5</title>
+    <title>🔴HTML5</title>
     <link href="/HTML5%E8%AF%AD%E4%B9%89%E5%8C%96/"/>
     <url>/HTML5%E8%AF%AD%E4%B9%89%E5%8C%96/</url>
     
@@ -1062,7 +1062,7 @@
   
   
   <entry>
-    <title>🏗Nodejs</title>
+    <title>🟡Nodejs</title>
     <link href="/Nodejs/"/>
     <url>/Nodejs/</url>
     
@@ -1087,7 +1087,7 @@
   
   
   <entry>
-    <title>🏗JavaScriptDOM</title>
+    <title>🟡JavaScriptDOM</title>
     <link href="/JavaScriptDOM/"/>
     <url>/JavaScriptDOM/</url>
     
@@ -1116,7 +1116,7 @@
   
   
   <entry>
-    <title>🏗JavaScriptBOM</title>
+    <title>🟡JavaScriptBOM</title>
     <link href="/JavaScriptBOM/"/>
     <url>/JavaScriptBOM/</url>
     
@@ -1145,7 +1145,7 @@
   
   
   <entry>
-    <title>JavaScript数据类型</title>
+    <title>🟡JavaScript数据类型</title>
     <link href="/JavaScript%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B/"/>
     <url>/JavaScript%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B/</url>
     
@@ -1203,7 +1203,7 @@
   
   
   <entry>
-    <title>🟢CSS选择器</title>
+    <title>🔵CSS选择器</title>
     <link href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8/"/>
     <url>/CSS%E9%80%89%E6%8B%A9%E5%99%A8/</url>
     
@@ -1230,7 +1230,7 @@
   
   
   <entry>
-    <title>🏗CSS基础属性</title>
+    <title>🔴CSS基础属性</title>
     <link href="/CSS%E5%9F%BA%E7%A1%80/"/>
     <url>/CSS%E5%9F%BA%E7%A1%80/</url>
     
@@ -1257,7 +1257,7 @@
   
   
   <entry>
-    <title>🏗ES6Promise与异步函数</title>
+    <title>🟡ES6Promise与异步函数</title>
     <link href="/ES6Promise/"/>
     <url>/ES6Promise/</url>
     
@@ -1288,7 +1288,7 @@
   
   
   <entry>
-    <title>✔ES6Module</title>
+    <title>🔵ES6Module</title>
     <link href="/ES6module/"/>
     <url>/ES6module/</url>
     
@@ -1319,7 +1319,7 @@
   
   
   <entry>
-    <title>Less学习</title>
+    <title>🟡Less学习</title>
     <link href="/less%E5%AD%A6%E4%B9%A0/"/>
     <url>/less%E5%AD%A6%E4%B9%A0/</url>
     
@@ -1350,7 +1350,7 @@
   
   
   <entry>
-    <title>🏗Sass学习</title>
+    <title>🟡Sass学习</title>
     <link href="/sass%E5%AD%A6%E4%B9%A0/"/>
     <url>/sass%E5%AD%A6%E4%B9%A0/</url>
     
@@ -1381,7 +1381,7 @@
   
   
   <entry>
-    <title>Axios学习</title>
+    <title>🟡Axios学习</title>
     <link href="/Axios%E5%AD%A6%E4%B9%A0/"/>
     <url>/Axios%E5%AD%A6%E4%B9%A0/</url>
     
@@ -1462,7 +1462,7 @@
   
   
   <entry>
-    <title>🔵TypeScript简记</title>
+    <title>🟡TypeScript简记</title>
     <link href="/TypeScript%E5%AD%A6%E4%B9%A0/"/>
     <url>/TypeScript%E5%AD%A6%E4%B9%A0/</url>
     
@@ -1599,7 +1599,7 @@
   
   
   <entry>
-    <title>JavaScript对象</title>
+    <title>🔴JavaScript对象</title>
     <link href="/JavaScript%E5%AF%B9%E8%B1%A1/"/>
     <url>/JavaScript%E5%AF%B9%E8%B1%A1/</url>
     
@@ -1732,7 +1732,7 @@
   
   
   <entry>
-    <title>vite基础使用</title>
+    <title>🟡vite基础使用</title>
     <link href="/vite%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/"/>
     <url>/vite%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/</url>
     
@@ -1840,7 +1840,7 @@
   
   
   <entry>
-    <title>✔hexo博客搭建</title>
+    <title>🔵hexo博客搭建</title>
     <link href="/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     <url>/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
     
@@ -1919,7 +1919,7 @@
   
   
   <entry>
-    <title>域名与DNS</title>
+    <title>🟡域名与DNS</title>
     <link href="/%E5%9F%9F%E5%90%8D%E4%B8%8EDNS/"/>
     <url>/%E5%9F%9F%E5%90%8D%E4%B8%8EDNS/</url>
     
