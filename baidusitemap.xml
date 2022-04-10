@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://qingshaner.com/vue%E7%BB%84%E4%BB%B6/</loc>
+    <lastmod>2022-04-09</lastmod>
+  </url>
+  <url>
+    <loc>https://qingshaner.com/vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/</loc>
+    <lastmod>2022-04-09</lastmod>
+  </url>
+  <url>
     <loc>https://qingshaner.com/JavaScript%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2022-04-09</lastmod>
   </url>
@@ -177,10 +185,6 @@
     <lastmod>2022-04-06</lastmod>
   </url>
   <url>
-    <loc>https://qingshaner.com/vue%E7%BB%84%E4%BB%B6/</loc>
-    <lastmod>2022-04-05</lastmod>
-  </url>
-  <url>
     <loc>https://qingshaner.com/vue%E5%8A%A8%E7%94%BB%E4%B8%8E%E8%BF%87%E6%B8%A1/</loc>
     <lastmod>2022-04-05</lastmod>
   </url>
@@ -214,10 +218,6 @@
   </url>
   <url>
     <loc>https://qingshaner.com/WebpackTS%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2022-04-03</lastmod>
-  </url>
-  <url>
-    <loc>https://qingshaner.com/vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/</loc>
     <lastmod>2022-04-03</lastmod>
   </url>
   <url>
