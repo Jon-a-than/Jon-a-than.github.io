@@ -16,24 +16,21 @@
   <meta name="author" content="清山">
   <meta name="keywords" content="前端, JavaScript, hexo, HTML, CSS, Vue, 学习">
   
-    <meta name="description" content="基础使用 🍑初始化 12npm init -y         # 默认初始化选项npm init 🍑npm初始化选项 123456789package name:     # 包名version:          # 版本号description:      # 包描述entry point:      # 入口文件test command:     # 测试指令git repos">
+    <meta name="description" content="接口 使用interface声明接口 声明对象 interface还可用声明对象类型 TS不检查属性的序列 1234567891011interface message &amp;#123;  age: number;  name: string;  isMale: boolean;&amp;#125;const aboutMe: message &#x3D; &amp;#123;  age: 20,  isMale: tr">
 <meta property="og:type" content="article">
-<meta property="og:title" content="🔵npm基础使用">
-<meta property="og:url" content="https://qingshaner.com/npm%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="TypeScript函数接口与泛型">
+<meta property="og:url" content="https://qingshaner.com/TypeScript%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%B3%9B%E5%9E%8B/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
-<meta property="og:description" content="基础使用 🍑初始化 12npm init -y         # 默认初始化选项npm init 🍑npm初始化选项 123456789package name:     # 包名version:          # 版本号description:      # 包描述entry point:      # 入口文件test command:     # 测试指令git repos">
+<meta property="og:description" content="接口 使用interface声明接口 声明对象 interface还可用声明对象类型 TS不检查属性的序列 1234567891011interface message &amp;#123;  age: number;  name: string;  isMale: boolean;&amp;#125;const aboutMe: message &#x3D; &amp;#123;  age: 20,  isMale: tr">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204012102200.jpg">
-<meta property="article:published_time" content="2022-01-23T15:34:41.000Z">
-<meta property="article:modified_time" content="2022-04-05T11:51:33.988Z">
+<meta property="article:published_time" content="2022-04-17T03:55:01.000Z">
+<meta property="article:modified_time" content="2022-04-19T09:42:46.235Z">
 <meta property="article:author" content="清山">
-<meta property="article:tag" content="npm">
-<meta property="article:tag" content="前端工具">
+<meta property="article:tag" content="TypeScript">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204012102200.jpg">
   
   
-  <title>🔵npm基础使用 - Jonathan的博客</title>
+  <title>TypeScript函数接口与泛型 - Jonathan的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -207,7 +204,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="🔵npm基础使用">
+            <span class="h2" id="subtitle" title="TypeScript函数接口与泛型">
               
             </span>
 
@@ -222,8 +219,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-01-23 23:34" pubdate>
-        2022年1月23日 晚上
+      <time datetime="2022-04-17 11:55" pubdate>
+        2022年4月17日 中午
       </time>
     </span>
   
@@ -233,7 +230,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.1k 字
+      604 字
     </span>
   
 
@@ -242,7 +239,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      10 分钟
+      6 分钟
     </span>
   
 
@@ -279,39 +276,20 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">🔵npm基础使用</h1>
+            <h1 style="display: none">TypeScript函数接口与泛型</h1>
             
             <div class="markdown-body">
-              <h2 id="基础使用">基础使用</h2>
-<h3 id="初始化">🍑初始化</h3>
-<figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">npm init <span class="hljs-literal">-y</span>         <span class="hljs-comment"># 默认初始化选项</span><br>npm init<br></code></pre></div></td></tr></table></figure>
-<h3 id="npm初始化选项">🍑npm初始化选项</h3>
-<figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">package name:     <span class="hljs-comment"># 包名</span><br>version:          <span class="hljs-comment"># 版本号</span><br>description:      <span class="hljs-comment"># 包描述</span><br>entry point:      <span class="hljs-comment"># 入口文件</span><br>test command:     <span class="hljs-comment"># 测试指令</span><br>git repository:   <span class="hljs-comment"># git仓库地址</span><br>keywords:         <span class="hljs-comment"># 关键字</span><br>author:           <span class="hljs-comment"># 作者</span><br>license:          <span class="hljs-comment"># 协议</span><br></code></pre></div></td></tr></table></figure>
-<h3 id="安装依赖">🍑安装依赖</h3>
-<h4 id="按package.json安装">按<code>package.json</code>安装</h4>
-<p><strong>依赖默认保存在</strong><code>node_modules</code><strong>文件夹中</strong></p>
-<figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">npm install       <span class="hljs-comment"># 安装所有`package.json`中的依赖</span><br>npm i             <span class="hljs-comment"># 简写</span><br></code></pre></div></td></tr></table></figure>
-<h4 id="自定义添加依赖">自定义添加依赖</h4>
-<figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">npm i 包名<span class="hljs-literal">-1</span><br>npm i 包名<span class="hljs-literal">-2</span><br><br><span class="hljs-comment"># 等价于</span><br>npm i 包名<span class="hljs-literal">-1</span> 包名<span class="hljs-literal">-2</span><br><br><span class="hljs-comment"># 等价于</span><br>npm i 包名&#123;<span class="hljs-literal">-1</span>, <span class="hljs-literal">-2</span>&#125;<br></code></pre></div></td></tr></table></figure>
-<h4 id="安装标志">安装标志</h4>
-<p><code>开发环境</code><strong>源码编写</strong></p>
-<p><code>生产环境</code><strong>产品上线</strong></p>
-<figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">npm i &lt;...&gt;                 <span class="hljs-comment"># 默认安装到生产环境</span><br>npm i &lt;...&gt; -<span class="hljs-literal">-save</span><span class="hljs-literal">-prod</span>     <span class="hljs-comment"># 安装到生产环境</span><br>npm i &lt;...&gt; -<span class="hljs-literal">-production</span>    <span class="hljs-comment"># 等价于</span><br>npm i &lt;...&gt; <span class="hljs-literal">-P</span>              <span class="hljs-comment"># 简写</span><br>npm i &lt;...&gt; -<span class="hljs-literal">-save</span>          <span class="hljs-comment"># 等价于</span><br>npm i &lt;...&gt; <span class="hljs-literal">-S</span>              <span class="hljs-comment"># 简写</span><br><br>npm i &lt;...&gt; -<span class="hljs-literal">-save</span><span class="hljs-literal">-dev</span>      <span class="hljs-comment"># 安装到开发环境</span><br>npm i &lt;...&gt; <span class="hljs-literal">-D</span>              <span class="hljs-comment"># 简写</span><br><br>npm i &lt;...&gt; -<span class="hljs-literal">-no</span><span class="hljs-literal">-save</span>       <span class="hljs-comment"># 不更改`package.json`</span><br></code></pre></div></td></tr></table></figure>
-<h4 id="安装位置">安装位置</h4>
-<figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">npm i &lt;...&gt; [<span class="hljs-type">option</span>]          <span class="hljs-comment"># 安装在当前包目录中    </span><br><br>npm i &lt;...&gt; -<span class="hljs-literal">-global</span> [<span class="hljs-type">option</span>] <span class="hljs-comment"># 安装在全局包目录中</span><br>npm i &lt;...&gt; <span class="hljs-literal">-g</span> [<span class="hljs-type">option</span>]       <span class="hljs-comment"># 等价于</span><br></code></pre></div></td></tr></table></figure>
-<h4 id="指定版本">指定版本</h4>
-<figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">npm i name@<span class="hljs-number">0.20</span>.<span class="hljs-number">1</span>            <span class="hljs-comment"># 指定版本</span><br>npm i name@beta              <span class="hljs-comment"># 版本标签</span><br></code></pre></div></td></tr></table></figure>
-<h3 id="更新依赖">🍑更新依赖</h3>
-<figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">npm update                  <span class="hljs-comment"># 参数同`install`</span><br></code></pre></div></td></tr></table></figure>
-<h3 id="卸载依赖">🍑卸载依赖</h3>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">npm uninstall<br></code></pre></div></td></tr></table></figure>
-<h3 id="运行任务">🍑运行任务</h3>
-<figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">npm run &lt;任务名&gt;<br><br>npm run <span class="hljs-built_in">start</span>      <span class="hljs-comment"># start是特殊任务名</span><br>npm <span class="hljs-built_in">start</span>          <span class="hljs-comment"># start可简写</span><br></code></pre></div></td></tr></table></figure>
-<p><strong>在</strong><code>package.json</code><strong>的</strong><code>scripts</code><strong>中写长命令以方便构建</strong></p>
-<figure class="highlight json"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs json">&#123;<br>  <span class="hljs-attr">&quot;scripts&quot;</span>: &#123;<br>    <span class="hljs-attr">&quot;task1&quot;</span>: <span class="hljs-string">&quot;....&quot;</span>,<br>    <span class="hljs-attr">&quot;start&quot;</span>: <span class="hljs-string">&quot;....&quot;</span>,<br>  &#125;,<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<h3 id="安装的包与版本">🍑安装的包与版本</h3>
-<figure class="highlight powershell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs powershell">npm <span class="hljs-built_in">ls</span>              <span class="hljs-comment"># 列出本地安装的包</span><br>npm <span class="hljs-built_in">ls</span> -<span class="hljs-literal">-depth</span>=<span class="hljs-number">0</span>    <span class="hljs-comment"># 包的依赖包列出0层</span><br><br>npm <span class="hljs-built_in">ls</span> <span class="hljs-literal">-g</span> [<span class="hljs-type">option</span>]  <span class="hljs-comment"># 列出全局安装的包</span><br><br>npm v name          <span class="hljs-comment"># 包的版本</span><br></code></pre></div></td></tr></table></figure>
-<h2 id="包配置">包配置</h2>
+              <h2 id="接口">接口</h2>
+<p><strong>使用</strong><code>interface</code><strong>声明接口</strong></p>
+<h3 id="声明对象">声明对象</h3>
+<p><code>interface</code><strong>还可用声明对象类型</strong> <strong>TS不检查属性的序列</strong> <figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> message &#123;<br>  <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>;<br>  name: <span class="hljs-built_in">string</span>;<br>  isMale: <span class="hljs-built_in">boolean</span>;<br>&#125;<br><br><span class="hljs-keyword">const</span> aboutMe: message = &#123;<br>  <span class="hljs-attr">age</span>: <span class="hljs-number">20</span>,<br>  <span class="hljs-attr">isMale</span>: <span class="hljs-literal">true</span>,           <span class="hljs-comment">// 交换顺序不会报错</span><br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Jonathan&#x27;</span>,<br>&#125;<br></code></pre></div></td></tr></table></figure></p>
+<h3 id="可选属性">可选属性</h3>
+<p><strong>使用</strong><code>?:</code><strong>表示为可选参数</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> message &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;<br>  age: <span class="hljs-built_in">number</span>;<br>  isMale: <span class="hljs-built_in">boolean</span>;<br>  birth?: <span class="hljs-built_in">string</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h3 id="只读属性">只读属性</h3>
+<p><code>readonly</code><strong>声明属性只读(不可重写)</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> message &#123;<br>  <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>;<br>  name: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-keyword">readonly</span> isMale: <span class="hljs-built_in">boolean</span>;<br>&#125;<br><br><span class="hljs-keyword">const</span> aboutMe: message = &#123;<br>  <span class="hljs-attr">age</span>: <span class="hljs-number">20</span>,<br>  <span class="hljs-attr">isMale</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Jonathan&#x27;</span>,<br>&#125;<br><br>aboutMe.isMale = <span class="hljs-literal">false</span><br><span class="hljs-comment">// &gt; Cannot assign to &#x27;isMale&#x27; because it is a read-only property.</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="更多属性">更多属性</h3>
 
             </div>
             <hr>
@@ -321,7 +299,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/Node-js/">Node.js</a>
+                      <a class="hover-with-bg" href="/categories/TypeScript/">TypeScript</a>
                     
                   </div>
                 
@@ -329,9 +307,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/npm/">npm</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/">前端工具</a>
+                      <a class="hover-with-bg" href="/tags/TypeScript/">TypeScript</a>
                     
                   </div>
                 
@@ -348,18 +324,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/react%E5%9F%BA%E7%A1%80/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">🔴React基础</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/TypeScript%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E/">
-                        <span class="hidden-mobile">🟡TypeScript类型声明</span>
+                      <a href="/TypeScript%E7%B1%BBclass/">
+                        <span class="hidden-mobile">TypeScript函数与类声明</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

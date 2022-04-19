@@ -16,23 +16,21 @@
   <meta name="author" content="清山">
   <meta name="keywords" content="前端, JavaScript, hexo, HTML, CSS, Vue, 学习">
   
-    <meta name="description" content="使用TypeScript 基础使用 🥝安装TypeScript 1yarn add TypeScript 可用tsc -v命令检查是否安装成功 1tsc -v 🥝编译ts文件 1tsc app.ts 运行命令生成对应的js文件 简易TypeScript环境搭建 🥕初始化 1tsc --init 运行命令后在目录下生成tsconfig.json文件 🥕创建目录 创">
+    <meta name="description" content="ES6 class了解更多 🔗前往查看 🍒基础使用 constructor为new关键字调用的构造函数 12345678class Speaker &amp;#123;  name: string                  &#x2F;&#x2F; 指定属性类型  constructor (name: string) &amp;#123;    this.name &#x3D; name  &amp;#125;&amp;#125;cons">
 <meta property="og:type" content="article">
-<meta property="og:title" content="🟡TypeScript简记">
-<meta property="og:url" content="https://qingshaner.com/TypeScript%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:title" content="TypeScript函数与类声明">
+<meta property="og:url" content="https://qingshaner.com/TypeScript%E7%B1%BBclass/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
-<meta property="og:description" content="使用TypeScript 基础使用 🥝安装TypeScript 1yarn add TypeScript 可用tsc -v命令检查是否安装成功 1tsc -v 🥝编译ts文件 1tsc app.ts 运行命令生成对应的js文件 简易TypeScript环境搭建 🥕初始化 1tsc --init 运行命令后在目录下生成tsconfig.json文件 🥕创建目录 创">
+<meta property="og:description" content="ES6 class了解更多 🔗前往查看 🍒基础使用 constructor为new关键字调用的构造函数 12345678class Speaker &amp;#123;  name: string                  &#x2F;&#x2F; 指定属性类型  constructor (name: string) &amp;#123;    this.name &#x3D; name  &amp;#125;&amp;#125;cons">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204012102201.jpg">
-<meta property="article:published_time" content="2022-01-23T15:25:46.000Z">
-<meta property="article:modified_time" content="2022-04-08T14:28:16.410Z">
+<meta property="article:published_time" content="2022-04-17T03:49:24.000Z">
+<meta property="article:modified_time" content="2022-04-18T09:07:09.458Z">
 <meta property="article:author" content="清山">
-<meta property="article:tag" content="TypeScript">
+<meta property="article:tag" content="前端, JavaScript, hexo, HTML, CSS, Vue, 学习">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204012102201.jpg">
   
   
-  <title>🟡TypeScript简记 - Jonathan的博客</title>
+  <title>TypeScript函数与类声明 - Jonathan的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -206,7 +204,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="🟡TypeScript简记">
+            <span class="h2" id="subtitle" title="TypeScript函数与类声明">
               
             </span>
 
@@ -221,8 +219,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-01-23 23:25" pubdate>
-        2022年1月23日 晚上
+      <time datetime="2022-04-17 11:49" pubdate>
+        2022年4月17日 中午
       </time>
     </span>
   
@@ -232,7 +230,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      4.6k 字
+      1.7k 字
     </span>
   
 
@@ -241,7 +239,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      39 分钟
+      15 分钟
     </span>
   
 
@@ -278,81 +276,12 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">🟡TypeScript简记</h1>
+            <h1 style="display: none">TypeScript函数与类声明</h1>
             
             <div class="markdown-body">
-              <h1 id="使用typescript">使用TypeScript</h1>
-<h2 id="基础使用">基础使用</h2>
-<h3 id="安装typescript">🥝安装TypeScript</h3>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yarn add TypeScript<br></code></pre></div></td></tr></table></figure>
-<p><strong>可用</strong><code>tsc -v</code><strong>命令检查是否安装成功</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">tsc -v<br></code></pre></div></td></tr></table></figure>
-<h3 id="编译ts文件">🥝编译ts文件</h3>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">tsc app.ts<br></code></pre></div></td></tr></table></figure>
-<p><strong>运行命令生成对应的</strong><code>js</code><strong>文件</strong></p>
-<h2 id="简易typescript环境搭建">简易TypeScript环境搭建</h2>
-<h3 id="初始化">🥕初始化</h3>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">tsc --init<br></code></pre></div></td></tr></table></figure>
-<p><strong>运行命令后在目录下生成</strong><code>tsconfig.json</code><strong>文件</strong></p>
-<h3 id="创建目录">🥕创建目录</h3>
-<p><strong>创建以下目录</strong></p>
-<p><code>dist</code><strong>为</strong><code>js</code><strong>文件输出目录</strong></p>
-<p><code>src</code><strong>为待编译</strong><code>ts</code><strong>文件目录</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">├─dist<br>├──src<br>|   └──index.ts<br>└──tsconfig.json<br></code></pre></div></td></tr></table></figure>
-<h3 id="绑定出入口">🥕绑定出入口</h3>
-<p><strong>打开</strong><code>tsconfig.json</code><strong>文件,设置</strong><code>"rootDir": "./src",</code><strong>和</strong><code>"outDir": "./dist",</code></p>
-<p><strong>再运行以下命令</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">tsc -w<br></code></pre></div></td></tr></table></figure>
-<p><strong>即可动态更新</strong><code>ts</code><strong>文件了</strong></p>
-<h1 id="typescript语法">TypeScript语法</h1>
-<h2 id="变量申明">变量申明</h2>
-<h3 id="定义基础类型">🍉定义基础类型</h3>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> name: <span class="hljs-built_in">string</span> = <span class="hljs-string">&#x27;Jonathan&#x27;</span><br><span class="hljs-comment">// const name = new String(&#x27;a&#x27;) 报错,构造函数非原始类型</span><br><span class="hljs-keyword">const</span> age: <span class="hljs-built_in">number</span> = <span class="hljs-number">20</span><br><span class="hljs-keyword">const</span> isMale: <span class="hljs-built_in">boolean</span> = <span class="hljs-literal">true</span><br></code></pre></div></td></tr></table></figure>
-<h3 id="定义数组">🍉定义数组</h3>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> list: <span class="hljs-built_in">number</span>[] = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]<br><br><span class="hljs-comment">// 或使用泛型</span><br><span class="hljs-keyword">const</span> list: <span class="hljs-built_in">Array</span>&lt;<span class="hljs-built_in">number</span>&gt; = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]<br></code></pre></div></td></tr></table></figure>
-<h3 id="定义元组">🍉定义元组</h3>
-<p><strong>元组为元素数量,各索引数据类型已知的数据类型</strong></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> tuples: [<span class="hljs-built_in">string</span>, <span class="hljs-built_in">number</span>, <span class="hljs-built_in">boolean</span>] = [<span class="hljs-string">&#x27;Jonathan&#x27;</span>, <span class="hljs-number">20</span>, <span class="hljs-literal">true</span>]<br></code></pre></div></td></tr></table></figure>
-<p><strong>元素可以是更复杂的元素类型,或嵌套元组</strong></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> tuples: [<br>    <span class="hljs-built_in">Array</span>&lt;<span class="hljs-built_in">string</span>&gt;,<br>    [<span class="hljs-built_in">string</span>, <span class="hljs-built_in">number</span>, <span class="hljs-built_in">boolean</span>]<br>  ] = [<br>    [<span class="hljs-string">&#x27;Hellow&#x27;</span>, <span class="hljs-string">&#x27;TypeScript&#x27;</span>],<br>    [<span class="hljs-string">&#x27;Jonathan&#x27;</span>, <span class="hljs-number">20</span>, <span class="hljs-literal">true</span>]<br>  ]<br></code></pre></div></td></tr></table></figure>
-<h3 id="定义枚举">🍉定义枚举</h3>
-<p><strong>枚举可以通过数值得到反向映射结果</strong></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-built_in">enum</span> StudentList &#123;<br>    <span class="hljs-string">&#x27;ZhangSan&#x27;</span>,<br>    <span class="hljs-string">&#x27;LiSi&#x27;</span> = <span class="hljs-number">4</span>,<br>    <span class="hljs-string">&#x27;LiuWu&#x27;</span>,<br>    <span class="hljs-string">&#x27;LingYun&#x27;</span> = <span class="hljs-number">7</span><br>&#125;<br><br><span class="hljs-built_in">console</span>.log(StudentList[<span class="hljs-string">&#x27;Zhangsan&#x27;</span>])  <span class="hljs-comment">// 0</span><br><span class="hljs-built_in">console</span>.log(StudentList[<span class="hljs-string">&#x27;LiuWu&#x27;</span>])     <span class="hljs-comment">// 5</span><br><span class="hljs-built_in">console</span>.log(StudentList[<span class="hljs-number">7</span>])           <span class="hljs-comment">// LingYun</span><br></code></pre></div></td></tr></table></figure>
-<p><strong>字符串枚举不支持反向映射</strong></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-built_in">enum</span> Message &#123;<br>    False = <span class="hljs-string">&quot;No&quot;</span>,<br>    True = <span class="hljs-string">&quot;Yes&quot;</span>,<br>    Yes = True<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<h3 id="定义未知类型">🍉定义未知类型</h3>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> anythings: <span class="hljs-built_in">Array</span>&lt;<span class="hljs-built_in">any</span>&gt; = [<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-literal">true</span>], <span class="hljs-literal">false</span>]<br></code></pre></div></td></tr></table></figure>
-<h3 id="空类型">🍉空类型</h3>
-<p><strong>该类型多用于无返回值的函数</strong></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> say = (): <span class="hljs-function"><span class="hljs-params">void</span> =&gt;</span> &#123;<br>  alert(<span class="hljs-string">&#x27;Hellow TypeScript!&#x27;</span>)<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<h3 id="对象">🍉对象</h3>
-<h3 id="联合类型">🍉联合类型</h3>
-<p><strong>联合类型变量赋值前只可使用不同类型的公共方法或属性</strong></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">let</span> strNum: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span><br><span class="hljs-built_in">console</span>.log(strNum.length)<br><span class="hljs-comment">/* &gt; error TS2339: Property &#x27;length&#x27; does not exist on type</span><br><span class="hljs-comment"> * &gt; &#x27;string | number&#x27;.Property &#x27;length&#x27; does not exist on</span><br><span class="hljs-comment"> * &gt; type &#x27;number&#x27;.</span><br><span class="hljs-comment">*/</span><br>strNum = <span class="hljs-number">1</span><br>strNum = <span class="hljs-string">&#x27;a&#x27;</span><br></code></pre></div></td></tr></table></figure>
-<h3 id="类型断言">🍉类型断言</h3>
-<h4 id="可用标签断言any类型">📌可用标签断言<code>any</code>类型</h4>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> myName: <span class="hljs-built_in">any</span> = <span class="hljs-string">&#x27;Jonathan&#x27;</span><br><span class="hljs-keyword">const</span> Len: <span class="hljs-built_in">number</span> = (&lt;<span class="hljs-built_in">string</span>&gt;myName).length<br></code></pre></div></td></tr></table></figure>
-<h4 id="推荐as语法">📌推荐<code>as</code>语法</h4>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> myName: <span class="hljs-built_in">any</span> = <span class="hljs-string">&#x27;Jonathan&#x27;</span><br><span class="hljs-keyword">const</span> Len: <span class="hljs-built_in">number</span> = (myName <span class="hljs-keyword">as</span> <span class="hljs-built_in">string</span>).length<br></code></pre></div></td></tr></table></figure>
-<h2 id="接口">接口</h2>
-<h3 id="基础使用-1">🍅基础使用</h3>
-<p><strong>函数接收参数不检查属性顺序</strong></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> myMsg = ( message: &#123; <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>; age: <span class="hljs-built_in">number</span>; male: <span class="hljs-built_in">boolean</span> &#125;): <span class="hljs-function"><span class="hljs-params">void</span> =&gt;</span> &#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`My name is <span class="hljs-subst">$&#123;message.name&#125;</span>, a <span class="hljs-subst">$&#123;message.age&#125;</span>-year-old <span class="hljs-subst">$&#123;(message.male)? <span class="hljs-string">&#x27;boy&#x27;</span>: <span class="hljs-string">&#x27;girl&#x27;</span>&#125;</span>`</span>)<br>&#125;<br><br>myMsg(&#123;<br>  <span class="hljs-attr">age</span>: <span class="hljs-number">20</span>,<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Jonathan&#x27;</span>,<br>  <span class="hljs-attr">male</span>: <span class="hljs-literal">true</span><br>&#125;)<br></code></pre></div></td></tr></table></figure>
-<p><strong>使用</strong><code>interface</code><strong>(接口)改写</strong></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> messageType &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;<br>  age: <span class="hljs-built_in">number</span>;<br>  male: <span class="hljs-built_in">boolean</span>;<br>&#125;<br><br><span class="hljs-keyword">const</span> myMsg = ( message: messageType): <span class="hljs-function"><span class="hljs-params">void</span> =&gt;</span> &#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`My name is <span class="hljs-subst">$&#123;message.name&#125;</span>, a <span class="hljs-subst">$&#123;message.age&#125;</span>-year-old <span class="hljs-subst">$&#123;(message.male)? <span class="hljs-string">&#x27;boy&#x27;</span>: <span class="hljs-string">&#x27;girl&#x27;</span>&#125;</span>`</span>)<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<p><code>interface</code><strong>还可用于对象类型</strong></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> message: messageType = &#123;<br>  <span class="hljs-attr">age</span>: <span class="hljs-number">20</span>,<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Jonathan&#x27;</span>,<br>  <span class="hljs-attr">male</span>: <span class="hljs-literal">true</span>,<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<h3 id="可选参数">🍅可选参数</h3>
-<p><strong>使用</strong><code>?:</code><strong>表示为可选参数</strong></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> messageType &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;<br>  age: <span class="hljs-built_in">number</span>;<br>  male: <span class="hljs-built_in">boolean</span>;<br>  birth?: <span class="hljs-built_in">string</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<h3 id="任意属性">🍅任意属性</h3>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> messageType &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;<br>  age: <span class="hljs-built_in">number</span>;<br>  []<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<h3 id="只读属性">🍅只读属性</h3>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> messageType &#123;<br>  <span class="hljs-keyword">readonly</span> name: <span class="hljs-built_in">string</span>;<br>	<span class="hljs-keyword">readonly</span> age: <span class="hljs-built_in">number</span>;<br>  <span class="hljs-keyword">readonly</span> male: <span class="hljs-built_in">boolean</span>;<br>  <span class="hljs-keyword">readonly</span> birth?: <span class="hljs-built_in">string</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<h2 id="类">类</h2>
-<p><strong>ES6 class了解更多</strong></p>
+              <p><strong>ES6 class了解更多</strong></p>
 <p><a class="btn" target="_blank" rel="noopener" href="https://jon-a-than.github.io/2022/02/03/ES6类/">🔗前往查看</a></p>
-<h3 id="基础使用-2">🍒基础使用</h3>
+<h3 id="基础使用">🍒基础使用</h3>
 <p><code>constructor</code><strong>为</strong><code>new</code><strong>关键字调用的构造函数</strong></p>
 <figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Speaker</span> </span>&#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>                  <span class="hljs-comment">// 指定属性类型</span><br>  <span class="hljs-title">constructor</span> (<span class="hljs-params">name: <span class="hljs-built_in">string</span></span>) &#123;<br>    <span class="hljs-built_in">this</span>.name = name<br>  &#125;<br>&#125;<br><br><span class="hljs-keyword">const</span> speaker: Speaker = <span class="hljs-keyword">new</span> Speaker(<span class="hljs-string">&#x27;Jonathan&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
 <h3 id="继承">🍒继承</h3>
@@ -377,12 +306,6 @@
 <h3 id="存取器">🍒存取器</h3>
 <p><strong>给类添加</strong><code>get()</code><strong>,与</strong><code>set()</code><strong>接口来修改(读取)属性</strong></p>
 <figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Message</span> </span>&#123;<br>  <span class="hljs-title">constructor</span> (<span class="hljs-params"><span class="hljs-keyword">public</span> name: <span class="hljs-built_in">string</span>, <span class="hljs-keyword">public</span> age: <span class="hljs-built_in">number</span></span>) &#123;&#125;<br>  <br>  get () &#123;<br>    <br>  &#125;<br><br>  set () &#123;<br>    <br>  &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<h2 id="泛型">泛型</h2>
-<h3 id="泛型变量">🍍泛型变量</h3>
-<h3 id="泛型类型">🍍泛型类型</h3>
-<div class="note note-info">
-            <p><strong>参考文档:</strong></p><p><a target="_blank" rel="noopener" href="https://www.tslang.cn/docs/home.html">《TypeScript中文网》</a></p>
-          </div>
 
             </div>
             <hr>
@@ -397,13 +320,6 @@
                   </div>
                 
                 
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/TypeScript/">TypeScript</a>
-                    
-                  </div>
-                
               </div>
               
                 <p class="note note-warning">
@@ -417,9 +333,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/npm%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/">
+                      <a href="/TypeScript%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%B3%9B%E5%9E%8B/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">🔵npm基础使用</span>
+                        <span class="hidden-mobile">TypeScript函数接口与泛型</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -427,8 +343,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/pinia/">
-                        <span class="hidden-mobile">🍍Pinia</span>
+                      <a href="/%E4%B8%BAGitHub%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">
+                        <span class="hidden-mobile">🔵为GitHub博客绑定域名</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
