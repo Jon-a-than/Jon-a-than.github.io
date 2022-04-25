@@ -16,21 +16,21 @@
   <meta name="author" content="清山">
   <meta name="keywords" content="前端, JavaScript, hexo, HTML, CSS, Vue, 学习">
   
-    <meta name="description" content="函数定义 TypeScript可在声明函数时添加参数与返回值类型 直接定义 123456789function add(x: number, y: number): number &amp;#123;  return x + y&amp;#125;const add &#x3D; function(x: number,y: number): number &amp;#123;   return x + y&amp;#125;cons">
+    <meta name="description" content="接口 使用interface声明接口 声明对象 interface还可用声明对象类型 TS不检查属性的序列 1234567891011interface message &amp;#123;  age: number;  name: string;  isMale: boolean;&amp;#125;const aboutMe: message &#x3D; &amp;#123;  age: 20,  isMale: t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TypeScript函数与泛型">
-<meta property="og:url" content="https://qingshaner.com/TypeScript%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%B3%9B%E5%9E%8B/index.html">
+<meta property="og:title" content="TypeScript对象与接口">
+<meta property="og:url" content="https://qingshaner.com/TypeScript%E5%AF%B9%E8%B1%A1%E4%B8%8E%E6%8E%A5%E5%8F%A3/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
-<meta property="og:description" content="函数定义 TypeScript可在声明函数时添加参数与返回值类型 直接定义 123456789function add(x: number, y: number): number &amp;#123;  return x + y&amp;#125;const add &#x3D; function(x: number,y: number): number &amp;#123;   return x + y&amp;#125;cons">
+<meta property="og:description" content="接口 使用interface声明接口 声明对象 interface还可用声明对象类型 TS不检查属性的序列 1234567891011interface message &amp;#123;  age: number;  name: string;  isMale: boolean;&amp;#125;const aboutMe: message &#x3D; &amp;#123;  age: 20,  isMale: t">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-01-02T03:55:01.000Z">
-<meta property="article:modified_time" content="2022-04-23T04:42:49.993Z">
+<meta property="article:published_time" content="2022-04-22T14:24:56.000Z">
+<meta property="article:modified_time" content="2022-04-23T02:55:15.735Z">
 <meta property="article:author" content="清山">
 <meta property="article:tag" content="TypeScript">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>TypeScript函数与泛型 - Jonathan的博客</title>
+  <title>TypeScript对象与接口 - Jonathan的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -204,7 +204,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="TypeScript函数与泛型">
+            <span class="h2" id="subtitle" title="TypeScript对象与接口">
               
             </span>
 
@@ -219,8 +219,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-01-02 11:55" pubdate>
-        2022年1月2日 中午
+      <time datetime="2022-04-22 22:24" pubdate>
+        2022年4月22日 晚上
       </time>
     </span>
   
@@ -230,7 +230,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      597 字
+      763 字
     </span>
   
 
@@ -239,7 +239,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5 分钟
+      7 分钟
     </span>
   
 
@@ -276,23 +276,27 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">TypeScript函数与泛型</h1>
+            <h1 style="display: none">TypeScript对象与接口</h1>
             
             <div class="markdown-body">
-              <h2 id="函数定义">函数定义</h2>
-<p><code>TypeScript</code><strong>可在声明函数时添加参数与返回值类型</strong></p>
-<h3 id="直接定义">直接定义</h3>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span> </span>&#123;<br>  <span class="hljs-keyword">return</span> x + y<br>&#125;<br><br><span class="hljs-keyword">const</span> add = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span>,y: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span> </span>&#123; <br>  <span class="hljs-keyword">return</span> x + y<br>&#125;<br><br><span class="hljs-keyword">const</span> add = (x: <span class="hljs-built_in">number</span>, <span class="hljs-attr">y</span>: <span class="hljs-built_in">number</span>): <span class="hljs-function"><span class="hljs-params">number</span> =&gt;</span> x + y<br></code></pre></div></td></tr></table></figure>
-<h3 id="类型表达式">类型表达式</h3>
-<p><strong>用于赋值语句的函数声明</strong></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> add: <span class="hljs-function">(<span class="hljs-params">x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span></span>) =&gt;</span> <span class="hljs-built_in">number</span> = <span class="hljs-function">(<span class="hljs-params">x, y</span>) =&gt;</span> x + y<br><br><span class="hljs-keyword">const</span> add: <span class="hljs-function">(<span class="hljs-params">x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span></span>) =&gt;</span> <span class="hljs-built_in">number</span> = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x, y</span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> x + y<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<p><strong>使用类型别名改写一下</strong></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">type</span> Add = <span class="hljs-function">(<span class="hljs-params">x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span></span>) =&gt;</span> <span class="hljs-built_in">number</span><br><br><span class="hljs-keyword">const</span> add: Add = <span class="hljs-function">(<span class="hljs-params">x, y</span>) =&gt;</span> x + y<br><br><span class="hljs-keyword">const</span> add: Add = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x, y</span>) </span>&#123; <span class="hljs-keyword">return</span> x + y &#125;<br></code></pre></div></td></tr></table></figure>
-<p><strong>使用高阶函数时也可用类型表达式</strong></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> <br></code></pre></div></td></tr></table></figure>
-<h2 id="泛型函数">泛型函数</h2>
-<p><strong>当输入类型是动态的且输出类型也随输入类型改变时可用泛型来避免</strong><code>any</code></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getter</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">input: T</span>): <span class="hljs-title">T</span> </span>&#123;<br>  <span class="hljs-keyword">return</span> i<br>&#125;<br></code></pre></div></td></tr></table></figure>
+              <h2 id="接口">接口</h2>
+<p><strong>使用</strong><code>interface</code><strong>声明接口</strong></p>
+<h3 id="声明对象">声明对象</h3>
+<p><code>interface</code><strong>还可用声明对象类型</strong> <strong>TS不检查属性的序列</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> message &#123;<br>  <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>;<br>  name: <span class="hljs-built_in">string</span>;<br>  isMale: <span class="hljs-built_in">boolean</span>;<br>&#125;<br><br><span class="hljs-keyword">const</span> aboutMe: message = &#123;<br>  <span class="hljs-attr">age</span>: <span class="hljs-number">20</span>,<br>  <span class="hljs-attr">isMale</span>: <span class="hljs-literal">true</span>,           <span class="hljs-comment">// 交换顺序不会报错</span><br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Jonathan&#x27;</span>,<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h3 id="可选属性">可选属性</h3>
+<p><strong>使用</strong><code>?:</code><strong>表示为可选参数</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> message &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;<br>  age: <span class="hljs-built_in">number</span>;<br>  isMale: <span class="hljs-built_in">boolean</span>;<br>  birth?: <span class="hljs-built_in">string</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h3 id="只读属性">只读属性</h3>
+<p><code>readonly</code><strong>声明属性只读(不可重写)</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> message &#123;<br>  <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>;<br>  name: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-keyword">readonly</span> isMale: <span class="hljs-built_in">boolean</span>;<br>&#125;<br><br><span class="hljs-keyword">const</span> aboutMe: message = &#123;<br>  <span class="hljs-attr">age</span>: <span class="hljs-number">20</span>,<br>  <span class="hljs-attr">isMale</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Jonathan&#x27;</span>,<br>&#125;<br><br>aboutMe.isMale = <span class="hljs-literal">false</span><br><span class="hljs-comment">// &gt; Cannot assign to &#x27;isMale&#x27; because it is a read-only property.</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="更多属性">更多属性</h3>
+<h2 id="对象">对象</h2>
+<h3 id="通过接口声明">通过接口声明</h3>
+<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> Message &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;<br>  age: <span class="hljs-built_in">number</span>;<br>  sex: <span class="hljs-built_in">boolean</span>;<br>&#125;<br><br><span class="hljs-keyword">const</span> I: Message = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Jon-a-than&#x27;</span>,<br>  <span class="hljs-attr">age</span>: <span class="hljs-number">20</span>,<br>  <span class="hljs-attr">sex</span>: <span class="hljs-literal">true</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
+<div class="note note-info">
+            <p><strong>参考文档:</strong></p>
+          </div>
 
             </div>
             <hr>
@@ -327,9 +331,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/TypeScript%E7%B1%BBclass/">
+                      <a href="/Vue%E5%8D%9A%E5%AE%A2%E5%89%8D%E7%AB%AF/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">TypeScript函数与类声明</span>
+                        <span class="hidden-mobile">Vue博客前端</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -337,8 +341,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/TypeScript%E5%AE%89%E8%A3%85%E4%B8%8E%E7%AE%80%E6%98%93%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
-                        <span class="hidden-mobile">🔵TypeScript安装与简易环境搭建</span>
+                      <a href="/%E4%B8%BAGitHub%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">
+                        <span class="hidden-mobile">🔵为GitHub博客绑定域名</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

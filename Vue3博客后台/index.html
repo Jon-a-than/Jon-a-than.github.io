@@ -16,21 +16,21 @@
   <meta name="author" content="清山">
   <meta name="keywords" content="前端, JavaScript, hexo, HTML, CSS, Vue, 学习">
   
-    <meta name="description" content="函数定义 TypeScript可在声明函数时添加参数与返回值类型 直接定义 123456789function add(x: number, y: number): number &amp;#123;  return x + y&amp;#125;const add &#x3D; function(x: number,y: number): number &amp;#123;   return x + y&amp;#125;cons">
+    <meta name="description" content="初始化项目 pnpm create vite创建vue3项目,选择vue-ts 1234567891011121314151617181920212223pnpm create vitePackages: +6++++++Packages are hard linked from the content-addressable store to the virtual store.  Cont">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TypeScript函数与泛型">
-<meta property="og:url" content="https://qingshaner.com/TypeScript%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%B3%9B%E5%9E%8B/index.html">
+<meta property="og:title" content="Vue3博客后台">
+<meta property="og:url" content="https://qingshaner.com/Vue3%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0/index.html">
 <meta property="og:site_name" content="Jonathan的博客">
-<meta property="og:description" content="函数定义 TypeScript可在声明函数时添加参数与返回值类型 直接定义 123456789function add(x: number, y: number): number &amp;#123;  return x + y&amp;#125;const add &#x3D; function(x: number,y: number): number &amp;#123;   return x + y&amp;#125;cons">
+<meta property="og:description" content="初始化项目 pnpm create vite创建vue3项目,选择vue-ts 1234567891011121314151617181920212223pnpm create vitePackages: +6++++++Packages are hard linked from the content-addressable store to the virtual store.  Cont">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-01-02T03:55:01.000Z">
-<meta property="article:modified_time" content="2022-04-23T04:42:49.993Z">
+<meta property="article:published_time" content="2022-04-25T00:51:08.000Z">
+<meta property="article:modified_time" content="2022-04-25T01:21:29.656Z">
 <meta property="article:author" content="清山">
-<meta property="article:tag" content="TypeScript">
+<meta property="article:tag" content="前端, JavaScript, hexo, HTML, CSS, Vue, 学习">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>TypeScript函数与泛型 - Jonathan的博客</title>
+  <title>Vue3博客后台 - Jonathan的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -204,7 +204,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="TypeScript函数与泛型">
+            <span class="h2" id="subtitle" title="Vue3博客后台">
               
             </span>
 
@@ -219,8 +219,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-01-02 11:55" pubdate>
-        2022年1月2日 中午
+      <time datetime="2022-04-25 08:51" pubdate>
+        2022年4月25日 早上
       </time>
     </span>
   
@@ -230,7 +230,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      597 字
+      1.6k 字
     </span>
   
 
@@ -239,7 +239,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5 分钟
+      14 分钟
     </span>
   
 
@@ -276,43 +276,37 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">TypeScript函数与泛型</h1>
+            <h1 style="display: none">Vue3博客后台</h1>
             
             <div class="markdown-body">
-              <h2 id="函数定义">函数定义</h2>
-<p><code>TypeScript</code><strong>可在声明函数时添加参数与返回值类型</strong></p>
-<h3 id="直接定义">直接定义</h3>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span> </span>&#123;<br>  <span class="hljs-keyword">return</span> x + y<br>&#125;<br><br><span class="hljs-keyword">const</span> add = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span>,y: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span> </span>&#123; <br>  <span class="hljs-keyword">return</span> x + y<br>&#125;<br><br><span class="hljs-keyword">const</span> add = (x: <span class="hljs-built_in">number</span>, <span class="hljs-attr">y</span>: <span class="hljs-built_in">number</span>): <span class="hljs-function"><span class="hljs-params">number</span> =&gt;</span> x + y<br></code></pre></div></td></tr></table></figure>
-<h3 id="类型表达式">类型表达式</h3>
-<p><strong>用于赋值语句的函数声明</strong></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> add: <span class="hljs-function">(<span class="hljs-params">x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span></span>) =&gt;</span> <span class="hljs-built_in">number</span> = <span class="hljs-function">(<span class="hljs-params">x, y</span>) =&gt;</span> x + y<br><br><span class="hljs-keyword">const</span> add: <span class="hljs-function">(<span class="hljs-params">x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span></span>) =&gt;</span> <span class="hljs-built_in">number</span> = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x, y</span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> x + y<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<p><strong>使用类型别名改写一下</strong></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">type</span> Add = <span class="hljs-function">(<span class="hljs-params">x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span></span>) =&gt;</span> <span class="hljs-built_in">number</span><br><br><span class="hljs-keyword">const</span> add: Add = <span class="hljs-function">(<span class="hljs-params">x, y</span>) =&gt;</span> x + y<br><br><span class="hljs-keyword">const</span> add: Add = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x, y</span>) </span>&#123; <span class="hljs-keyword">return</span> x + y &#125;<br></code></pre></div></td></tr></table></figure>
-<p><strong>使用高阶函数时也可用类型表达式</strong></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> <br></code></pre></div></td></tr></table></figure>
-<h2 id="泛型函数">泛型函数</h2>
-<p><strong>当输入类型是动态的且输出类型也随输入类型改变时可用泛型来避免</strong><code>any</code></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getter</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">input: T</span>): <span class="hljs-title">T</span> </span>&#123;<br>  <span class="hljs-keyword">return</span> i<br>&#125;<br></code></pre></div></td></tr></table></figure>
+              <h2 id="初始化项目">初始化项目</h2>
+<p><code>pnpm create vite</code>创建<code>vue3</code>项目,选择<code>vue-ts</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pnpm create vite<br>Packages: +6<br>++++++<br>Packages are hard linked from the content-addressable store to the virtual store.<br>  Content-addressable store is at: xxxxxxxxxxxxxxxxxxxx<br>  Virtual store is at:             node_modules/.pnpm<br><br>xxxxxxxxxxxxxxxxxxxxxxx:<br>+ create-vite 2.9.2<br><br>Progress: resolved 6, reused 6, downloaded 0, added 6, <span class="hljs-keyword">done</span><br>√ Project name: ... vue3BlogBackstage<br>√ Package name: ... vue3blogbackstage<br>√ Select a framework: » vue<br>√ Select a variant: » vue-ts<br><br>Scaffolding project <span class="hljs-keyword">in</span> F:\xxxxx\vue3BlogBackstage...<br><br>Done. Now run:<br><br>  <span class="hljs-built_in">cd</span> vue3BlogBackstage<br>  pnpm install<br>  pnpm run dev<br></code></pre></div></td></tr></table></figure>
+<h3 id="依赖">依赖</h3>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pnpm i pinia<br>pnpm i vue-router<br>pnpm i axios<br>pnpm i @types/node                                       <span class="hljs-comment"># 配置路径别名所需</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="ui框架">ui框架</h3>
+<p>使用<code>element-plus</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pnpm i element-plus                                      <span class="hljs-comment"># element-plus</span><br>pnpm i unplugin-vue-components unplugin-auto-import -D   <span class="hljs-comment"># 按需导入ui组件</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="vite.config.ts">vite.config.ts</h3>
+<h4 id="路径别名">路径别名</h4>
+<p><code>tsconfig.json</code>文件添加</p>
+<figure class="highlight json"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs json">&#123;<br>  <span class="hljs-attr">&quot;compilerOptions&quot;</span>: &#123;<br>    <span class="hljs-comment">// ...</span><br>    <span class="hljs-attr">&quot;baseUrl&quot;</span>: <span class="hljs-string">&quot;.&quot;</span>,<br>    <span class="hljs-attr">&quot;paths&quot;</span>: &#123;<br>      <span class="hljs-attr">&quot;@/*&quot;</span>: [<br>        <span class="hljs-string">&quot;src/*&quot;</span><br>      ]<br>    &#125;<br>    <span class="hljs-comment">// ...</span><br>  &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p><code>vite.config.ts</code>文件添加</p>
+<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; resolve &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;path&#x27;</span><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> defineConfig(&#123;<br>  <span class="hljs-comment">// ...</span><br>  <span class="hljs-attr">resolve</span>: &#123;<br>    <span class="hljs-attr">alias</span>: &#123;<br>      <span class="hljs-string">&#x27;@&#x27;</span>: resolve(__dirname, <span class="hljs-string">&#x27;src&#x27;</span>),<br>    &#125;,<br>  &#125;<br>  <span class="hljs-comment">// ...</span><br>&#125;)<br></code></pre></div></td></tr></table></figure>
+<h4 id="自动按需导入">自动按需导入</h4>
+<p><code>vite.config.ts</code>文件添加</p>
+<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> AutoImport <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;unplugin-auto-import/vite&#x27;</span><br><span class="hljs-keyword">import</span> Components <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;unplugin-vue-components/vite&#x27;</span><br><span class="hljs-keyword">import</span> &#123; ElementPlusResolver &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;unplugin-vue-components/resolvers&#x27;</span><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> defineConfig(&#123;<br>  <span class="hljs-attr">plugins</span>: [<br>    vue(),<br>    AutoImport(&#123;<br>      <span class="hljs-attr">resolvers</span>: [ElementPlusResolver()],<br>    &#125;),<br>    Components(&#123;<br>      <span class="hljs-attr">resolvers</span>: [ElementPlusResolver()],<br>    &#125;),<br>  ],<br>&#125;)<br></code></pre></div></td></tr></table></figure>
+<div class="note note-success">
+            <p><a target="_blank" rel="noopener" href="https://element-plus.gitee.io/zh-CN/guide/quickstart.html#按需导入"><strong><code>Element-Plus官网</code></strong></a></p>
+          </div>
+<h2 id="项目目录">项目目录</h2>
+<h3 id="main.ts">main.ts</h3>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/TypeScript/">TypeScript</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/TypeScript/">TypeScript</a>
-                    
-                  </div>
                 
               </div>
               
@@ -327,9 +321,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/TypeScript%E7%B1%BBclass/">
+                      <a href="/Vue%E5%8D%9A%E5%AE%A2%E5%90%8E%E7%AB%AF2-%E6%B7%BB%E5%8A%A0GitHub%E6%8E%88%E6%9D%83%E7%99%BB%E5%BD%95/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">TypeScript函数与类声明</span>
+                        <span class="hidden-mobile">Vue博客后端2(添加GitHub授权登录)</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -337,8 +331,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/TypeScript%E5%AE%89%E8%A3%85%E4%B8%8E%E7%AE%80%E6%98%93%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
-                        <span class="hidden-mobile">🔵TypeScript安装与简易环境搭建</span>
+                      <a href="/Vue%E5%8D%9A%E5%AE%A2%E5%90%8E%E7%AB%AF1-%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/">
+                        <span class="hidden-mobile">🔵Vue博客后端1(初始化项目)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
