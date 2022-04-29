@@ -4,7 +4,32 @@
   
   
   <entry>
-    <title>Vue博客(添加GitHub授权登录)</title>
+    <title>🔵Hexo fluid主题首页添加文章滑入动画</title>
+    <link href="/Hexo%20fluid%E4%B8%BB%E9%A2%98%E9%A6%96%E9%A1%B5%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E6%BB%91%E5%85%A5%E5%8A%A8%E7%94%BB/"/>
+    <url>/Hexo%20fluid%E4%B8%BB%E9%A2%98%E9%A6%96%E9%A1%B5%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E6%BB%91%E5%85%A5%E5%8A%A8%E7%94%BB/</url>
+    
+    <content type="html"><![CDATA[<h2 id="添加js">添加js</h2><p><code>source</code>目录下新建<code>js</code>目录,新建<code>scrollAnimation.js</code></p><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> cards = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">&#x27;.index-card&#x27;</span>);<br><span class="hljs-keyword">const</span> origin = <span class="hljs-built_in">document</span>.documentElement.clientHeight - cards[<span class="hljs-number">0</span>].getBoundingClientRect().height * <span class="hljs-number">.5</span><br><span class="hljs-keyword">if</span> (cards.length) &#123;<br>  <span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">&#x27;scroll&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>    cards.forEach(<span class="hljs-function"><span class="hljs-params">card</span> =&gt;</span> &#123;<br>      card.setAttribute(<span class="hljs-string">&#x27;style&#x27;</span>, <span class="hljs-string">`--state: <span class="hljs-subst">$&#123;(card.getBoundingClientRect().top - origin) &lt; <span class="hljs-number">0</span> ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>&#125;</span>`</span>)<br>    &#125;)<br>  &#125;);<br>&#125;<br></code></pre></div></td></tr></table></figure><h2 id="添加css">添加css</h2><p><code>source</code>目录下新建<code>css</code>文件夹,新建<code>scrollAnimation.css</code></p><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-class">.index-card</span> &#123;<br>  <span class="hljs-attribute">transition</span>: all <span class="hljs-number">0.5s</span>;<br>  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-built_in">calc</span>(<span class="hljs-number">1.8</span> - <span class="hljs-number">0.8</span> * <span class="hljs-built_in">var</span>(--state)));<br>  <span class="hljs-attribute">opacity</span>: <span class="hljs-built_in">var</span>(--state);<br>&#125;<br></code></pre></div></td></tr></table></figure><h2 id="载入css与js">载入<code>css</code>与<code>js</code></h2><p><code>_config.fluid.yml</code></p><figure class="highlight yaml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yaml"><span class="hljs-comment"># 指定自定义 .js 文件路径，支持列表；路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js</span><br><span class="hljs-comment"># Specify the path of your custom js file, support list. The path is relative to the source directory, such as `/js/custom.js` corresponding to the directory `source/js/custom.js`</span><br><span class="hljs-attr">custom_js:</span> <br>  <span class="hljs-bullet">-</span> <span class="hljs-string">/js/scrollAnimation.js</span><br><br><span class="hljs-comment"># 指定自定义 .css 文件路径，用法和 custom_js 相同</span><br><span class="hljs-comment"># The usage is the same as custom_js</span><br><span class="hljs-attr">custom_css:</span> <br>  <span class="hljs-bullet">-</span> <span class="hljs-string">/css/scrollAnimation.css</span><br></code></pre></div></td></tr></table></figure><div class="note note-info">            <p><strong>动画效果参考:</strong></p><p><a href="https://www.bilibili.com/video/BV1fD4y197NL?spm_id_from=333.999.0.0">【Apple官网特效】iPhone 12 页面卷动逐行滑入效果_哔哩哔哩_bilibili</a></p>          </div>]]></content>
+    
+    
+    <categories>
+      
+      <category>hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>🔵Vue博客(添加GitHub授权登录)</title>
     <link href="/Vue%E5%8D%9A%E5%AE%A2%E5%90%8E%E7%AB%AF2-%E6%B7%BB%E5%8A%A0GitHub%E6%8E%88%E6%9D%83%E7%99%BB%E5%BD%95/"/>
     <url>/Vue%E5%8D%9A%E5%AE%A2%E5%90%8E%E7%AB%AF2-%E6%B7%BB%E5%8A%A0GitHub%E6%8E%88%E6%9D%83%E7%99%BB%E5%BD%95/</url>
     
@@ -78,9 +103,9 @@
     
     <tags>
       
-      <tag>Express</tag>
-      
       <tag>Nodejs</tag>
+      
+      <tag>Express</tag>
       
     </tags>
     
