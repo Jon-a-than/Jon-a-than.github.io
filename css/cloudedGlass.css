@@ -1,3 +1,19 @@
 #board {
   backdrop-filter: blur(5px);
 }
+
+footer {
+  color: #fff !important;
+}
+
+footer span {
+  color: #fff !important;
+}
+
+#toc {
+  color: #fff !important;
+}
+
+#toc a {
+  color: #fff;
+}
