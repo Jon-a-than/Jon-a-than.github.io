@@ -1,19 +1,23 @@
 #board {
+  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
 }
 
 footer {
-  color: #fff !important;
+  color: #ff0e0e !important;
+  font-weight: 600;
 }
 
 footer span {
-  color: #fff !important;
+  color: #ff0e0e !important;
+  font-weight: 600;
 }
 
 #toc {
-  color: #fff !important;
-}
-
-#toc a {
-  color: #fff;
+  padding: 10px;
+  top: 4rem;
+  background-color: var(--board-bg-color);
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
