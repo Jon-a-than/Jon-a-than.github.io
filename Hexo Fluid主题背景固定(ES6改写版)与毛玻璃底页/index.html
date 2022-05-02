@@ -14,25 +14,26 @@
   
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="清山">
-  <meta name="keywords" content="前端, JavaScript, hexo, HTML, CSS, Vue, 学习">
+  <meta name="keywords" content="Hexo, Fluid, 美化,毛玻璃,背景固定">
   
-    <meta name="description" content="背景全屏固定 只要新建两个文件就可实现背景固定  注入背景容器 根目录新建scripts文件夹,新建injector.js 123const &amp;#123; root: siteRoot &#x3D; &quot;&#x2F;&quot; &amp;#125; &#x3D; hexo.config;hexo.extend.injector.register(&quot;body_begin&quot;, &#96;&lt;div id">
+    <meta name="description" content="对HexoFluid主题的修改,背景固定,文章面板毛玻璃效果">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo Fluid主题背景固定(ES6改写版)与毛玻璃底页">
+<meta property="og:title" content="🔵Hexo Fluid主题背景固定(ES6改写版)与毛玻璃底页">
 <meta property="og:url" content="https://qingshaner.com/Hexo%20Fluid%E4%B8%BB%E9%A2%98%E8%83%8C%E6%99%AF%E5%9B%BA%E5%AE%9A(ES6%E6%94%B9%E5%86%99%E7%89%88)%E4%B8%8E%E6%AF%9B%E7%8E%BB%E7%92%83%E5%BA%95%E9%A1%B5/index.html">
 <meta property="og:site_name" content="清山的博客">
-<meta property="og:description" content="背景全屏固定 只要新建两个文件就可实现背景固定  注入背景容器 根目录新建scripts文件夹,新建injector.js 123const &amp;#123; root: siteRoot &#x3D; &quot;&#x2F;&quot; &amp;#125; &#x3D; hexo.config;hexo.extend.injector.register(&quot;body_begin&quot;, &#96;&lt;div id">
+<meta property="og:description" content="对HexoFluid主题的修改,背景固定,文章面板毛玻璃效果">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202205012020106.jpg">
+<meta property="og:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202205021012259.jpg">
 <meta property="article:published_time" content="2022-05-01T12:18:01.000Z">
-<meta property="article:modified_time" content="2022-05-02T01:29:09.663Z">
+<meta property="article:modified_time" content="2022-05-02T02:28:59.817Z">
 <meta property="article:author" content="清山">
-<meta property="article:tag" content="前端, JavaScript, hexo, HTML, CSS, Vue, 学习">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="fluid">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202205012020106.jpg">
+<meta name="twitter:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202205021012259.jpg">
   
   
-  <title>Hexo Fluid主题背景固定(ES6改写版)与毛玻璃底页 - 清山的博客</title>
+  <title>🔵Hexo Fluid主题背景固定(ES6改写版)与毛玻璃底页 - 清山的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -209,7 +210,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Hexo Fluid主题背景固定(ES6改写版)与毛玻璃底页">
+            <span class="h2" id="subtitle" title="🔵Hexo Fluid主题背景固定(ES6改写版)与毛玻璃底页">
               
             </span>
 
@@ -244,7 +245,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      11 分钟
+      12 分钟
     </span>
   
 
@@ -281,7 +282,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hexo Fluid主题背景固定(ES6改写版)与毛玻璃底页</h1>
+            <h1 style="display: none">🔵Hexo Fluid主题背景固定(ES6改写版)与毛玻璃底页</h1>
             
               <p class="note note-info">
                 
@@ -311,12 +312,31 @@
 <div class="note note-danger">
             <p><code>backdrop-filter</code>兼容性不好,要结合背景图片适当调节背景色使无毛玻璃时也能展示内容</p>
           </div>
+<div class="note note-info">
+            <p><strong>参考链接:</strong></p><p><a target="_blank" rel="noopener" href="https://aigisss.com/blog/posts/1563abd8.html">《背景固定 (AIGISSS)》</a></p>
+          </div>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/hexo/">hexo</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/hexo/">hexo</a>
+                    
+                      <a class="hover-with-bg" href="/tags/fluid/">fluid</a>
+                    
+                  </div>
                 
               </div>
               
@@ -336,7 +356,7 @@
                     
                     
                       <a href="/Vue%E5%8D%9A%E5%AE%A2%5B6%5D(%E5%AE%89%E8%A3%85Markdown%E7%BC%96%E8%BE%91%E5%99%A8)/">
-                        <span class="hidden-mobile">Vue博客[6](安装Markdown编辑器)</span>
+                        <span class="hidden-mobile">🔵Vue博客[6](安装Markdown编辑器)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
