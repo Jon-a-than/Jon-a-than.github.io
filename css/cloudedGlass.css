@@ -4,12 +4,12 @@
 }
 
 footer {
-  color: #ff0e0e !important;
+  color: #1bc2c7 !important;
   font-weight: 600;
 }
 
 footer span {
-  color: #ff0e0e !important;
+  color: #1bc2c7 !important;
   font-weight: 600;
 }
 
@@ -20,4 +20,16 @@ footer span {
   border-radius: 10px;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
+}
+
+[data-user-color-scheme='dark'] {
+  --link-hover-bg-color: #36415199;
+}
+
+:root {
+  --link-hover-bg-color: #f8f9fa57;
+}
+
+.list-group-item {
+  border-left: 4px solid;
 }
