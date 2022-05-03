@@ -2,6 +2,12 @@
   background: #2f6993;
 }
 
+.icon {
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
 pre::selection, pre ::selection {
   background: #424858;
 }
@@ -18,6 +24,65 @@ h1, h2, h3, h4, h5, h6, .line, footer, #toc, time, #subtitle.h2, .nav-link, .pos
 
 .hljs-comment {
   color: #88d084;
-  font-size: .1rem;
   font-family: auto;
+}
+
+/* figure.highlight::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1.5rem;
+  color: #000;
+  background-color: #000;
+  border-radius: 5px 5px 0 0;
+  padding-left: 10px;
+}
+
+figure.highlight::after {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  display: block;
+  position:absolute;
+  top: .3em;
+  left: 10px;
+  background-color: #e81224;
+  box-shadow: 1.5rem 0 0 #fff100, 3rem 0 #16c60c;
+  border-radius: 100%;
+} */
+
+figure.highlight {
+  background: #eee;
+  border-radius: 5px;
+  padding-top: 30px
+}
+
+figure.highlight::before {
+  content: attr(data-type);
+  z-index: 999;
+  color: #e038d2;
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  text-align: right;
+  padding-right: 20px;
+  font-weight: 600;
+}
+
+figure.highlight::after {
+  background: #fc625d;
+  border-radius: 100%;
+  box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+  content: '';
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  top: 9px;
+  left: 12px;
+}
+
+
+figure.highlight > table {
+  border-radius: 0 0 5px 5px;
 }
