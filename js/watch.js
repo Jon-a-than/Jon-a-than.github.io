@@ -6,6 +6,6 @@ const print = (colorCode, input) =>
   console.log(`\x1b[0;${colorCode}m${input}\x1b[0m`)
 
 setTimeout(() => {
-  // console.clear()
+  console.clear()
   print(91, '今夕何夕💌见此良人')
 }, 1000)
