@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204250748865.jpg">
 <meta property="article:published_time" content="2022-04-25T00:51:08.000Z">
-<meta property="article:modified_time" content="2022-04-30T02:05:16.855Z">
+<meta property="article:modified_time" content="2022-05-03T06:18:53.653Z">
 <meta property="article:author" content="清山">
 <meta property="article:tag" content="Vue3">
 <meta name="twitter:card" content="summary_large_image">
@@ -235,7 +235,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.8k 字
+      2.9k 字
     </span>
   
 
@@ -285,19 +285,19 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年4月30日 上午
+                  本文最后更新于：2022年5月3日 下午
                 
               </p>
             
             <div class="markdown-body">
               <h2 id="初始化项目">初始化项目</h2>
 <p><code>pnpm create vite</code>创建<code>vue3</code>项目,选择<code>vue-ts</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pnpm create vite<br>Packages: +6<br>++++++<br>Packages are hard linked from the content-addressable store to the virtual store.<br>  Content-addressable store is at: xxxxxxxxxxxxxxxxxxxx<br>  Virtual store is at:             node_modules/.pnpm<br><br>xxxxxxxxxxxxxxxxxxxxxxx:<br>+ create-vite 2.9.2<br><br>Progress: resolved 6, reused 6, downloaded 0, added 6, <span class="hljs-keyword">done</span><br>√ Project name: ... vue3BlogBackstage<br>√ Package name: ... vue3blogbackstage<br>√ Select a framework: » vue<br>√ Select a variant: » vue-ts<br><br>Scaffolding project <span class="hljs-keyword">in</span> F:\xxxxx\vue3BlogBackstage...<br><br>Done. Now run:<br><br>  <span class="hljs-built_in">cd</span> vue3BlogBackstage<br>  pnpm install<br>  pnpm run dev<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight subunit"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs subunit">pnpm create vite<br>Packages: <span class="hljs-string">+6</span><br>++++++<br>Packages are hard linked from the content-addressable store to the virtual store.<br>  Content-addressable store is at: xxxxxxxxxxxxxxxxxxxx<br>  Virtual store is at:             node_modules/.pnpm<br><br>xxxxxxxxxxxxxxxxxxxxxxx:<br>+ create-vite 2.9.2<br><br><span class="hljs-keyword">Progress: </span>resolved 6, reused 6, downloaded 0, added 6, done<br>√ Project name: ... vue3BlogBackstage<br>√ Package name: ... vue3blogbackstage<br>√ Select a framework: » vue<br>√ Select a variant: » vue-ts<br><br>Scaffolding project in F:\xxxxx\vue3BlogBackstage...<br><br>Done. Now run:<br><br>  cd vue3BlogBackstage<br>  pnpm install<br>  pnpm run dev<br></code></pre></div></td></tr></table></figure>
 <h3 id="依赖">依赖</h3>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pnpm i pinia<br>pnpm i pinia-plugin-persist                              <span class="hljs-comment"># pinia持久化</span><br>pnpm i vue-router<br>pnpm i sass<br>pnpm i axios<br>pnpm i @types/node -D                                    <span class="hljs-comment"># 配置路径别名所需</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pnpm i pinia<br><span class="hljs-comment"># pinia持久化</span><br>pnpm i pinia-plugin-persist<br>pnpm i vue-router<br>pnpm i sass<br>pnpm i axios<br><span class="hljs-comment"># 配置路径别名所需</span><br>pnpm i @types/node -D<br></code></pre></div></td></tr></table></figure>
 <h3 id="ui框架">ui框架</h3>
 <p>使用<code>element-plus</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pnpm i element-plus                                      <span class="hljs-comment"># element-plus</span><br>pnpm i @element-plus/icons-vue                           <span class="hljs-comment"># ui图标</span><br>pnpm i unplugin-vue-components unplugin-auto-import -D   <span class="hljs-comment"># 按需导入ui组件</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pnpm i element-plus<br><span class="hljs-comment"># element-plus</span><br>pnpm i @element-plus/icons-vue<br><span class="hljs-comment"># ui图标</span><br>pnpm i unplugin-vue-components unplugin-auto-import -D<br><span class="hljs-comment"># 按需导入ui组件</span><br></code></pre></div></td></tr></table></figure>
 <h3 id="vite.config.ts">vite.config.ts</h3>
 <h4 id="路径别名">路径别名</h4>
 <p><code>tsconfig.json</code>文件添加</p>
