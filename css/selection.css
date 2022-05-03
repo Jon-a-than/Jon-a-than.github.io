@@ -48,6 +48,7 @@ figure.highlight {
 
 figure.highlight::before {
   content: attr(data-type);
+  font-family: 华文新魏,SSTXinwei;
   z-index: 999;
   color: #ff8d33;
   display: block;

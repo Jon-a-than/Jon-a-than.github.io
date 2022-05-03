@@ -14,6 +14,7 @@ footer span {
 }
 
 #toc {
+  font-family: 华文新魏,STXinwei;
   padding: 10px;
   top: 4rem;
   background-color: var(--board-bg-color);
