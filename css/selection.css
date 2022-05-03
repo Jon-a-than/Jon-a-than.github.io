@@ -1,5 +1,6 @@
 ::selection {
-  background: #2f6993;
+  background: #ffffff00;
+  color: #f00;
 }
 
 .icon {
@@ -9,7 +10,12 @@
 }
 
 pre::selection, pre ::selection {
+  background: #fff;
+}
+
+[data-user-color-scheme='dark'] pre::selection, [data-user-color-scheme='dark'] pre ::selection {
   background: #424858;
+  color: #fff;
 }
 
 h1, h2, h3, h4, h5, h6, .line, footer, #toc, time, #subtitle.h2, .nav-link, .post-meta.mr-2, #busuanzi_container_page_pv, .note, .hover-with-bg {
@@ -22,51 +28,33 @@ h1, h2, h3, h4, h5, h6, .line, footer, #toc, time, #subtitle.h2, .nav-link, .pos
   user-select:none;
 }
 
-.hljs-comment {
-  color: #88d084;
+.hljs-comment, .hljs-quote {
+  color: #ff6262;
   font-family: auto;
+  font-style: normal;
 }
 
-/* figure.highlight::before {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 1.5rem;
-  color: #000;
-  background-color: #000;
-  border-radius: 5px 5px 0 0;
-  padding-left: 10px;
-}
-
-figure.highlight::after {
-  content: '';
-  width: 1rem;
-  height: 1rem;
-  display: block;
-  position:absolute;
-  top: .3em;
-  left: 10px;
-  background-color: #e81224;
-  box-shadow: 1.5rem 0 0 #fff100, 3rem 0 #16c60c;
-  border-radius: 100%;
-} */
 
 figure.highlight {
-  background: #eee;
+  background: #838383;
   border-radius: 5px;
-  padding-top: 30px
+  padding-top: 30px;
+  box-shadow: 0 5px 10px #a1a1a1;
+}
+
+[data-user-color-scheme='dark'] figure.highlight {
+  background: #000;
 }
 
 figure.highlight::before {
   content: attr(data-type);
   z-index: 999;
-  color: #e038d2;
+  color: #ff8d33;
   display: block;
   width: 100%;
   position: absolute;
   top: 0;
-  text-align: right;
-  padding-right: 20px;
+  text-align: center;
   font-weight: 600;
 }
 
@@ -82,7 +70,27 @@ figure.highlight::after {
   left: 12px;
 }
 
+.hljs {
+  background-color: #00000000;
+}
+
+/* 代码块颜色 */
+figure.highlight tr {
+  background-color: #f9fffa;
+}
+
+[data-user-color-scheme='dark'] .markdown-body table tr {
+  background-color: #25272d;
+}
 
 figure.highlight > table {
   border-radius: 0 0 5px 5px;
+}
+
+.gutter {
+  background-color: #f9fffa;
+}
+
+[data-user-color-scheme='dark'] .gutter {
+  background-color: #25272d;
 }

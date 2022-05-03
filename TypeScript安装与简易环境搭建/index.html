@@ -24,7 +24,7 @@
 <meta property="og:description" content="安装与使用TypeScript 安装TypeScript 1yarn add TypeScript 可用tsc -v命令检查是否安装成功 1tsc -v 编译ts文件 1tsc app.ts 运行命令生成对应的js文件 简易TypeScript环境搭建 🥕初始化 1tsc --init 运行命令后在目录下生成tsconfig.json文件 🥕创建目录 创建以下目录">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-01T04:01:07.000Z">
-<meta property="article:modified_time" content="2022-04-17T04:08:18.743Z">
+<meta property="article:modified_time" content="2022-05-03T02:44:41.725Z">
 <meta property="article:author" content="清山">
 <meta property="article:tag" content="TypeScript">
 <meta name="twitter:card" content="summary_large_image">
@@ -42,7 +42,7 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/atom-one-dark.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11/styles/atom-one-dark.min.css" />
     
   
 
@@ -283,32 +283,32 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年4月17日 中午
+                  本文最后更新于：2022年5月3日 上午
                 
               </p>
             
             <div class="markdown-body">
               <h2 id="安装与使用typescript">安装与使用TypeScript</h2>
 <h3 id="安装typescript">安装TypeScript</h3>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yarn add TypeScript<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">yarn add TypeScript<br></code></pre></div></td></tr></table></figure>
 <p><strong>可用</strong><code>tsc -v</code><strong>命令检查是否安装成功</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">tsc -v<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">tsc -v<br></code></pre></div></td></tr></table></figure>
 <h3 id="编译ts文件">编译ts文件</h3>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">tsc app.ts<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">tsc app.ts<br></code></pre></div></td></tr></table></figure>
 <p><strong>运行命令生成对应的</strong><code>js</code><strong>文件</strong></p>
 <h2 id="简易typescript环境搭建">简易TypeScript环境搭建</h2>
 <h3 id="初始化">🥕初始化</h3>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">tsc --init<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">tsc --init<br></code></pre></div></td></tr></table></figure>
 <p><strong>运行命令后在目录下生成</strong><code>tsconfig.json</code><strong>文件</strong></p>
 <h3 id="创建目录">🥕创建目录</h3>
 <p><strong>创建以下目录</strong></p>
 <p><code>dist</code><strong>为</strong><code>js</code><strong>文件输出目录</strong></p>
 <p><code>src</code><strong>为待编译</strong><code>ts</code><strong>文件目录</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">├─dist<br>├──src<br>|   └──index.ts<br>└──tsconfig.json<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs txt">├─dist<br>├──src<br>|   └──index.ts<br>└──tsconfig.json<br></code></pre></div></td></tr></table></figure>
 <h3 id="绑定出入口">🥕绑定出入口</h3>
 <p><strong>打开</strong><code>tsconfig.json</code><strong>文件,设置</strong><code>"rootDir": "./src",</code><strong>和</strong><code>"outDir": "./dist",</code></p>
 <p><strong>再运行以下命令</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">tsc -w<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">tsc -w<br></code></pre></div></td></tr></table></figure>
 <p><strong>即可动态更新</strong><code>ts</code><strong>文件了</strong></p>
 
             </div>
