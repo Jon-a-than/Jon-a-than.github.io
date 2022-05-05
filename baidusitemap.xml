@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://qingshaner.com/vue3-2%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2022-05-05</lastmod>
+  </url>
+  <url>
     <loc>https://qingshaner.com/JavaScript%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2022-05-04</lastmod>
   </url>
@@ -30,10 +34,6 @@
   </url>
   <url>
     <loc>https://qingshaner.com/vue%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2022-05-03</lastmod>
-  </url>
-  <url>
-    <loc>https://qingshaner.com/vue3-2%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2022-05-03</lastmod>
   </url>
   <url>
