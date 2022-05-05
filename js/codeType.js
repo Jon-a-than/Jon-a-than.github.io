@@ -3,9 +3,7 @@ const languageStyle = (str) => {
   if (['ts', 'typescript'].includes(str)) return 'TypeScript'
   if (str === 'plaintext') return 'Text'
   if (str === 'markdown') return 'Markdown'
-  if (str === 'powershell') return 'PowerShell'
-  if (str === 'shell') return 'Shell'
-  if (str === 'bash') return 'Bash'
+  if (['node-repl','apache','powershell', 'bash', 'shell','crmsh'].includes(str)) return 'Termainal'
   if (str === 'xml') return 'Vue'                             // 曲线救国(Highlight不支持vue)
   // return str                                               // 全小写风格
   return str.toUpperCase()                                    // 全大写风格
