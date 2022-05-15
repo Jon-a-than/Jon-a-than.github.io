@@ -29,6 +29,8 @@ footer span {
 
 :root {
   --link-hover-bg-color: #f8f9fa57;
+  --text-color: #000;
+  --sec-text-color: #000;
 }
 
 .list-group-item {
