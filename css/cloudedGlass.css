@@ -25,6 +25,8 @@ footer span {
 
 [data-user-color-scheme='dark'] {
   --link-hover-bg-color: #36415199;
+  --text-color: #cecece !important;
+  --sec-text-color: #cecece !important;
 }
 
 :root {
