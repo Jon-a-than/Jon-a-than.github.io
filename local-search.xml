@@ -4,19 +4,6 @@
   
   
   <entry>
-    <title>各类请求方法</title>
-    <link href="/%E5%90%84%E7%B1%BB%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95/"/>
-    <url>/%E5%90%84%E7%B1%BB%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95/</url>
-    
-    <content type="html"><![CDATA[<div class="note note-success">            <p>测试时后端接口已开启跨域支持</p>          </div><h2 id="get请求">GET请求</h2><h3 id="xhr">XHR</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();<br>xhr.open(<span class="hljs-string">&#x27;GET&#x27;</span>, <span class="hljs-string">&#x27;http://localhost:5500&#x27;</span>);<br>xhr.send();<br>xhr.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-keyword">if</span> (xhr.readyState === <span class="hljs-number">4</span>)<br>    <span class="hljs-built_in">console</span>.log(xhr.responseText);<br>&#125;<br></code></pre></div></td></tr></table></figure><h3 id="fetch">Fetch</h3><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><br></code></pre></div></td></tr></table></figure><h3 id="axios">Axios</h3><h2 id="post请求">POST请求</h2><h3 id="xhr-1">XHR</h3><h3 id="fetch-1">Fetch</h3>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>🔵hexo博客搭建</title>
     <link href="/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     <url>/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
