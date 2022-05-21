@@ -64,3 +64,34 @@ aside.sidebar.category-bar {
 aside.sidebar.category-bar a {
   border-color: #00000000;
 }
+
+/* tag标签背景 */
+
+.note {
+  color: #000;
+}
+.note-info {
+  background-color: #eef7fa;
+}
+.note-success {
+  background-color: #eff8f0;
+}
+.note-warning {
+  background-color: #fdf8ea;
+}
+.note-primary {
+  background-color: #f5f0fa;
+}
+.note-secondary {
+  background-color: #f7f7f7;
+}
+.note-danger {
+  background-color: #fcf1f2;
+}
+.note-light {
+  background-color: #fff;
+}
+
+.note a {
+  color: #ff8b00;
+}

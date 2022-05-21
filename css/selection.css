@@ -183,28 +183,3 @@ border-left: 20px solid #838383;
   background-color: rgba(27,31,35,.05);
   border-radius: 3px;
 }
-
-.note {
-  color: #000;
-}
-.note-info {
-  background-color: #eef7fa;
-}
-.note-success {
-  background-color: #eff8f0;
-}
-.note-warning {
-  background-color: #fdf8ea;
-}
-.note-primary {
-  background-color: #f5f0fa;
-}
-.note-secondary {
-  background-color: #f7f7f7;
-}
-.note-danger {
-  background-color: #fcf1f2;
-}
-.note-light {
-  background-color: #fff;
-}
