@@ -28,15 +28,21 @@
 <meta name="twitter:card" content="summary_large_image">
   
   
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
   <title>清山的博客</title>
 
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
 
-<!-- 主题依赖的图标库，不要自行修改 -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -45,7 +51,13 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
   
 <link rel="stylesheet" href="/css/selection.css">
@@ -58,16 +70,29 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"qingshaner.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":false,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"qingshaner.com","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.0.0"></head>
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
 <body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>荷风送香气，竹露滴清响</strong>
@@ -155,24 +180,13 @@
             </li>
           
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/%E9%97%AE%E6%B8%A0%E9%82%A3%E5%BE%97%E6%B8%85%E5%A6%82%E8%AE%B8/">
-                <i class="iconfont icon-plan"></i>
-                计划表
-              </a>
-            </li>
-          
-        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
               &nbsp;<i class="iconfont icon-search"></i>&nbsp;
             </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -185,40 +199,122 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202205011921669.jpg') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="海上升明月🌕天涯共此时">
-              
-            </span>
+  
 
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202205011921669.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
           
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
+            <span id="subtitle" data-typed-text="海上升明月🌕天涯共此时"></span>
           
         </div>
+
+        
       </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
     
       <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
+        <div id="board"
+          style="margin-top: 0">
           
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
                 
 
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/" target="_self">
+          <img src="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204012103297.jpg" alt="🔴算法-排序">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/" target="_self">
+          🔴算法-排序
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/" target="_self">
+        <div>
+          
+          冒泡排序 算法实现 1234567const bubbleSort &#x3D; (array) &#x3D;&gt; &amp;#123;  const L &#x3D; array.length  for(let i &#x3D; 0;i &lt; L;i++)    for(let j &#x3D; 0;j &lt; L - 1 - i;j++)      if(array[j] &gt; array[j + 1])        [array
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-02-23 11:48" pubdate>
+              2022-02-23
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/" class="category-chain-item">排序</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>
+            
+              <a href="/tags/%E6%8E%92%E5%BA%8F/">#排序</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
 
   <div class="row mx-auto index-card">
     
@@ -237,12 +333,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/JavaScript%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/" target="_self">
+      <a class="index-excerpt" href="/JavaScript%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/" target="_self">
+        <div>
           
           记录js严格模式的使用方法与严格模式的优势点以及严格模式使用后的差异
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -254,22 +350,41 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/JavaScript/">JavaScript</a>
-            
-              <a href="/categories/JavaScript/%E5%9F%BA%E7%A1%80/">基础</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaScript/" class="category-chain-item">JavaScript</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/JavaScript/%E5%9F%BA%E7%A1%80/" class="category-chain-item">基础</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/JavaScript/">JavaScript</a>
+              <a href="/tags/JavaScript/">#JavaScript</a>
             
-              <a href="/tags/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/">严格模式</a>
+              <a href="/tags/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/">#严格模式</a>
             
           </div>
         
@@ -294,12 +409,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/JavaScript%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0/" target="_self">
+      <a class="index-excerpt" href="/JavaScript%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0/" target="_self">
+        <div>
           
           
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -311,22 +426,41 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/JavaScript/">JavaScript</a>
-            
-              <a href="/categories/JavaScript/%E5%9F%BA%E7%A1%80/">基础</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaScript/" class="category-chain-item">JavaScript</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/JavaScript/%E5%9F%BA%E7%A1%80/" class="category-chain-item">基础</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/JavaScript/">JavaScript</a>
+              <a href="/tags/JavaScript/">#JavaScript</a>
             
-              <a href="/tags/%E5%87%BD%E6%95%B0/">函数</a>
+              <a href="/tags/%E5%87%BD%E6%95%B0/">#函数</a>
             
           </div>
         
@@ -351,12 +485,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/JavaScript%E5%87%BD%E6%95%B0/" target="_self">
+      <a class="index-excerpt" href="/JavaScript%E5%87%BD%E6%95%B0/" target="_self">
+        <div>
           
           函数定义 🥝函数声明 使用函数声明会发生函数声明提升在声明前使用函数也不会报错 123function sum (a, b) &amp;#123;  return a + b&amp;#125; 🥝函数表达式 123const sum &#x3D; function (a, b) &amp;#123;  return a + b&amp;#125; 🥝箭头函数 箭头函数不可使用(arguments,super,new.
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -368,22 +502,41 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/JavaScript/">JavaScript</a>
-            
-              <a href="/categories/JavaScript/%E5%9F%BA%E7%A1%80/">基础</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaScript/" class="category-chain-item">JavaScript</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/JavaScript/%E5%9F%BA%E7%A1%80/" class="category-chain-item">基础</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/JavaScript/">JavaScript</a>
+              <a href="/tags/JavaScript/">#JavaScript</a>
             
-              <a href="/tags/%E5%87%BD%E6%95%B0/">函数</a>
+              <a href="/tags/%E5%87%BD%E6%95%B0/">#函数</a>
             
           </div>
         
@@ -408,12 +561,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/JavaScript%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/" target="_self">
+      <a class="index-excerpt" href="/JavaScript%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/" target="_self">
+        <div>
           
           .tips {         background: #787;         color: #fff;         padding: 10px;     }     .input{         border-radius: 5px;         width: 100%;         background: #787;         color:
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -425,24 +578,43 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/JavaScript/">JavaScript</a>
-            
-              <a href="/categories/JavaScript/%E5%9F%BA%E7%A1%80/">基础</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaScript/" class="category-chain-item">JavaScript</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/JavaScript/%E5%9F%BA%E7%A1%80/" class="category-chain-item">基础</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/JavaScript/">JavaScript</a>
+              <a href="/tags/JavaScript/">#JavaScript</a>
             
-              <a href="/tags/%E9%98%B2%E6%8A%96/">防抖</a>
+              <a href="/tags/%E9%98%B2%E6%8A%96/">#防抖</a>
             
-              <a href="/tags/%E8%8A%82%E6%B5%81/">节流</a>
+              <a href="/tags/%E8%8A%82%E6%B5%81/">#节流</a>
             
           </div>
         
@@ -467,12 +639,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/CSS%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1/" target="_self">
+      <a class="index-excerpt" href="/CSS%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1/" target="_self">
+        <div>
           
           媒体查询 @media              参考文档:《CSS@media规则 (w3school)》
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -484,20 +656,39 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/CSS/">CSS</a>
-            
-              <a href="/categories/CSS/%E5%9F%BA%E7%A1%80/">基础</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CSS/" class="category-chain-item">CSS</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/CSS/%E5%9F%BA%E7%A1%80/" class="category-chain-item">基础</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/CSS/">CSS</a>
+              <a href="/tags/CSS/">#CSS</a>
             
           </div>
         
@@ -522,12 +713,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/CSS%E8%BF%87%E6%B8%A1%E4%B8%8E%E5%8A%A8%E7%94%BB/" target="_self">
+      <a class="index-excerpt" href="/CSS%E8%BF%87%E6%B8%A1%E4%B8%8E%E5%8A%A8%E7%94%BB/" target="_self">
+        <div>
           
           记录css3过渡动画与animation分步动画
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -539,20 +730,39 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/CSS/">CSS</a>
-            
-              <a href="/categories/CSS/%E5%9F%BA%E7%A1%80/">基础</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CSS/" class="category-chain-item">CSS</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/CSS/%E5%9F%BA%E7%A1%80/" class="category-chain-item">基础</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/CSS/">CSS</a>
+              <a href="/tags/CSS/">#CSS</a>
             
           </div>
         
@@ -577,12 +787,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/CSS%E5%B8%83%E5%B1%80/" target="_self">
+      <a class="index-excerpt" href="/CSS%E5%B8%83%E5%B1%80/" target="_self">
+        <div>
           
           本节子元素均默认设有以下属性123456div &amp;#123;  background: #787;  color: #fff;  margin: 5px;  padding: 10px 15px;&amp;#125;            Flexbox布局      .flex {         display: flex !important;
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -594,20 +804,39 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/CSS/">CSS</a>
-            
-              <a href="/categories/CSS/%E5%9F%BA%E7%A1%80/">基础</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CSS/" class="category-chain-item">CSS</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/CSS/%E5%9F%BA%E7%A1%80/" class="category-chain-item">基础</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/CSS/">CSS</a>
+              <a href="/tags/CSS/">#CSS</a>
             
           </div>
         
@@ -632,12 +861,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/CSS3%E7%A9%BA%E9%97%B4%E5%8F%98%E6%8D%A2/" target="_self">
+      <a class="index-excerpt" href="/CSS3%E7%A9%BA%E9%97%B4%E5%8F%98%E6%8D%A2/" target="_self">
+        <div>
           
           记录css3的2d与3d变换
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -649,20 +878,39 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/CSS/">CSS</a>
-            
-              <a href="/categories/CSS/%E5%9F%BA%E7%A1%80/">基础</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CSS/" class="category-chain-item">CSS</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/CSS/%E5%9F%BA%E7%A1%80/" class="category-chain-item">基础</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/CSS/">CSS</a>
+              <a href="/tags/CSS/">#CSS</a>
             
           </div>
         
@@ -687,12 +935,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/JavaScript%E5%8A%A8%E7%94%BB/" target="_self">
+      <a class="index-excerpt" href="/JavaScript%E5%8A%A8%E7%94%BB/" target="_self">
+        <div>
           
           动画间隔 requestAnimationFrame 接收一个函数地址,多次触发时会有节流效果,该函数同setInterval可返回一个id 1234567891011const example &#x3D; document.querySelector(&amp;#x27;.example&amp;#x27;)requestAnimationFrame(move)function move() &amp;#123;  co
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -704,79 +952,41 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/JavaScript/">JavaScript</a>
-            
-              <a href="/categories/JavaScript/HTML5/">HTML5</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaScript/" class="category-chain-item">JavaScript</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/JavaScript/HTML5/" class="category-chain-item">HTML5</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/JavaScript/">JavaScript</a>
+              <a href="/tags/JavaScript/">#JavaScript</a>
             
-              <a href="/tags/%E5%8A%A8%E7%94%BB/">动画</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/JavaScript%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B5%84%E6%BA%90%E8%AF%B7%E6%B1%82/" target="_self">
-          <img src="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204012045016.jpg" alt="🟡JavaScript网络与资源请求">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/JavaScript%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B5%84%E6%BA%90%E8%AF%B7%E6%B1%82/" target="_self">
-          🟡JavaScript网络与资源请求
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/JavaScript%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B5%84%E6%BA%90%E8%AF%B7%E6%B1%82/" target="_self">
-          
-          XHR对象 🌽创建XHR对象 使用构造函数创建新XHR对象 1const xhr &#x3D; new XMLHttpRequest() 🌽open方法 XHR对象使用open(method, url, Boolean)方法定义请求    参数 说明     method 请求方式   url 相对路径或绝对路径   Boolean 是否异步执行
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-02-15 12:37" pubdate>
-              2022-02-15
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/JavaScript/">JavaScript</a>
-            
-              <a href="/categories/JavaScript/%E5%9F%BA%E7%A1%80/">基础</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/">网络请求</a>
-            
-              <a href="/tags/JavaScript/">JavaScript</a>
+              <a href="/tags/%E5%8A%A8%E7%94%BB/">#动画</a>
             
           </div>
         
@@ -821,56 +1031,58 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-  <div class="statistics">
-    
-    
-
-    
-      
-        <!-- 不蒜子统计PV -->
-        <span id="busuanzi_container_site_pv" style="display: none">
-            总访问量 
-            <span id="busuanzi_value_site_pv"></span>
-             次
-          </span>
-      
-      
-        <!-- 不蒜子统计UV -->
-        <span id="busuanzi_container_site_uv" style="display: none">
-            总访客数 
-            <span id="busuanzi_value_site_uv"></span>
-             人
-          </span>
-      
-    
-  </div>
-
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
   
 
   
-</footer>
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
 
+  
+  
+  
+</div>
 
-  <!-- SCRIPTS -->
+  </footer>
+
+  <!-- Scripts -->
   
   <script  src="https://fastly.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
@@ -889,37 +1101,18 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    
-  
-
-
-
-  
-
-
-
-
-
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-
 
   <script  src="https://fastly.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
       
-        typing(title);
+        typing(text);
       
     })(window, document);
   </script>
@@ -929,10 +1122,16 @@
 
 
 
+  
+    
+  
 
 
 
 
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
@@ -944,9 +1143,15 @@
 
 
 
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 <!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><!-- hexo injector body_end end --></body>
 </html>

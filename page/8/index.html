@@ -28,15 +28,21 @@
 <meta name="twitter:card" content="summary_large_image">
   
   
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
   <title>清山的博客</title>
 
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
 
-<!-- 主题依赖的图标库，不要自行修改 -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -45,7 +51,13 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
   
 <link rel="stylesheet" href="/css/selection.css">
@@ -58,16 +70,29 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"qingshaner.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":false,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"qingshaner.com","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.0.0"></head>
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
 <body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>荷风送香气，竹露滴清响</strong>
@@ -155,24 +180,13 @@
             </li>
           
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/%E9%97%AE%E6%B8%A0%E9%82%A3%E5%BE%97%E6%B8%85%E5%A6%82%E8%AE%B8/">
-                <i class="iconfont icon-plan"></i>
-                计划表
-              </a>
-            </li>
-          
-        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
               &nbsp;<i class="iconfont icon-search"></i>&nbsp;
             </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -185,40 +199,115 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202205011921669.jpg') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="海上升明月🌕天涯共此时">
-              
-            </span>
+  
 
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202205011921669.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
           
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
+            <span id="subtitle" data-typed-text="海上升明月🌕天涯共此时"></span>
           
         </div>
+
+        
       </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
     
       <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
+        <div id="board"
+          style="margin-top: 0">
           
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
                 
 
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/vue3-2%E5%9F%BA%E7%A1%80/" target="_self">
+          <img src="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204012056110.jpg" alt="🟡Vue3.2特性">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/vue3-2%E5%9F%BA%E7%A1%80/" target="_self">
+          🟡Vue3.2特性
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/vue3-2%E5%9F%BA%E7%A1%80/" target="_self">
+        <div>
+          
+          setup语法糖 数据自动导出可用 使用全局的setup无需再用return导出定义的数据即可在模板与样式中使用 123456789&lt;script setup&gt;import &amp;#123; ref &amp;#125; from &amp;#x27;vue&amp;#x27;const count &#x3D; ref(0)&lt;&#x2F;script&gt;&lt;template&gt;  &lt;button @c
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-01-19 22:10" pubdate>
+              2022-01-19
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Vue/" class="category-chain-item">Vue</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Vue/">#Vue</a>
+            
+              <a href="/tags/Vue3-2/">#Vue3.2</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
 
   <div class="row mx-auto index-card">
     
@@ -237,12 +326,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/vuex%E5%9F%BA%E7%A1%80/" target="_self">
+      <a class="index-excerpt" href="/vuex%E5%9F%BA%E7%A1%80/" target="_self">
+        <div>
           
           vuex用于解决组件间的数据通信   state(共享状态数据) mutaitions(同步处理) actions(异步处理)
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -254,22 +343,41 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Vue/">Vue</a>
-            
-              <a href="/categories/Vue/%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/">状态管理</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Vue/" class="category-chain-item">Vue</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Vue/%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/" class="category-chain-item">状态管理</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Vue/">Vue</a>
+              <a href="/tags/Vue/">#Vue</a>
             
-              <a href="/tags/Vuex/">Vuex</a>
+              <a href="/tags/Vuex/">#Vuex</a>
             
           </div>
         
@@ -294,12 +402,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/vue%E5%9F%BA%E7%A1%80/" target="_self">
+      <a class="index-excerpt" href="/vue%E5%9F%BA%E7%A1%80/" target="_self">
+        <div>
           
           指令 🥝指令基础 指令以v-为前缀的属性 指令可以接受一个单句表达式(除了v-for,v-on) v-???:参数&#x3D;&quot;&quot; 1&lt;tag v-on:click&#x3D;&quot;clickFunction&quot;&gt;&lt;&#x2F;tag&gt; v-???:[动态参数]&#x3D;&quot;&quot; 1&lt;tag v-on:[eventType]&#x3D;&quot;eventFunction&quot;&amp;g
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -311,18 +419,32 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Vue/">Vue</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Vue/" class="category-chain-item">Vue</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Vue/">Vue</a>
+              <a href="/tags/Vue/">#Vue</a>
             
           </div>
         
@@ -347,12 +469,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/vue%E9%AB%98%E4%BA%AE/" target="_self">
+      <a class="index-excerpt" href="/vue%E9%AB%98%E4%BA%AE/" target="_self">
+        <div>
           
           安装vuter插件 🌰搜索volar并安装
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -364,18 +486,32 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/">前端工具</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" class="category-chain-item">前端工具</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Vue/">Vue</a>
+              <a href="/tags/Vue/">#Vue</a>
             
           </div>
         
@@ -400,12 +536,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/vite%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" target="_self">
+      <a class="index-excerpt" href="/vite%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" target="_self">
+        <div>
           
           安装vite 🍉项目创建 1pnpm create vite                         # 开始创建vite项目 🍉安装依赖 1pnpm install                             # 进入项目目录后再安装 🍉启动项目 1pnpm run dev                             # 自动开启localhos
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -417,20 +553,34 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/">前端工具</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" class="category-chain-item">前端工具</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Vite/">Vite</a>
+              <a href="/tags/Vite/">#Vite</a>
             
-              <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+              <a href="/tags/%E7%AC%94%E8%AE%B0/">#笔记</a>
             
           </div>
         
@@ -455,12 +605,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/vue3%E5%9F%BA%E7%A1%80/" target="_self">
+      <a class="index-excerpt" href="/vue3%E5%9F%BA%E7%A1%80/" target="_self">
+        <div>
           
-          生成vue3 🥬从vue导入createApp函数 在src目录下新建main.js导入createApp 1import &amp;#123; createApp &amp;#125; from &amp;#x27;vue&amp;#x27; 🥬创建一个根组件App.vue导入至main.js 在src目录下新建App.vue中导入main.js App.vue: 1234567891011&lt;scrip
-        </a>
-      </p>
+          快速开始 使用官方工具vite快速初始化一个vue应用 本文使用vite在线工具演示(Vite在线体验) 先清空文件夹,再执行命令初始化一个Vue3项目 1npm create vite 执行后按提示输入项目文件夹名,包名,之后选择vue,继续选择vue 123456789101112131415&gt; npm create vite&gt; success Install fini
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -472,22 +622,41 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Vue/">Vue</a>
-            
-              <a href="/categories/Vue/Vue3-x/">Vue3.x</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Vue/" class="category-chain-item">Vue</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Vue/Vue3-x/" class="category-chain-item">Vue3.x</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Vue3/">Vue3</a>
+              <a href="/tags/Vue3/">#Vue3</a>
             
-              <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+              <a href="/tags/%E7%AC%94%E8%AE%B0/">#笔记</a>
             
           </div>
         
@@ -512,12 +681,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/yarn%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" target="_self">
+      <a class="index-excerpt" href="/yarn%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" target="_self">
+        <div>
           
           脚本起用  在当前窗口启用脚本  1Set-ExecutionPolicy RemoteSigned Process       # 在当前窗口启用脚本 安装全部项目依赖  packagename含中文字符会报错  1yarn                                           # 安装所有依赖包 初始化 12yarn init -y
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -529,20 +698,39 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/">前端工具</a>
-            
-              <a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/%E5%8C%85%E7%AE%A1%E7%90%86/">包管理</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" class="category-chain-item">前端工具</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/%E5%8C%85%E7%AE%A1%E7%90%86/" class="category-chain-item">包管理</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/yarn/">yarn</a>
+              <a href="/tags/yarn/">#yarn</a>
             
           </div>
         
@@ -567,12 +755,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" target="_self">
+      <a class="index-excerpt" href="/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" target="_self">
+        <div>
           
           1.安装依赖包 1npm install -g hexo-cli 2.初始化 12hexo initnpm install 3.关联github 清除缓存 该命令会清除手动添加至public目录中的文件 把静态图片放入source目录可自动复制到public目录且不会清除 1hexo clean 上传博客 12hexo g[enerate]hexo d 本地服务器 12he
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -584,18 +772,32 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/hexo/">hexo</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/hexo/" class="category-chain-item">hexo</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/hexo/">hexo</a>
+              <a href="/tags/hexo/">#hexo</a>
             
           </div>
         
@@ -620,12 +822,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/webpack%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" target="_self">
+      <a class="index-excerpt" href="/webpack%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" target="_self">
+        <div>
           
           webpack打包后压缩冗余空格与换行、变量名 初始化包环境 12yarn init                                   # 回车确认yarn init -y                                # 默认配置 安装webpack包 1yarn add webpack webpack-cli -D 配置scripts  在pac
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -637,18 +839,32 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/">前端工具</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" class="category-chain-item">前端工具</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/webpack/">webpack</a>
+              <a href="/tags/webpack/">#webpack</a>
             
           </div>
         
@@ -673,12 +889,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/TypeScript%E7%B1%BBclass/" target="_self">
+      <a class="index-excerpt" href="/TypeScript%E7%B1%BBclass/" target="_self">
+        <div>
           
           ES6 class了解更多 🔗前往查看 🍒基础使用 constructor为new关键字调用的构造函数 12345678class Speaker &amp;#123;  name: string                  &#x2F;&#x2F; 指定属性类型  constructor (name: string) &amp;#123;    this.name &#x3D; name  &amp;#125;&amp;#125;cons
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -690,66 +906,27 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/TypeScript/">TypeScript</a>
-            
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
 
-  <div class="row mx-auto index-card">
+<span class="category-chains">
+  
+  
     
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/TypeScript%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%B3%9B%E5%9E%8B/" target="_self">
-          <img src="https://ftp.bmp.ovh/imgs/2021/06/308002a11efe4ccb.jpg" alt="TypeScript函数与泛型">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <span class="category-chain">
         
-        <a href="/TypeScript%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%B3%9B%E5%9E%8B/" target="_self">
-          TypeScript函数与泛型
-        </a>
-      </h1>
+  <a href="/categories/TypeScript/" class="category-chain-item">TypeScript</a>
+  
+  
 
-      <p class="index-excerpt">
-        <a href="/TypeScript%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%B3%9B%E5%9E%8B/" target="_self">
-          
-          函数定义 TypeScript可在声明函数时添加参数与返回值类型 直接定义 123456789function add(x: number, y: number): number &amp;#123;  return x + y&amp;#125;const add &#x3D; function(x: number,y: number): number &amp;#123;   return x + y&amp;#125;cons
-        </a>
-      </p>
+      </span>
+    
+  
+</span>
 
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-01-02 11:55" pubdate>
-              2022-01-02
-            </time>
           </div>
         
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/TypeScript/">TypeScript</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/TypeScript/">TypeScript</a>
-            
-          </div>
         
       </div>
     </article>
@@ -792,56 +969,58 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-  <div class="statistics">
-    
-    
-
-    
-      
-        <!-- 不蒜子统计PV -->
-        <span id="busuanzi_container_site_pv" style="display: none">
-            总访问量 
-            <span id="busuanzi_value_site_pv"></span>
-             次
-          </span>
-      
-      
-        <!-- 不蒜子统计UV -->
-        <span id="busuanzi_container_site_uv" style="display: none">
-            总访客数 
-            <span id="busuanzi_value_site_uv"></span>
-             人
-          </span>
-      
-    
-  </div>
-
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
   
 
   
-</footer>
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
 
+  
+  
+  
+</div>
 
-  <!-- SCRIPTS -->
+  </footer>
+
+  <!-- Scripts -->
   
   <script  src="https://fastly.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
@@ -860,37 +1039,18 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    
-  
-
-
-
-  
-
-
-
-
-
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-
 
   <script  src="https://fastly.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
       
-        typing(title);
+        typing(text);
       
     })(window, document);
   </script>
@@ -900,10 +1060,16 @@
 
 
 
+  
+    
+  
 
 
 
 
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
@@ -915,9 +1081,15 @@
 
 
 
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 <!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><!-- hexo injector body_end end --></body>
 </html>

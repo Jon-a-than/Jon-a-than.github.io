@@ -28,15 +28,21 @@
 <meta name="twitter:card" content="summary_large_image">
   
   
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
   <title>清山的博客</title>
 
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
 
-<!-- 主题依赖的图标库，不要自行修改 -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -45,7 +51,13 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
   
 <link rel="stylesheet" href="/css/selection.css">
@@ -58,16 +70,29 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"qingshaner.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":false,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"qingshaner.com","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.0.0"></head>
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
 <body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>荷风送香气，竹露滴清响</strong>
@@ -155,24 +180,13 @@
             </li>
           
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/%E9%97%AE%E6%B8%A0%E9%82%A3%E5%BE%97%E6%B8%85%E5%A6%82%E8%AE%B8/">
-                <i class="iconfont icon-plan"></i>
-                计划表
-              </a>
-            </li>
-          
-        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
               &nbsp;<i class="iconfont icon-search"></i>&nbsp;
             </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -185,40 +199,113 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202205011921669.jpg') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="海上升明月🌕天涯共此时">
-              
-            </span>
+  
 
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202205011921669.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
           
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
+            <span id="subtitle" data-typed-text="海上升明月🌕天涯共此时"></span>
           
         </div>
+
+        
       </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
     
       <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
+        <div id="board"
+          style="margin-top: 0">
           
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
                 
 
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/Nodejs/" target="_self">
+          <img src="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204012104181.jpg" alt="🟡Nodejs">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/Nodejs/" target="_self">
+          🟡Nodejs
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/Nodejs/" target="_self">
+        <div>
+          
+          脚本运行 🥕命令终端 12node app.jsnode app 🥕JS代码 12#!&#x2F;user&#x2F;bin&#x2F;node#!&#x2F;user&#x2F;bin&#x2F;env node 脚本关闭 🥬exit()方法 使用process.exit()方法可强制关闭所有任务 可设置process.exitCode &#x3D; exitCode或直接执行process.exit(exitCode)来传递退出代码,默认为
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-02-01 20:52" pubdate>
+              2022-02-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Node-js/" class="category-chain-item">Node.js</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Node-js/">#Node.js</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
 
   <div class="row mx-auto index-card">
     
@@ -237,12 +324,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/JavaScriptDOM/" target="_self">
+      <a class="index-excerpt" href="/JavaScriptDOM/" target="_self">
+        <div>
           
           节点类型 Node类型 🌿属性    属性 值     nodeValue 节点值   nodeName 节点名称   nodeType 节点类型   childNodes 子节点信息   hasChildNodes 是否有子节点(返回布尔值)   parentNode 指向父节点   previousSibling 指向
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -254,22 +341,41 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/JavaScript/">JavaScript</a>
-            
-              <a href="/categories/JavaScript/DOM/">DOM</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaScript/" class="category-chain-item">JavaScript</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/JavaScript/DOM/" class="category-chain-item">DOM</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/JavaScript/">JavaScript</a>
+              <a href="/tags/JavaScript/">#JavaScript</a>
             
-              <a href="/tags/DOM/">DOM</a>
+              <a href="/tags/DOM/">#DOM</a>
             
           </div>
         
@@ -294,12 +400,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/JavaScriptBOM/" target="_self">
+      <a class="index-excerpt" href="/JavaScriptBOM/" target="_self">
+        <div>
           
           window对象 窗口位置 🥕位置获取 window.screenTop,window.screenLeft显示浏览器应用左上角的位置 🥕位置方法              这些方法可能被浏览器禁用             window.moveTo(x, y)浏览器左上角移动至(x, y) window.moveBy(x, y)浏览器左上角相对当前向左x px向下y px
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -311,22 +417,41 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/JavaScript/">JavaScript</a>
-            
-              <a href="/categories/JavaScript/BOM/">BOM</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaScript/" class="category-chain-item">JavaScript</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/JavaScript/BOM/" class="category-chain-item">BOM</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/JavaScript/">JavaScript</a>
+              <a href="/tags/JavaScript/">#JavaScript</a>
             
-              <a href="/tags/BOM/">BOM</a>
+              <a href="/tags/BOM/">#BOM</a>
             
           </div>
         
@@ -351,12 +476,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/JavaScript%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B/" target="_self">
+      <a class="index-excerpt" href="/JavaScript%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B/" target="_self">
+        <div>
           
           原始类型 Undefined 定义变量的默认值,表示未定义 Null 一个空对象指针,声明变量要保存对象但暂时未获取时应赋初值null Boolean Boolean()方法将其他类型转为Boolean型,&#39;&#39;,0,NaN,null,undefined被转为false,其他均为true String ### 🌿字符集 🌿字符数组 字符串可以当作一个只读字符数组 123le
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -368,22 +493,41 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/JavaScript/">JavaScript</a>
-            
-              <a href="/categories/JavaScript/%E5%9F%BA%E7%A1%80/">基础</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaScript/" class="category-chain-item">JavaScript</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/JavaScript/%E5%9F%BA%E7%A1%80/" class="category-chain-item">基础</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/JavaScript/">JavaScript</a>
+              <a href="/tags/JavaScript/">#JavaScript</a>
             
-              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">数据类型</a>
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">#数据类型</a>
             
           </div>
         
@@ -408,12 +552,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/ES6%E8%A7%A3%E6%9E%84/" target="_self">
+      <a class="index-excerpt" href="/ES6%E8%A7%A3%E6%9E%84/" target="_self">
+        <div>
           
           数组解构 使用解构赋值可以加强可读性 12345const x &#x3D; 0const y &#x3D; 1&#x2F;&#x2F; 等价于const [x, y] &#x3D; [0, 1] 🍒嵌套解构 🍒默认值 当解构失败时可使用默认值 1const [x &#x3D; 0, y &#x3D; 1] &#x3D; [] 🍒交换值 使用解构可以高效的完成不借助第三变量且快速的完成交换 1;[a, b] &#x3D; [b, a]    &#x2F;&#x2F; 在前加分号与前
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -425,22 +569,41 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/JavaScript/">JavaScript</a>
-            
-              <a href="/categories/JavaScript/ES6/">ES6</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaScript/" class="category-chain-item">JavaScript</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/JavaScript/ES6/" class="category-chain-item">ES6</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/JavaScript/">JavaScript</a>
+              <a href="/tags/JavaScript/">#JavaScript</a>
             
-              <a href="/tags/ES6/">ES6</a>
+              <a href="/tags/ES6/">#ES6</a>
             
           </div>
         
@@ -465,12 +628,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8/" target="_self">
+      <a class="index-excerpt" href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8/" target="_self">
+        <div>
           
           记录css不同选择器与选择器优先级计算方法
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -482,20 +645,39 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/CSS/">CSS</a>
-            
-              <a href="/categories/CSS/%E5%9F%BA%E7%A1%80/">基础</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CSS/" class="category-chain-item">CSS</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/CSS/%E5%9F%BA%E7%A1%80/" class="category-chain-item">基础</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/CSS/">CSS</a>
+              <a href="/tags/CSS/">#CSS</a>
             
           </div>
         
@@ -520,12 +702,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/CSS%E5%9F%BA%E7%A1%80/" target="_self">
+      <a class="index-excerpt" href="/CSS%E5%9F%BA%E7%A1%80/" target="_self">
+        <div>
           
           颜色 单位 字体 背景 background 1234567body &amp;#123;  background-color: ;  background-image: ;  background-repeat: ;  background-attachment: ;  background-position: ;&amp;#125; 边框              参考文档:《CSS教程 (w
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -537,20 +719,39 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/CSS/">CSS</a>
-            
-              <a href="/categories/CSS/%E5%9F%BA%E7%A1%80/">基础</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CSS/" class="category-chain-item">CSS</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/CSS/%E5%9F%BA%E7%A1%80/" class="category-chain-item">基础</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/CSS/">CSS</a>
+              <a href="/tags/CSS/">#CSS</a>
             
           </div>
         
@@ -575,12 +776,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/ES6Promise/" target="_self">
+      <a class="index-excerpt" href="/ES6Promise/" target="_self">
+        <div>
           
           Promise(期约) Promise 🍇建立Promise Promise接收一个带(reslove,reject)的函数用来指定期约状态 状态转换在同级代码后执行,使用return可以直接退出 1234567const promise &#x3D; new Promise((reslove, reject) &#x3D;&gt; &amp;#123;  if(&#x2F;* 期约兑现 *&#x2F;)    reslove(re
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -592,24 +793,43 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/JavaScript/">JavaScript</a>
-            
-              <a href="/categories/JavaScript/ES6/">ES6</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaScript/" class="category-chain-item">JavaScript</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/JavaScript/ES6/" class="category-chain-item">ES6</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/JavaScript/">JavaScript</a>
+              <a href="/tags/JavaScript/">#JavaScript</a>
             
-              <a href="/tags/ES6/">ES6</a>
+              <a href="/tags/ES6/">#ES6</a>
             
-              <a href="/tags/Promise/">Promise</a>
+              <a href="/tags/Promise/">#Promise</a>
             
           </div>
         
@@ -634,12 +854,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/ES6module/" target="_self">
+      <a class="index-excerpt" href="/ES6module/" target="_self">
+        <div>
           
           🌿导出 可以用export对外暴露变量,方法,类 定义后导出需用对象,expor default除外 12345export let x &#x3D; 0export const y &#x3D; (a, b) &#x3D;&gt; a + b&#x2F;&#x2F; 或一次性export &amp;#123; x, y &amp;#125;  🌿重命名 导出时用as重命名导出内容 1234export &amp;#123;  a as method1,
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -651,24 +871,43 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/JavaScript/">JavaScript</a>
-            
-              <a href="/categories/JavaScript/ES6/">ES6</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaScript/" class="category-chain-item">JavaScript</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/JavaScript/ES6/" class="category-chain-item">ES6</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/JavaScript/">JavaScript</a>
+              <a href="/tags/JavaScript/">#JavaScript</a>
             
-              <a href="/tags/ES6/">ES6</a>
+              <a href="/tags/ES6/">#ES6</a>
             
-              <a href="/tags/Module/">Module</a>
+              <a href="/tags/Module/">#Module</a>
             
           </div>
         
@@ -693,12 +932,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/less%E5%AD%A6%E4%B9%A0/" target="_self">
+      <a class="index-excerpt" href="/less%E5%AD%A6%E4%B9%A0/" target="_self">
+        <div>
           
           注释 12&#x2F;&#x2F; 行注释,编译去除&#x2F;* 块注释,编译保留 *&#x2F; 变量 使用@命名变量 1@key: value; 也可命名选择器 12345@selsetor: className&gt;p.@&amp;#123;selector&amp;#125;&amp;#123;       &#x2F;&#x2F; 即&#96;.className&gt;p&amp;#123;&amp;#125;&#96;&amp;#125; 作用域 作用域同JavaScript 同作用
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -710,83 +949,48 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/CSS/">CSS</a>
-            
-              <a href="/categories/CSS/CSS%E9%A2%84%E5%A4%84%E7%90%86/">CSS预处理</a>
-            
-              <a href="/categories/CSS/CSS%E9%A2%84%E5%A4%84%E7%90%86/Less/">Less</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CSS/" class="category-chain-item">CSS</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/CSS/CSS%E9%A2%84%E5%A4%84%E7%90%86/" class="category-chain-item">CSS预处理</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/CSS/CSS%E9%A2%84%E5%A4%84%E7%90%86/Less/" class="category-chain-item">Less</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Less/">Less</a>
+              <a href="/tags/Less/">#Less</a>
             
-              <a href="/tags/css%E9%A2%84%E5%A4%84%E7%90%86/">css预处理</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/sass%E5%AD%A6%E4%B9%A0/" target="_self">
-          <img src="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204012102199.jpg" alt="🟡Sass学习">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/sass%E5%AD%A6%E4%B9%A0/" target="_self">
-          🟡Sass学习
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/sass%E5%AD%A6%E4%B9%A0/" target="_self">
-          
-          安装与使用SASS 安装Ruby 官网下载有devkte的ruby版本 安装时勾选自动添加环境变量 安装后命令窗口选3 命令终端使用ruby -v检查是否安装成功 gem更新 gem用于管理Ruby程序 命令终端执行以下命令 12&gt; gem update --system&gt; gem sources --add https:&#x2F;&#x2F;gems.ruby-china.com&#x2F;
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-01-26 17:33" pubdate>
-              2022-01-26
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/CSS/">CSS</a>
-            
-              <a href="/categories/CSS/CSS%E9%A2%84%E5%A4%84%E7%90%86/">CSS预处理</a>
-            
-              <a href="/categories/CSS/CSS%E9%A2%84%E5%A4%84%E7%90%86/Sass/">Sass</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/css%E9%A2%84%E5%A4%84%E7%90%86/">css预处理</a>
-            
-              <a href="/tags/Sass/">Sass</a>
+              <a href="/tags/css%E9%A2%84%E5%A4%84%E7%90%86/">#css预处理</a>
             
           </div>
         
@@ -831,56 +1035,58 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-  <div class="statistics">
-    
-    
-
-    
-      
-        <!-- 不蒜子统计PV -->
-        <span id="busuanzi_container_site_pv" style="display: none">
-            总访问量 
-            <span id="busuanzi_value_site_pv"></span>
-             次
-          </span>
-      
-      
-        <!-- 不蒜子统计UV -->
-        <span id="busuanzi_container_site_uv" style="display: none">
-            总访客数 
-            <span id="busuanzi_value_site_uv"></span>
-             人
-          </span>
-      
-    
-  </div>
-
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
   
 
   
-</footer>
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
 
+  
+  
+  
+</div>
 
-  <!-- SCRIPTS -->
+  </footer>
+
+  <!-- Scripts -->
   
   <script  src="https://fastly.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
@@ -899,37 +1105,18 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    
-  
-
-
-
-  
-
-
-
-
-
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-
 
   <script  src="https://fastly.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
       
-        typing(title);
+        typing(text);
       
     })(window, document);
   </script>
@@ -939,10 +1126,16 @@
 
 
 
+  
+    
+  
 
 
 
 
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
@@ -954,9 +1147,15 @@
 
 
 
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 <!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><!-- hexo injector body_end end --></body>
 </html>

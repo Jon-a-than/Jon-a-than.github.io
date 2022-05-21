@@ -33,30 +33,27 @@
 <meta name="twitter:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204012045016.jpg">
   
   
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
   <title>🟡JavaScript网络与资源请求 - 清山的博客</title>
 
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
+
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/hint.css@2/hint.min.css" />
 
-  
-    
-    
-      
-      <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/highlight.js@11/styles/atom-one-dark.min.css" />
-    
-  
+  <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
 
-  
-    <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
-  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -65,7 +62,13 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
   
 <link rel="stylesheet" href="/css/selection.css">
@@ -78,16 +81,29 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"qingshaner.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":false,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"qingshaner.com","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.0.0"></head>
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
 <body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>荷风送香气，竹露滴清响</strong>
@@ -175,24 +191,13 @@
             </li>
           
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/%E9%97%AE%E6%B8%A0%E9%82%A3%E5%BE%97%E6%B8%85%E5%A6%82%E8%AE%B8/">
-                <i class="iconfont icon-plan"></i>
-                计划表
-              </a>
-            </li>
-          
-        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
               &nbsp;<i class="iconfont icon-search"></i>&nbsp;
             </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -205,70 +210,84 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204031054091.jpg') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="🟡JavaScript网络与资源请求">
-              
-            </span>
-
-            
-              <div class="mt-3">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-author" aria-hidden="true"></i>
-      清山
-    </span>
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-02-15 12:37" pubdate>
-        2022年2月15日 下午
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      3.4k 字
-    </span>
   
 
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      29 分钟
-    </span>
-  
-
-  
-  
-    
-      <!-- 不蒜子统计文章PV -->
-      <span id="busuanzi_container_page_pv" style="display: none">
-        <i class="iconfont icon-eye" aria-hidden="true"></i>
-        <span id="busuanzi_value_page_pv"></span> 次
-      </span>
-    
-  
-</div>
-
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204031054091.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="🟡JavaScript网络与资源请求"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        清山
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-02-15 12:37" pubdate>
+          2022年2月15日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          3.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          29 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
       </div>
+
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
@@ -277,25 +296,33 @@
 
 <div class="container-fluid nopadding-x">
   <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
     <div class="col-lg-8 nopadding-x-md">
       <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
+        <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
             <h1 style="display: none">🟡JavaScript网络与资源请求</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年4月8日 晚上
+                  
+                    <!-- compatible with older versions-->
+                    本文最后更新于：2022年4月8日 晚上
+                  
                 
               </p>
             
             <div class="markdown-body">
+              
               <h2 id="xhr对象">XHR对象</h2>
 <h3 id="创建xhr对象">🌽创建XHR对象</h3>
 <p><strong>使用构造函数创建新</strong><code>XHR</code><strong>对象</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest()<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> xhr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>()<br></code></pre></td></tr></table></figure>
 <h3 id="open方法">🌽open方法</h3>
 <p><code>XHR</code><strong>对象使用</strong><code>open(method, url, Boolean)</code><strong>方法定义请求</strong></p>
 <table>
@@ -320,11 +347,11 @@
 </tr>
 </tbody>
 </table>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">xhr.open(<span class="hljs-string">&#x27;GET&#x27;</span>, <span class="hljs-string">&#x27;XHR.txt&#x27;</span>, <span class="hljs-literal">false</span> )<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">xhr.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;GET&#x27;</span>, <span class="hljs-string">&#x27;XHR.txt&#x27;</span>, <span class="hljs-literal">false</span> )<br></code></pre></td></tr></table></figure>
 <h3 id="send方法">🌽send方法</h3>
 <p><code>XHR</code><strong>对象使用</strong><code>send(data)</code><strong>方法发送请求</strong></p>
 <p><strong>当无数据发送时应传入</strong><code>null</code><strong>以兼容</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">xhr.send(<span class="hljs-literal">null</span>)<br>xhr.send()<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js">xhr.<span class="hljs-title function_">send</span>(<span class="hljs-literal">null</span>)<br>xhr.<span class="hljs-title function_">send</span>()<br></code></pre></td></tr></table></figure>
 <h3 id="xhr请求属性">🌽XHR请求属性</h3>
 <p><strong>使用</strong><code>send</code><strong>方法后</strong><code>XHR</code><strong>对象以下属性会接收响应数据</strong></p>
 <table>
@@ -386,7 +413,7 @@
 </tbody>
 </table>
 <p><strong>当状态改变时发生</strong><code>readystatechange</code><strong>事件,可以此添加监听器,该事件不传递</strong><code>event</code></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">xhr.onreadystatechange = <span class="hljs-function">() =&gt;</span> &#123;&#125;                             <span class="hljs-comment">// DOM0</span><br>xhr.addEventLisener(<span class="hljs-string">&#x27;readystatechange&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;&#125;, <span class="hljs-literal">false</span>)      <span class="hljs-comment">// DOM2</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js">xhr.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-function">() =&gt;</span> &#123;&#125;                             <span class="hljs-comment">// DOM0</span><br>xhr.<span class="hljs-title function_">addEventLisener</span>(<span class="hljs-string">&#x27;readystatechange&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;&#125;, <span class="hljs-literal">false</span>)      <span class="hljs-comment">// DOM2</span><br></code></pre></td></tr></table></figure>
 <p><strong>使用</strong><code>abort()</code><strong>方法可将</strong><code>XHR</code><strong>对象状态直接变为</strong><code>4</code><strong>停止通信</strong></p>
 <h3 id="http请求头">🌽HTTP请求头</h3>
 <p><strong>在使用</strong><code>open</code><strong>方法后</strong><code>send</code><strong>方法前使用</strong><code>setRequestHeader(key, value)</code><strong>方法为请求头添加数据</strong></p>
@@ -399,13 +426,13 @@
 <h3 id="formdata类型">🥕FormData类型</h3>
 <p><strong>该类型可对表单数据进行序列化,并自动配置请求头</strong></p>
 <p><code>append(key, value)</code><strong>可向表单添加数据</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> Data = <span class="hljs-keyword">new</span> FromData(<span class="hljs-built_in">document</span>.forms[<span class="hljs-number">0</span>])<br>Data.append(<span class="hljs-string">&#x27;Blog&#x27;</span>, <span class="hljs-string">&#x27;https://jon-a-than.github.io&#x27;</span>)<br>xhr.send(Data)<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">Data</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FromData</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-property">forms</span>[<span class="hljs-number">0</span>])<br><span class="hljs-title class_">Data</span>.<span class="hljs-title function_">append</span>(<span class="hljs-string">&#x27;Blog&#x27;</span>, <span class="hljs-string">&#x27;https://jon-a-than.github.io&#x27;</span>)<br>xhr.<span class="hljs-title function_">send</span>(<span class="hljs-title class_">Data</span>)<br></code></pre></td></tr></table></figure>
 <h3 id="timeout">🥕timeout</h3>
 <p><code>XHR</code><strong>对象的</strong><code>timeout</code><strong>属性设置请求判断超时时间(ms),超时后触发</strong><code>timeout</code><strong>事件,对象状态变为4</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">xhr.timeout = <span class="hljs-number">10000</span><br>xhr.addEventLisener(<span class="hljs-string">&#x27;timeout&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;&#125;)  <span class="hljs-comment">// DOM2</span><br>xhr.ontimeout = <span class="hljs-function">() =&gt;</span> &#123;&#125;                  <span class="hljs-comment">// DOM0</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js">xhr.<span class="hljs-property">timeout</span> = <span class="hljs-number">10000</span><br>xhr.<span class="hljs-title function_">addEventLisener</span>(<span class="hljs-string">&#x27;timeout&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;&#125;)  <span class="hljs-comment">// DOM2</span><br>xhr.<span class="hljs-property">ontimeout</span> = <span class="hljs-function">() =&gt;</span> &#123;&#125;                  <span class="hljs-comment">// DOM0</span><br></code></pre></td></tr></table></figure>
 <h3 id="overridemimetype方法">🥕overrideMimeType方法</h3>
 <p><strong>在使用</strong><code>send</code><strong>方法前调用</strong><code>overrideMimeType</code><strong>方法可强制改变响应头对响应的处理方式(MIME)</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">xhr.overrideMimeType(<span class="hljs-string">&#x27;text/plain&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">xhr.<span class="hljs-title function_">overrideMimeType</span>(<span class="hljs-string">&#x27;text/plain&#x27;</span>)<br></code></pre></td></tr></table></figure>
 <h2 id="进度事件">进度事件</h2>
 <table>
 <thead>
@@ -479,7 +506,7 @@
 <h3 id="header对象">🍍Header对象</h3>
 <p><code>Response</code><strong>或</strong><code>Request</code><strong>的</strong><code>header</code><strong>属性为一个</strong><code>Header</code><strong>实例</strong></p>
 <p><strong>可使用构造函数创建实例,可传入可迭代对象或键值对初始化</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> header = <span class="hljs-keyword">new</span> Header(&#123;<span class="hljs-attr">id</span>: <span class="hljs-number">1</span>&#125;)<br><span class="hljs-keyword">const</span> header = <span class="hljs-keyword">new</span> Header(prams)<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> header = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Header</span>(&#123;<span class="hljs-attr">id</span>: <span class="hljs-number">1</span>&#125;)<br><span class="hljs-keyword">const</span> header = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Header</span>(prams)<br></code></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr class="header">
@@ -505,16 +532,16 @@
 <h4 id="头部护卫">📌头部护卫</h4>
 <h3 id="request对象">🍍Request对象</h3>
 <p><strong>可使用</strong><code>bodyUsed</code><strong>属性为</strong><code>false</code><strong>的</strong><code>Request</code><strong>实例传递给</strong><code>fetch</code></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> request = <span class="hljs-keyword">new</span> Request(<span class="hljs-string">&#x27;url&#x27;</span>, [init])     <span class="hljs-comment">// 可直接fetch该实例(bodyUsed必须为false)</span><br>fetch(request, &#123;<span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;POST&#x27;</span>&#125;)               <span class="hljs-comment">// init会覆盖先前设置</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> request = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Request</span>(<span class="hljs-string">&#x27;url&#x27;</span>, [init])     <span class="hljs-comment">// 可直接fetch该实例(bodyUsed必须为false)</span><br><span class="hljs-title function_">fetch</span>(request, &#123;<span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;POST&#x27;</span>&#125;)               <span class="hljs-comment">// init会覆盖先前设置</span><br></code></pre></td></tr></table></figure>
 <p><strong>使用</strong><code>new Requset(request)</code><strong>可复制</strong><code>request</code><strong>,但</strong><code>request</code><strong>的</strong><code>bodyUsed</code><strong>属性值会变为</strong><code>true</code></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> request2 = <span class="hljs-keyword">new</span> Requset(request)<br>fetch(request)                         <span class="hljs-comment">// 报错</span><br>fetch(request2)                        <span class="hljs-comment">// 正常</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> request2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Requset</span>(request)<br><span class="hljs-title function_">fetch</span>(request)                         <span class="hljs-comment">// 报错</span><br><span class="hljs-title function_">fetch</span>(request2)                        <span class="hljs-comment">// 正常</span><br></code></pre></td></tr></table></figure>
 <p><strong>使用</strong><code>clone()</code><strong>方法可复制一模一样的</strong><code>Request</code><strong>实例</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> request2 = request.clone()<br>fetch(request)                        <span class="hljs-comment">// 正常</span><br>fetch(request2)                       <span class="hljs-comment">// 正常</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> request2 = request.<span class="hljs-title function_">clone</span>()<br><span class="hljs-title function_">fetch</span>(request)                        <span class="hljs-comment">// 正常</span><br><span class="hljs-title function_">fetch</span>(request2)                       <span class="hljs-comment">// 正常</span><br></code></pre></td></tr></table></figure>
 <h3 id="response对象">🍍Response对象</h3>
 <h4 id="创建实例">📌创建实例</h4>
 <p><strong>使用构造函数创建</strong><code>Response</code><strong>实例</strong></p>
 <p><strong>可选参数有</strong><code>body</code><strong>(同</strong><code>fetch</code><strong>)和</strong><code>init</code></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> response = <span class="hljs-keyword">new</span> Response([body], [init])<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> response = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Response</span>([body], [init])<br></code></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr class="header">
@@ -556,13 +583,10 @@
 </tr>
 </tbody>
 </table>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">response.redirect(<span class="hljs-string">&#x27;test.txt&#x27;</span>, <span class="hljs-number">200</span>)              <span class="hljs-comment">// 状态码为非重定向状态码会报错</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">response.<span class="hljs-title function_">redirect</span>(<span class="hljs-string">&#x27;test.txt&#x27;</span>, <span class="hljs-number">200</span>)              <span class="hljs-comment">// 状态码为非重定向状态码会报错</span><br></code></pre></td></tr></table></figure>
 <h4 id="实例属性">📌实例属性</h4>
 <table>
-<colgroup>
-<col style="width: 16%">
-<col style="width: 83%">
-</colgroup>
+
 <thead>
 <tr class="header">
 <th style="text-align: center;">属性</th>
@@ -601,7 +625,7 @@
 </tbody>
 </table>
 <h4 id="实例拷贝">📌实例拷贝</h4>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> response2 = <span class="hljs-keyword">new</span> Response(response)       <span class="hljs-comment">// response的bodyUsed不会变为true,但实例变为共享</span><br><span class="hljs-keyword">const</span> response2 = response.clone()             <span class="hljs-comment">// 不可对bodyUsed为true的实例使用</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> response2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Response</span>(response)       <span class="hljs-comment">// response的bodyUsed不会变为true,但实例变为共享</span><br><span class="hljs-keyword">const</span> response2 = response.<span class="hljs-title function_">clone</span>()             <span class="hljs-comment">// 不可对bodyUsed为true的实例使用</span><br></code></pre></td></tr></table></figure>
 <h3 id="body-1">🍍body</h3>
 <p><code>Request</code><strong>与</strong><code>Response</code><strong>实例均有只读的</strong><code>body</code><strong>和</strong><code>bodyUsed</code><strong>(</strong><code>ReadableStream</code><strong>是否摄受)属性以及五种转换方法</strong></p>
 <table>
@@ -641,44 +665,102 @@
             <p><strong>参考文档:</strong></p><p>《JavaScript高级程序设计 第四版》</p><p><a target="_blank" rel="noopener" href="https://zh.javascript.info/xmlhttprequest">《现代JavaScript教程》</a></p><p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2020/12/fetch-tutorial.html">《 Fetch API 教程》(阮一峰)</a></p>
           </div>
 
+              
             </div>
-            <hr>
+            <hr/>
             <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/JavaScript/">JavaScript</a>
-                    
-                      <a class="hover-with-bg" href="/categories/JavaScript/%E5%9F%BA%E7%A1%80/">基础</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/">网络请求</a>
-                    
-                      <a class="hover-with-bg" href="/tags/JavaScript/">JavaScript</a>
-                    
-                  </div>
-                
-              </div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaScript/" class="category-chain-item">JavaScript</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/JavaScript/%E5%9F%BA%E7%A1%80/" class="category-chain-item">基础</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/">#网络请求</a>
+      
+        <a href="/tags/JavaScript/">#JavaScript</a>
+      
+    </div>
+  
+</div>
+
+
               
-                <p class="note note-warning">
-                  
-                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
-                  
-                </p>
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>🟡JavaScript网络与资源请求</div>
+      <div>https://qingshaner.com/JavaScript网络与资源请求/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>清山</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年2月15日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
               
-              
-                <div class="post-prevnext">
+                <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/JavaScript%E5%8A%A8%E7%94%BB/">
+                      <a href="/JavaScript%E5%8A%A8%E7%94%BB/" title="🟡JavaScript动画">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">🟡JavaScript动画</span>
                         <span class="visible-mobile">上一篇</span>
@@ -688,7 +770,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/ES6%E8%BF%AD%E4%BB%A3%E5%99%A8/">
+                      <a href="/ES6%E8%BF%AD%E4%BB%A3%E5%99%A8/" title="🏗ES6迭代器">
                         <span class="hidden-mobile">🏗ES6迭代器</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -700,12 +782,8 @@
             </div>
 
             
-              <!-- Comments -->
-              <article class="comments" id="comments">
-                
-                  
-                
-                
+  <article id="comments">
+    
   <div id="valine"></div>
   <script type="text/javascript">
     Fluid.utils.loadComments('#valine', function() {
@@ -719,7 +797,9 @@
         )
         new Valine(options);
         Fluid.utils.waitElementVisible('#valine .vcontent', () => {
-          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
         })
       });
     });
@@ -727,25 +807,53 @@
   <noscript>Please enable JavaScript to view the comments</noscript>
 
 
-              </article>
-            
+  </article>
+
+
           </article>
         </div>
       </div>
     </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
   <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
-      </div>
-    
+
+
+  </aside>
+
+
+    </div>
   </div>
 </div>
 
-<!-- Custom -->
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
 
 
     
@@ -770,56 +878,58 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-  <div class="statistics">
-    
-    
-
-    
-      
-        <!-- 不蒜子统计PV -->
-        <span id="busuanzi_container_site_pv" style="display: none">
-            总访问量 
-            <span id="busuanzi_value_site_pv"></span>
-             次
-          </span>
-      
-      
-        <!-- 不蒜子统计UV -->
-        <span id="busuanzi_container_site_uv" style="display: none">
-            总访客数 
-            <span id="busuanzi_value_site_uv"></span>
-             人
-          </span>
-      
-    
-  </div>
-
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
   
 
   
-</footer>
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
 
+  
+  
+  
+</div>
 
-  <!-- SCRIPTS -->
+  </footer>
+
+  <!-- Scripts -->
   
   <script  src="https://fastly.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
@@ -838,10 +948,24 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
+
+  <script  src="https://fastly.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
 
-  <script  src="/js/local-search.js" ></script>
+
 
 
 
@@ -853,48 +977,71 @@
 
 
 
-  
-
-
 
   
-    <script  src="https://fastly.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
-  
-  
-    <script  src="https://fastly.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
-  
-  
-    <script  src="https://fastly.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
-  
-  
+<script>
+  Fluid.utils.createScript('https://fastly.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
 
 
+  
+<script>
+  Fluid.utils.createScript('https://fastly.jsdelivr.net/npm/anchor-js@4/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://fastly.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-
-
-  <script  src="https://fastly.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-        typing(title);
-      
-    })(window, document);
-  </script>
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -906,9 +1053,15 @@
 
 
 
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 <!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><!-- hexo injector body_end end --></body>
 </html>

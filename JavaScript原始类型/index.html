@@ -33,30 +33,27 @@
 <meta name="twitter:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204012104184.jpg">
   
   
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
   <title>🟡JavaScript数据类型 - 清山的博客</title>
 
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
+
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/hint.css@2/hint.min.css" />
 
-  
-    
-    
-      
-      <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/highlight.js@11/styles/atom-one-dark.min.css" />
-    
-  
+  <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
 
-  
-    <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
-  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -65,7 +62,13 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
   
 <link rel="stylesheet" href="/css/selection.css">
@@ -78,16 +81,29 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"qingshaner.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":false,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"qingshaner.com","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.0.0"></head>
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
 <body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>荷风送香气，竹露滴清响</strong>
@@ -175,24 +191,13 @@
             </li>
           
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/%E9%97%AE%E6%B8%A0%E9%82%A3%E5%BE%97%E6%B8%85%E5%A6%82%E8%AE%B8/">
-                <i class="iconfont icon-plan"></i>
-                计划表
-              </a>
-            </li>
-          
-        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
               &nbsp;<i class="iconfont icon-search"></i>&nbsp;
             </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -205,70 +210,84 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204031054091.jpg') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="🟡JavaScript数据类型">
-              
-            </span>
-
-            
-              <div class="mt-3">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-author" aria-hidden="true"></i>
-      清山
-    </span>
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-01-29 19:43" pubdate>
-        2022年1月29日 晚上
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      3.5k 字
-    </span>
   
 
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      30 分钟
-    </span>
-  
-
-  
-  
-    
-      <!-- 不蒜子统计文章PV -->
-      <span id="busuanzi_container_page_pv" style="display: none">
-        <i class="iconfont icon-eye" aria-hidden="true"></i>
-        <span id="busuanzi_value_page_pv"></span> 次
-      </span>
-    
-  
-</div>
-
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204031054091.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="🟡JavaScript数据类型"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        清山
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-01-29 19:43" pubdate>
+          2022年1月29日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          3.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          30 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
       </div>
+
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
@@ -277,21 +296,29 @@
 
 <div class="container-fluid nopadding-x">
   <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
     <div class="col-lg-8 nopadding-x-md">
       <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
+        <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
             <h1 style="display: none">🟡JavaScript数据类型</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年4月8日 晚上
+                  
+                    <!-- compatible with older versions-->
+                    本文最后更新于：2022年4月8日 晚上
+                  
                 
               </p>
             
             <div class="markdown-body">
+              
               <h1 id="原始类型">原始类型</h1>
 <h2 id="undefined">Undefined</h2>
 <p><strong>定义变量的默认值,表示未定义</strong></p>
@@ -303,11 +330,11 @@
 <p>### 🌿字符集</p>
 <h3 id="字符数组">🌿字符数组</h3>
 <p><strong>字符串可以当作一个只读字符数组</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&#x27;Jonathan&#x27;</span><br>str[<span class="hljs-number">3</span>] = <span class="hljs-string">&#x27;a&#x27;</span><br>str.length = <span class="hljs-number">8</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&#x27;Jonathan&#x27;</span><br>str[<span class="hljs-number">3</span>] = <span class="hljs-string">&#x27;a&#x27;</span><br>str.<span class="hljs-property">length</span> = <span class="hljs-number">8</span><br></code></pre></td></tr></table></figure>
 <p><strong>字符不可更改,长度不可更改</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&#x27;Jonathan&#x27;</span><br>str.length = <span class="hljs-number">4</span>, str[<span class="hljs-number">1</span>] = <span class="hljs-string">&#x27;a&#x27;</span><br><span class="hljs-built_in">console</span>.log(str)              <span class="hljs-comment">// &#x27;Jonathan&#x27;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&#x27;Jonathan&#x27;</span><br>str.<span class="hljs-property">length</span> = <span class="hljs-number">4</span>, str[<span class="hljs-number">1</span>] = <span class="hljs-string">&#x27;a&#x27;</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(str)              <span class="hljs-comment">// &#x27;Jonathan&#x27;</span><br></code></pre></td></tr></table></figure>
 <p><strong>可以用</strong><code>str.split()</code><strong>将字符串分割出一个可读写的字符数组</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&#x27;Jonathan&#x27;</span><br><span class="hljs-keyword">let</span> x = str.split(<span class="hljs-string">&#x27;&#x27;</span>)        <span class="hljs-comment">// [&#x27;J&#x27;, &#x27;o&#x27;, &#x27;n&#x27;, &#x27;a&#x27;, &#x27;t&#x27;, &#x27;h&#x27;, &#x27;a&#x27;, &#x27;n&#x27;]</span><br>x.length = <span class="hljs-number">4</span>, x[<span class="hljs-number">1</span>] = <span class="hljs-string">&#x27;a&#x27;</span><br><span class="hljs-keyword">let</span> y = x.join(<span class="hljs-string">&#x27;&#x27;</span>)           <span class="hljs-comment">// &#x27;Jana&#x27;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&#x27;Jonathan&#x27;</span><br><span class="hljs-keyword">let</span> x = str.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;&#x27;</span>)        <span class="hljs-comment">// [&#x27;J&#x27;, &#x27;o&#x27;, &#x27;n&#x27;, &#x27;a&#x27;, &#x27;t&#x27;, &#x27;h&#x27;, &#x27;a&#x27;, &#x27;n&#x27;]</span><br>x.<span class="hljs-property">length</span> = <span class="hljs-number">4</span>, x[<span class="hljs-number">1</span>] = <span class="hljs-string">&#x27;a&#x27;</span><br><span class="hljs-keyword">let</span> y = x.<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27;&#x27;</span>)           <span class="hljs-comment">// &#x27;Jana&#x27;</span><br></code></pre></td></tr></table></figure>
 <h3 id="base64">🌿Base64</h3>
 <p><code>btoa()</code><strong>asc转</strong><code>Base64</code></p>
 <p><code>atob()</code> <code>Base64</code><strong>转asc</strong></p>
@@ -316,16 +343,16 @@
 <div class="note note-success">
             <p><strong>ES6中新增了二进制与八进制的表示</strong><a href class="btn" style="margin:10px">🔗前往查看</a></p>
           </div>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> a = <span class="hljs-number">31</span>        <span class="hljs-comment">// 十进制</span><br><span class="hljs-keyword">const</span> a = <span class="hljs-number">037</span>       <span class="hljs-comment">// 八进制0开头,ES5严格模式禁止0开头表示八进制</span><br><span class="hljs-keyword">const</span> b = <span class="hljs-number">0x1F</span>      <span class="hljs-comment">// 十六进制0x(或0X)开头(不分大小写)</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> a = <span class="hljs-number">31</span>        <span class="hljs-comment">// 十进制</span><br><span class="hljs-keyword">const</span> a = <span class="hljs-number">037</span>       <span class="hljs-comment">// 八进制0开头,ES5严格模式禁止0开头表示八进制</span><br><span class="hljs-keyword">const</span> b = <span class="hljs-number">0x1F</span>      <span class="hljs-comment">// 十六进制0x(或0X)开头(不分大小写)</span><br></code></pre></td></tr></table></figure>
 <p><strong>JS有</strong><code>-0</code><strong>与</strong><code>+0</code><strong>一般情况是相等的</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-literal">Infinity</span>/-<span class="hljs-number">0</span> == <span class="hljs-literal">Infinity</span>/+<span class="hljs-number">0</span>    <span class="hljs-comment">// false, 只有这种情况会不同</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title class_">Infinity</span>/-<span class="hljs-number">0</span> == <span class="hljs-title class_">Infinity</span>/+<span class="hljs-number">0</span>    <span class="hljs-comment">// false, 只有这种情况会不同</span><br></code></pre></td></tr></table></figure>
 <h3 id="浮点数">🥝浮点数</h3>
 <p><strong>JS会尽量接收一个整数,数字小数点后有非零值才会成为浮点数</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> a = <span class="hljs-number">1.0</span>        <span class="hljs-comment">// 无效</span><br><span class="hljs-keyword">const</span> b = <span class="hljs-number">1.1</span>        <span class="hljs-comment">// 有效</span><br><span class="hljs-keyword">const</span> c = <span class="hljs-number">.1</span>         <span class="hljs-comment">// 有效</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> a = <span class="hljs-number">1.0</span>        <span class="hljs-comment">// 无效</span><br><span class="hljs-keyword">const</span> b = <span class="hljs-number">1.1</span>        <span class="hljs-comment">// 有效</span><br><span class="hljs-keyword">const</span> c = <span class="hljs-number">.1</span>         <span class="hljs-comment">// 有效</span><br></code></pre></td></tr></table></figure>
 <p><strong>小数高于6位会默认使用科学计数法(最高精度</strong><code>e-17</code><strong>)</strong></p>
 <h3 id="nan">🥝NaN</h3>
 <p><code>NaN</code><strong>(Not A Number),唯一一个不等于自身的值,可以用</strong><code>isNaN()</code><strong>或是否等于自身来判断</strong><code>NaN</code></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-literal">NaN</span> != <span class="hljs-literal">NaN</span>          <span class="hljs-comment">// true</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title class_">NaN</span> != <span class="hljs-title class_">NaN</span>          <span class="hljs-comment">// true</span><br></code></pre></td></tr></table></figure>
 <h3 id="infinity">🥝Infinity</h3>
 <p><strong>表示无穷大,可以用</strong><code>isInfinity()</code><strong>判断是否为</strong><code>Infinity</code></p>
 <h3 id="parseint">🥝parseInt()</h3>
@@ -342,9 +369,9 @@
 <p><code>Data</code><strong>的原型为字符串</strong></p>
 <h3 id="建立日期对象">🍍建立日期对象</h3>
 <p><strong>日期对象可直接比较时间早晚(时间戳越大越晚)</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()                 <span class="hljs-comment">// 默认当时计算机日期</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>()                 <span class="hljs-comment">// 默认当时计算机日期</span><br></code></pre></td></tr></table></figure>
 <p><code>Date.parse()</code><strong>或</strong><code>Date.UTC()</code><strong>来初始化日期</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-built_in">Date</span>.parse(<span class="hljs-comment">/*...*/</span>))<br><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-built_in">Date</span>.UTC(<span class="hljs-comment">/*...*/</span>))<br><br><span class="hljs-comment">// 默认隐式调用Date.parse或Date.UTC</span><br><span class="hljs-comment">// 等价于</span><br><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-comment">/*...*/</span>)<br><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-comment">/*...*/</span>)<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(<span class="hljs-title class_">Date</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-comment">/*...*/</span>))<br><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(<span class="hljs-title class_">Date</span>.<span class="hljs-title function_">UTC</span>(<span class="hljs-comment">/*...*/</span>))<br><br><span class="hljs-comment">// 默认隐式调用Date.parse或Date.UTC</span><br><span class="hljs-comment">// 等价于</span><br><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(<span class="hljs-comment">/*...*/</span>)<br><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(<span class="hljs-comment">/*...*/</span>)<br></code></pre></td></tr></table></figure>
 <h4 id="date.parse">Date.parse()</h4>
 <p><code>Date.parse()</code><strong>接收一个日期字符串,模板如下(月名, 星期名均为英文缩写)</strong></p>
 <ul>
@@ -353,24 +380,24 @@
 <li>'星期名 月名 dd yyyy hh:mm:ss 时区'</li>
 <li>'YYYY-MM-DDTHH:mm:ss.sssZ'</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">&#x27;Thu Feb 03 2022 13:08:38 GMT+0800&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(<span class="hljs-string">&#x27;Thu Feb 03 2022 13:08:38 GMT+0800&#x27;</span>)<br></code></pre></td></tr></table></figure>
 <h4 id="date.utc">Date.UTC()</h4>
 <p><code>Date.UTC(year, month[, d, h, min, s, ms])</code><strong>年月必选,月为</strong><code>[0, 11]</code><strong>,天默认为</strong><code>1</code><strong>其余默认为</strong><code>0</code></p>
 <p><strong>该时间为</strong><code>GMT</code><strong>时间(0时区时间)</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2022</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">13</span>, <span class="hljs-number">24</span>, <span class="hljs-number">17</span>)<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(<span class="hljs-number">2022</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">13</span>, <span class="hljs-number">24</span>, <span class="hljs-number">17</span>)<br></code></pre></td></tr></table></figure>
 <h4 id="date.now">Date.now()</h4>
 <p><code>Date.now()</code><strong>方法返回当时计算机日期与</strong><code>1970/1/1 00:00:00</code><strong>的时间差的毫秒数</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Date</span>.now())<br><span class="hljs-comment">// 1643867269483</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Date</span>.<span class="hljs-title function_">now</span>())<br><span class="hljs-comment">// 1643867269483</span><br></code></pre></td></tr></table></figure>
 <h3 id="继承方法">🍍继承方法</h3>
 <h4 id="date.valueof">Date.valueOf()</h4>
 <p><strong>返回时间戳</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().valueOf())<br><span class="hljs-comment">// 1643867269483</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">valueOf</span>())<br><span class="hljs-comment">// 1643867269483</span><br></code></pre></td></tr></table></figure>
 <h4 id="date.tostring">Date.toString()</h4>
 <p><strong>24小时制的时间(具体格式与环境有关)</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().toString())<br><span class="hljs-comment">// Thu Feb 03 2022 18:47:09 GMT+0800 (中国标准时间)</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">toString</span>())<br><span class="hljs-comment">// Thu Feb 03 2022 18:47:09 GMT+0800 (中国标准时间)</span><br></code></pre></td></tr></table></figure>
 <h4 id="date.tolocalestring">Date.toLocaleString()</h4>
 <p><strong>12小时制时间(具体格式与环境有关)</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().toLocaleString())<br><span class="hljs-comment">// 2022/2/3 下午6:47:09</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">toLocaleString</span>())<br><span class="hljs-comment">// 2022/2/3 下午6:47:09</span><br></code></pre></td></tr></table></figure>
 <h2 id="regexp">RegExp</h2>
 <h2 id="原始值包装类型">原始值包装类型</h2>
 <h2 id="单例内置对象global">单例内置对象Global</h2>
@@ -433,12 +460,12 @@
 </table>
 <h2 id="单例内置对象math">单例内置对象Math</h2>
 <h3 id="属性">🍉属性</h3>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-built_in">Math</span>.PI<br><span class="hljs-built_in">Math</span>.E<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title class_">Math</span>.<span class="hljs-property">PI</span><br><span class="hljs-title class_">Math</span>.<span class="hljs-property">E</span><br></code></pre></td></tr></table></figure>
 <h3 id="方法">🍉方法</h3>
 <h4 id="最值方法">最值方法</h4>
 <p><code>Math.min()</code><strong>与</strong><code>Math.max()</code><strong>方法可以返回多个数中的最值</strong></p>
 <p><strong>可用</strong><code>...</code><strong>(扩展操作符)找出数组最值</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> nums = [<span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, -<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>]<br><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Math</span>.max(...nums))     <span class="hljs-comment">// 5</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Math</span>.min(...nums))     <span class="hljs-comment">// -4</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> nums = [<span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, -<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>]<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">max</span>(...nums))     <span class="hljs-comment">// 5</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">min</span>(...nums))     <span class="hljs-comment">// -4</span><br></code></pre></td></tr></table></figure>
 <h4 id="舍入方法">舍入方法</h4>
 <ul>
 <li><code>Math.ceil()</code><strong>向上舍入</strong></li>
@@ -456,14 +483,14 @@
 <h1 id="集合引用类型">集合引用类型</h1>
 <h2 id="object-1">Object</h2>
 <h3 id="创建对象">🍇创建对象</h3>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>()   <span class="hljs-comment">// 构造函数式</span><br><span class="hljs-keyword">const</span> obj = &#123;&#125;             <span class="hljs-comment">// 对象字面量</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Object</span>()   <span class="hljs-comment">// 构造函数式</span><br><span class="hljs-keyword">const</span> obj = &#123;&#125;             <span class="hljs-comment">// 对象字面量</span><br></code></pre></td></tr></table></figure>
 <h3 id="对象属性-1">🍇对象属性</h3>
 <p><strong>对象属性</strong><code>key</code><strong>使用数字会转换为字符串</strong></p>
 <p><code>key</code><strong>使用中括号语法避免错误语法</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> obj = &#123;<br>  <span class="hljs-number">0</span>: <span class="hljs-string">&#x27;a&#x27;</span>,<br>  [<span class="hljs-string">&#x27;a b&#x27;</span>]: <span class="hljs-string">&#x27;b&#x27;</span><br>&#125;<br><br><span class="hljs-built_in">console</span>.log(obj<span class="hljs-number">.0</span>, obj.<span class="hljs-string">&#x27;0&#x27;</span>)<br><span class="hljs-comment">// 报错</span><br><span class="hljs-built_in">console</span>.log(obj[<span class="hljs-number">0</span>], obj[<span class="hljs-string">&#x27;0&#x27;</span>])<br><span class="hljs-comment">// &#x27;a&#x27; &#x27;a&#x27;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> obj = &#123;<br>  <span class="hljs-number">0</span>: <span class="hljs-string">&#x27;a&#x27;</span>,<br>  [<span class="hljs-string">&#x27;a b&#x27;</span>]: <span class="hljs-string">&#x27;b&#x27;</span><br>&#125;<br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(obj<span class="hljs-number">.0</span>, obj.<span class="hljs-string">&#x27;0&#x27;</span>)<br><span class="hljs-comment">// 报错</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(obj[<span class="hljs-number">0</span>], obj[<span class="hljs-string">&#x27;0&#x27;</span>])<br><span class="hljs-comment">// &#x27;a&#x27; &#x27;a&#x27;</span><br></code></pre></td></tr></table></figure>
 <h2 id="array">Array</h2>
 <h3 id="创建数组">🥕创建数组</h3>
-<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> nums = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-number">3</span>)<br><span class="hljs-keyword">const</span> nums = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> nums = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Array</span>(<span class="hljs-number">3</span>)<br><span class="hljs-keyword">const</span> nums = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]<br></code></pre></td></tr></table></figure>
 <h3 id="方法-1">🥕方法</h3>
 <h4 id="继承方法-1">继承方法</h4>
 <ul>
@@ -505,44 +532,102 @@
             <p><strong>ES6新增了四种引用类型(</strong><code>Map</code><strong>,</strong><code>WeakMap</code><strong>,</strong><code>Set</code><strong>,</strong><code>WeakSet</code><strong>)</strong><a href class="btn" style="margin:10px">🔗前往查看</a></p>
           </div>
 
+              
             </div>
-            <hr>
+            <hr/>
             <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/JavaScript/">JavaScript</a>
-                    
-                      <a class="hover-with-bg" href="/categories/JavaScript/%E5%9F%BA%E7%A1%80/">基础</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/JavaScript/">JavaScript</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">数据类型</a>
-                    
-                  </div>
-                
-              </div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaScript/" class="category-chain-item">JavaScript</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/JavaScript/%E5%9F%BA%E7%A1%80/" class="category-chain-item">基础</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/JavaScript/">#JavaScript</a>
+      
+        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">#数据类型</a>
+      
+    </div>
+  
+</div>
+
+
               
-                <p class="note note-warning">
-                  
-                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
-                  
-                </p>
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>🟡JavaScript数据类型</div>
+      <div>https://qingshaner.com/JavaScript原始类型/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>清山</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年1月29日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
               
-              
-                <div class="post-prevnext">
+                <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/JavaScriptBOM/">
+                      <a href="/JavaScriptBOM/" title="🟡JavaScriptBOM">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">🟡JavaScriptBOM</span>
                         <span class="visible-mobile">上一篇</span>
@@ -552,7 +637,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/ES6%E8%A7%A3%E6%9E%84/">
+                      <a href="/ES6%E8%A7%A3%E6%9E%84/" title="🏗ES6解构">
                         <span class="hidden-mobile">🏗ES6解构</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -564,12 +649,8 @@
             </div>
 
             
-              <!-- Comments -->
-              <article class="comments" id="comments">
-                
-                  
-                
-                
+  <article id="comments">
+    
   <div id="valine"></div>
   <script type="text/javascript">
     Fluid.utils.loadComments('#valine', function() {
@@ -583,7 +664,9 @@
         )
         new Valine(options);
         Fluid.utils.waitElementVisible('#valine .vcontent', () => {
-          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
         })
       });
     });
@@ -591,25 +674,53 @@
   <noscript>Please enable JavaScript to view the comments</noscript>
 
 
-              </article>
-            
+  </article>
+
+
           </article>
         </div>
       </div>
     </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
   <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
-      </div>
-    
+
+
+  </aside>
+
+
+    </div>
   </div>
 </div>
 
-<!-- Custom -->
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
 
 
     
@@ -634,56 +745,58 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-  <div class="statistics">
-    
-    
-
-    
-      
-        <!-- 不蒜子统计PV -->
-        <span id="busuanzi_container_site_pv" style="display: none">
-            总访问量 
-            <span id="busuanzi_value_site_pv"></span>
-             次
-          </span>
-      
-      
-        <!-- 不蒜子统计UV -->
-        <span id="busuanzi_container_site_uv" style="display: none">
-            总访客数 
-            <span id="busuanzi_value_site_uv"></span>
-             人
-          </span>
-      
-    
-  </div>
-
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
   
 
   
-</footer>
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
 
+  
+  
+  
+</div>
 
-  <!-- SCRIPTS -->
+  </footer>
+
+  <!-- Scripts -->
   
   <script  src="https://fastly.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
@@ -702,10 +815,24 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
+
+  <script  src="https://fastly.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
 
-  <script  src="/js/local-search.js" ></script>
+
 
 
 
@@ -717,48 +844,71 @@
 
 
 
-  
-
-
 
   
-    <script  src="https://fastly.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
-  
-  
-    <script  src="https://fastly.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
-  
-  
-    <script  src="https://fastly.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
-  
-  
+<script>
+  Fluid.utils.createScript('https://fastly.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
 
 
+  
+<script>
+  Fluid.utils.createScript('https://fastly.jsdelivr.net/npm/anchor-js@4/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://fastly.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-
-
-  <script  src="https://fastly.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-        typing(title);
-      
-    })(window, document);
-  </script>
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -770,9 +920,15 @@
 
 
 
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 <!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><!-- hexo injector body_end end --></body>
 </html>

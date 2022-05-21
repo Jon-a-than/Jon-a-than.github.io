@@ -38,3 +38,29 @@ footer span {
 .list-group-item {
   border-left: 4px solid;
 }
+
+.category-item::before {
+  content: '';
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background: #797979;
+  position: relative;
+  top: -2rem;
+  left: -2rem;
+  z-index: 999;
+}
+
+/* 侧栏分类 */
+
+aside.sidebar.category-bar {
+  top: 5rem;
+  background: var(--board-bg-color);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 2rem;
+}
+
+aside.sidebar.category-bar a {
+  border-color: #00000000;
+}

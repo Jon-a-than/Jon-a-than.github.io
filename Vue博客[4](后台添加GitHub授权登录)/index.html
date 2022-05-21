@@ -32,30 +32,27 @@
 <meta name="twitter:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204250748864.jpg">
   
   
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
   <title>🔵Vue博客[4](后台添加GitHub授权登录) - 清山的博客</title>
 
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
+
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/hint.css@2/hint.min.css" />
 
-  
-    
-    
-      
-      <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/highlight.js@11/styles/atom-one-dark.min.css" />
-    
-  
+  <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
 
-  
-    <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
-  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -64,7 +61,13 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
   
 <link rel="stylesheet" href="/css/selection.css">
@@ -77,16 +80,29 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"qingshaner.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":false,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"qingshaner.com","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.0.0"></head>
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
 <body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>荷风送香气，竹露滴清响</strong>
@@ -174,24 +190,13 @@
             </li>
           
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/%E9%97%AE%E6%B8%A0%E9%82%A3%E5%BE%97%E6%B8%85%E5%A6%82%E8%AE%B8/">
-                <i class="iconfont icon-plan"></i>
-                计划表
-              </a>
-            </li>
-          
-        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
               &nbsp;<i class="iconfont icon-search"></i>&nbsp;
             </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -204,70 +209,84 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204031054091.jpg') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="🔵Vue博客[4](后台添加GitHub授权登录)">
-              
-            </span>
-
-            
-              <div class="mt-3">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-author" aria-hidden="true"></i>
-      清山
-    </span>
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-25 20:35" pubdate>
-        2022年4月25日 晚上
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      7.4k 字
-    </span>
   
 
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      62 分钟
-    </span>
-  
-
-  
-  
-    
-      <!-- 不蒜子统计文章PV -->
-      <span id="busuanzi_container_page_pv" style="display: none">
-        <i class="iconfont icon-eye" aria-hidden="true"></i>
-        <span id="busuanzi_value_page_pv"></span> 次
-      </span>
-    
-  
-</div>
-
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204031054091.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="🔵Vue博客[4](后台添加GitHub授权登录)"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        清山
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-04-25 20:35" pubdate>
+          2022年4月25日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          7.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          62 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
       </div>
+
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
@@ -276,21 +295,29 @@
 
 <div class="container-fluid nopadding-x">
   <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
     <div class="col-lg-8 nopadding-x-md">
       <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
+        <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
             <h1 style="display: none">🔵Vue博客[4](后台添加GitHub授权登录)</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年5月3日 下午
+                  
+                    <!-- compatible with older versions-->
+                    本文最后更新于：2022年5月3日 下午
+                  
                 
               </p>
             
             <div class="markdown-body">
+              
               <h2 id="设计思路">设计思路</h2>
 <p><img src="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204272036750.jpg" srcset="/img/loading.gif" lazyload></p>
 <h2 id="新建oauth-apps">新建<code>OAuth Apps</code></h2>
@@ -300,9 +327,9 @@
 <h2 id="博客后台">博客后台</h2>
 <h3 id="路由表">路由表</h3>
 <p><code>router</code>目录下的<code>modules</code>新建<code>login.ts</code></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> Login = [&#123;<br>  <span class="hljs-comment">// 登录页</span><br>  <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/login&#x27;</span>,<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;login&#x27;</span>,<br>  <span class="hljs-attr">component</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;@/views/login/index.vue&#x27;</span>),<br>&#125;, &#123;<br>  <span class="hljs-comment">// 回调中转页</span><br>  <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/login/code&#x27;</span>,<br>  <span class="hljs-attr">component</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;@/views/login/callback/index.vue&#x27;</span>)<br>&#125;]<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title class_">Login</span> = [&#123;<br>  <span class="hljs-comment">// 登录页</span><br>  <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/login&#x27;</span>,<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;login&#x27;</span>,<br>  <span class="hljs-attr">component</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-title function_">import</span>(<span class="hljs-string">&#x27;@/views/login/index.vue&#x27;</span>),<br>&#125;, &#123;<br>  <span class="hljs-comment">// 回调中转页</span><br>  <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/login/code&#x27;</span>,<br>  <span class="hljs-attr">component</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-title function_">import</span>(<span class="hljs-string">&#x27;@/views/login/callback/index.vue&#x27;</span>)<br>&#125;]<br></code></pre></td></tr></table></figure>
 <p><code>router/index.ts</code>导入<code>login.ts</code></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; createRouter, createWebHistory &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue-router&#x27;</span><br><span class="hljs-keyword">import</span> &#123; Login &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./modules/login&#x27;</span><br><br><span class="hljs-keyword">const</span> routes = [<br>  &#123;<br>    <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/&#x27;</span>,<br>    <span class="hljs-attr">redirect</span>: <span class="hljs-string">&#x27;/login&#x27;</span><br>  &#125;,<br>  &#123;<br>    <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/home&#x27;</span>,<br><br>  &#125;,<br>  ...Login<br>]<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> router = createRouter(&#123;<br>  <span class="hljs-attr">history</span>: createWebHistory(),<br>  routes<br>&#125;)<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; createRouter, createWebHistory &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue-router&#x27;</span><br><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">Login</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./modules/login&#x27;</span><br><br><span class="hljs-keyword">const</span> routes = [<br>  &#123;<br>    <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/&#x27;</span>,<br>    <span class="hljs-attr">redirect</span>: <span class="hljs-string">&#x27;/login&#x27;</span><br>  &#125;,<br>  &#123;<br>    <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/home&#x27;</span>,<br><br>  &#125;,<br>  ...<span class="hljs-title class_">Login</span><br>]<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> router = <span class="hljs-title function_">createRouter</span>(&#123;<br>  <span class="hljs-attr">history</span>: <span class="hljs-title function_">createWebHistory</span>(),<br>  routes<br>&#125;)<br></code></pre></td></tr></table></figure>
 <h3 id="登录页">登录页</h3>
 <h4 id="iconfont图标库">iconfont图标库</h4>
 <p>注册<code>iconfont</code></p>
@@ -312,41 +339,41 @@
 <p><code>assets</code>新建<code>fonts</code>目录,新建<code>fonts/index.js</code></p>
 <p>把上一步链接代码复制到<code>index.js</code></p>
 <p><code>main.ts</code>导入图标<code>js</code></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;@/assets/fonts&#x27;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;@/assets/fonts&#x27;</span><br></code></pre></td></tr></table></figure>
 <p><code>app.vue</code>设置全局<code>class="icon"</code>css</p>
-<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">router-view</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">router-view</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;scss&quot;</span>&gt;</span><span class="css"></span><br><span class="css"><span class="hljs-selector-tag">body</span> &#123;</span><br><span class="css">  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;</span><br><span class="css">&#125;</span><br><span class="css"></span><br><span class="css"><span class="hljs-selector-class">.icon</span> &#123;</span><br><span class="css">  <span class="hljs-attribute">vertical-align</span>: -<span class="hljs-number">0.15em</span>;</span><br><span class="css">  fill: currentColor;</span><br><span class="css">  <span class="hljs-attribute">overflow</span>: hidden;</span><br><span class="css">&#125;</span><br><span class="css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">router-view</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">router-view</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;scss&quot;</span>&gt;</span><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-tag">body</span> &#123;</span><br><span class="language-css">  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;</span><br><span class="language-css">&#125;</span><br><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.icon</span> &#123;</span><br><span class="language-css">  <span class="hljs-attribute">vertical-align</span>: -<span class="hljs-number">0.15em</span>;</span><br><span class="language-css">  fill: currentColor;</span><br><span class="language-css">  <span class="hljs-attribute">overflow</span>: hidden;</span><br><span class="language-css">&#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p>使用</p>
-<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- xlink:href值由图标指定 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">&quot;#icon-GitHub&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;scss&quot;</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css"></span><br><span class="css">  <span class="hljs-comment">/* `width`与`height`调节大小 */</span></span><br><span class="css">  <span class="hljs-selector-class">.icon</span> &#123;</span><br><span class="css">  	<span class="hljs-attribute">width</span>: <span class="hljs-number">2rem</span>;</span><br><span class="css">    <span class="hljs-attribute">height</span>: <span class="hljs-number">2rem</span>;</span><br><span class="css">  &#125;</span><br><span class="css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- xlink:href值由图标指定 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">&quot;#icon-GitHub&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;scss&quot;</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="language-css"></span><br><span class="language-css">  <span class="hljs-comment">/* `width`与`height`调节大小 */</span></span><br><span class="language-css">  <span class="hljs-selector-class">.icon</span> &#123;</span><br><span class="language-css">  	<span class="hljs-attribute">width</span>: <span class="hljs-number">2rem</span>;</span><br><span class="language-css">    <span class="hljs-attribute">height</span>: <span class="hljs-number">2rem</span>;</span><br><span class="language-css">  &#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <h4 id="登录页面">登录页面</h4>
 <p><code>views</code>目录下新建<code>login</code>目录,新建<code>index.vue</code>作为登录页</p>
-<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">el-card</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box-card&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">header</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card-header&quot;</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>管理员认证<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span>&gt;</span>使用说明<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;authorization&quot;</span>&gt;</span><br>        <span class="hljs-comment">&lt;!-- 跳转至授权页 --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> </span><br><span class="hljs-tag">           <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://github.com/login/oauth/authorize?client_id=db7547efa91798d7e956&quot;</span></span><br><span class="hljs-tag">           <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;GitHub授权认证&quot;</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconfont icon-GitHub&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">el-divider</span>&gt;</span>第三方授权认证<span class="hljs-tag">&lt;/<span class="hljs-name">el-divider</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">el-card</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;scss&quot;</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css"></span><br><span class="css"><span class="hljs-selector-class">.container</span> &#123;</span><br><span class="css">  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;</span><br><span class="css">  <span class="hljs-attribute">position</span>: fixed;</span><br><span class="css">  <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;</span><br><span class="css">  <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;</span><br><span class="css">  <span class="hljs-attribute">display</span>: flex;</span><br><span class="css">  <span class="hljs-attribute">justify-content</span>: center;</span><br><span class="css">  <span class="hljs-attribute">align-items</span>: center;</span><br><span class="css">&#125;</span><br><span class="css"></span><br><span class="css"><span class="hljs-selector-class">.authorization</span> &#123;</span><br><span class="css">  <span class="hljs-attribute">display</span>: flex;</span><br><span class="css">  <span class="hljs-attribute">justify-content</span>: center;</span><br><span class="css">  <span class="hljs-attribute">align-items</span>: center;</span><br><span class="css">  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;</span><br><span class="css">  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;</span><br><span class="css"></span><br><span class="css">  <span class="hljs-selector-tag">a</span> &#123; <span class="hljs-attribute">color</span>: <span class="hljs-number">#000</span>; <span class="hljs-attribute">text-decoration</span>: none; &#125;</span><br><span class="css"></span><br><span class="css">  <span class="hljs-selector-tag">a</span> &gt; <span class="hljs-selector-tag">i</span> &#123; <span class="hljs-attribute">font-size</span>: <span class="hljs-number">40px</span>; &#125;</span><br><span class="css">&#125;</span><br><span class="css"></span><br><span class="css"><span class="hljs-selector-class">.card-header</span> &#123; <span class="hljs-attribute">display</span>: flex; <span class="hljs-attribute">justify-content</span>: space-between; <span class="hljs-attribute">align-items</span>: center; &#125;</span><br><span class="css"></span><br><span class="css"><span class="hljs-selector-class">.text</span> &#123; <span class="hljs-attribute">font-size</span>: <span class="hljs-number">14px</span>; &#125;</span><br><span class="css"></span><br><span class="css"><span class="hljs-selector-class">.item</span> &#123; <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">18px</span>; &#125;</span><br><span class="css"></span><br><span class="css"><span class="hljs-selector-class">.box-card</span> &#123; <span class="hljs-attribute">width</span>: <span class="hljs-number">480px</span>; &#125;</span><br><span class="css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">el-card</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box-card&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">header</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card-header&quot;</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>管理员认证<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span>&gt;</span>使用说明<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;authorization&quot;</span>&gt;</span><br>        <span class="hljs-comment">&lt;!-- 跳转至授权页 --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> </span><br><span class="hljs-tag">           <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://github.com/login/oauth/authorize?client_id=db7547efa91798d7e956&quot;</span></span><br><span class="hljs-tag">           <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;GitHub授权认证&quot;</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconfont icon-GitHub&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">el-divider</span>&gt;</span>第三方授权认证<span class="hljs-tag">&lt;/<span class="hljs-name">el-divider</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">el-card</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;scss&quot;</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.container</span> &#123;</span><br><span class="language-css">  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;</span><br><span class="language-css">  <span class="hljs-attribute">position</span>: fixed;</span><br><span class="language-css">  <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;</span><br><span class="language-css">  <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;</span><br><span class="language-css">  <span class="hljs-attribute">display</span>: flex;</span><br><span class="language-css">  <span class="hljs-attribute">justify-content</span>: center;</span><br><span class="language-css">  <span class="hljs-attribute">align-items</span>: center;</span><br><span class="language-css">&#125;</span><br><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.authorization</span> &#123;</span><br><span class="language-css">  <span class="hljs-attribute">display</span>: flex;</span><br><span class="language-css">  <span class="hljs-attribute">justify-content</span>: center;</span><br><span class="language-css">  <span class="hljs-attribute">align-items</span>: center;</span><br><span class="language-css">  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;</span><br><span class="language-css">  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;</span><br><span class="language-css"></span><br><span class="language-css">  <span class="hljs-selector-tag">a</span> &#123; <span class="hljs-attribute">color</span>: <span class="hljs-number">#000</span>; <span class="hljs-attribute">text-decoration</span>: none; &#125;</span><br><span class="language-css"></span><br><span class="language-css">  <span class="hljs-selector-tag">a</span> &gt; <span class="hljs-selector-tag">i</span> &#123; <span class="hljs-attribute">font-size</span>: <span class="hljs-number">40px</span>; &#125;</span><br><span class="language-css">&#125;</span><br><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.card-header</span> &#123; <span class="hljs-attribute">display</span>: flex; <span class="hljs-attribute">justify-content</span>: space-between; <span class="hljs-attribute">align-items</span>: center; &#125;</span><br><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.text</span> &#123; <span class="hljs-attribute">font-size</span>: <span class="hljs-number">14px</span>; &#125;</span><br><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.item</span> &#123; <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">18px</span>; &#125;</span><br><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.box-card</span> &#123; <span class="hljs-attribute">width</span>: <span class="hljs-number">480px</span>; &#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <h3 id="回调中转页">回调中转页</h3>
 <p><code>login</code>文件夹下新建<code>callback</code>文件夹,新建<code>index.vue</code>作为回调中转页面</p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts">&lt;script lang=<span class="hljs-string">&quot;ts&quot;</span> setup&gt;<br><span class="hljs-keyword">import</span> &#123; router &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/router&#x27;</span><br><span class="hljs-keyword">import</span> &#123; ApiGet &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/utils/request&#x27;</span><br><span class="hljs-keyword">import</span> &#123; ElMessage, ElLoading &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;element-plus&#x27;</span><br><span class="hljs-keyword">import</span> &#123; onMounted &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span>;<br><br>onMounted(<span class="hljs-keyword">async</span> () =&gt; &#123;<br>  <span class="hljs-comment">/* 加载动画 */</span><br>  <span class="hljs-keyword">const</span> loading = ElLoading.service(&#123;<br>    <span class="hljs-attr">lock</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;正在人海中搜寻...&#x27;</span>,<br>    <span class="hljs-attr">background</span>: <span class="hljs-string">&#x27;#fff&#x27;</span>,<br>  &#125;)<br>  <br>  <span class="hljs-comment">// 核心</span><br>  <span class="hljs-comment">/* get携带code参数请求后端 */</span><br>  <span class="hljs-keyword">const</span> params = <span class="hljs-keyword">new</span> URLSearchParams(location.search)<br>  <span class="hljs-keyword">const</span> code = params.get(<span class="hljs-string">&#x27;code&#x27;</span>)<br>  <span class="hljs-comment">/* 注意axios之前已经配置过了baseUrl */</span><br>  <span class="hljs-keyword">const</span> res = (<span class="hljs-keyword">await</span> ApiGet(<span class="hljs-string">&#x27;/login/token&#x27;</span>, &#123; code &#125;)).data<br>	<br>  <span class="hljs-comment">/* 认证成功跳转app主页 */</span><br>  <span class="hljs-keyword">if</span> (res.statusCode === <span class="hljs-number">2000</span>) &#123;<br>    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> 信息保存到pinia</span><br>    ElMessage.success(<span class="hljs-string">&#x27;欢迎回家φ(゜▽゜*)♪&#x27;</span>)<br>    loading.close()<br>    router.push(&#123; <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/home&#x27;</span> &#125;)<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-comment">/* 认证失败等两秒再跳转回登录页😂 */</span><br>    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>      ElMessage.error(<span class="hljs-string">&#x27;授权失败ψ(｀∇´)ψ&#x27;</span>)<br>      loading.close()<br>      router.push(&#123; <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/login&#x27;</span> &#125;)<br>    &#125;, <span class="hljs-number">2000</span>)<br>  &#125;<br>&#125;)<br>&lt;/script&gt;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs ts">&lt;script lang=<span class="hljs-string">&quot;ts&quot;</span> setup&gt;<br><span class="hljs-keyword">import</span> &#123; router &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/router&#x27;</span><br><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">ApiGet</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/utils/request&#x27;</span><br><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">ElMessage</span>, <span class="hljs-title class_">ElLoading</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;element-plus&#x27;</span><br><span class="hljs-keyword">import</span> &#123; onMounted &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span>;<br><br><span class="hljs-title function_">onMounted</span>(<span class="hljs-keyword">async</span> () =&gt; &#123;<br>  <span class="hljs-comment">/* 加载动画 */</span><br>  <span class="hljs-keyword">const</span> loading = <span class="hljs-title class_">ElLoading</span>.<span class="hljs-title function_">service</span>(&#123;<br>    <span class="hljs-attr">lock</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;正在人海中搜寻...&#x27;</span>,<br>    <span class="hljs-attr">background</span>: <span class="hljs-string">&#x27;#fff&#x27;</span>,<br>  &#125;)<br>  <br>  <span class="hljs-comment">// 核心</span><br>  <span class="hljs-comment">/* get携带code参数请求后端 */</span><br>  <span class="hljs-keyword">const</span> params = <span class="hljs-keyword">new</span> <span class="hljs-title class_">URLSearchParams</span>(location.<span class="hljs-property">search</span>)<br>  <span class="hljs-keyword">const</span> code = params.<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x27;code&#x27;</span>)<br>  <span class="hljs-comment">/* 注意axios之前已经配置过了baseUrl */</span><br>  <span class="hljs-keyword">const</span> res = (<span class="hljs-keyword">await</span> <span class="hljs-title class_">ApiGet</span>(<span class="hljs-string">&#x27;/login/token&#x27;</span>, &#123; code &#125;)).<span class="hljs-property">data</span><br>	<br>  <span class="hljs-comment">/* 认证成功跳转app主页 */</span><br>  <span class="hljs-keyword">if</span> (res.<span class="hljs-property">statusCode</span> === <span class="hljs-number">2000</span>) &#123;<br>    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> 信息保存到pinia</span><br>    <span class="hljs-title class_">ElMessage</span>.<span class="hljs-title function_">success</span>(<span class="hljs-string">&#x27;欢迎回家φ(゜▽゜*)♪&#x27;</span>)<br>    loading.<span class="hljs-title function_">close</span>()<br>    router.<span class="hljs-title function_">push</span>(&#123; <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/home&#x27;</span> &#125;)<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-comment">/* 认证失败等两秒再跳转回登录页😂 */</span><br>    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>      <span class="hljs-title class_">ElMessage</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&#x27;授权失败ψ(｀∇´)ψ&#x27;</span>)<br>      loading.<span class="hljs-title function_">close</span>()<br>      router.<span class="hljs-title function_">push</span>(&#123; <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/login&#x27;</span> &#125;)<br>    &#125;, <span class="hljs-number">2000</span>)<br>  &#125;<br>&#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
 <h2 id="后端">后端</h2>
 <h3 id="配置环境变量">配置环境变量</h3>
 <p>用<code>.env</code>文件存储<code>client_id</code>与<code>client_secret</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pnpm i dotenv<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pnpm i dotenv<br></code></pre></td></tr></table></figure>
 <p>根目录新建<code>.env</code>文件</p>
 <p><img src="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204272058399.jpg" srcset="/img/loading.gif" lazyload></p>
-<figure class="highlight dts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs dts"><span class="hljs-symbol">CLIENT_ID:</span> <span class="hljs-string">&quot;上一步的client_id&quot;</span><br><span class="hljs-symbol">CLIENT_SECRET:</span> <span class="hljs-string">&quot;上一步的client_secret&quot;</span><br><span class="hljs-symbol">USER_ID:</span> <span class="hljs-number">666666</span><span class="hljs-params">&lt;管理员的GitHubID&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">CLIENT_ID:</span> <span class="hljs-string">&quot;上一步的client_id&quot;</span><br><span class="hljs-symbol">CLIENT_SECRET:</span> <span class="hljs-string">&quot;上一步的client_secret&quot;</span><br><span class="hljs-symbol">USER_ID:</span> <span class="hljs-number">666666</span>&lt;管理员的GitHubID&gt;<br></code></pre></td></tr></table></figure>
 <p><code>.gitignore</code>添加<code>.env</code>,这样上传到仓库就看不到密匙了</p>
-<figure class="highlight asciidoc"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs asciidoc">node_modules<br>dist<br><span class="hljs-title">.env</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc">node_modules<br>dist<br><span class="hljs-title">.env</span><br></code></pre></td></tr></table></figure>
 <h3 id="使用环境变量">使用环境变量</h3>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> dotenv <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;dotenv&#x27;</span><br><br><span class="hljs-keyword">const</span> config = dotenv.config().parsed   <span class="hljs-comment">// config即为保存了变量的对象</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> dotenv <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;dotenv&#x27;</span><br><br><span class="hljs-keyword">const</span> config = dotenv.<span class="hljs-title function_">config</span>().<span class="hljs-property">parsed</span>   <span class="hljs-comment">// config即为保存了变量的对象</span><br></code></pre></td></tr></table></figure>
 <h3 id="安装axios">安装<code>axios</code></h3>
 <p>第三方授权需要请求信息,所以使用<code>axios</code>请求</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pnpm i axios<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pnpm i axios<br></code></pre></td></tr></table></figure>
 <p><code>src</code>目录下新建<code>utils</code>文件夹,新建<code>request.ts</code></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;axios&#x27;</span><br><br><span class="hljs-keyword">const</span> ApiGet = <span class="hljs-function">(<span class="hljs-params">url: <span class="hljs-built_in">string</span>, params: <span class="hljs-built_in">any</span>, config?: <span class="hljs-built_in">any</span></span>) =&gt;</span> &#123;<br>  <span class="hljs-keyword">return</span> axios.get(url, &#123;<br>    ...params,<br>    ...config<br>  &#125;)<br>&#125;<br><br><span class="hljs-keyword">const</span> ApiPost = <span class="hljs-function">(<span class="hljs-params">url: <span class="hljs-built_in">string</span>, data: <span class="hljs-built_in">any</span>, config?: <span class="hljs-built_in">any</span></span>) =&gt;</span> &#123;<br>  <span class="hljs-keyword">return</span> axios.post(url, data, config)<br>&#125;<br><br><span class="hljs-keyword">export</span> &#123; ApiPost, ApiGet &#125;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;axios&#x27;</span><br><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">ApiGet</span> = (<span class="hljs-params">url: <span class="hljs-built_in">string</span>, params: <span class="hljs-built_in">any</span>, config?: <span class="hljs-built_in">any</span></span>) =&gt; &#123;<br>  <span class="hljs-keyword">return</span> axios.<span class="hljs-title function_">get</span>(url, &#123;<br>    ...params,<br>    ...config<br>  &#125;)<br>&#125;<br><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">ApiPost</span> = (<span class="hljs-params">url: <span class="hljs-built_in">string</span>, data: <span class="hljs-built_in">any</span>, config?: <span class="hljs-built_in">any</span></span>) =&gt; &#123;<br>  <span class="hljs-keyword">return</span> axios.<span class="hljs-title function_">post</span>(url, data, config)<br>&#125;<br><br><span class="hljs-keyword">export</span> &#123; <span class="hljs-title class_">ApiPost</span>, <span class="hljs-title class_">ApiGet</span> &#125;<br></code></pre></td></tr></table></figure>
 <h2 id="提供授权">提供授权</h2>
 <h3 id="获取token">获取<code>token</code></h3>
 <p><code>api</code>文件夹下新建<code>types</code>文件夹,新建<code>index.ts</code></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-comment">/* 获取token请求的参数接口 */</span><br><span class="hljs-keyword">interface</span> Params &#123;<br>  <span class="hljs-attr">client_id</span>: <span class="hljs-built_in">string</span>,<br>  <span class="hljs-attr">client_secret</span>: <span class="hljs-built_in">string</span>,<br>  <span class="hljs-attr">code</span>: <span class="hljs-built_in">string</span><br>&#125;<br><br><span class="hljs-comment">/* 返回请求的res.data.data内容接口 */</span><br><span class="hljs-keyword">interface</span> Message &#123;<br>  <span class="hljs-attr">login</span>: <span class="hljs-built_in">string</span>,<br>  <span class="hljs-attr">id</span>: <span class="hljs-built_in">number</span>,<br>  <span class="hljs-attr">token</span>: <span class="hljs-built_in">string</span>,<br>  <span class="hljs-attr">avatar_url</span>: <span class="hljs-built_in">string</span><br>&#125;<br><br><span class="hljs-comment">/* 返回接口 */</span><br><span class="hljs-keyword">interface</span> ResponseData &#123;<br>  <span class="hljs-attr">statusCode</span>: <span class="hljs-built_in">number</span>,<br>  <span class="hljs-attr">message</span>: <span class="hljs-built_in">string</span>,<br>  <span class="hljs-attr">data</span>: Message | <span class="hljs-literal">null</span><br>&#125;<br><br><span class="hljs-keyword">export</span> &#123; Params, ResponseData &#125;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">/* 获取token请求的参数接口 */</span><br><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Params</span> &#123;<br>  <span class="hljs-attr">client_id</span>: <span class="hljs-built_in">string</span>,<br>  <span class="hljs-attr">client_secret</span>: <span class="hljs-built_in">string</span>,<br>  <span class="hljs-attr">code</span>: <span class="hljs-built_in">string</span><br>&#125;<br><br><span class="hljs-comment">/* 返回请求的res.data.data内容接口 */</span><br><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Message</span> &#123;<br>  <span class="hljs-attr">login</span>: <span class="hljs-built_in">string</span>,<br>  <span class="hljs-attr">id</span>: <span class="hljs-built_in">number</span>,<br>  <span class="hljs-attr">token</span>: <span class="hljs-built_in">string</span>,<br>  <span class="hljs-attr">avatar_url</span>: <span class="hljs-built_in">string</span><br>&#125;<br><br><span class="hljs-comment">/* 返回接口 */</span><br><span class="hljs-keyword">interface</span> <span class="hljs-title class_">ResponseData</span> &#123;<br>  <span class="hljs-attr">statusCode</span>: <span class="hljs-built_in">number</span>,<br>  <span class="hljs-attr">message</span>: <span class="hljs-built_in">string</span>,<br>  <span class="hljs-attr">data</span>: <span class="hljs-title class_">Message</span> | <span class="hljs-literal">null</span><br>&#125;<br><br><span class="hljs-keyword">export</span> &#123; <span class="hljs-title class_">Params</span>, <span class="hljs-title class_">ResponseData</span> &#125;<br></code></pre></td></tr></table></figure>
 <p><code>login</code>文件夹下新建<code>getGithubToken.ts</code></p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; Request, Response &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;express&#x27;</span><br><span class="hljs-keyword">import</span> &#123; ApiPost, ApiGet &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../utils/request&#x27;</span><br><span class="hljs-keyword">import</span> &#123; Params, ResponseData &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./types&#x27;</span><br><span class="hljs-keyword">import</span> dotenv <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;dotenv&#x27;</span><br><br><span class="hljs-keyword">const</span> config = dotenv.config().parsed<br><br><span class="hljs-keyword">const</span> params: Params = &#123;<br>  <span class="hljs-attr">client_id</span>: config!.CLIENT_ID,<br>  <span class="hljs-attr">client_secret</span>: config!.CLIENT_SECRET,<br>  <span class="hljs-attr">code</span>: <span class="hljs-string">&#x27;&#x27;</span>,<br>&#125;<br><br><span class="hljs-keyword">const</span> responseData: ResponseData = &#123;<br>  <span class="hljs-attr">statusCode</span>: <span class="hljs-number">2000</span>,<br>  <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;success&#x27;</span>,<br>  <span class="hljs-attr">data</span>: <span class="hljs-literal">null</span>,<br>&#125;<br><br><span class="hljs-keyword">const</span> setResponseData = <span class="hljs-function">(<span class="hljs-params">newData: ResponseData</span>) =&gt;</span> &#123;<br>  responseData.statusCode = newData.statusCode<br>  responseData.message = newData.message<br>  responseData.data = newData.data<br>&#125;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> getGithubToken = &#123;<br>  <span class="hljs-attr">GitToken</span>: <span class="hljs-keyword">async</span> (req: Request, <span class="hljs-attr">res</span>: Response) =&gt; &#123;<br>    <span class="hljs-comment">// 获取GitHub code</span><br>    params.code = <span class="hljs-built_in">String</span>(req.query.code)<br><br>    <span class="hljs-comment">// 获取GitHub token</span><br>    <span class="hljs-keyword">let</span> token = <span class="hljs-string">&#x27;&#x27;</span><br>    <span class="hljs-keyword">try</span> &#123;<br>      <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> ApiPost(<span class="hljs-string">&#x27;https://github.com/login/oauth/access_token&#x27;</span>, params)<br>      token = data.data.split(<span class="hljs-string">&#x27;&amp;&#x27;</span>)[<span class="hljs-number">0</span>].split(<span class="hljs-string">&#x27;=&#x27;</span>)[<span class="hljs-number">1</span>]<br>    &#125; <span class="hljs-keyword">catch</span> (e: <span class="hljs-built_in">any</span>) &#123;<br>      setResponseData(&#123; <span class="hljs-attr">statusCode</span>: <span class="hljs-number">5001</span>, <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;获取GitHub token失败&#x27;</span>, <span class="hljs-attr">data</span>: <span class="hljs-literal">null</span> &#125;)<br>    &#125;<br><br>    <span class="hljs-comment">// 获取用户信息</span><br>    <span class="hljs-keyword">try</span> &#123;<br>      <span class="hljs-comment">// 获取access_token</span><br>      <span class="hljs-keyword">const</span> userData = <span class="hljs-keyword">await</span> ApiGet(<span class="hljs-string">&#x27;https://api.github.com/user&#x27;</span>, &#123;<br>        <span class="hljs-attr">headers</span>: &#123;<br>          <span class="hljs-string">&#x27;Authorization&#x27;</span>: <span class="hljs-string">&#x27;token &#x27;</span> + token<br>        &#125;<br>      &#125;)<br><br>      <span class="hljs-comment">// 处理请求结果</span><br>      <span class="hljs-keyword">if</span> (userData.status === <span class="hljs-number">200</span> &amp;&amp; userData.data.login) &#123;<br>        <span class="hljs-comment">// 用户信息比对</span><br>        <span class="hljs-keyword">if</span> (userData.data.id != config!.USER_ID)<br>          setResponseData(&#123; <span class="hljs-attr">statusCode</span>: <span class="hljs-number">4003</span>, <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;用户信息不匹配&#x27;</span>, <span class="hljs-attr">data</span>: <span class="hljs-literal">null</span> &#125;)<br>        <span class="hljs-keyword">else</span><br>          setResponseData(&#123;<br>            <span class="hljs-attr">statusCode</span>: <span class="hljs-number">2000</span>,<br>            <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;success&#x27;</span>,<br>            <span class="hljs-attr">data</span>: &#123;<br>              <span class="hljs-attr">login</span>: userData.data.login,<br>              <span class="hljs-attr">id</span>: userData.data.id,<br>              <span class="hljs-attr">token</span>: token,<br>              <span class="hljs-attr">avatar_url</span>: userData.data.avatar_url,<br>            &#125;<br>          &#125;)<br>      &#125; <span class="hljs-keyword">else</span><br>        setResponseData(&#123; <span class="hljs-attr">statusCode</span>: <span class="hljs-number">4001</span>, <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;获取用户信息失败&#x27;</span>, <span class="hljs-attr">data</span>: <span class="hljs-literal">null</span> &#125;)<br>    &#125; <span class="hljs-keyword">catch</span> (e: <span class="hljs-built_in">any</span>) &#123;<br>      setResponseData(&#123; <span class="hljs-attr">statusCode</span>: <span class="hljs-number">5002</span>, <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;无效token&#x27;</span>, <span class="hljs-attr">data</span>: <span class="hljs-literal">null</span> &#125;)<br>    &#125;<br><br>    res.send(responseData)<br>  &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">Request</span>, <span class="hljs-title class_">Response</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;express&#x27;</span><br><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">ApiPost</span>, <span class="hljs-title class_">ApiGet</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../utils/request&#x27;</span><br><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">Params</span>, <span class="hljs-title class_">ResponseData</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./types&#x27;</span><br><span class="hljs-keyword">import</span> dotenv <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;dotenv&#x27;</span><br><br><span class="hljs-keyword">const</span> config = dotenv.<span class="hljs-title function_">config</span>().<span class="hljs-property">parsed</span><br><br><span class="hljs-keyword">const</span> <span class="hljs-attr">params</span>: <span class="hljs-title class_">Params</span> = &#123;<br>  <span class="hljs-attr">client_id</span>: config!.<span class="hljs-property">CLIENT_ID</span>,<br>  <span class="hljs-attr">client_secret</span>: config!.<span class="hljs-property">CLIENT_SECRET</span>,<br>  <span class="hljs-attr">code</span>: <span class="hljs-string">&#x27;&#x27;</span>,<br>&#125;<br><br><span class="hljs-keyword">const</span> <span class="hljs-attr">responseData</span>: <span class="hljs-title class_">ResponseData</span> = &#123;<br>  <span class="hljs-attr">statusCode</span>: <span class="hljs-number">2000</span>,<br>  <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;success&#x27;</span>,<br>  <span class="hljs-attr">data</span>: <span class="hljs-literal">null</span>,<br>&#125;<br><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">setResponseData</span> = (<span class="hljs-params">newData: ResponseData</span>) =&gt; &#123;<br>  responseData.<span class="hljs-property">statusCode</span> = newData.<span class="hljs-property">statusCode</span><br>  responseData.<span class="hljs-property">message</span> = newData.<span class="hljs-property">message</span><br>  responseData.<span class="hljs-property">data</span> = newData.<span class="hljs-property">data</span><br>&#125;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> getGithubToken = &#123;<br>  <span class="hljs-title class_">GitToken</span>: <span class="hljs-keyword">async</span> (<span class="hljs-attr">req</span>: <span class="hljs-title class_">Request</span>, <span class="hljs-attr">res</span>: <span class="hljs-title class_">Response</span>) =&gt; &#123;<br>    <span class="hljs-comment">// 获取GitHub code</span><br>    params.<span class="hljs-property">code</span> = <span class="hljs-title class_">String</span>(req.<span class="hljs-property">query</span>.<span class="hljs-property">code</span>)<br><br>    <span class="hljs-comment">// 获取GitHub token</span><br>    <span class="hljs-keyword">let</span> token = <span class="hljs-string">&#x27;&#x27;</span><br>    <span class="hljs-keyword">try</span> &#123;<br>      <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> <span class="hljs-title class_">ApiPost</span>(<span class="hljs-string">&#x27;https://github.com/login/oauth/access_token&#x27;</span>, params)<br>      token = data.<span class="hljs-property">data</span>.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;&amp;&#x27;</span>)[<span class="hljs-number">0</span>].<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;=&#x27;</span>)[<span class="hljs-number">1</span>]<br>    &#125; <span class="hljs-keyword">catch</span> (<span class="hljs-attr">e</span>: <span class="hljs-built_in">any</span>) &#123;<br>      <span class="hljs-title function_">setResponseData</span>(&#123; <span class="hljs-attr">statusCode</span>: <span class="hljs-number">5001</span>, <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;获取GitHub token失败&#x27;</span>, <span class="hljs-attr">data</span>: <span class="hljs-literal">null</span> &#125;)<br>    &#125;<br><br>    <span class="hljs-comment">// 获取用户信息</span><br>    <span class="hljs-keyword">try</span> &#123;<br>      <span class="hljs-comment">// 获取access_token</span><br>      <span class="hljs-keyword">const</span> userData = <span class="hljs-keyword">await</span> <span class="hljs-title class_">ApiGet</span>(<span class="hljs-string">&#x27;https://api.github.com/user&#x27;</span>, &#123;<br>        <span class="hljs-attr">headers</span>: &#123;<br>          <span class="hljs-string">&#x27;Authorization&#x27;</span>: <span class="hljs-string">&#x27;token &#x27;</span> + token<br>        &#125;<br>      &#125;)<br><br>      <span class="hljs-comment">// 处理请求结果</span><br>      <span class="hljs-keyword">if</span> (userData.<span class="hljs-property">status</span> === <span class="hljs-number">200</span> &amp;&amp; userData.<span class="hljs-property">data</span>.<span class="hljs-property">login</span>) &#123;<br>        <span class="hljs-comment">// 用户信息比对</span><br>        <span class="hljs-keyword">if</span> (userData.<span class="hljs-property">data</span>.<span class="hljs-property">id</span> != config!.<span class="hljs-property">USER_ID</span>)<br>          <span class="hljs-title function_">setResponseData</span>(&#123; <span class="hljs-attr">statusCode</span>: <span class="hljs-number">4003</span>, <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;用户信息不匹配&#x27;</span>, <span class="hljs-attr">data</span>: <span class="hljs-literal">null</span> &#125;)<br>        <span class="hljs-keyword">else</span><br>          <span class="hljs-title function_">setResponseData</span>(&#123;<br>            <span class="hljs-attr">statusCode</span>: <span class="hljs-number">2000</span>,<br>            <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;success&#x27;</span>,<br>            <span class="hljs-attr">data</span>: &#123;<br>              <span class="hljs-attr">login</span>: userData.<span class="hljs-property">data</span>.<span class="hljs-property">login</span>,<br>              <span class="hljs-attr">id</span>: userData.<span class="hljs-property">data</span>.<span class="hljs-property">id</span>,<br>              <span class="hljs-attr">token</span>: token,<br>              <span class="hljs-attr">avatar_url</span>: userData.<span class="hljs-property">data</span>.<span class="hljs-property">avatar_url</span>,<br>            &#125;<br>          &#125;)<br>      &#125; <span class="hljs-keyword">else</span><br>        <span class="hljs-title function_">setResponseData</span>(&#123; <span class="hljs-attr">statusCode</span>: <span class="hljs-number">4001</span>, <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;获取用户信息失败&#x27;</span>, <span class="hljs-attr">data</span>: <span class="hljs-literal">null</span> &#125;)<br>    &#125; <span class="hljs-keyword">catch</span> (<span class="hljs-attr">e</span>: <span class="hljs-built_in">any</span>) &#123;<br>      <span class="hljs-title function_">setResponseData</span>(&#123; <span class="hljs-attr">statusCode</span>: <span class="hljs-number">5002</span>, <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;无效token&#x27;</span>, <span class="hljs-attr">data</span>: <span class="hljs-literal">null</span> &#125;)<br>    &#125;<br><br>    res.<span class="hljs-title function_">send</span>(responseData)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p><code>router</code>目录下<code>index.ts</code>注册<code>/login/token</code>路径</p>
-<figure class="highlight ts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> express, &#123; Router &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;express&#x27;</span><br><span class="hljs-keyword">import</span> &#123; getGithubToken &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../api/login/getGithubToken&#x27;</span><br><br><span class="hljs-keyword">const</span> router: Router = express.Router()<br><br><span class="hljs-comment">// ...</span><br>router.get(<span class="hljs-string">&#x27;/login/token&#x27;</span>, getGithubToken.GitToken)<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> router<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> express, &#123; <span class="hljs-title class_">Router</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;express&#x27;</span><br><span class="hljs-keyword">import</span> &#123; getGithubToken &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../api/login/getGithubToken&#x27;</span><br><br><span class="hljs-keyword">const</span> <span class="hljs-attr">router</span>: <span class="hljs-title class_">Router</span> = express.<span class="hljs-title class_">Router</span>()<br><br><span class="hljs-comment">// ...</span><br>router.<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x27;/login/token&#x27;</span>, getGithubToken.<span class="hljs-property">GitToken</span>)<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> router<br></code></pre></td></tr></table></figure>
 <h2 id="最终效果">最终效果</h2>
 <h3 id="登录页-1">登录页</h3>
 <p><img src="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204272124144.jpg" srcset="/img/loading.gif" lazyload></p>
@@ -357,40 +384,93 @@
 <h3 id="跳回app首页">跳回app首页</h3>
 <p><img src="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204272124147.jpg" srcset="/img/loading.gif" lazyload></p>
 
+              
             </div>
-            <hr>
+            <hr/>
             <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/Vue%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E5%8D%9A%E5%AE%A2/">Vue前后端分离博客</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/Nodejs/">Nodejs</a>
-                    
-                  </div>
-                
-              </div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Vue%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E5%8D%9A%E5%AE%A2/" class="category-chain-item">Vue前后端分离博客</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Nodejs/">#Nodejs</a>
+      
+    </div>
+  
+</div>
+
+
               
-                <p class="note note-warning">
-                  
-                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
-                  
-                </p>
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>🔵Vue博客[4](后台添加GitHub授权登录)</div>
+      <div>https://qingshaner.com/Vue博客[4](后台添加GitHub授权登录)/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>清山</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年4月25日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
               
-              
-                <div class="post-prevnext">
+                <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Hexo%20fluid%E4%B8%BB%E9%A2%98%E9%A6%96%E9%A1%B5%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E6%BB%91%E5%85%A5%E5%8A%A8%E7%94%BB/">
+                      <a href="/Hexo%20fluid%E4%B8%BB%E9%A2%98%E9%A6%96%E9%A1%B5%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E6%BB%91%E5%85%A5%E5%8A%A8%E7%94%BB/" title="🔵Hexo fluid主题首页添加文章滑入动画">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">🔵Hexo fluid主题首页添加文章滑入动画</span>
                         <span class="visible-mobile">上一篇</span>
@@ -400,7 +480,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Vue%E5%8D%9A%E5%AE%A2%5B3%5D(%E5%90%8E%E5%8F%B0%E5%88%9D%E5%A7%8B%E5%8C%96%E6%90%AD%E5%BB%BA)/">
+                      <a href="/Vue%E5%8D%9A%E5%AE%A2%5B3%5D(%E5%90%8E%E5%8F%B0%E5%88%9D%E5%A7%8B%E5%8C%96%E6%90%AD%E5%BB%BA)/" title="🔵Vue博客[3](后台初始化搭建)">
                         <span class="hidden-mobile">🔵Vue博客[3](后台初始化搭建)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -412,12 +492,8 @@
             </div>
 
             
-              <!-- Comments -->
-              <article class="comments" id="comments">
-                
-                  
-                
-                
+  <article id="comments">
+    
   <div id="valine"></div>
   <script type="text/javascript">
     Fluid.utils.loadComments('#valine', function() {
@@ -431,7 +507,9 @@
         )
         new Valine(options);
         Fluid.utils.waitElementVisible('#valine .vcontent', () => {
-          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
         })
       });
     });
@@ -439,25 +517,53 @@
   <noscript>Please enable JavaScript to view the comments</noscript>
 
 
-              </article>
-            
+  </article>
+
+
           </article>
         </div>
       </div>
     </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
   <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
-      </div>
-    
+
+
+  </aside>
+
+
+    </div>
   </div>
 </div>
 
-<!-- Custom -->
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
 
 
     
@@ -482,56 +588,58 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-  <div class="statistics">
-    
-    
-
-    
-      
-        <!-- 不蒜子统计PV -->
-        <span id="busuanzi_container_site_pv" style="display: none">
-            总访问量 
-            <span id="busuanzi_value_site_pv"></span>
-             次
-          </span>
-      
-      
-        <!-- 不蒜子统计UV -->
-        <span id="busuanzi_container_site_uv" style="display: none">
-            总访客数 
-            <span id="busuanzi_value_site_uv"></span>
-             人
-          </span>
-      
-    
-  </div>
-
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
   
 
   
-</footer>
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
 
+  
+  
+  
+</div>
 
-  <!-- SCRIPTS -->
+  </footer>
+
+  <!-- Scripts -->
   
   <script  src="https://fastly.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
@@ -550,10 +658,24 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
+
+  <script  src="https://fastly.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
 
-  <script  src="/js/local-search.js" ></script>
+
 
 
 
@@ -565,48 +687,71 @@
 
 
 
-  
-
-
 
   
-    <script  src="https://fastly.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
-  
-  
-    <script  src="https://fastly.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
-  
-  
-    <script  src="https://fastly.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
-  
-  
+<script>
+  Fluid.utils.createScript('https://fastly.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
 
 
+  
+<script>
+  Fluid.utils.createScript('https://fastly.jsdelivr.net/npm/anchor-js@4/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://fastly.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-
-
-  <script  src="https://fastly.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-        typing(title);
-      
-    })(window, document);
-  </script>
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -618,9 +763,15 @@
 
 
 
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 <!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><!-- hexo injector body_end end --></body>
 </html>

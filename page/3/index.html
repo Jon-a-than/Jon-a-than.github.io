@@ -28,15 +28,21 @@
 <meta name="twitter:card" content="summary_large_image">
   
   
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
   <title>清山的博客</title>
 
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
 
-<!-- 主题依赖的图标库，不要自行修改 -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -45,7 +51,13 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
   
 <link rel="stylesheet" href="/css/selection.css">
@@ -58,16 +70,29 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"qingshaner.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":false,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"qingshaner.com","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.0.0"></head>
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
 <body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>荷风送香气，竹露滴清响</strong>
@@ -155,24 +180,13 @@
             </li>
           
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/%E9%97%AE%E6%B8%A0%E9%82%A3%E5%BE%97%E6%B8%85%E5%A6%82%E8%AE%B8/">
-                <i class="iconfont icon-plan"></i>
-                计划表
-              </a>
-            </li>
-          
-        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
               &nbsp;<i class="iconfont icon-search"></i>&nbsp;
             </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -185,40 +199,115 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202205011921669.jpg') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="海上升明月🌕天涯共此时">
-              
-            </span>
+  
 
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202205011921669.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
           
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
+            <span id="subtitle" data-typed-text="海上升明月🌕天涯共此时"></span>
           
         </div>
+
+        
       </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
     
       <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
+        <div id="board"
+          style="margin-top: 0">
           
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
                 
 
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/hexo%E5%8D%9A%E6%96%87%E5%8A%A0%E5%AF%86/" target="_self">
+          <img src="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204031137125.jpg" alt="🔵hexo博文加密">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/hexo%E5%8D%9A%E6%96%87%E5%8A%A0%E5%AF%86/" target="_self">
+          🔵hexo博文加密
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/hexo%E5%8D%9A%E6%96%87%E5%8A%A0%E5%AF%86/" target="_self">
+        <div>
+          
+          插件安装 1npm install --save hexo-blog-encrypt 启用插件 在_config.yml文件中添加 123# Securityencrypt:    enable: true 加密博文 博文前添加 12345---password: &lt;密码&gt;abstract: 文章描述message: 密码提示--- 完成 123hexo cleanh
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-03-10 13:51" pubdate>
+              2022-03-10
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/hexo/" class="category-chain-item">hexo</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/hexo/">#hexo</a>
+            
+              <a href="/tags/%E5%8A%A0%E5%AF%86/">#加密</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
 
   <div class="row mx-auto index-card">
     
@@ -237,12 +326,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/CSS%E6%B8%90%E5%8F%98/" target="_self">
+      <a class="index-excerpt" href="/CSS%E6%B8%90%E5%8F%98/" target="_self">
+        <div>
           
           .block{padding: 50px;color: #000;font-weight: 700;font-size:2rem;}.flex{display: flex;justify-content:space-around;flex-wrap: wrap;} 颜色表示  HEX rgb与rgba 渐变 线性渐变 🍉设置渐变 linear-gradient(color1, c
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -254,20 +343,39 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/CSS/">CSS</a>
-            
-              <a href="/categories/CSS/%E5%9F%BA%E7%A1%80/">基础</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CSS/" class="category-chain-item">CSS</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/CSS/%E5%9F%BA%E7%A1%80/" class="category-chain-item">基础</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/CSS/">CSS</a>
+              <a href="/tags/CSS/">#CSS</a>
             
           </div>
         
@@ -292,12 +400,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/Element-Plus%E7%9A%84%E4%BD%BF%E7%94%A8/" target="_self">
+      <a class="index-excerpt" href="/Element-Plus%E7%9A%84%E4%BD%BF%E7%94%A8/" target="_self">
+        <div>
           
           安装 1pnpm i element-plus --save 挂载 12345678910&#x2F;&#x2F; main.ts[main.js]import &amp;#123; createApp &amp;#125; from &amp;#x27;vue&amp;#x27;import ElementPlus from &amp;#x27;element-plus&amp;#x27;import &amp;#x27;element-plus&#x2F;dist&#x2F;ind
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -309,24 +417,48 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Vue/">Vue</a>
-            
-              <a href="/categories/Vue/Vue3-x/">Vue3.x</a>
-            
-              <a href="/categories/Vue/Vue3-x/UI%E6%A1%86%E6%9E%B6/">UI框架</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Vue/" class="category-chain-item">Vue</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Vue/Vue3-x/" class="category-chain-item">Vue3.x</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Vue/Vue3-x/UI%E6%A1%86%E6%9E%B6/" class="category-chain-item">UI框架</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Vue3/">Vue3</a>
+              <a href="/tags/Vue3/">#Vue3</a>
             
-              <a href="/tags/UI%E6%A1%86%E6%9E%B6/">UI框架</a>
+              <a href="/tags/UI%E6%A1%86%E6%9E%B6/">#UI框架</a>
             
           </div>
         
@@ -351,12 +483,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/TailWind/" target="_self">
+      <a class="index-excerpt" href="/TailWind/" target="_self">
+        <div>
           
           
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -368,22 +500,41 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/CSS/">CSS</a>
-            
-              <a href="/categories/CSS/CSS%E6%A1%86%E6%9E%B6/">CSS框架</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CSS/" class="category-chain-item">CSS</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/CSS/CSS%E6%A1%86%E6%9E%B6/" class="category-chain-item">CSS框架</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/CSS/">CSS</a>
+              <a href="/tags/CSS/">#CSS</a>
             
-              <a href="/tags/TailWind/">TailWind</a>
+              <a href="/tags/TailWind/">#TailWind</a>
             
           </div>
         
@@ -408,12 +559,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/pnpm%E4%BD%BF%E7%94%A8/" target="_self">
+      <a class="index-excerpt" href="/pnpm%E4%BD%BF%E7%94%A8/" target="_self">
+        <div>
           
           安装pnpm 使用npm安装pnpm 1npm install pnpm -g 查看pnpm版本,检查是否安装成功 1pnpm -v 更新pnpm 1pnpm add
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -425,20 +576,39 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/">前端工具</a>
-            
-              <a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/%E5%8C%85%E7%AE%A1%E7%90%86/">包管理</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" class="category-chain-item">前端工具</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/%E5%8C%85%E7%AE%A1%E7%90%86/" class="category-chain-item">包管理</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/pnpm/">pnpm</a>
+              <a href="/tags/pnpm/">#pnpm</a>
             
           </div>
         
@@ -463,12 +633,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/hexo%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" target="_self">
+      <a class="index-excerpt" href="/hexo%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" target="_self">
+        <div>
           
           更换文本渲染器 🍍卸载原渲染器 1npm uninstall hexo-renderer-marked --save 🍍安装渲染器 1npm install hexo-renderer-pandoc --save 🍍安装pandoc Releases · jgm&#x2F;pandoc (github.com) 开启公式 123456post:  math:    enable: tr
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -480,20 +650,34 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/hexo/">hexo</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/hexo/" class="category-chain-item">hexo</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/hexo/">hexo</a>
+              <a href="/tags/hexo/">#hexo</a>
             
-              <a href="/tags/latex/">latex</a>
+              <a href="/tags/latex/">#latex</a>
             
           </div>
         
@@ -518,12 +702,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/" target="_self">
+      <a class="index-excerpt" href="/vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/" target="_self">
+        <div>
           
           以下内容适用于Vue2.x            父组件传子组件 props              官方文档: 🔗props (vuejs.org)            📌父组件 123456789101112131415&lt;script&gt; import SonProps from &amp;#x27;xxx&amp;#x27;   export def
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -535,22 +719,46 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Vue/">Vue</a>
-            
-              <a href="/categories/Vue/Vue2/">Vue2</a>
-            
-              <a href="/categories/Vue/Vue2/%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/">组件通信</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Vue/" class="category-chain-item">Vue</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Vue/Vue2/" class="category-chain-item">Vue2</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Vue/Vue2/%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/" class="category-chain-item">组件通信</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Vue/">Vue</a>
+              <a href="/tags/Vue/">#Vue</a>
             
           </div>
         
@@ -575,12 +783,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/WebpackTS%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" target="_self">
+      <a class="index-excerpt" href="/WebpackTS%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" target="_self">
+        <div>
           
           配置TS环境 1npm init -y 🥝配置 123456789101112&amp;#123;    ...    &quot;main&quot;: &quot;.&#x2F;src&#x2F;index.ts&quot;    ...    &quot;scripts&quot;: &amp;#123;        &quot;test&quot;: &quot;echo \&quot;Error: no test
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -592,18 +800,32 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/TypeScript/">TypeScript</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/TypeScript/" class="category-chain-item">TypeScript</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Webpack/">Webpack</a>
+              <a href="/tags/Webpack/">#Webpack</a>
             
           </div>
         
@@ -628,12 +850,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/%E7%AE%97%E6%B3%95-%E4%BD%8D%E8%BF%90%E7%AE%97/" target="_self">
+      <a class="index-excerpt" href="/%E7%AE%97%E6%B3%95-%E4%BD%8D%E8%BF%90%E7%AE%97/" target="_self">
+        <div>
           
           与 算法 性质 应用 或 算法 性质 应用 异或 算法 性质  x ^ 0 &#x3D; x x ^ x &#x3D; 0  应用 🥝LeetCode 136. 只出现一次的数字 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。 说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？ 示例 1: 12输
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -645,22 +867,41 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E5%AD%A6/">数学</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E5%AD%A6/" class="category-chain-item">数学</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+              <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>
             
-              <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/">位运算</a>
+              <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/">#位运算</a>
             
           </div>
         
@@ -685,12 +926,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/%E7%AE%97%E6%B3%95-%E5%8F%8C%E6%8C%87%E9%92%88/" target="_self">
+      <a class="index-excerpt" href="/%E7%AE%97%E6%B3%95-%E5%8F%8C%E6%8C%87%E9%92%88/" target="_self">
+        <div>
           
           
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -702,79 +943,41 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%AE%97%E6%B3%95/%E5%8F%8C%E6%8C%87%E9%92%88/" class="category-chain-item">双指针</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+              <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>
             
-              <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/" target="_self">
-          <img src="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204012103297.jpg" alt="🔴算法-排序">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/" target="_self">
-          🔴算法-排序
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/" target="_self">
-          
-          冒泡排序 算法实现 1234567const bubbleSort &#x3D; (array) &#x3D;&gt; &amp;#123;  const L &#x3D; array.length  for(let i &#x3D; 0;i &lt; L;i++)    for(let j &#x3D; 0;j &lt; L - 1 - i;j++)      if(array[j] &gt; array[j + 1])        [array
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-02-23 11:48" pubdate>
-              2022-02-23
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/">排序</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
-            
-              <a href="/tags/%E6%8E%92%E5%BA%8F/">排序</a>
+              <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">#双指针</a>
             
           </div>
         
@@ -819,56 +1022,58 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-  <div class="statistics">
-    
-    
-
-    
-      
-        <!-- 不蒜子统计PV -->
-        <span id="busuanzi_container_site_pv" style="display: none">
-            总访问量 
-            <span id="busuanzi_value_site_pv"></span>
-             次
-          </span>
-      
-      
-        <!-- 不蒜子统计UV -->
-        <span id="busuanzi_container_site_uv" style="display: none">
-            总访客数 
-            <span id="busuanzi_value_site_uv"></span>
-             人
-          </span>
-      
-    
-  </div>
-
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
   
 
   
-</footer>
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
 
+  
+  
+  
+</div>
 
-  <!-- SCRIPTS -->
+  </footer>
+
+  <!-- Scripts -->
   
   <script  src="https://fastly.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
@@ -887,37 +1092,18 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    
-  
-
-
-
-  
-
-
-
-
-
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-
 
   <script  src="https://fastly.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
       
-        typing(title);
+        typing(text);
       
     })(window, document);
   </script>
@@ -927,10 +1113,16 @@
 
 
 
+  
+    
+  
 
 
 
 
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
@@ -942,9 +1134,15 @@
 
 
 
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 <!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><!-- hexo injector body_end end --></body>
 </html>
