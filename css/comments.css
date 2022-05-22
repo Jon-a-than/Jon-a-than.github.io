@@ -22,10 +22,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .vcontent, .vcontent p {
-  background: #64ff9e;
+  background: #95ec69;
   color: #000 !important;
   border-radius: 5px;
   padding: 5px;
+}
+
+.vcontent {
+  filter: drop-shadow(-2px 3px 5px #999);
 }
 
 img.vimg {
@@ -47,7 +51,7 @@ img.vimg {
   border-left: 0;
   border-bottom: 10px solid #00000000;
   border-top: 10px solid #00000000;
-  border-right: 10px solid #64ff9e;
+  border-right: 10px solid #95ec69;
 }
 
 .vcontent a {
