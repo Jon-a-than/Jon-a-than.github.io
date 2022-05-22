@@ -183,3 +183,9 @@ border-left: 20px solid #838383;
   background-color: rgba(27,31,35,.05);
   border-radius: 3px;
 }
+
+/* hexo-math */
+.MathJax svg {
+  width: 100%;
+  font-size: 1.5rem;
+}
