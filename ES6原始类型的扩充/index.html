@@ -16,16 +16,16 @@
   <meta name="author" content="清山">
   <meta name="keywords" content="前端, JavaScript, hexo, HTML, CSS, Vue, 学习">
   
-    <meta name="description" content="Map 🍍创建Map 12const map &#x3D; new Map()const map &#x3D; new Map(array) 🍍方法与属性  set(key, value)新增(更新)key has(key)是否有key get(key)返回key的值,若未定义则返回undefined delete(key)删除成功返回true反之为false clear()清空此实例 s">
+    <meta name="description" content="Symbol 生成一个独一无二的值 12const symbol &#x3D; Symbol() 123456const [S1, S2] &#x3D; [Symbol(), Symbol()]console.log([S1, S2, S1 &#x3D;&#x3D;&#x3D; S2])&#x2F;&#x2F; [Symbol(), Symbol(), false]const [S1, S2] &#x3D; [Symbol(&amp;#x27;111&amp;#x27;)] 内置Sy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="🏗ES6原始类型的扩充">
+<meta property="og:title" content="🟡ES6原始类型的扩充">
 <meta property="og:url" content="https://qingshaner.com/ES6%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%89%A9%E5%85%85/index.html">
 <meta property="og:site_name" content="清山的博客">
-<meta property="og:description" content="Map 🍍创建Map 12const map &#x3D; new Map()const map &#x3D; new Map(array) 🍍方法与属性  set(key, value)新增(更新)key has(key)是否有key get(key)返回key的值,若未定义则返回undefined delete(key)删除成功返回true反之为false clear()清空此实例 s">
+<meta property="og:description" content="Symbol 生成一个独一无二的值 12const symbol &#x3D; Symbol() 123456const [S1, S2] &#x3D; [Symbol(), Symbol()]console.log([S1, S2, S1 &#x3D;&#x3D;&#x3D; S2])&#x2F;&#x2F; [Symbol(), Symbol(), false]const [S1, S2] &#x3D; [Symbol(&amp;#x27;111&amp;#x27;)] 内置Sy">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204012045634.jpg">
 <meta property="article:published_time" content="2022-02-03T03:39:31.000Z">
-<meta property="article:modified_time" content="2022-04-01T12:53:45.015Z">
+<meta property="article:modified_time" content="2022-05-27T13:19:29.120Z">
 <meta property="article:author" content="清山">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="ES6">
@@ -37,7 +37,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>🏗ES6原始类型的扩充 - 清山的博客</title>
+  <title>🟡ES6原始类型的扩充 - 清山的博客</title>
 
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -224,7 +224,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="🏗ES6原始类型的扩充"></span>
+            <span id="subtitle" data-typed-text="🟡ES6原始类型的扩充"></span>
           
         </div>
 
@@ -253,7 +253,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          353 字
+          591 字
         
       </span>
     
@@ -265,7 +265,7 @@
         
         
           <!-- compatible with older versions-->
-          3 分钟
+          5 分钟
         
       </span>
     
@@ -303,6 +303,463 @@
   <div class="row nomargin-x">
     <div class="side-col d-none d-lg-block col-lg-2">
       
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="JavaScript"
+        id="heading-686155af75a60a0f6e9d80c1f7edd3e9" role="tab" data-toggle="collapse" href="#collapse-686155af75a60a0f6e9d80c1f7edd3e9"
+        aria-expanded="true"
+      >
+        JavaScript
+        <span class="list-group-count">(20)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-686155af75a60a0f6e9d80c1f7edd3e9"
+           role="tabpanel" aria-labelledby="heading-686155af75a60a0f6e9d80c1f7edd3e9">
+        
+        
+          
+          
+  <div class="category-post-list">
+    
+    
+  </div>
+
+          
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="BOM"
+        id="heading-292365aa98c86c6962152d0d010b9846" role="tab" data-toggle="collapse" href="#collapse-292365aa98c86c6962152d0d010b9846"
+        aria-expanded="false"
+      >
+        BOM
+        <span class="list-group-count">(3)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-292365aa98c86c6962152d0d010b9846"
+           role="tabpanel" aria-labelledby="heading-292365aa98c86c6962152d0d010b9846">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A3%80%E6%B5%8B/" title="🔴客户端检测"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🔴客户端检测</span>
+        </a>
+      
+    
+      
+      
+        <a href="/JavaScriptBOM/" title="🟡JavaScriptBOM"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🟡JavaScriptBOM</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%98%E5%82%A8/" title="🟡客户端存储"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🟡客户端存储</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="DOM"
+        id="heading-7d961b8030c6099ee907f4f4b5fe6b3d" role="tab" data-toggle="collapse" href="#collapse-7d961b8030c6099ee907f4f4b5fe6b3d"
+        aria-expanded="false"
+      >
+        DOM
+        <span class="list-group-count">(1)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-7d961b8030c6099ee907f4f4b5fe6b3d"
+           role="tabpanel" aria-labelledby="heading-7d961b8030c6099ee907f4f4b5fe6b3d">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/JavaScriptDOM/" title="🟡JavaScriptDOM"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🟡JavaScriptDOM</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="ES6"
+        id="heading-a341a0ec0c824fdb4da2f951178d486b" role="tab" data-toggle="collapse" href="#collapse-a341a0ec0c824fdb4da2f951178d486b"
+        aria-expanded="true"
+      >
+        ES6
+        <span class="list-group-count">(7)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-a341a0ec0c824fdb4da2f951178d486b"
+           role="tabpanel" aria-labelledby="heading-a341a0ec0c824fdb4da2f951178d486b">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/ES6%E4%BB%A3%E7%90%86-Proxy/" title="🏗ES6代理(Proxy)与反射(Reflect)"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🏗ES6代理(Proxy)与反射(Reflect)</span>
+        </a>
+      
+    
+      
+      
+        <a href="/ES6%E8%A7%A3%E6%9E%84/" title="🏗ES6解构"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🏗ES6解构</span>
+        </a>
+      
+    
+      
+      
+        <a href="/ES6%E8%BF%AD%E4%BB%A3%E5%99%A8/" title="🏗ES6迭代器"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🏗ES6迭代器</span>
+        </a>
+      
+    
+      
+      
+        <a href="/ES6module/" title="🔵ES6Module"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🔵ES6Module</span>
+        </a>
+      
+    
+      
+      
+        <a href="/ES6Promise/" title="🟡ES6Promise与异步函数"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🟡ES6Promise与异步函数</span>
+        </a>
+      
+    
+      
+      
+        <a href="/ES6%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%89%A9%E5%85%85/" title="🟡ES6原始类型的扩充"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">🟡ES6原始类型的扩充</span>
+        </a>
+      
+    
+      
+      
+        <a href="/ES6%E7%B1%BB/" title="🟡ES6类"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🟡ES6类</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="HTML5"
+        id="heading-6bff62b10d884fb77428cfe168cd783d" role="tab" data-toggle="collapse" href="#collapse-6bff62b10d884fb77428cfe168cd783d"
+        aria-expanded="false"
+      >
+        HTML5
+        <span class="list-group-count">(1)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-6bff62b10d884fb77428cfe168cd783d"
+           role="tabpanel" aria-labelledby="heading-6bff62b10d884fb77428cfe168cd783d">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/JavaScript%E5%8A%A8%E7%94%BB/" title="🟡JavaScript动画"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🟡JavaScript动画</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="基础"
+        id="heading-0796ba76b4b553687e5ffaeb78512ccb" role="tab" data-toggle="collapse" href="#collapse-0796ba76b4b553687e5ffaeb78512ccb"
+        aria-expanded="false"
+      >
+        基础
+        <span class="list-group-count">(8)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-0796ba76b4b553687e5ffaeb78512ccb"
+           role="tabpanel" aria-labelledby="heading-0796ba76b4b553687e5ffaeb78512ccb">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/JavaScript%E5%AF%B9%E8%B1%A1/" title="🔴JavaScript对象"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🔴JavaScript对象</span>
+        </a>
+      
+    
+      
+      
+        <a href="/JavaScript%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/" title="🔴JavaScript防抖与节流"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🔴JavaScript防抖与节流</span>
+        </a>
+      
+    
+      
+      
+        <a href="/JavaScript%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0/" title="🔴JavaScript高阶函数"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🔴JavaScript高阶函数</span>
+        </a>
+      
+    
+      
+      
+        <a href="/JavaScript%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/" title="🟡JavaScript严格模式"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🟡JavaScript严格模式</span>
+        </a>
+      
+    
+      
+      
+        <a href="/JavaScript%E4%BA%8B%E4%BB%B6/" title="🟡JavaScript事件"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🟡JavaScript事件</span>
+        </a>
+      
+    
+      
+      
+        <a href="/JavaScript%E5%87%BD%E6%95%B0/" title="🟡JavaScript函数"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🟡JavaScript函数</span>
+        </a>
+      
+    
+      
+      
+        <a href="/JavaScript%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B/" title="🟡JavaScript数据类型"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🟡JavaScript数据类型</span>
+        </a>
+      
+    
+      
+      
+        <a href="/JavaScript%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B5%84%E6%BA%90%E8%AF%B7%E6%B1%82/" title="🟡JavaScript网络与资源请求"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🟡JavaScript网络与资源请求</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="ES6"
+        id="heading-a341a0ec0c824fdb4da2f951178d486b" role="tab" data-toggle="collapse" href="#collapse-a341a0ec0c824fdb4da2f951178d486b"
+        aria-expanded="true"
+      >
+        ES6
+        <span class="list-group-count">(7)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-a341a0ec0c824fdb4da2f951178d486b"
+           role="tabpanel" aria-labelledby="heading-a341a0ec0c824fdb4da2f951178d486b">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/ES6%E4%BB%A3%E7%90%86-Proxy/" title="🏗ES6代理(Proxy)与反射(Reflect)"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🏗ES6代理(Proxy)与反射(Reflect)</span>
+        </a>
+      
+    
+      
+      
+        <a href="/ES6%E8%A7%A3%E6%9E%84/" title="🏗ES6解构"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🏗ES6解构</span>
+        </a>
+      
+    
+      
+      
+        <a href="/ES6%E8%BF%AD%E4%BB%A3%E5%99%A8/" title="🏗ES6迭代器"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🏗ES6迭代器</span>
+        </a>
+      
+    
+      
+      
+        <a href="/ES6module/" title="🔵ES6Module"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🔵ES6Module</span>
+        </a>
+      
+    
+      
+      
+        <a href="/ES6Promise/" title="🟡ES6Promise与异步函数"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🟡ES6Promise与异步函数</span>
+        </a>
+      
+    
+      
+      
+        <a href="/ES6%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%89%A9%E5%85%85/" title="🟡ES6原始类型的扩充"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">🟡ES6原始类型的扩充</span>
+        </a>
+      
+    
+      
+      
+        <a href="/ES6%E7%B1%BB/" title="🟡ES6类"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">🟡ES6类</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
 
     </div>
 
@@ -311,20 +768,28 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">🏗ES6原始类型的扩充</h1>
+            <h1 style="display: none">🟡ES6原始类型的扩充</h1>
             
               <p class="note note-info">
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：2022年4月1日 晚上
+                    本文最后更新于：2022年5月27日 晚上
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <h2 id="section"></h2>
+              <h2 id="symbol">Symbol</h2>
+<p>生成一个独一无二的值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> symbol = <span class="hljs-title class_">Symbol</span>()<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> [<span class="hljs-variable constant_">S1</span>, <span class="hljs-variable constant_">S2</span>] = [<span class="hljs-title class_">Symbol</span>(), <span class="hljs-title class_">Symbol</span>()]<br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>([<span class="hljs-variable constant_">S1</span>, <span class="hljs-variable constant_">S2</span>, <span class="hljs-variable constant_">S1</span> === <span class="hljs-variable constant_">S2</span>])<br><span class="hljs-comment">// [Symbol(), Symbol(), false]</span><br><br><span class="hljs-keyword">const</span> [<span class="hljs-variable constant_">S1</span>, <span class="hljs-variable constant_">S2</span>] = [<span class="hljs-title class_">Symbol</span>(<span class="hljs-string">&#x27;111&#x27;</span>)]<br></code></pre></td></tr></table></figure>
+<h3 id="内置symbol方法">内置Symbol方法</h3>
+<p>`Symbol.inter</p>
+<div class="note note-info">
+            <p><strong>参考文档:</strong></p><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1UU4y1K7Np?p=3&amp;spm_id_from=pageDriver">《typescript入门到放弃（有可能是全站讲的最好的TS课程）(vim零一)》</a></p>
+          </div>
 <h2 id="map">Map</h2>
 <h3 id="创建map">🍍创建Map</h3>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>()<br><span class="hljs-keyword">const</span> map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>(array)<br></code></pre></td></tr></table></figure>
@@ -407,7 +872,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>🏗ES6原始类型的扩充</div>
+      <div>🟡ES6原始类型的扩充</div>
       <div>https://qingshaner.com/ES6原始类型的扩充/</div>
     </div>
     <div class="license-meta">

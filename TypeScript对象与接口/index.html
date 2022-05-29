@@ -16,16 +16,16 @@
   <meta name="author" content="清山">
   <meta name="keywords" content="前端, JavaScript, hexo, HTML, CSS, Vue, 学习">
   
-    <meta name="description" content="接口 使用interface声明接口 声明对象 interface还可用声明对象类型 TS不检查属性的序列 1234567891011interface message &amp;#123;  age: number;  name: string;  isMale: boolean;&amp;#125;const aboutMe: message &#x3D; &amp;#123;  age: 20,  isMale: t">
+    <meta name="description" content="使用interface声明接口 声明对象 interface可用于声明对象类型 TS不检查属性的序列 1234567891011interface Message &amp;#123;  age: number;  name: string;  isMale: boolean;&amp;#125;const aboutMe: Message &#x3D; &amp;#123;  age: 20,  isMale: true,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TypeScript对象与接口">
+<meta property="og:title" content="💛TypeScript对象与接口">
 <meta property="og:url" content="https://qingshaner.com/TypeScript%E5%AF%B9%E8%B1%A1%E4%B8%8E%E6%8E%A5%E5%8F%A3/index.html">
 <meta property="og:site_name" content="清山的博客">
-<meta property="og:description" content="接口 使用interface声明接口 声明对象 interface还可用声明对象类型 TS不检查属性的序列 1234567891011interface message &amp;#123;  age: number;  name: string;  isMale: boolean;&amp;#125;const aboutMe: message &#x3D; &amp;#123;  age: 20,  isMale: t">
+<meta property="og:description" content="使用interface声明接口 声明对象 interface可用于声明对象类型 TS不检查属性的序列 1234567891011interface Message &amp;#123;  age: number;  name: string;  isMale: boolean;&amp;#125;const aboutMe: Message &#x3D; &amp;#123;  age: 20,  isMale: true,">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204012102501.jpg">
 <meta property="article:published_time" content="2022-04-22T14:24:56.000Z">
-<meta property="article:modified_time" content="2022-04-30T02:16:27.713Z">
+<meta property="article:modified_time" content="2022-05-28T12:52:57.068Z">
 <meta property="article:author" content="清山">
 <meta property="article:tag" content="TypeScript">
 <meta name="twitter:card" content="summary_large_image">
@@ -35,7 +35,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>TypeScript对象与接口 - 清山的博客</title>
+  <title>💛TypeScript对象与接口 - 清山的博客</title>
 
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -222,7 +222,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="TypeScript对象与接口"></span>
+            <span id="subtitle" data-typed-text="💛TypeScript对象与接口"></span>
           
         </div>
 
@@ -251,7 +251,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          763 字
+          844 字
         
       </span>
     
@@ -263,7 +263,7 @@
         
         
           <!-- compatible with older versions-->
-          7 分钟
+          8 分钟
         
       </span>
     
@@ -309,34 +309,32 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">TypeScript对象与接口</h1>
+            <h1 style="display: none">💛TypeScript对象与接口</h1>
             
               <p class="note note-info">
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：2022年4月30日 上午
+                    本文最后更新于：2022年5月28日 晚上
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <h2 id="接口">接口</h2>
-<p><strong>使用</strong><code>interface</code><strong>声明接口</strong></p>
-<h3 id="声明对象">声明对象</h3>
-<p><code>interface</code><strong>还可用声明对象类型</strong> <strong>TS不检查属性的序列</strong></p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> message &#123;<br>  <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>;<br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-attr">isMale</span>: <span class="hljs-built_in">boolean</span>;<br>&#125;<br><br><span class="hljs-keyword">const</span> <span class="hljs-attr">aboutMe</span>: message = &#123;<br>  <span class="hljs-attr">age</span>: <span class="hljs-number">20</span>,<br>  <span class="hljs-attr">isMale</span>: <span class="hljs-literal">true</span>,           <span class="hljs-comment">// 交换顺序不会报错</span><br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Jonathan&#x27;</span>,<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="可选属性">可选属性</h3>
+              <p><strong>使用</strong><code>interface</code><strong>声明接口</strong></p>
+<h2 id="声明对象">声明对象</h2>
+<p><code>interface</code><strong>可用于声明对象类型</strong> <strong>TS不检查属性的序列</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Message</span> &#123;<br>  <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>;<br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-attr">isMale</span>: <span class="hljs-built_in">boolean</span>;<br>&#125;<br><br><span class="hljs-keyword">const</span> <span class="hljs-attr">aboutMe</span>: <span class="hljs-title class_">Message</span> = &#123;<br>  <span class="hljs-attr">age</span>: <span class="hljs-number">20</span>,<br>  <span class="hljs-attr">isMale</span>: <span class="hljs-literal">true</span>,           <span class="hljs-comment">// 交换顺序不会报错</span><br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Jonathan&#x27;</span>,<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="可选属性">可选属性</h2>
 <p><strong>使用</strong><code>?:</code><strong>表示为可选参数</strong></p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> message &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>;<br>  <span class="hljs-attr">isMale</span>: <span class="hljs-built_in">boolean</span>;<br>  birth?: <span class="hljs-built_in">string</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="只读属性">只读属性</h3>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Message</span> &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>;<br>  <span class="hljs-attr">isMale</span>: <span class="hljs-built_in">boolean</span>;<br>  birth?: <span class="hljs-built_in">string</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="只读属性">只读属性</h2>
 <p><code>readonly</code><strong>声明属性只读(不可重写)</strong></p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> message &#123;<br>  <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>;<br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-keyword">readonly</span> <span class="hljs-attr">isMale</span>: <span class="hljs-built_in">boolean</span>;<br>&#125;<br><br><span class="hljs-keyword">const</span> <span class="hljs-attr">aboutMe</span>: message = &#123;<br>  <span class="hljs-attr">age</span>: <span class="hljs-number">20</span>,<br>  <span class="hljs-attr">isMale</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Jonathan&#x27;</span>,<br>&#125;<br><br>aboutMe.<span class="hljs-property">isMale</span> = <span class="hljs-literal">false</span><br><span class="hljs-comment">// &gt; Cannot assign to &#x27;isMale&#x27; because it is a read-only property.</span><br></code></pre></td></tr></table></figure>
-<h3 id="更多属性">更多属性</h3>
-<h2 id="对象">对象</h2>
-<h3 id="通过接口声明">通过接口声明</h3>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Message</span> &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>;<br>  <span class="hljs-attr">sex</span>: <span class="hljs-built_in">boolean</span>;<br>&#125;<br><br><span class="hljs-keyword">const</span> <span class="hljs-attr">I</span>: <span class="hljs-title class_">Message</span> = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Jon-a-than&#x27;</span>,<br>  <span class="hljs-attr">age</span>: <span class="hljs-number">20</span>,<br>  <span class="hljs-attr">sex</span>: <span class="hljs-literal">true</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Message</span> &#123;<br>  <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>;<br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-keyword">readonly</span> <span class="hljs-attr">isMale</span>: <span class="hljs-built_in">boolean</span>;<br>&#125;<br><br><span class="hljs-keyword">const</span> <span class="hljs-attr">aboutMe</span>: <span class="hljs-title class_">Message</span> = &#123;<br>  <span class="hljs-attr">age</span>: <span class="hljs-number">20</span>,<br>  <span class="hljs-attr">isMale</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Jonathan&#x27;</span>,<br>&#125;<br><br>aboutMe.<span class="hljs-property">isMale</span> = <span class="hljs-literal">false</span><br><span class="hljs-comment">// &gt; Cannot assign to &#x27;isMale&#x27; because it is a read-only property.</span><br></code></pre></td></tr></table></figure>
+<h2 id="任意属性">任意属性</h2>
+<p>用接口声明一个必须有<code>name</code>与<code>age</code>的类型,且可以增加任意其它属性</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Person</span> &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>;<br>  [<span class="hljs-attr">id</span>: <span class="hljs-built_in">string</span>]: <span class="hljs-built_in">any</span>;<br>  <span class="hljs-comment">// 将any改为其它类型可约束任意属性的类型</span><br>&#125;<br><br><span class="hljs-keyword">const</span> <span class="hljs-attr">man</span>: <span class="hljs-title class_">Person</span> = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Jonathan&#x27;</span>,<br>  <span class="hljs-attr">age</span>: <span class="hljs-number">20</span>,<br>  <span class="hljs-attr">isMale</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-attr">nationality</span>: <span class="hljs-string">&#x27;CN&#x27;</span><br>&#125;<br></code></pre></td></tr></table></figure>
 <div class="note note-info">
             <p><strong>参考文档:</strong></p>
           </div>
@@ -384,7 +382,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>TypeScript对象与接口</div>
+      <div>💛TypeScript对象与接口</div>
       <div>https://qingshaner.com/TypeScript对象与接口/</div>
     </div>
     <div class="license-meta">

@@ -8,17 +8,15 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 华文新魏,STXinwei;
-  font-weight: 300 !important;
+  font-family: fangsong;
 }
 
 .page-header {
-  font-family: 华文新魏,STXinwei;
+  font-family: fangsong;
 }
 
 .navbar-brand strong {
-  font-family: 华文新魏,STXinwei;
-  font-weight: 300;
+  font-family: fangsong;
 }
 
 .vcontent, .vcontent p {

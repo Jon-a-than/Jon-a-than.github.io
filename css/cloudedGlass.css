@@ -14,7 +14,7 @@ footer span {
 }
 
 #toc {
-  font-family: 华文新魏,STXinwei;
+  /* font-family: fangsong; */
   padding: 10px;
   top: 4rem;
   background-color: var(--board-bg-color);
@@ -94,4 +94,26 @@ aside.sidebar.category-bar a {
 
 .note a {
   color: #ff8b00;
+}
+
+[data-user-color-scheme='dark'] .note-info {
+  background-color: #eef7fadd;
+}
+[data-user-color-scheme='dark'] .note-success {
+  background-color: #eff8f0dd;
+}
+[data-user-color-scheme='dark'] .note-warning {
+  background-color: #fdf8eadd;
+}
+[data-user-color-scheme='dark'] .note-primary {
+  background-color: #f5f0fadd;
+}
+[data-user-color-scheme='dark'] .note-secondary {
+  background-color: #f7f7f7dd;
+}
+[data-user-color-scheme='dark'] .note-danger {
+  background-color: #fcf1f2dd;
+}
+[data-user-color-scheme='dark'] .note-light {
+  background-color: #ffffffdd;
 }
