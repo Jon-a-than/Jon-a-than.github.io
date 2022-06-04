@@ -16,16 +16,16 @@
   <meta name="author" content="清山">
   <meta name="keywords" content="前端, JavaScript, hexo, HTML, CSS, Vue, 学习">
   
-    <meta name="description" content="快速开始 1pnpm create vite 新建React">
+    <meta name="description" content="项目初始化 使用vite快速生成React18项目 123pnpm create vite&gt; react 快速开始 src目录新建main.jsx作为入口  src&#x2F;main.jsx  12345import &amp;#123; createRoot &amp;#125; from &quot;react-dom&#x2F;client&quot;;const root &#x3D; createRoot(d">
 <meta property="og:type" content="article">
-<meta property="og:title" content="🔴React基础">
+<meta property="og:title" content="🟡React基础">
 <meta property="og:url" content="https://qingshaner.com/react%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="清山的博客">
-<meta property="og:description" content="快速开始 1pnpm create vite 新建React">
+<meta property="og:description" content="项目初始化 使用vite快速生成React18项目 123pnpm create vite&gt; react 快速开始 src目录新建main.jsx作为入口  src&#x2F;main.jsx  12345import &amp;#123; createRoot &amp;#125; from &quot;react-dom&#x2F;client&quot;;const root &#x3D; createRoot(d">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202204012102197.jpg">
 <meta property="article:published_time" content="2022-01-24T15:00:20.000Z">
-<meta property="article:modified_time" content="2022-05-26T14:20:59.864Z">
+<meta property="article:modified_time" content="2022-06-03T13:53:56.391Z">
 <meta property="article:author" content="清山">
 <meta property="article:tag" content="React">
 <meta property="article:tag" content="框架">
@@ -36,7 +36,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>🔴React基础 - 清山的博客</title>
+  <title>🟡React基础 - 清山的博客</title>
 
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -223,7 +223,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="🔴React基础"></span>
+            <span id="subtitle" data-typed-text="🟡React基础"></span>
           
         </div>
 
@@ -252,7 +252,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          26 字
+          4.6k 字
         
       </span>
     
@@ -264,7 +264,7 @@
         
         
           <!-- compatible with older versions-->
-          1 分钟
+          39 分钟
         
       </span>
     
@@ -310,22 +310,110 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">🔴React基础</h1>
+            <h1 style="display: none">🟡React基础</h1>
             
               <p class="note note-info">
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：2022年5月26日 晚上
+                    本文最后更新于：2022年6月3日 晚上
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <h2 id="快速开始">快速开始</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pnpm create vite<br></code></pre></td></tr></table></figure>
-<h2 id="新建react">新建React</h2>
+              <h2 id="项目初始化">项目初始化</h2>
+<p>使用<code>vite</code>快速生成<code>React18</code>项目</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">pnpm create vite<br><br>&gt; react<br></code></pre></td></tr></table></figure>
+<h2 id="快速开始">快速开始</h2>
+<p><code>src</code>目录新建<code>main.jsx</code>作为入口</p>
+<p class="file-path">
+<span>src/main.jsx</span>
+</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">import</span> &#123; createRoot &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react-dom/client&quot;</span>;<br><br><span class="hljs-keyword">const</span> root = <span class="hljs-title function_">createRoot</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;root&quot;</span>));<br><br>root.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>🎉Hello React<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>);<br></code></pre></td></tr></table></figure>
+<p><img src="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202206031227529.jpg" srcset="/img/loading.gif" lazyload></p>
+<h2 id="单文件组件">单文件组件</h2>
+<p><code>src</code>新建<code>components</code>文件夹存放组件</p>
+<p><code>components</code>文件夹新建<code>Hello</code>文件夹封装<code>&lt;h1&gt;🎉Hello React&lt;/h1&gt;</code></p>
+<p class="file-path">
+<span>src/components/Hello/index.jsx</span>
+</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Hello</span> () &#123;<br>  <span class="hljs-keyword">return</span> (<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>🎉Hello React<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>)<br>&#125;<br><br><span class="hljs-keyword">export</span> &#123; <span class="hljs-title class_">Hello</span> &#125;<br></code></pre></td></tr></table></figure>
+<p class="file-path">
+<span>src/main.jsx</span>
+</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">StrictMode</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span><br><span class="hljs-keyword">import</span> &#123; createRoot &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react-dom/client&#x27;</span><br><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">Hello</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./components/Hello&#x27;</span><br><br><span class="hljs-title function_">createRoot</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;root&#x27;</span>)).<span class="hljs-title function_">render</span>(<br>  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">StrictMode</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">Hello</span> /&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;/<span class="hljs-name">StrictMode</span>&gt;</span></span><br>)<br></code></pre></td></tr></table></figure>
+<p><img src="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202206031245771.jpg" srcset="/img/loading.gif" lazyload></p>
+<h2 id="jsx">JSX</h2>
+<p class="file-path">
+<span>src/components/JSX.jsx</span>
+</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">JSX</span> () &#123;<br>  <span class="hljs-keyword">const</span> <span class="hljs-title class_">Article</span> = &#123;<br>    <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;## JSX&#x27;</span>,<br>    <span class="hljs-attr">content</span>: <span class="hljs-string">&#x27;JSX是一个JavaScript XML扩展&#x27;</span><br>  &#125;<br><br>  <span class="hljs-keyword">const</span> <span class="hljs-title function_">nowTime</span> = (<span class="hljs-params"></span>) =&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">toLocaleString</span>()<br><br>  <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>&#123;Article.title&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#123;Article.content&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">time</span>&gt;</span>&#123;nowTime()&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>  )<br>&#125;<br><br><span class="hljs-keyword">export</span> &#123; <span class="hljs-variable constant_">JSX</span> &#125;<br></code></pre></td></tr></table></figure>
+<p class="file-path">
+<span>src/main.jsx</span>
+</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-comment">/* 省略部分模块导入 */</span><br><span class="hljs-keyword">import</span> &#123; <span class="hljs-variable constant_">JSX</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./components/JSX&#x27;</span><br><br><span class="hljs-title function_">createRoot</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;root&#x27;</span>)).<span class="hljs-title function_">render</span>(<br>  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">StrictMode</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">Hello</span> /&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">JSX</span> /&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;/<span class="hljs-name">StrictMode</span>&gt;</span></span><br>)<br></code></pre></td></tr></table></figure>
+<p><img src="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202206031914867.jpg" srcset="/img/loading.gif" lazyload></p>
+<div class="note note-success">
+            <p><a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/introducing-jsx.html">JSX简介</a></p><p><a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/jsx-in-depth.html">深入 JSX</a></p>
+          </div>
+<h2 id="css样式">CSS样式</h2>
+<h3 id="classname">className</h3>
+<p>可使用<code>className</code>(即<code>HTML</code>标签的class)属性为组件添加<code>CSS</code>样式</p>
+<p class="file-path">
+<span>src/components/CssClass/index.css</span>
+</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.content</span> &#123;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#4ebe54</span>;<br>  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">600</span>;<br>&#125;<br><br><span class="hljs-selector-class">.content</span>&gt;<span class="hljs-selector-class">.red</span> &#123;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#ff6262</span>;<br>&#125;<br><br><span class="hljs-selector-class">.content</span>&gt;<span class="hljs-selector-class">.blue</span> &#123;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#125dff</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p class="file-path">
+<span>src/components/CssClass/index.jsx</span>
+</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./index.css&#x27;</span><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">CssClass</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">const</span> color = <span class="hljs-string">&#x27;blue&#x27;</span><br><br>  <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>## ClassName<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;red&quot;</span>&gt;</span>红色<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&#123;color&#125;</span>&gt;</span>蓝色<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>绿色<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>  )<br>&#125;<br><br><span class="hljs-keyword">export</span> &#123; <span class="hljs-title class_">CssClass</span> &#125;<br></code></pre></td></tr></table></figure>
+<p class="file-path">
+<span>src/main.jsx</span>
+</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">StrictMode</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span><br><span class="hljs-keyword">import</span> &#123; createRoot &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react-dom/client&#x27;</span><br><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">Hello</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./components/Hello&#x27;</span><br><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">CssClass</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./components/CssClass&#x27;</span><br><br><span class="hljs-title function_">createRoot</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;root&#x27;</span>)).<span class="hljs-title function_">render</span>(<br>  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">StrictMode</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">Hello</span> /&gt;</span></span><br><span class="language-xml">    <span class="hljs-comment">&lt;!-- 演示CSS作用域 --&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>外部content样式<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">CssClass</span> /&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;/<span class="hljs-name">StrictMode</span>&gt;</span></span><br>)<br></code></pre></td></tr></table></figure>
+<p><img src="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202206032107295.jpg" srcset="/img/loading.gif" lazyload></p>
+<div class="note note-warning">
+            <p>可以看到组件的CSS会作用到全局,若class名称相同就会很麻烦</p>
+          </div>
+<h3 id="style内联">style内联</h3>
+<p>使用内联的<code>CSS</code>可避免样式的污染</p>
+<p class="file-path">
+<span>src/components/CssStyle/index.jsx</span>
+</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">CssStyle</span> () &#123;<br>  <span class="hljs-keyword">const</span> color = <span class="hljs-string">&#x27;blue&#x27;</span><br><br>  <span class="hljs-keyword">const</span> styles = &#123;<br>    <span class="hljs-attr">content</span>: &#123;<br>      <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;#4ebe54&#x27;</span>,<br>      <span class="hljs-attr">fontWeight</span>: <span class="hljs-string">&#x27;600&#x27;</span>,<br>    &#125;,<br>    <span class="hljs-attr">red</span>: &#123;<br>      <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;#ff6262&#x27;</span>,<br>    &#125;,<br>    <span class="hljs-attr">blue</span>: &#123;<br>      <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;#125dff&#x27;</span>,<br>    &#125;,<br>  &#125;<br><br>  <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>## CSS Style<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&#123;styles.content&#125;</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&#123;styles.red&#125;</span>&gt;</span>红色<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&#123;styles[color]&#125;</span>&gt;</span>蓝色<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>绿色<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>  )<br>&#125;<br><br><span class="hljs-keyword">export</span> &#123; <span class="hljs-title class_">CssStyle</span> &#125;<br></code></pre></td></tr></table></figure>
+<p><img src="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202206032153094.jpg" srcset="/img/loading.gif" lazyload></p>
+<div class="note note-warning">
+            <p><code>React</code>官方不推荐使用内联样式,并且写内联<code>CSS</code>可能没有语法提示,效率较低</p>
+          </div>
+<h3 id="css-modules">CSS modules</h3>
+<p>使用打包工具为<code>CSS</code>自动配置一个哈希值来模拟一个私有<code>CSS</code></p>
+<p>使用<code>vite</code>可方便的配置<code>CSS modules</code></p>
+<p class="file-path">
+<span>vite.config.js</span>
+</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// ...</span><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineConfig</span>(&#123;<br>  <span class="hljs-comment">// ...</span><br>  <span class="hljs-attr">css</span>: &#123;<br>    <span class="hljs-attr">modules</span>: <span class="hljs-literal">true</span>,<br>  &#125;<br>&#125;)<br><br></code></pre></td></tr></table></figure>
+<p class="file-path">
+<span>src/components/CssModules/index.module.css</span>
+</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.content</span> &#123;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#4ebe54</span>;<br>  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">600</span>;<br>&#125;<br><br><span class="hljs-selector-class">.content</span>&gt;<span class="hljs-selector-class">.red</span> &#123;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#ff6262</span>;<br>&#125;<br><br><span class="hljs-selector-class">.content</span>&gt;<span class="hljs-selector-class">.blue</span> &#123;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#125dff</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p class="file-path">
+<span>src/components/CssModuls/index.jsx</span>
+</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">import</span> styles <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./index.module.css&#x27;</span><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">CssModule</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(styles)<br>  <span class="hljs-keyword">const</span> color = <span class="hljs-string">&#x27;blue&#x27;</span><br><br>  <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>## CSS Modules<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&#123;styles.content&#125;</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&#123;styles.red&#125;</span>&gt;</span>红色<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&#123;styles[color]&#125;</span>&gt;</span>蓝色<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>绿色<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>  )<br>&#125;<br><br><span class="hljs-keyword">export</span> &#123; <span class="hljs-title class_">CssModule</span> &#125;<br></code></pre></td></tr></table></figure>
+<p><img src="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202206032153821.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202206032153822.jpg" srcset="/img/loading.gif" lazyload></p>
+<h2 id="组件传参">组件传参</h2>
+<p>函数组件可接收一个对象(<code>Object</code>),其含有传递给组件的参数</p>
+<p class="file-path">
+<span>src/components/Props/index.jsx</span>
+</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Props</span>(<span class="hljs-params">props</span>) &#123;<br>  <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>## Props<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml">        &#123;props.name&#125; is</span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">time</span>&gt;</span> &#123;props.age&#125; <span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span></span><br><span class="language-xml">        year old.</span><br><span class="language-xml">      <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>  );<br>&#125;<br><br><span class="hljs-keyword">export</span> &#123; <span class="hljs-title class_">Props</span> &#125;;<br></code></pre></td></tr></table></figure>
+<p class="file-path">
+<span>src/main.jsx</span>
+</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-comment">/* 省略部分模块导入 */</span><br><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">Props</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./components/Props&#x27;</span><br><br><span class="hljs-title function_">createRoot</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;root&#x27;</span>)).<span class="hljs-title function_">render</span>(<br>  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">StrictMode</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">Hello</span> /&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">Props</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;Jonathan&quot;</span> <span class="hljs-attr">age</span>=<span class="hljs-string">&quot;20&quot;</span> /&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;/<span class="hljs-name">StrictMode</span>&gt;</span></span><br>)<br></code></pre></td></tr></table></figure>
 
               
             </div>
@@ -372,7 +460,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>🔴React基础</div>
+      <div>🟡React基础</div>
       <div>https://qingshaner.com/react基础/</div>
     </div>
     <div class="license-meta">
